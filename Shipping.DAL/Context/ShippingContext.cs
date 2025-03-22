@@ -9,5 +9,6 @@ namespace Shipping.DAL.Context
 {
     public class ShippingContext
     {
+
     }
 }
