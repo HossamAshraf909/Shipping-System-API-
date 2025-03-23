@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
-namespace Shipping.DAL.Context
+namespace Shipping.DAL.Persistent.Data.Context
 {
     public class ShippingContext:DbContext
     {

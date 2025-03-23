@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Shipping.DAL.Repositries
+namespace Shipping.DAL.Persistent.Data.Context
 {
-    public class OrderRepositry
+    public class ShippingContextSeed
     {
     }
 }
