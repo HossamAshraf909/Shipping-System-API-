@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Shipping.DAL.UnitOfWork
 {
-    internal class UnitOfWork
+    public class UnitOfWork
     {
     }
 }
