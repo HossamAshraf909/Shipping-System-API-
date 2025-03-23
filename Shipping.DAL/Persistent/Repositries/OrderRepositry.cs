@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Shipping.DAL.Entities
+namespace Shipping.DAL.Persistent.Repositries
 {
-    public class Order :BaseEntity
+    public class OrderRepositry
     {
     }
 }
