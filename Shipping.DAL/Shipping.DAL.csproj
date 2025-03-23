@@ -17,8 +17,4 @@
     </PackageReference>
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Persistent\Data\Configurations\Order\" />
-  </ItemGroup>
-
 </Project>
