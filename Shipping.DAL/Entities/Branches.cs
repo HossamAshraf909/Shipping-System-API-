@@ -10,11 +10,11 @@ namespace Shipping.DAL.Entities
 {
     public class Branches:BaseEntity
     {
-       
-        [MaxLength(50),Required]
-        public string Name { get; set; }
+        [MaxLength(50), Required]
+        public string Name { get; set; } = null!;
         [Column(TypeName ="date")]
         public DateTime Date { get; set; }
+
 
     }
 }
