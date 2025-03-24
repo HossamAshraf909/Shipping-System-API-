@@ -15,7 +15,8 @@ namespace Shipping.DAL.Entities
 
         public virtual List<City> cities { get; set; }
 
-        public ICollection<Order> orders { get; set; } = new List<Order>();
+        public virtual ICollection<Order> orders { get; set; } = new List<Order>();
 
+        public virtual ICollection<SpecialPackages> specialPackages { get; set; } = new List<SpecialPackages>();    
     }
 }
