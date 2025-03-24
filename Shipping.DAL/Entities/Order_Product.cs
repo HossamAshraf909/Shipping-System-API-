@@ -1,17 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Shipping.DAL.Entities;
 
-namespace Shipping.DAL.Entities
+public class Order_Product
 {
-    public class Order_Product
-    {
-        public int ProdID { get; set; }
-        public int OrderID { get; set; }
-        [ForeignKey("ProdID")]
-        public virtual Product product { get; set; }
-    }
+    public int ProductId { get; set; }  
+    public virtual Product? Product { get; set; }
+
+    public int OrderId { get; set; }
+    public virtual Order? Order { get; set; }
 }

@@ -8,16 +8,13 @@ using System.Threading.Tasks;
 
 namespace Shipping.DAL.Entities
 {
-    public class Branches
+    public class Branches:BaseEntity
     {
-        [Key]
-        public int Id { get; set; }
-        [MaxLength(50),Required]
-        public string Name { get; set; }
+        [MaxLength(50), Required]
+        public string Name { get; set; } = null!;
         [Column(TypeName ="date")]
         public DateTime Date { get; set; }
 
-        public bool IsDeleted { get; set; } = false;
 
     }
 }

@@ -7,14 +7,13 @@ using System.Threading.Tasks;
 
 namespace Shipping.DAL.Entities
 {
-    public class Governorate : BaseEntity
+    public class ShippingType:BaseEntity
     {
 
-        [Required, MaxLength(50)]
-        public string Name { get; set; } = null!;
+        public string Type { get; set; } = null!;
 
-        public virtual List<City> cities { get; set; }
-
+        [DataType(DataType.Currency)]
+        public decimal ShippingPrice { get; set; }
         public ICollection<Order> orders { get; set; } = new List<Order>();
 
     }
