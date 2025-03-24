@@ -1,4 +1,7 @@
 
+using Microsoft.EntityFrameworkCore;
+using Shipping.DAL.Persistent.Data.Context;
+
 namespace Shipping.PL
 {
     public class Program
@@ -12,7 +15,9 @@ namespace Shipping.PL
             builder.Services.AddControllers();
             // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
             builder.Services.AddOpenApi();
-            
+            builder.Services.AddDbContext<ShippingContext>(options =>
+                options.UseLazyLoadingProxies().UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"))
+                );
 
             var app = builder.Build();
 

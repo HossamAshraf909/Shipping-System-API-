@@ -12,6 +12,6 @@ namespace Shipping.DAL.Entities
         [DataType(DataType.Currency)]
         public decimal Price { get; set; }
 
-        public ICollection<Order> orders { get; set; } = new List<Order>();
+        public virtual ICollection<Order> orders { get; set; } = new List<Order>();
     }
 }

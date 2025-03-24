@@ -15,6 +15,5 @@ namespace Shipping.DAL.Entities
         [Column(TypeName ="date")]
         public DateTime Date { get; set; }
 
-
     }
 }

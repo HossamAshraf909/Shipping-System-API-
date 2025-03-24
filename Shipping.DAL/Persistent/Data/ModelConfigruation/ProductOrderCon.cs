@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using Microsoft.EntityFrameworkCore;
 
-internal class ProductOrderCon : IEntityTypeConfiguration<Order_Product>
+public class ProductOrderCon : IEntityTypeConfiguration<Order_Product>
 {
     public void Configure(EntityTypeBuilder<Order_Product> builder)
     {
@@ -10,7 +10,7 @@ internal class ProductOrderCon : IEntityTypeConfiguration<Order_Product>
 
         // Define relationships
         builder.HasOne(op => op.Product)
-               .WithMany(p => p.Order_Products)
+               .WithMany(p => p.OrderProducts)
                .HasForeignKey(op => op.ProductId)
                .OnDelete(DeleteBehavior.Cascade);
 

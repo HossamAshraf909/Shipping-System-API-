@@ -13,3 +13,4 @@ D:\Shipping System\Shipping.BL\obj\Debug\net9.0\Shipping.BL.dll
 D:\Shipping System\Shipping.BL\obj\Debug\net9.0\refint\Shipping.BL.dll
 D:\Shipping System\Shipping.BL\obj\Debug\net9.0\Shipping.BL.pdb
 D:\Shipping System\Shipping.BL\obj\Debug\net9.0\ref\Shipping.BL.dll
+D:\Shipping System\Shipping.BL\obj\Debug\net9.0\Shipping.BL.sourcelink.json

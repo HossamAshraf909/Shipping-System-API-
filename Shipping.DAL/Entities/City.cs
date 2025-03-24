@@ -10,7 +10,9 @@ namespace Shipping.DAL.Entities
 {
     public class City:BaseEntity
     {
-        public string Name { get; set; } = null!;
+       
+        public string Name { get; set; }
+      
 
         [Column(TypeName ="money"),Required]
         public decimal ShippingPrice { get; set; }
@@ -22,7 +24,8 @@ namespace Shipping.DAL.Entities
         public int GovId { get; set; }
         public virtual Governorate? governorate { get; set; }
 
-        public ICollection<Order> orders { get; set; } = new List<Order>();
+        public virtual ICollection<Order>? orders { get; set; } = new List<Order>();
+        public virtual SpecialPackages? specialPackages { get; set; }
 
 
     }
