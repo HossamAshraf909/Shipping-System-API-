@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Shipping.DAL.Entities
 {
-    public class Order :BaseEntity
+    public class Order
     {
        
 

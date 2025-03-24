@@ -13,5 +13,7 @@ namespace Shipping.DAL.Entities
         public int OrderID { get; set; }
         [ForeignKey("ProdID")]
         public virtual Product product { get; set; }
+        [ForeignKey("OrderID")]
+        public virtual Order order { get; set; }
     }
 }

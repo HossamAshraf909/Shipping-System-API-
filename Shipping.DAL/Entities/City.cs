@@ -8,10 +8,9 @@ using System.Threading.Tasks;
 
 namespace Shipping.DAL.Entities
 {
-    public class City
+    public class City:BaseEntity
     {
-        [Key]
-        public int ID { get; set; }
+        
         public string Name { get; set; }
 
         [Column(TypeName ="money"),Required]
@@ -20,7 +19,6 @@ namespace Shipping.DAL.Entities
         [Column(TypeName = "money"), Required]
         public decimal PickUpShippingPrice { get; set; }
       
-        public bool IsDeleted { get; set; } = false;
         [ForeignKey("governorate")]
         public int GovId { get; set; }
         public virtual Governorate governorate { get; set; }

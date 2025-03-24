@@ -7,14 +7,12 @@ using System.Threading.Tasks;
 
 namespace Shipping.DAL.Entities
 {
-    public class Governorate
+    public class Governorate:BaseEntity
     {
-        [Key]
-        public int Id { get; set; }
+       
         [Required,MaxLength(50)]
         public string Name { get; set; }
-        public bool IsDeleted { get; set; } = false;
-
+  
         public virtual List<City> cities { get; set; }
     }
 }
