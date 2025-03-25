@@ -1,5 +1,6 @@
 
 using Microsoft.EntityFrameworkCore;
+using Shipping.BL.Mappers;
 using Shipping.DAL.Persistent.Data.Context;
 
 namespace Shipping.PL
@@ -18,6 +19,7 @@ namespace Shipping.PL
             builder.Services.AddDbContext<ShippingContext>(options =>
                 options.UseLazyLoadingProxies().UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"))
                 );
+            builder.Services.AddAutoMapper(typeof(MapConfig));
 
             var app = builder.Build();
 
