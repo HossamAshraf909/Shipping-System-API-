@@ -13,12 +13,13 @@ namespace Shipping.DAL.Persistent.Repositries
         {
 
         }
-        
+         
         public void deleteProductFromOrder(int id)
         {
             var Order_Product = GetById(id);
             context.OrderProducts.Remove(Order_Product);
             context.Products.Remove(Order_Product.Product);
         }
+        
     }
 }

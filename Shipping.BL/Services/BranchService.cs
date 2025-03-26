@@ -43,6 +43,7 @@ namespace Shipping.BL.Services
         {
             Branches branch = map.Map<Branches>(branchDTO);
             unit.BranchRep.Add(branch);
+            unit.Save();
         }
 
 
@@ -51,6 +52,7 @@ namespace Shipping.BL.Services
         {
             Branches branch= map.Map<Branches>(branchDTO);
             unit.BranchRep.Update(branch);
+            unit.Save();
         }
 
 
@@ -59,6 +61,7 @@ namespace Shipping.BL.Services
         {
             Branches branch = unit.BranchRep.GetById(id);
             branch.IsDeleted = true;
+            unit.Save();
         }
 
     }

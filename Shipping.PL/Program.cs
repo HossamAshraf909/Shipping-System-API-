@@ -18,14 +18,23 @@ namespace Shipping.PL
 
             builder.Services.AddControllers();
             // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
+            
             builder.Services.AddOpenApi();
-            builder.Services.AddDbContext<ShippingContext>(options =>
-                options.UseLazyLoadingProxies().UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"))
-                );
-            builder.Services.AddScoped<UnitOfWork>();
-            builder.Services.AddAutoMapper(typeof(MapConfig));
-            builder.Services.AddScoped<ProductService>();
-            builder.Services.AddScoped<OrderProductService>();
+            
+            
+            #region Add Services
+
+                    builder.Services.AddDbContext<ShippingContext>(options =>
+                        options.UseLazyLoadingProxies().UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"))
+                        );
+                    builder.Services.AddScoped<UnitOfWork>();
+                    builder.Services.AddAutoMapper(typeof(MapConfig));
+                    builder.Services.AddScoped<ProductService>();
+                    builder.Services.AddScoped<OrderProductService>();
+                    builder.Services.AddScoped<ShippingTypeService>();
+            
+            #endregion
+
 
             var app = builder.Build();
 
