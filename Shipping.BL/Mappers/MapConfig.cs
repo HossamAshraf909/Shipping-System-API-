@@ -9,6 +9,10 @@ using Shipping.BL.DTOs.City;
 using Shipping.BL.DTOs.Branch;
 using Shipping.BL.DTOs.Governorate;
 using Shipping.PL.DTOs.Governorate;
+using AutoMapper;
+using Shipping.BL.DTOs.Product;
+
+
 
 namespace Shipping.BL.Mappers
 {
@@ -24,6 +28,13 @@ namespace Shipping.BL.Mappers
 
             CreateMap<Branches, AddBrachDTO>().ReverseMap();
             CreateMap<Branches, ReadBranchDTO>().ReverseMap();
+        }
+    public class MapConfig:Profile
+    {
+        public MapConfig()
+        {
+            //productMap
+            CreateMap<CreateProductDTO,Product>().ReverseMap();
         }
     }
 }

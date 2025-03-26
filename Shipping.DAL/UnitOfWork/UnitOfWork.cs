@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 using Shipping.DAL.Entities;
 using Shipping.DAL.Persistent.Data.Context;
 using Shipping.DAL.Persistent.Repositries;
+using Shipping.DAL.Entities;
+using Shipping.DAL.Persistent.Data.Context;
+using Shipping.DAL.Persistent.Repositries;
 
 namespace Shipping.DAL.UnitOfWork
 {
@@ -62,5 +65,22 @@ namespace Shipping.DAL.UnitOfWork
 
 
 
+        private readonly ShippingContext context;
+        private  ProductRepositry _ProductRepositry; 
+
+        
+        public ProductRepositry ProductRepositry
+        {
+            get
+            {
+                if (_ProductRepositry == null)
+                    _ProductRepositry = new ProductRepositry(context);
+                return _ProductRepositry;
+            }
+        }
+        public void Save()
+        {
+            context.SaveChanges();
+        }
     }
 }
