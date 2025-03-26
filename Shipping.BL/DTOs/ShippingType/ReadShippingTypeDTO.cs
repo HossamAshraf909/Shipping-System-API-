@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace Shipping.BL.DTOs.ShippingType
 {
-    internal class ReadShippingTypeDTO
+    public record ReadShippingTypeDTO
     {
+        public int Id { get; set; }
+        public string Type { get; set; } = null!;
     }
 }

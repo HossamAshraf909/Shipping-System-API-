@@ -11,30 +11,25 @@ using Shipping.BL.DTOs.Governorate;
 using Shipping.PL.DTOs.Governorate;
 using AutoMapper;
 using Shipping.BL.DTOs.Product;
+using Shipping.BL.DTOs.ShippingType;
 
 
 
 namespace Shipping.BL.Mappers
 {
-    public class MapConfig :Profile
+    public class MapConfig : Profile
     {
         public MapConfig()
         {
             CreateMap<City, ReadCityDTO>().ReverseMap();
             CreateMap<City, AddCityDTO>().ReverseMap();
-
             CreateMap<Governorate, AddGovernorateDTO>().ReverseMap();
             CreateMap<Governorate, ReadGovernorateDTO>().ReverseMap();
-
             CreateMap<Branches, AddBrachDTO>().ReverseMap();
             CreateMap<Branches, ReadBranchDTO>().ReverseMap();
-        }
-    public class MapConfig:Profile
-    {
-        public MapConfig()
-        {
-            //productMap
-            CreateMap<CreateProductDTO,Product>().ReverseMap();
+            CreateMap<CreateProductDTO, Product>().ReverseMap();
+            CreateMap<AddShippingTypeDTO, ShippingType>().ReverseMap();
+            CreateMap<ShippingType, ReadShippingTypeDTO>().ReverseMap();
         }
     }
 }

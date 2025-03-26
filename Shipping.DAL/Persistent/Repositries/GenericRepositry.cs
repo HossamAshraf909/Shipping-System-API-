@@ -39,10 +39,10 @@ namespace Shipping.DAL.Persistent.Repositries
         {
             context.Set<T>().Update(entity);
         }
-        public T Delete(int id) 
+        public void Delete(T entity) 
         {
-            var entity = GetById(id);
-            return entity;
+
+            context.Set<T>().Update(entity); ;
         }
     }
 }

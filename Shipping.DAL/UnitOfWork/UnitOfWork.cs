@@ -14,10 +14,14 @@ namespace Shipping.DAL.UnitOfWork
 {
     public class UnitOfWork
     {
-        ShippingContext context;
-        GenericRepositry<City> cityRep;
-        GenericRepositry<Governorate> govRep;
-        GenericRepositry<Branches> branchRep;
+
+        private readonly ShippingContext context;
+        private ProductRepositry _ProductRepositry;
+        private OrderProductRepositry _OrderProductRepositry;
+        private GenericRepositry<City> cityRep;
+        private GenericRepositry<Governorate> govRep;
+        private GenericRepositry<Branches> branchRep;
+        private GenericRepositry<ShippingType> _ShippingTypeRepositry;
         public UnitOfWork( ShippingContext context)
         {
             this.context = context;
@@ -45,7 +49,6 @@ namespace Shipping.DAL.UnitOfWork
             }
         }
 
-
         public GenericRepositry<Branches> BranchRep
         {
             get
@@ -57,18 +60,6 @@ namespace Shipping.DAL.UnitOfWork
             }
         }
 
-
-
-
-
-
-
-
-
-        private readonly ShippingContext context;
-        private  ProductRepositry _ProductRepositry; 
-
-        
         public ProductRepositry ProductRepositry
         {
             get
@@ -78,6 +69,28 @@ namespace Shipping.DAL.UnitOfWork
                 return _ProductRepositry;
             }
         }
+
+        public OrderProductRepositry orderProductRepositry
+        {
+            get
+            {
+                if (_OrderProductRepositry == null)
+                    _OrderProductRepositry = new(context);
+                return _OrderProductRepositry;
+            }
+        }
+
+        public GenericRepositry<ShippingType> shippingTypeRepositry
+        {
+            get
+            {
+                if (_ShippingTypeRepositry == null)
+                    _ShippingTypeRepositry = new(context);
+                return _ShippingTypeRepositry;
+            }
+        }
+        
+
         public void Save()
         {
             context.SaveChanges();
