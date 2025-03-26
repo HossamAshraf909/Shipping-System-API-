@@ -9,7 +9,7 @@ namespace Shipping.DAL.Persistent.Repositries
 {
     public class GenericRepositry<T> where T : class
     {
-        private readonly ShippingContext context;
+        protected readonly ShippingContext context;
 
         public GenericRepositry(ShippingContext context)
         {
@@ -39,9 +39,10 @@ namespace Shipping.DAL.Persistent.Repositries
         {
             context.Set<T>().Update(entity);
         }
-        public void Delete(int id) 
+        public T Delete(int id) 
         {
             var entity = GetById(id);
+            return entity;
         }
     }
 }
