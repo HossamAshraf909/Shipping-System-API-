@@ -5049,23 +5049,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Future\\.nuget\\packages\\": {},
+    "C:\\Users\\Gamemachines\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Shipping System\\Shipping.DAL\\Shipping.DAL.csproj",
+      "projectUniqueName": "E:\\Ehab\\ITI TASKS\\GP\\Graduation Project 26-3-2025\\Shipping-System-API-\\Shipping.DAL\\Shipping.DAL.csproj",
       "projectName": "Shipping.DAL",
-      "projectPath": "D:\\Shipping System\\Shipping.DAL\\Shipping.DAL.csproj",
-      "packagesPath": "C:\\Users\\Future\\.nuget\\packages\\",
-      "outputPath": "D:\\Shipping System\\Shipping.DAL\\obj\\",
+      "projectPath": "E:\\Ehab\\ITI TASKS\\GP\\Graduation Project 26-3-2025\\Shipping-System-API-\\Shipping.DAL\\Shipping.DAL.csproj",
+      "packagesPath": "C:\\Users\\Gamemachines\\.nuget\\packages\\",
+      "outputPath": "E:\\Ehab\\ITI TASKS\\GP\\Graduation Project 26-3-2025\\Shipping-System-API-\\Shipping.DAL\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\Future\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Gamemachines\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -5092,7 +5092,7 @@
         "auditLevel": "low",
         "auditMode": "direct"
       },
-      "SdkAnalysisLevel": "9.0.100"
+      "SdkAnalysisLevel": "9.0.200"
     },
     "frameworks": {
       "net9.0": {
@@ -5141,7 +5141,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.102/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.201/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

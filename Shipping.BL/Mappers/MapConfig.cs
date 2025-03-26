@@ -11,6 +11,7 @@ using Shipping.BL.DTOs.Governorate;
 using Shipping.PL.DTOs.Governorate;
 using AutoMapper;
 using Shipping.BL.DTOs.Product;
+using Shipping.BL.DTOs.Weight;
 
 
 
@@ -28,13 +29,42 @@ namespace Shipping.BL.Mappers
 
             CreateMap<Branches, AddBrachDTO>().ReverseMap();
             CreateMap<Branches, ReadBranchDTO>().ReverseMap();
+
+            CreateMap<WeightPrice, ReadWeightDTO>().ReverseMap();
+            CreateMap<WeightPrice, AddWeightDTO>().ReverseMap();
+
+
+            //hossam
+            CreateMap<CreateProductDTO, Product>().ReverseMap();
+
+
+         
         }
-    public class MapConfig:Profile
-    {
-        public MapConfig()
-        {
-            //productMap
-            CreateMap<CreateProductDTO,Product>().ReverseMap();
-        }
+
+
+
+
+
+
+
+
+
+
+
+
+    //public class MapConfig:Profile
+    //{
+    //    public MapConfig()
+    //    {
+    //        //productMap
+    //        CreateMap<CreateProductDTO,Product>().ReverseMap();
+    //    }
+
+
+
+
+
+
+
     }
 }
