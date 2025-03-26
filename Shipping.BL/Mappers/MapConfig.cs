@@ -8,14 +8,10 @@ using Shipping.DAL.Entities;
 using Shipping.BL.DTOs.City;
 using Shipping.BL.DTOs.Branch;
 using Shipping.BL.DTOs.Governorate;
-using Shipping.PL.DTOs.Governorate;
-using AutoMapper;
 using Shipping.BL.DTOs.Product;
-<<<<<<< HEAD
 using Shipping.BL.DTOs.ShippingType;
-=======
 using Shipping.BL.DTOs.Weight;
->>>>>>> 04029105593f96b08271d432ec662ad8f4153582
+
 
 
 
