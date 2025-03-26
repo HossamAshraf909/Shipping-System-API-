@@ -18,6 +18,7 @@ namespace Shipping.DAL.UnitOfWork
         GenericRepositry<City> cityRep;
         GenericRepositry<Governorate> govRep;
         GenericRepositry<Branches> branchRep;
+        GenericRepositry<WeightPrice> weightPriceRepo;
         public UnitOfWork( ShippingContext context)
         {
             this.context = context;
@@ -57,6 +58,15 @@ namespace Shipping.DAL.UnitOfWork
             }
         }
 
+        public GenericRepositry<WeightPrice> WeightPriceRepo
+        {
+            get
+            {
+                if(weightPriceRepo == null)
+                    weightPriceRepo = new GenericRepositry<WeightPrice>(context);
+                return weightPriceRepo;
+            }
+        }
 
 
 
@@ -65,7 +75,8 @@ namespace Shipping.DAL.UnitOfWork
 
 
 
-        private readonly ShippingContext context;
+
+      //  private readonly ShippingContext context;
         private  ProductRepositry _ProductRepositry; 
 
         

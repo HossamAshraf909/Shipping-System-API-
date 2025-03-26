@@ -41,18 +41,21 @@ namespace Shipping.BL.Services
         {
             City city = map.Map<City>(cityDTO);
             unit.CityRep.Add(city);
+            unit.Save();
         }
 
         public void Update(AddCityDTO cityDTO)
         {
             City city = map.Map<City>(cityDTO);
             unit.CityRep.Update(city);
+            unit.Save();
         }
 
         public void Delete(int id)
         {
             City city = unit.CityRep.GetById(id);
             city.IsDeleted = true;
+            unit.Save();
         }
 
     }
