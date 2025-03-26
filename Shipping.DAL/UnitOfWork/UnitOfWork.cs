@@ -22,6 +22,7 @@ namespace Shipping.DAL.UnitOfWork
         private GenericRepositry<Governorate> govRep;
         private GenericRepositry<Branches> branchRep;
         private GenericRepositry<ShippingType> _ShippingTypeRepositry;
+        GenericRepositry<WeightPrice> weightPriceRepo;
         public UnitOfWork( ShippingContext context)
         {
             this.context = context;

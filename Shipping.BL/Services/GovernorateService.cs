@@ -51,7 +51,7 @@ namespace Shipping.BL.Services
         {
             Governorate governorate = map.Map<Governorate>(governorateDTO);
             unit.GovRep.Update(governorate);
-            unit.Save();    
+            unit.Save();
         }
 
 
@@ -59,7 +59,7 @@ namespace Shipping.BL.Services
         {
             Governorate governorate = unit.GovRep.GetById(id);
             governorate.IsDeleted = true;
-            unit.Save();    
+            unit.Save();
         }
 
 

@@ -11,7 +11,11 @@ using Shipping.BL.DTOs.Governorate;
 using Shipping.PL.DTOs.Governorate;
 using AutoMapper;
 using Shipping.BL.DTOs.Product;
+<<<<<<< HEAD
 using Shipping.BL.DTOs.ShippingType;
+=======
+using Shipping.BL.DTOs.Weight;
+>>>>>>> 04029105593f96b08271d432ec662ad8f4153582
 
 
 
@@ -27,9 +31,49 @@ namespace Shipping.BL.Mappers
             CreateMap<Governorate, ReadGovernorateDTO>().ReverseMap();
             CreateMap<Branches, AddBrachDTO>().ReverseMap();
             CreateMap<Branches, ReadBranchDTO>().ReverseMap();
+<<<<<<< HEAD
             CreateMap<CreateProductDTO, Product>().ReverseMap();
             CreateMap<AddShippingTypeDTO, ShippingType>().ReverseMap();
             CreateMap<ShippingType, ReadShippingTypeDTO>().ReverseMap();
         }
+=======
+
+            CreateMap<WeightPrice, ReadWeightDTO>().ReverseMap();
+            CreateMap<WeightPrice, AddWeightDTO>().ReverseMap();
+
+
+            //hossam
+            CreateMap<CreateProductDTO, Product>().ReverseMap();
+
+
+         
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+    //public class MapConfig:Profile
+    //{
+    //    public MapConfig()
+    //    {
+    //        //productMap
+    //        CreateMap<CreateProductDTO,Product>().ReverseMap();
+    //    }
+
+
+
+
+
+
+
+>>>>>>> 04029105593f96b08271d432ec662ad8f4153582
     }
 }
