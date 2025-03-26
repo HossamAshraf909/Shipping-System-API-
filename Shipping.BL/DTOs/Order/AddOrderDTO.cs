@@ -1,4 +1,4 @@
-﻿namespace Shipping.PL.DTOs.Order
+﻿namespace Shipping.BL.DTOs.Order
 {
     public class AddOrderDTO
     {
