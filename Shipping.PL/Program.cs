@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using Shipping.BL.Mappers;
 using Shipping.BL.Services;
 using Shipping.DAL.Persistent.Data.Context;
-using Shipping.DAL.UnitOfWork;
+using Shipping.DAL.Persistent.UnitOfWork;
 
 namespace Shipping.PL
 {
@@ -32,6 +32,7 @@ namespace Shipping.PL
                     builder.Services.AddScoped<ProductService>();
                     builder.Services.AddScoped<OrderProductService>();
                     builder.Services.AddScoped<ShippingTypeService>();
+                    builder.Services.AddScoped<OrderService>();
             
             #endregion
 
