@@ -21,7 +21,7 @@ namespace Shipping.BL.Services
 
         public async Task<IEnumerable<OrderDTO>> GetAllOrdersAsync()
         {
-            var orders = await _unitOfWork.OrderRepository.GetAllAsync();
+            var orders = await _unitOfWork.Orders.GetAllAsync();
             return _mapper.Map<IEnumerable<OrderDTO>>(orders);
         }
 
