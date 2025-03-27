@@ -32,7 +32,11 @@ namespace Shipping.PL
                     builder.Services.AddScoped<ProductService>();
                     builder.Services.AddScoped<OrderProductService>();
                     builder.Services.AddScoped<ShippingTypeService>();
-            
+                    builder.Services.AddScoped<BranchService>();
+                    builder.Services.AddScoped<GovernorateService>();
+                    builder.Services.AddScoped<CityService>();
+                    builder.Services.AddScoped<WeightPriceService>();
+;            
             #endregion
 
 

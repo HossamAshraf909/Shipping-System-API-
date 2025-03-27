@@ -64,5 +64,11 @@ namespace Shipping.BL.Services
             unit.Save();
         }
 
+
+        public IEnumerable<Branches> Search(string Searchword)
+        {
+           return unit.BranchRep.search(Searchword);
+        }
+
     }
 }

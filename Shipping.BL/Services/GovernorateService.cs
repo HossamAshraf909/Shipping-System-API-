@@ -23,7 +23,7 @@ namespace Shipping.BL.Services
 
         }
 
-        public List<ReadGovernorateDTO> GettAll()
+        public List<ReadGovernorateDTO> GetAll()
         {
             List<Governorate> governorates = unit.GovRep.GetAll().ToList();
             List<ReadGovernorateDTO> governorateDTO = map.Map<List<ReadGovernorateDTO>>(governorates);
@@ -63,6 +63,10 @@ namespace Shipping.BL.Services
         }
 
 
+        public IEnumerable<Governorate> Search(string Searchword)
+        {
+            return unit.GovRep.search(Searchword);
+        }
 
     }
 }
