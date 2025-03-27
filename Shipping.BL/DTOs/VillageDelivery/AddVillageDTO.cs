@@ -6,7 +6,13 @@ using System.Threading.Tasks;
 
 namespace Shipping.BL.DTOs.VillageDelivery
 {
-    internal class AddVillageDTO
+    public class AddVillageDTO
     {
+      
+        public string VillageName { get; set; }  // اسم القرية
+        public string CityName { get; set; }  // اسم المدينة
+        public string GovernorateName { get; set; }  // اسم المحافظة
+        public decimal Price { get; set; }
+     
     }
 }

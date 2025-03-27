@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace Shipping.BL.DTOs.SpecialPackage
 {
-    internal class AddPackage
+    public class AddPackageDto
     {
+        public int cityID { get; set; }
+        public int governorateID { get; set; }
+        public decimal ShippingPrice { get; set; }
+        public bool IsDeleted { get; set; }
     }
 }

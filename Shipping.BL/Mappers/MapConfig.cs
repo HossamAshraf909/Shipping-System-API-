@@ -11,6 +11,9 @@ using Shipping.BL.DTOs.Governorate;
 using Shipping.BL.DTOs.Product;
 using Shipping.BL.DTOs.ShippingType;
 using Shipping.BL.DTOs.Weight;
+using Shipping.BL.DTOs.SpecialPackage;
+using Shipping.BL.DTOs.VillageDelivery;
+using Shipping.PL.DTOs.Governorate;
 
 
 
@@ -35,6 +38,10 @@ namespace Shipping.BL.Mappers
             CreateMap<WeightPrice, AddWeightDTO>().ReverseMap();
 
             CreateMap<CreateProductDTO, Product>().ReverseMap();
+            CreateMap<SpecialPackages,ReadPackageDto>().ReverseMap();
+            CreateMap<SpecialPackages,AddPackageDto>().ReverseMap();
+            CreateMap<VillageDelivery,ReadVillageDTO>().ReverseMap();
+            CreateMap<VillageDelivery,AddVillageDTO>().ReverseMap();
         }
 
     }

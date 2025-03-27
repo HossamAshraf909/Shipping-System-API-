@@ -23,11 +23,13 @@ namespace Shipping.DAL.UnitOfWork
         private GenericRepositry<Branches> branchRep;
         private GenericRepositry<ShippingType> _ShippingTypeRepositry;
         GenericRepositry<WeightPrice> weightPriceRepo;
+        private GenericRepositry<SpecialPackages> _specialPackagesRepo;
+        private GenericRepositry<VillageDelivery> _villageDeliveryRepo;
         public UnitOfWork( ShippingContext context)
         {
             this.context = context;
         }
-
+        
         public GenericRepositry<City> CityRep
         {
             get
@@ -90,8 +92,25 @@ namespace Shipping.DAL.UnitOfWork
                 return _ShippingTypeRepositry;
             }
         }
-        
 
+        public GenericRepositry<VillageDelivery> villageDelivery
+        {
+            get
+            {
+                if (_villageDeliveryRepo == null)
+                    _villageDeliveryRepo = new GenericRepositry<VillageDelivery>(context);
+                return _villageDeliveryRepo;
+            }
+        }
+        public GenericRepositry<SpecialPackages> specialPackage
+        {
+            get
+            {
+                if (_specialPackagesRepo == null)
+                    _specialPackagesRepo = new GenericRepositry<SpecialPackages>(context);
+                return _specialPackagesRepo;
+            }
+        }
         public void Save()
         {
             context.SaveChanges();
