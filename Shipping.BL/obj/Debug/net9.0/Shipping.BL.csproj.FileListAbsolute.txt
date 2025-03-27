@@ -14,3 +14,12 @@ D:\Shipping System\Shipping.BL\obj\Debug\net9.0\refint\Shipping.BL.dll
 D:\Shipping System\Shipping.BL\obj\Debug\net9.0\Shipping.BL.pdb
 D:\Shipping System\Shipping.BL\obj\Debug\net9.0\ref\Shipping.BL.dll
 D:\Shipping System\Shipping.BL\obj\Debug\net9.0\Shipping.BL.sourcelink.json
+D:\shippingsys\Shipping.BL\obj\Debug\net9.0\Shipping.BL.csproj.AssemblyReference.cache
+D:\shippingsys\Shipping.BL\obj\Debug\net9.0\Shipping.BL.GeneratedMSBuildEditorConfig.editorconfig
+D:\shippingsys\Shipping.BL\obj\Debug\net9.0\Shipping.BL.AssemblyInfoInputs.cache
+D:\shippingsys\Shipping.BL\obj\Debug\net9.0\Shipping.BL.AssemblyInfo.cs
+D:\shippingsys\Shipping.BL\obj\Debug\net9.0\Shipping.BL.csproj.CoreCompileInputs.cache
+D:\shippingsys\Shipping.BL\obj\Debug\net9.0\Shipping.BL.sourcelink.json
+D:\shippingsys\Shipping.BL\obj\Debug\net9.0\Shipping.BL.dll
+D:\shippingsys\Shipping.BL\obj\Debug\net9.0\refint\Shipping.BL.dll
+D:\shippingsys\Shipping.BL\obj\Debug\net9.0\Shipping.BL.pdb
