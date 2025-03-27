@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
 using AutoMapper;
 using Shipping.BL.DTOs.Order;
@@ -42,13 +44,13 @@ namespace Shipping.BL.Services
         {
             var order = await _unitOfWork.Orders.GetByIdAsync(orderId);
             if (order != null)
-            {
+    {
                 _mapper.Map(orderDto, order);
                 await _unitOfWork.Orders.UpdateAsync(order);
                 await _unitOfWork.SaveChangesAsync();  // Ensure changes are saved
             }
         }
-
+       
         public async Task DeleteOrderAsync(int orderId)
         {
             await _unitOfWork.Orders.DeleteAsync(orderId);

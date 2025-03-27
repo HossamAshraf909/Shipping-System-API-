@@ -1,6 +1,10 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
 using AutoMapper;
+using Shipping.BL.DTOs.City;
 using Shipping.BL.DTOs.Governorate;
 using Shipping.DAL.Entities;
 using Shipping.DAL.Persistent.UnitOfWork;
@@ -56,5 +60,8 @@ namespace Shipping.BL.Services
             governorate.IsDeleted = true;
             await _unitOfWork.SaveChangesAsync();
         }
+
+
+
     }
 }

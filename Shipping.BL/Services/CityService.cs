@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
 using AutoMapper;
 using Shipping.BL.DTOs.City;
@@ -13,7 +14,7 @@ namespace Shipping.BL.Services
     {
         private readonly IMapper _mapper;
         private readonly IUnitOfWork _unitOfWork;
-
+            
         public CityService(IMapper mapper, IUnitOfWork unitOfWork)
         {
             _mapper = mapper;
@@ -57,5 +58,6 @@ namespace Shipping.BL.Services
             city.IsDeleted = true;
             await _unitOfWork.SaveChangesAsync();
         }
+
     }
 }

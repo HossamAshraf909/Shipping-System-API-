@@ -1,9 +1,15 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
 using Shipping.DAL.Entities;
 using Shipping.DAL.Persistent.Data.Context;
 using Shipping.DAL.Persistent.Repositories;
 using Shipping.DAL.Persistent.Repositries.Irepo;
+using Shipping.DAL.Persistent.Repositries;
+using Shipping.DAL.Entities;
+using Shipping.DAL.Persistent.Data.Context;
 using Shipping.DAL.Persistent.Repositries;
 
 namespace Shipping.DAL.Persistent.UnitOfWork
@@ -30,7 +36,7 @@ namespace Shipping.DAL.Persistent.UnitOfWork
 
         public ProductRepository Products =>
             _products ??= new ProductRepository(_context);
-        
+
         
         public IGenericRepository<SpecialPackages> SpecialPackage =>
             _specialPackages ??= new GenericRepository<SpecialPackages>(_context);
@@ -58,23 +64,29 @@ namespace Shipping.DAL.Persistent.UnitOfWork
         public IGenericRepository<WeightPrice> WeightPrices =>
             _weightPrices ??= new GenericRepository<WeightPrice>(_context);
 
+            }
+        }
 
         public async Task<int> SaveChangesAsync()
-        {
+            {
             return await _context.SaveChangesAsync();
         }
 
         public int SaveChanges()
-        {
+            {
             return _context.SaveChanges();
         }
 
         public void Dispose()
-        {
+            {
             _context.Dispose();
             GC.SuppressFinalize(this);
         }
+        
 
-
+        public void Save()
+        {
+            context.SaveChanges();
+        }
     }
 }

@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
+using Shipping.DAL.Persistent.Data.Context;
 
 namespace Shipping.DAL.Persistent.Repositories
 {
@@ -54,7 +55,7 @@ namespace Shipping.DAL.Persistent.Repositories
         {
             var entity = await _dbSet.FindAsync(id);
             if (entity != null)
-            {
+        {
                 _dbSet.Remove(entity);
                 await _context.SaveChangesAsync(); // Ensure the delete is saved asynchronously
             }

@@ -1,5 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
 using AutoMapper;
 using Shipping.BL.DTOs.Weight;
@@ -12,7 +14,7 @@ namespace Shipping.BL.Services
     {
         private readonly IUnitOfWork _unit;
         private readonly IMapper _map;
-
+            
         public WeightPriceService(IUnitOfWork unit, IMapper map)
         {
             _unit = unit;
@@ -54,5 +56,6 @@ namespace Shipping.BL.Services
             weightPrice.IsDeleted = true;
             await _unit.SaveChangesAsync();
         }
+
     }
 }
