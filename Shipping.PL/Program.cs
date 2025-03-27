@@ -1,4 +1,11 @@
 
+using AutoMapper;
+using Microsoft.EntityFrameworkCore;
+using Shipping.BL.Mappers;
+using Shipping.BL.Services;
+using Shipping.DAL.Persistent.Data.Context;
+using Shipping.DAL.Persistent.UnitOfWork;
+
 namespace Shipping.PL
 {
     public class Program
@@ -11,8 +18,21 @@ namespace Shipping.PL
 
             builder.Services.AddControllers();
             // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
+            
             builder.Services.AddOpenApi();
             
+            
+            #region Add Services
+
+                    builder.Services.AddDbContext<ShippingContext>(options =>
+                        options.UseLazyLoadingProxies().UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"))
+                        );
+                    builder.Services.AddScoped<UnitOfWork>();
+                    builder.Services.AddAutoMapper(typeof(MapConfig));
+                   
+            
+            #endregion
+
 
             var app = builder.Build();
 
