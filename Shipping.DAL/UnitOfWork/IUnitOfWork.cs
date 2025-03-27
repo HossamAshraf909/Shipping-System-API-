@@ -6,7 +6,10 @@ public interface IUnitOfWork : IDisposable
 {
     ProductRepository Products { get; }
     OrderProductRepository OrderProducts { get; }
-    OrderRepository Orders { get; }  
+    OrderRepository Orders { get; }
+
+     IGenericRepository<VillageDelivery> VillageDelivery { get; }
+     IGenericRepository<SpecialPackages> SpecialPackage { get; }
 
     IGenericRepository<City> Cities { get; }
     IGenericRepository<Governorate> Governorates { get; }

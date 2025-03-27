@@ -29,10 +29,7 @@ namespace Shipping.PL
                         );
                     builder.Services.AddScoped<UnitOfWork>();
                     builder.Services.AddAutoMapper(typeof(MapConfig));
-                    builder.Services.AddScoped<ProductService>();
-                    builder.Services.AddScoped<OrderProductService>();
-                    builder.Services.AddScoped<ShippingTypeService>();
-                    builder.Services.AddScoped<OrderService>();
+                   
             
             #endregion
 

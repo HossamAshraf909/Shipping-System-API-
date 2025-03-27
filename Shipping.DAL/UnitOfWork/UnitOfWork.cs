@@ -21,7 +21,8 @@ namespace Shipping.DAL.Persistent.UnitOfWork
         private IGenericRepository<Branches>? _branches;
         private IGenericRepository<ShippingType>? _shippingTypes;
         private IGenericRepository<WeightPrice>? _weightPrices;
-
+        private IGenericRepository<VillageDelivery>? _villageDelivery;
+        private IGenericRepository<SpecialPackages>? _specialPackages;
         public UnitOfWork(ShippingContext context)
         {
             _context = context ?? throw new ArgumentNullException(nameof(context));
@@ -29,6 +30,10 @@ namespace Shipping.DAL.Persistent.UnitOfWork
 
         public ProductRepository Products =>
             _products ??= new ProductRepository(_context);
+        
+        
+        public IGenericRepository<SpecialPackages> SpecialPackage =>
+            _specialPackages ??= new GenericRepository<SpecialPackages>(_context);
 
         public OrderProductRepository OrderProducts =>
             _orderProducts ??= new OrderProductRepository(_context);
@@ -42,6 +47,8 @@ namespace Shipping.DAL.Persistent.UnitOfWork
         public IGenericRepository<Governorate> Governorates =>
             _governorates ??= new GenericRepository<Governorate>(_context);
 
+        public IGenericRepository<VillageDelivery> VillageDelivery =>
+            _villageDelivery ??= new GenericRepository<VillageDelivery>(_context);
         public IGenericRepository<Branches> Branches =>
             _branches ??= new GenericRepository<Branches>(_context);
 
@@ -50,6 +57,7 @@ namespace Shipping.DAL.Persistent.UnitOfWork
 
         public IGenericRepository<WeightPrice> WeightPrices =>
             _weightPrices ??= new GenericRepository<WeightPrice>(_context);
+
 
         public async Task<int> SaveChangesAsync()
         {
