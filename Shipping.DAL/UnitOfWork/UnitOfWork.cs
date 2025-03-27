@@ -1,100 +1,72 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using Shipping.DAL.Entities;
 using Shipping.DAL.Persistent.Data.Context;
-using Shipping.DAL.Persistent.Repositries;
-using Shipping.DAL.Entities;
-using Shipping.DAL.Persistent.Data.Context;
+using Shipping.DAL.Persistent.Repositories;
+using Shipping.DAL.Persistent.Repositries.Irepo;
 using Shipping.DAL.Persistent.Repositries;
 
-namespace Shipping.DAL.UnitOfWork
+namespace Shipping.DAL.Persistent.UnitOfWork
 {
-    public class UnitOfWork
+    public class UnitOfWork : IUnitOfWork
     {
 
-        private readonly ShippingContext context;
-        private ProductRepositry _ProductRepositry;
-        private OrderProductRepositry _OrderProductRepositry;
-        private GenericRepositry<City> cityRep;
-        private GenericRepositry<Governorate> govRep;
-        private GenericRepositry<Branches> branchRep;
-        private GenericRepositry<ShippingType> _ShippingTypeRepositry;
-        GenericRepositry<WeightPrice> weightPriceRepo;
-        public UnitOfWork( ShippingContext context)
+        private readonly ShippingContext _context;
+
+        private ProductRepository? _products;
+        private OrderProductRepository? _orderProducts;
+        private OrderRepository? _orders;
+        private IGenericRepository<City>? _cities;
+        private IGenericRepository<Governorate>? _governorates;
+        private IGenericRepository<Branches>? _branches;
+        private IGenericRepository<ShippingType>? _shippingTypes;
+        private IGenericRepository<WeightPrice>? _weightPrices;
+
+        public UnitOfWork(ShippingContext context)
         {
-            this.context = context;
+            _context = context ?? throw new ArgumentNullException(nameof(context));
         }
 
-        public GenericRepositry<City> CityRep
-        {
-            get
-            {
-                if (cityRep == null)
-                    cityRep = new GenericRepositry<City>(context);
-                return cityRep;
+        public ProductRepository Products =>
+            _products ??= new ProductRepository(_context);
 
-            }
+        public OrderProductRepository OrderProducts =>
+            _orderProducts ??= new OrderProductRepository(_context);
+
+        public OrderRepository Orders =>
+            _orders ??= new OrderRepository(_context);
+
+        public IGenericRepository<City> Cities =>
+     _cities ??= new GenericRepository<City>(_context);
+
+        public IGenericRepository<Governorate> Governorates =>
+            _governorates ??= new GenericRepository<Governorate>(_context);
+
+        public IGenericRepository<Branches> Branches =>
+            _branches ??= new GenericRepository<Branches>(_context);
+
+        public IGenericRepository<ShippingType> ShippingTypes =>
+            _shippingTypes ??= new GenericRepository<ShippingType>(_context);
+
+        public IGenericRepository<WeightPrice> WeightPrices =>
+            _weightPrices ??= new GenericRepository<WeightPrice>(_context);
+
+        public async Task<int> SaveChangesAsync()
+        {
+            return await _context.SaveChangesAsync();
         }
 
-        public GenericRepositry<Governorate> GovRep
+        public int SaveChanges()
         {
-            get
-            {
-                if (govRep == null)
-                    govRep = new GenericRepositry<Governorate>(context);
-                return govRep;
-
-            }
+            return _context.SaveChanges();
         }
 
-        public GenericRepositry<Branches> BranchRep
+        public void Dispose()
         {
-            get
-            {
-                if (branchRep == null)
-                    branchRep = new GenericRepositry<Branches>(context);
-                return branchRep;
-
-            }
+            _context.Dispose();
+            GC.SuppressFinalize(this);
         }
 
-        public ProductRepositry ProductRepositry
-        {
-            get
-            {
-                if (_ProductRepositry == null)
-                    _ProductRepositry = new ProductRepositry(context);
-                return _ProductRepositry;
-            }
-        }
 
-        public OrderProductRepositry orderProductRepositry
-        {
-            get
-            {
-                if (_OrderProductRepositry == null)
-                    _OrderProductRepositry = new(context);
-                return _OrderProductRepositry;
-            }
-        }
-
-        public GenericRepositry<ShippingType> shippingTypeRepositry
-        {
-            get
-            {
-                if (_ShippingTypeRepositry == null)
-                    _ShippingTypeRepositry = new(context);
-                return _ShippingTypeRepositry;
-            }
-        }
-        
-
-        public void Save()
-        {
-            context.SaveChanges();
-        }
     }
 }
