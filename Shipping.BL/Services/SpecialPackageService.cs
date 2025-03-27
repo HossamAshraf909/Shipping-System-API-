@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using AutoMapper;
@@ -57,17 +57,6 @@ namespace Shipping.BL.Services
             await _unitOfWork.SaveChangesAsync();
         }
 
-=======
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace Shipping.BL.Services
-{
-    internal class SpecialPackageService
-    {
->>>>>>> origin/master
     }
 }
