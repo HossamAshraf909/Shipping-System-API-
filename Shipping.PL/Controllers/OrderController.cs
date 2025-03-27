@@ -21,26 +21,26 @@ namespace Shipping.PL.Controllers
         
 
         [HttpPost("product")]
-        public IActionResult AddProduct(CreateProductDTO productDTO)
+        public async Task<IActionResult> AddProduct(CreateProductDTO productDTO)
         {
             if (productDTO == null) BadRequest();
-            if (!ModelState.IsValid) return BadRequest(ModelState);
-            ProductService.AddProduct(productDTO);
+            if (!ModelState.IsValid)  BadRequest(ModelState);
+            await ProductService.AddProductAsync(productDTO);
             return Ok();
         }
         [HttpPut("product-Edit")]
-        public IActionResult UpdateProduct(EditProductDTO productDTO)
+        public async Task<IActionResult> UpdateProduct(EditProductDTO productDTO)
         {
             if (productDTO == null) BadRequest();
-            if (!ModelState.IsValid) return BadRequest(ModelState);
-            ProductService.UpdateProduct(productDTO);
+            if (!ModelState.IsValid) BadRequest(ModelState);
+            await ProductService.UpdateProductAsync(productDTO);
             return Ok();
         }
         [HttpDelete("{id:int}")]
-        public IActionResult DeleteProduct(int id)
+        public async Task<IActionResult> DeleteProductAsync(int id)
         {
             if (id == 0) BadRequest();
-            ProductService.DeleteProduct(id);
+            await ProductService.DeleteProductAsync(id);
             return Ok();
         }
     }

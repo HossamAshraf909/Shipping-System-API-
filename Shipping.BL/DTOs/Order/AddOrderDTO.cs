@@ -1,3 +1,4 @@
+
 ﻿using Shipping.BL.DTOs.OrderProduct;
 
 namespace Shipping.BL.DTOs.Order
@@ -25,6 +26,5 @@ namespace Shipping.BL.DTOs.Order
 
         public List<OrderProductDTO> OrderProducts { get; set; } = new List<OrderProductDTO>();
     }
-
 
 }
