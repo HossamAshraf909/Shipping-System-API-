@@ -57,5 +57,10 @@ namespace Shipping.BL.Services
             city.IsDeleted = true;
             await _unitOfWork.SaveChangesAsync();
         }
+        public async Task<IEnumerable<City>> Search(string Searchword)
+        {
+            var cities = await _unitOfWork.Cities.SearchAsync(g => g.Name.Contains(Searchword));
+            return cities;
+        }
     }
 }

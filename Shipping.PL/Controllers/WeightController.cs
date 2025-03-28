@@ -16,11 +16,11 @@ namespace Shipping.PL.Controllers
         }
 
         [HttpPost]
-        public IActionResult AddWeightSetting(AddWeightDTO weight)
+        public async Task<IActionResult> AddWeightSetting(AddWeightDTO weight)
         {
             if (weight == null) return BadRequest();
             if(!ModelState.IsValid) return BadRequest();
-            weightPriceService.Add(weight);
+            await weightPriceService.AddAsync(weight);
             return Ok ();   
         }
     }
