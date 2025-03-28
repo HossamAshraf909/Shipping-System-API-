@@ -1,68 +1,61 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using AutoMapper;
 using Shipping.BL.DTOs.Branch;
-using Shipping.BL.DTOs.City;
 using Shipping.DAL.Entities;
-using Shipping.DAL.UnitOfWork;
+using Shipping.DAL.Persistent.UnitOfWork;
 
 namespace Shipping.BL.Services
 {
     public class BranchService
     {
+        private readonly IMapper _mapper;
+        private readonly IUnitOfWork _unitOfWork;
 
-        IMapper map;
-        UnitOfWork unit;
-        public BranchService(IMapper map, UnitOfWork unit)
+        public BranchService(IMapper mapper, IUnitOfWork unitOfWork)
         {
-            this.map = map;
-            this.unit = unit;
-
+            _mapper = mapper;
+            _unitOfWork = unitOfWork;
         }
 
-
-        public List<ReadBranchDTO> GetAll()
+        public async Task<List<ReadBranchDTO>> GetAllAsync()
         {
-            List<Branches> branchs = unit.BranchRep.GetAll().ToList();
-            List<ReadBranchDTO> branchsDTO = map.Map<List<ReadBranchDTO>>(branchs);
-            return branchsDTO;
+            var branches = await _unitOfWork.Branches.GetAllAsync();
+            return _mapper.Map<List<ReadBranchDTO>>(branches);
         }
 
-
-        public ReadBranchDTO GetById (int id)
+        public async Task<ReadBranchDTO?> GetByIdAsync(int id)
         {
-            Branches branch = unit.BranchRep.GetById(id);
-            ReadBranchDTO branchDTO = map.Map<ReadBranchDTO>(branch);
-            return branchDTO;
+            var branch = await _unitOfWork.Branches.GetByIdAsync(id);
+            return branch != null ? _mapper.Map<ReadBranchDTO>(branch) : null;
         }
 
-        public void Add(AddBrachDTO branchDTO)
+        public async Task AddAsync(AddBrachDTO branchDTO)
         {
-            Branches branch = map.Map<Branches>(branchDTO);
-            unit.BranchRep.Add(branch);
-            unit.Save();
+            var branch = _mapper.Map<Branches>(branchDTO);
+            await _unitOfWork.Branches.AddAsync(branch);
+            await _unitOfWork.SaveChangesAsync();
         }
 
-
-
-        public void Update(AddBrachDTO branchDTO)
+        public async Task UpdateAsync(int id, AddBrachDTO branchDTO)
         {
-            Branches branch= map.Map<Branches>(branchDTO);
-            unit.BranchRep.Update(branch);
-            unit.Save();
+            var branch = await _unitOfWork.Branches.GetByIdAsync(id);
+            if (branch == null) return;
+
+            _mapper.Map(branchDTO, branch);
+            await _unitOfWork.Branches.UpdateAsync(branch);
+            await _unitOfWork.SaveChangesAsync();
         }
 
-
-
-        public void Delete(int id)
+        public async Task DeleteAsync(int id)
         {
-            Branches branch = unit.BranchRep.GetById(id);
+            var branch = await _unitOfWork.Branches.GetByIdAsync(id);
+            if (branch == null) return;
+
             branch.IsDeleted = true;
-            unit.Save();
+            await _unitOfWork.SaveChangesAsync();
         }
-
     }
 }

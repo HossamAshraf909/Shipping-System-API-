@@ -1,62 +1,61 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using AutoMapper;
 using Shipping.BL.DTOs.City;
 using Shipping.DAL.Entities;
-using Shipping.DAL.UnitOfWork;
+using Shipping.DAL.Persistent.UnitOfWork;
 
 namespace Shipping.BL.Services
 {
     public class CityService
     {
-        IMapper map;
-        UnitOfWork unit;
-        public CityService(IMapper map , UnitOfWork unit)
+        private readonly IMapper _mapper;
+        private readonly IUnitOfWork _unitOfWork;
+
+        public CityService(IMapper mapper, IUnitOfWork unitOfWork)
         {
-            this.map = map;
-            this.unit = unit;
-            
+            _mapper = mapper;
+            _unitOfWork = unitOfWork;
         }
 
-        public List<ReadCityDTO> GetAll()
+        public async Task<List<ReadCityDTO>> GetAllAsync()
         {
-            List <City> cities = unit.CityRep.GetAll().ToList();
-            List<ReadCityDTO> citesDTO = map.Map<List<ReadCityDTO>>(cities);  
-            return citesDTO;
-        
+            var cities = await _unitOfWork.Cities.GetAllAsync();
+            return _mapper.Map<List<ReadCityDTO>>(cities);
         }
 
-        public ReadCityDTO GetById(int id)
+        public async Task<ReadCityDTO?> GetByIdAsync(int id)
         {
-            City city = unit.CityRep.GetById(id);
-            ReadCityDTO cityDTO = map.Map<ReadCityDTO>(city);
-            return cityDTO;
-
+            var city = await _unitOfWork.Cities.GetByIdAsync(id);
+            return city != null ? _mapper.Map<ReadCityDTO>(city) : null;
         }
 
-        public void Add(AddCityDTO cityDTO)
+        public async Task AddAsync(AddCityDTO cityDTO)
         {
-            City city = map.Map<City>(cityDTO);
-            unit.CityRep.Add(city);
-            unit.Save();
+            var city = _mapper.Map<City>(cityDTO);
+            await _unitOfWork.Cities.AddAsync(city);
+            await _unitOfWork.SaveChangesAsync();
         }
 
-        public void Update(AddCityDTO cityDTO)
+        public async Task UpdateAsync(int id, AddCityDTO cityDTO)
         {
-            City city = map.Map<City>(cityDTO);
-            unit.CityRep.Update(city);
-            unit.Save();
+            var city = await _unitOfWork.Cities.GetByIdAsync(id);
+            if (city == null) return;
+
+            _mapper.Map(cityDTO, city);
+            await _unitOfWork.Cities.UpdateAsync(city);
+            await _unitOfWork.SaveChangesAsync();
         }
 
-        public void Delete(int id)
+        public async Task DeleteAsync(int id)
         {
-            City city = unit.CityRep.GetById(id);
+            var city = await _unitOfWork.Cities.GetByIdAsync(id);
+            if (city == null) return;
+
             city.IsDeleted = true;
-            unit.Save();
+            await _unitOfWork.SaveChangesAsync();
         }
-
     }
 }

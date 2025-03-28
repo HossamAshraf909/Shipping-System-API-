@@ -1,64 +1,58 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using AutoMapper;
 using Shipping.BL.DTOs.Weight;
 using Shipping.DAL.Entities;
-using Shipping.DAL.UnitOfWork;
+using Shipping.DAL.Persistent.UnitOfWork;
 
 namespace Shipping.BL.Services
 {
     public class WeightPriceService
     {
-        UnitOfWork unit;
-        IMapper map;
-        public WeightPriceService(UnitOfWork unit , IMapper map)
-        {
-            this.unit = unit;
-            this.map = map;
-            
-        }
-        public List<ReadWeightDTO> GetAll()
-        {
-            List<WeightPrice> weightPrices = unit.WeightPriceRepo.GetAll().ToList();
+        private readonly IUnitOfWork _unit;
+        private readonly IMapper _map;
 
-            List<ReadWeightDTO> weightPricesDTO = map.Map<List<ReadWeightDTO>>(weightPrices);
-            return weightPricesDTO;
+        public WeightPriceService(IUnitOfWork unit, IMapper map)
+        {
+            _unit = unit;
+            _map = map;
         }
 
-
-
-        public ReadWeightDTO GetById(int id)
+        public async Task<List<ReadWeightDTO>> GetAllAsync()
         {
-            WeightPrice weightPrice = unit.WeightPriceRepo.GetById(id);
-            ReadWeightDTO weightPriceDTO = map.Map<ReadWeightDTO>(weightPrice);
-            return weightPriceDTO;
+            var weightPrices = await _unit.WeightPrices.GetAllAsync();
+            return _map.Map<List<ReadWeightDTO>>(weightPrices);
+        }
+
+        public async Task<ReadWeightDTO?> GetByIdAsync(int id)
+        {
+            var weightPrice = await _unit.WeightPrices.GetByIdAsync(id);
+            return weightPrice == null ? null : _map.Map<ReadWeightDTO>(weightPrice);
         }
 
 
-        public void Add(AddWeightDTO weighttDTO)
+        public async Task AddAsync(AddWeightDTO weightDTO)
         {
-            WeightPrice weightPrice = map.Map<WeightPrice>(weighttDTO);
-            unit.WeightPriceRepo.Add(weightPrice);
-            unit.Save();
+            var weightPrice = _map.Map<WeightPrice>(weightDTO);
+            await _unit.WeightPrices.AddAsync(weightPrice);
+            await _unit.SaveChangesAsync();
         }
 
-
-        public void Update (AddWeightDTO weighttDTO)
+        public async Task UpdateAsync(AddWeightDTO weightDTO)
         {
-            WeightPrice weightPrice = map.Map<WeightPrice>(weighttDTO);
-            unit.WeightPriceRepo.Update(weightPrice);
-            unit.Save();
+            var weightPrice = _map.Map<WeightPrice>(weightDTO);
+           await _unit.WeightPrices.UpdateAsync(weightPrice);
+            await _unit.SaveChangesAsync();
         }
 
-        public void Delete(int id)
+        public async Task DeleteAsync(int id)
         {
-            WeightPrice weightPrice = unit.WeightPriceRepo.GetById(id);
+            var weightPrice = await _unit.WeightPrices.GetByIdAsync(id);
+             if (weightPrice == null) return;
+
             weightPrice.IsDeleted = true;
-            unit.Save();
+            await _unit.SaveChangesAsync();
         }
-
     }
 }

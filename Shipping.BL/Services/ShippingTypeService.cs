@@ -1,43 +1,47 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using AutoMapper;
 using Shipping.BL.DTOs.ShippingType;
 using Shipping.DAL.Entities;
-using Shipping.DAL.UnitOfWork;
+using Shipping.DAL.Persistent.UnitOfWork;
 
 namespace Shipping.BL.Services
 {
     public class ShippingTypeService
     {
-        private readonly UnitOfWork _unit;
-        private readonly IMapper _map;
+        private readonly IUnitOfWork _unitOfWork;
+        private readonly IMapper _mapper;
 
-        public ShippingTypeService(UnitOfWork unit , IMapper map)
+        public ShippingTypeService(IUnitOfWork unitOfWork, IMapper mapper)
         {
-            this._unit = unit;
-            this._map = map;
+            _unitOfWork = unitOfWork;
+            _mapper = mapper;
         }
-        public IEnumerable<ReadShippingTypeDTO> GetAll()
+
+        public async Task<IEnumerable<ReadShippingTypeDTO>> GetAllAsync()
         {
-            return _map.Map<IEnumerable<ReadShippingTypeDTO>>(_unit.shippingTypeRepositry.GetAll());
+            var shippingTypes = await _unitOfWork.ShippingTypes.GetAllAsync();
+            return _mapper.Map<IEnumerable<ReadShippingTypeDTO>>(shippingTypes);
         }
-        public void Add(AddShippingTypeDTO shippingTypeDTO) 
+
+        public async Task AddAsync(AddShippingTypeDTO shippingTypeDTO)
         {
-            _unit.shippingTypeRepositry.Add(_map.Map<ShippingType>(shippingTypeDTO));
-            _unit.Save();
+            var shippingType = _mapper.Map<ShippingType>(shippingTypeDTO);
+            await _unitOfWork.ShippingTypes.AddAsync(shippingType);
+            await _unitOfWork.SaveChangesAsync();
         }
-        public void Edit(AddShippingTypeDTO shippingTypeDTO)
+
+        public async Task EditAsync(AddShippingTypeDTO shippingTypeDTO)
         {
-            _unit.shippingTypeRepositry.Update(_map.Map<ShippingType>(shippingTypeDTO));
-            _unit.Save();
+            var shippingType = _mapper.Map<ShippingType>(shippingTypeDTO);
+            await _unitOfWork.ShippingTypes.UpdateAsync(shippingType);
+            await _unitOfWork.SaveChangesAsync();
         }
-        public void Delete(AddShippingTypeDTO shippingTypeDTO)
+
+        public async Task DeleteAsync(int id)
         {
-             _unit.shippingTypeRepositry.Delete(_map.Map<ShippingType>(shippingTypeDTO));
-             _unit.Save();
+            await _unitOfWork.ShippingTypes.DeleteAsync(id);
+            await _unitOfWork.SaveChangesAsync();
         }
     }
 }

@@ -15,30 +15,31 @@ namespace Shipping.PL.Controllers
             ShippingTypeService = shippingTypeService;
         }
         [HttpGet]
-        public IActionResult GetAllType()
+        public async Task<IActionResult> GetAllType()
         {
-            return Ok(ShippingTypeService.GetAll());
+           var shippingTypes= await ShippingTypeService.GetAllAsync();
+            return  Ok(shippingTypes);
         }
         [HttpPost]
-        public IActionResult AddShippingType(AddShippingTypeDTO addShippingTypeDTO)
+        public async Task<IActionResult> AddShippingType(AddShippingTypeDTO addShippingTypeDTO)
         {
             if (addShippingTypeDTO == null) BadRequest();
-            if (!ModelState.IsValid) return BadRequest(ModelState);
-            ShippingTypeService.Add(addShippingTypeDTO);    
+            if (!ModelState.IsValid)  BadRequest(ModelState);
+            await ShippingTypeService.AddAsync(addShippingTypeDTO);    
             return Ok();
         }
         [HttpPut]
-        public IActionResult EditShippingType(AddShippingTypeDTO addShippingTypeDTO) 
+        public async Task<IActionResult> EditShippingType(AddShippingTypeDTO addShippingTypeDTO) 
         {
-            if (!ModelState.IsValid) return BadRequest();
-            ShippingTypeService.Edit(addShippingTypeDTO);
+            if (!ModelState.IsValid) BadRequest();
+             await ShippingTypeService.EditAsync(addShippingTypeDTO);
             return Ok();
         }
         [HttpDelete]
-        public IActionResult DeleteShippingType(AddShippingTypeDTO shippingTypeDTO)
+        public async Task<IActionResult> DeleteShippingType(int id)
         {
             if(!ModelState.IsValid) return BadRequest();
-            ShippingTypeService.Delete(shippingTypeDTO);
+            await ShippingTypeService.DeleteAsync(id);
             return Ok();
         }
     }
