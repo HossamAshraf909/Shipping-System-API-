@@ -1,41 +1,44 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using AutoMapper;
-using Shipping.BL.DTOs.Order;
 using Shipping.BL.DTOs.Product;
-using Shipping.DAL.UnitOfWork;
+using Shipping.DAL.Entities;
+using Shipping.DAL.Persistent.UnitOfWork;
 
 namespace Shipping.BL.Services
 {
     public class ProductService
     {
-        private readonly UnitOfWork _Unit;
-        private readonly IMapper _Map;
+        private readonly IUnitOfWork _unitOfWork;
+        private readonly IMapper _mapper;
 
-        public ProductService(UnitOfWork unit, IMapper Map)
+        public ProductService(IUnitOfWork unitOfWork, IMapper mapper)
         {
-            this._Unit = unit;
-            _Map = Map;
+            _unitOfWork = unitOfWork;
+            _mapper = mapper;
         }
-        public void AddProduct(CreateProductDTO productDTO)
+
+        public async Task AddProductAsync(CreateProductDTO productDTO)
         {
-            // Add Product
-            _Unit.ProductRepositry.Add(_Map.Map<Product>(productDTO));
-            _Unit.Save();
+            var product = _mapper.Map<Product>(productDTO);
+            await _unitOfWork.Products.AddAsync(product);
+            await _unitOfWork.SaveChangesAsync();
         }
-        public void UpdateProduct(EditProductDTO productDTO)
+
+        public async Task UpdateProductAsync(EditProductDTO productDTO)
         {
-            _Unit.ProductRepositry.Update(_Map.Map<Product>(productDTO));
-            _Unit.Save();
+            var product = _mapper.Map<Product>(productDTO);
+            await _unitOfWork.Products.UpdateAsync(product);
+            await _unitOfWork.SaveChangesAsync();
         }
-        public void DeleteProduct(int id)
+
+        public async Task DeleteProductAsync(int id)
         {
-            _Unit.ProductRepositry.deleteProduct(id);
-            _Unit.Save();
+            var product = await _unitOfWork.Products.GetByIdAsync(id);
+            if (product == null) return;
+
+            await _unitOfWork.Products.UpdateAsync(product);
+            await _unitOfWork.SaveChangesAsync();
         }
-        
     }
 }

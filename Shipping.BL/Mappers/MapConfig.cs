@@ -11,9 +11,16 @@ using Shipping.BL.DTOs.Governorate;
 using Shipping.BL.DTOs.Product;
 using Shipping.BL.DTOs.ShippingType;
 using Shipping.BL.DTOs.Weight;
+<<<<<<< HEAD
 using Shipping.BL.DTOs.SpecialPackage;
 using Shipping.BL.DTOs.VillageDelivery;
 using Shipping.PL.DTOs.Governorate;
+=======
+using Shipping.PL.DTOs.Governorate;
+using Shipping.BL.DTOs.SpecialPackage;
+using Shipping.BL.DTOs.VillageDelivery;
+using Shipping.BL.DTOs.Order;
+>>>>>>> master
 
 
 
@@ -37,11 +44,20 @@ namespace Shipping.BL.Mappers
             CreateMap<WeightPrice, ReadWeightDTO>().ReverseMap();
             CreateMap<WeightPrice, AddWeightDTO>().ReverseMap();
 
+<<<<<<< HEAD
             CreateMap<CreateProductDTO, Product>().ReverseMap();
             CreateMap<SpecialPackages,ReadPackageDto>().ReverseMap();
             CreateMap<SpecialPackages,AddPackageDto>().ReverseMap();
             CreateMap<VillageDelivery,ReadVillageDTO>().ReverseMap();
             CreateMap<VillageDelivery,AddVillageDTO>().ReverseMap();
+=======
+            CreateMap<Product, ReadProductDTO>().ReverseMap();
+            CreateMap<SpecialPackages, ReadPackageDto>().ReverseMap();
+            CreateMap<SpecialPackages, AddPackageDto>().ReverseMap();
+            CreateMap<VillageDelivery, ReadVillageDTO>().ReverseMap();
+            CreateMap<VillageDelivery, AddVillageDTO>().ReverseMap();
+            CreateMap<OrderDTO ,Order>().ReverseMap();
+>>>>>>> master
         }
 
     }

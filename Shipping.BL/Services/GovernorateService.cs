@@ -1,68 +1,60 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using AutoMapper;
-using Shipping.BL.DTOs.City;
 using Shipping.BL.DTOs.Governorate;
 using Shipping.DAL.Entities;
-using Shipping.DAL.UnitOfWork;
+using Shipping.DAL.Persistent.UnitOfWork;
 using Shipping.PL.DTOs.Governorate;
 
 namespace Shipping.BL.Services
 {
     public class GovernorateService
     {
-        IMapper map;
-        UnitOfWork unit;
-        public GovernorateService(IMapper map, UnitOfWork unit)
-        {
-            this.map = map;
-            this.unit = unit;
+        private readonly IMapper _mapper;
+        private readonly IUnitOfWork _unitOfWork;
 
+        public GovernorateService(IMapper mapper, IUnitOfWork unitOfWork)
+        {
+            _mapper = mapper;
+            _unitOfWork = unitOfWork;
         }
 
-        public List<ReadGovernorateDTO> GettAll()
+        public async Task<List<ReadGovernorateDTO>> GetAllAsync()
         {
-            List<Governorate> governorates = unit.GovRep.GetAll().ToList();
-            List<ReadGovernorateDTO> governorateDTO = map.Map<List<ReadGovernorateDTO>>(governorates);
-            return governorateDTO;
+            var governorates = await _unitOfWork.Governorates.GetAllAsync();
+            return _mapper.Map<List<ReadGovernorateDTO>>(governorates);
         }
 
-
-        public ReadGovernorateDTO GetById(int id)
+        public async Task<ReadGovernorateDTO?> GetByIdAsync(int id)
         {
-            Governorate governorate = unit.GovRep.GetById(id);
-            ReadGovernorateDTO governorateDTO = map.Map<ReadGovernorateDTO>(governorate);
-            return governorateDTO;
+            var governorate = await _unitOfWork.Governorates.GetByIdAsync(id);
+            return governorate != null ? _mapper.Map<ReadGovernorateDTO>(governorate) : null;
         }
 
-
-        public void Add (AddGovernorateDTO governorateDTO)
+        public async Task AddAsync(AddGovernorateDTO governorateDTO)
         {
-            Governorate governorate = map.Map<Governorate>(governorateDTO);
-            unit.GovRep.Add(governorate);
-            unit.Save();
+            var governorate = _mapper.Map<Governorate>(governorateDTO);
+            await _unitOfWork.Governorates.AddAsync(governorate);
+            await _unitOfWork.SaveChangesAsync();
         }
 
-
-        public void Update(AddGovernorateDTO governorateDTO)
+        public async Task UpdateAsync(int id, AddGovernorateDTO governorateDTO)
         {
-            Governorate governorate = map.Map<Governorate>(governorateDTO);
-            unit.GovRep.Update(governorate);
-            unit.Save();
+            var governorate = await _unitOfWork.Governorates.GetByIdAsync(id);
+            if (governorate == null) return;
+
+            _mapper.Map(governorateDTO, governorate);
+            await _unitOfWork.Governorates.UpdateAsync(governorate);
+            await _unitOfWork.SaveChangesAsync();
         }
 
-
-        public void Delete(int id)
+        public async Task DeleteAsync(int id)
         {
-            Governorate governorate = unit.GovRep.GetById(id);
+            var governorate = await _unitOfWork.Governorates.GetByIdAsync(id);
+            if (governorate == null) return;
+
             governorate.IsDeleted = true;
-            unit.Save();
+            await _unitOfWork.SaveChangesAsync();
         }
-
-
-
     }
 }

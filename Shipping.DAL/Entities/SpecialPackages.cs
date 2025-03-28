@@ -22,7 +22,9 @@ namespace Shipping.DAL.Entities
 
         public virtual City city { get; set; }
 
-        public virtual Governorate governorate { get; set; }    
+        public virtual Governorate governorate { get; set; } 
+        
+
 
     }
 }

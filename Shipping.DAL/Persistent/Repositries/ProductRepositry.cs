@@ -1,22 +1,29 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Shipping.DAL.Persistent.Data.Context;
-
+﻿
 namespace Shipping.DAL.Persistent.Repositries
 {
-    public class ProductRepositry : GenericRepositry<Product>
+    using System;
+    using System.Threading.Tasks;
+    using Microsoft.EntityFrameworkCore;
+    using Shipping.DAL.Persistent.Data.Context;
+    using Shipping.DAL.Persistent.Repositories;
+
+    public class ProductRepository : GenericRepository<Product>
     {
-        public ProductRepositry(ShippingContext context) : base(context)
+        public ProductRepository(ShippingContext context) : base(context)
         {
-        }
-        public void deleteProduct(int id)
-        {
-            var product = GetById(id);
-            context.Products.Remove(product);
         }
 
+        public async Task DeleteProductAsync(int id)
+        {
+            var product = await GetByIdAsync(id);
+            if (product == null)
+            {
+                throw new ArgumentException($"Product with ID {id} not found.");
+            }
+
+           await DeleteAsync(id); 
+            await SaveChangesAsync(); 
+        }
     }
+
 }
