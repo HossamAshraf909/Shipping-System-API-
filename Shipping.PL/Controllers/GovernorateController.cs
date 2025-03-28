@@ -19,39 +19,39 @@ namespace Shipping.PL.Controllers
 
 
         [HttpGet]
-        public IActionResult GetAllGovernorates()
+        public async Task<IActionResult> GetAllGovernorates()
         {
-            return Ok(governorateService.GetAll());
+            return Ok(await governorateService.GetAllAsync());
         }
 
 
 
         [HttpGet]
         [Route("api/governorateSearch/{searchWord}")]
-        public IActionResult SearchForGovernorate(string searchWord)
+        public async Task<IActionResult> SearchForGovernorate(string searchWord)
         {
-            return Ok(governorateService.Search(searchWord));
+            return Ok(await governorateService.SearchAsync(searchWord));
         }
 
 
 
         [HttpPost]
-        public IActionResult AddGovernorate(AddGovernorateDTO governorate)
+        public async Task< IActionResult> AddGovernorate(AddGovernorateDTO governorate)
         {
             if (governorate == null) return BadRequest();
             if (!ModelState.IsValid) return BadRequest();
-            governorateService.Add(governorate);
+            await governorateService.AddAsync(governorate);
             return Ok();
         }
 
 
 
-        [HttpPut]
-        public IActionResult UpdateGovernorate(AddGovernorateDTO governorate)
+        [HttpPut("{id:int}")]
+        public async Task<IActionResult> UpdateGovernorate(int id,AddGovernorateDTO governorate)
         {
             if(governorate == null) return NotFound();
             if(!ModelState.IsValid) return BadRequest();    
-            governorateService.Update(governorate);
+           await governorateService.UpdateAsync(id,governorate);
             return Ok();
         }
 

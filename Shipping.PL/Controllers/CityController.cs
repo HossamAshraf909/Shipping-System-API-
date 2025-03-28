@@ -16,11 +16,11 @@ namespace Shipping.PL.Controllers
         }
 
         [HttpPost]
-        public IActionResult AddCity(AddCityDTO city)
+        public async Task<IActionResult> AddCity(AddCityDTO city)
         {
             if (city == null) return BadRequest();
             if(!ModelState.IsValid) return BadRequest();
-            cityService.Add(city);
+            await cityService.AddAsync(city);
             return Ok();
         }
 

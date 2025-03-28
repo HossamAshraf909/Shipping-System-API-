@@ -18,39 +18,39 @@ namespace Shipping.PL.Controllers
 
 
         [HttpGet]
-        public IActionResult GetAllBranchs()
+        public async Task<IActionResult> GetAllBranchs()
         {
-            return Ok(branchService.GetAll());
+            return Ok(await branchService.GetAllAsync());
         }
 
 
 
         [HttpGet]
         [Route("api/branchSearch/{searchWord}")]
-        public IActionResult SearchForBranch(string searchWord)
+        public async Task<IActionResult> SearchForBranchAsync(string searchWord)
         {
-            return Ok(branchService.Search(searchWord));
+            return Ok(await branchService.SearchAsync(searchWord));
         }
 
 
 
         [HttpPost]
-        public IActionResult AddBranch(AddBrachDTO branch)
+        public async Task<IActionResult> AddBranch(AddBrachDTO branch)
         {
             if (branch == null) return BadRequest();
             if(!ModelState.IsValid) return BadRequest();
-            branchService.Add(branch);
+           await branchService.AddAsync(branch);
             return Ok();
         }
 
 
 
-        [HttpPut]
-        public IActionResult UpdateBranch(AddBrachDTO branch)
+        [HttpPut("{id:int}")]
+        public async Task<IActionResult> UpdateBranchAsync(int id,AddBrachDTO branch)
         {
             if (branch == null) return BadRequest();
             if(!ModelState.IsValid) return BadRequest();
-            branchService.Update(branch);
+            await branchService.UpdateAsync(id,branch);
             return Ok();
 
         }
@@ -59,17 +59,14 @@ namespace Shipping.PL.Controllers
 
 
         [HttpDelete]
-        public IActionResult DeleteBranch(int id)
+        public async Task<IActionResult> DeleteBranch(int id)
         {
-            ReadBranchDTO branch = branchService.GetById(id);
+            ReadBranchDTO branch = await branchService.GetByIdAsync(id);
             if (branch == null) return BadRequest();
-            branchService.Delete(id);
+            await branchService.DeleteAsync(id);
             return Ok();
 
         }
-
-
-        // Entities
 
 
     }
