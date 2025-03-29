@@ -23,3 +23,10 @@ D:\shippingsys\Shipping.BL\obj\Debug\net9.0\Shipping.BL.sourcelink.json
 D:\shippingsys\Shipping.BL\obj\Debug\net9.0\Shipping.BL.dll
 D:\shippingsys\Shipping.BL\obj\Debug\net9.0\refint\Shipping.BL.dll
 D:\shippingsys\Shipping.BL\obj\Debug\net9.0\Shipping.BL.pdb
+D:\shippingsys\Shipping.BL\bin\Debug\net9.0\Shipping.BL.deps.json
+D:\shippingsys\Shipping.BL\bin\Debug\net9.0\Shipping.BL.dll
+D:\shippingsys\Shipping.BL\bin\Debug\net9.0\Shipping.BL.pdb
+D:\shippingsys\Shipping.BL\bin\Debug\net9.0\Shipping.DAL.dll
+D:\shippingsys\Shipping.BL\bin\Debug\net9.0\Shipping.DAL.pdb
+D:\shippingsys\Shipping.BL\obj\Debug\net9.0\Shipping.26712019.Up2Date
+D:\shippingsys\Shipping.BL\obj\Debug\net9.0\ref\Shipping.BL.dll
