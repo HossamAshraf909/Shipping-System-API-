@@ -56,5 +56,14 @@ namespace Shipping.BL.Services
             governorate.IsDeleted = true;
             await _unitOfWork.SaveChangesAsync();
         }
+
+
+
+        public  async Task<IEnumerable<Governorate>> SearchAsync(string Searchword)
+        {
+           var Governorates = await _unitOfWork.Governorates.SearchAsync(g => g.Name.Contains(Searchword));
+            return Governorates;
+        }
+
     }
 }
