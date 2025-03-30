@@ -26,8 +26,7 @@ namespace Shipping.PL.Controllers
 
 
 
-        [HttpGet]
-        [Route("api/governorateSearch/{searchWord}")]
+        [HttpGet("/governorateSearch/{searchWord}")]
         public async Task<IActionResult> SearchForGovernorate(string searchWord)
         {
             return Ok(await governorateService.SearchAsync(searchWord));
