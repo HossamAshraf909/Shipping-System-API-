@@ -142,22 +142,6 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "Shipping.PL.Controllers.GovernorateController",
-    "Method": "SearchForGovernorate",
-    "RelativePath": "api/Governorate/api/governorateSearch/{searchWord}",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "searchWord",
-        "Type": "System.String",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
     "ContainingType": "Shipping.PL.Controllers.OrderController",
     "Method": "DeleteProductAsync",
     "RelativePath": "api/Order/{id}",
@@ -274,6 +258,22 @@
       {
         "Name": "weight",
         "Type": "Shipping.BL.DTOs.Weight.AddWeightDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Shipping.PL.Controllers.GovernorateController",
+    "Method": "SearchForGovernorate",
+    "RelativePath": "governorateSearch/{searchWord}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "searchWord",
+        "Type": "System.String",
         "IsRequired": true
       }
     ],
