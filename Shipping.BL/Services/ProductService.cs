@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using AutoMapper;
-using Shipping.BL.DTOs.Product;
+using Shipping.BL.DTOs.product;
 using Shipping.DAL.Entities;
 using Shipping.DAL.Persistent.UnitOfWork;
 

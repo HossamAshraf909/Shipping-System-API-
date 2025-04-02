@@ -53,7 +53,6 @@ namespace Shipping.BL.Services
         {
             var branch = await _unitOfWork.Branches.GetByIdAsync(id);
             if (branch == null) return;
-
             branch.IsDeleted = true;
             await _unitOfWork.SaveChangesAsync();
         }

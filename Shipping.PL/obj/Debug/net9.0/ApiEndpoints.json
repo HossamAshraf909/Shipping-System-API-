@@ -143,6 +143,32 @@
   },
   {
     "ContainingType": "Shipping.PL.Controllers.OrderController",
+    "Method": "GetAllOrders",
+    "RelativePath": "api/Order",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Shipping.PL.Controllers.OrderController",
+    "Method": "AddOrder",
+    "RelativePath": "api/Order",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "orderDTO",
+        "Type": "Shipping.BL.DTOs.Order.AddOrderDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Shipping.PL.Controllers.OrderController",
     "Method": "DeleteProductAsync",
     "RelativePath": "api/Order/{id}",
     "HttpMethod": "DELETE",
@@ -159,15 +185,15 @@
   },
   {
     "ContainingType": "Shipping.PL.Controllers.OrderController",
-    "Method": "AddProduct",
-    "RelativePath": "api/Order/product",
-    "HttpMethod": "POST",
+    "Method": "GetOrderBystatus",
+    "RelativePath": "api/Order/{search}",
+    "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "productDTO",
-        "Type": "Shipping.BL.DTOs.Product.CreateProductDTO",
+        "Name": "search",
+        "Type": "System.String",
         "IsRequired": true
       }
     ],
@@ -183,7 +209,7 @@
     "Parameters": [
       {
         "Name": "productDTO",
-        "Type": "Shipping.BL.DTOs.Product.EditProductDTO",
+        "Type": "Shipping.BL.DTOs.product.EditProductDTO",
         "IsRequired": true
       }
     ],

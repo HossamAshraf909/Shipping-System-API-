@@ -1,12 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Shipping.DAL.Entities;
+using Shipping.DAL.Persistent.Data.ModelConfigruation;
 
 namespace Shipping.DAL.Persistent.Data.Context
 {
@@ -20,11 +22,20 @@ namespace Shipping.DAL.Persistent.Data.Context
         {
             base.OnModelCreating(modelBuilder);
 
-           // modelBuilder.ApplyConfiguration(new ProductOrderCon());
+           
            modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
+            foreach (var entityType in modelBuilder.Model.GetEntityTypes())
+            {
+                if (typeof(BaseEntity).IsAssignableFrom(entityType.ClrType))
+                {
+                    modelBuilder.Entity(entityType.ClrType)
+                        .HasQueryFilter(SoftDeleteConfiguration.CreateFilterExpression(entityType.ClrType));
+                }
+            }
         }
+        
 
-       public DbSet<Branches> Branches { get; set; }
+        public DbSet<Branches> Branches { get; set; }
        public DbSet<City> Cities { get; set; }
        public DbSet<Governorate> governorates { get; set; }
        public DbSet<Order> Orders { get; set; }

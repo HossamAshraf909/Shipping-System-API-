@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Shipping.DAL.Persistent.Data.Context;
 
@@ -11,9 +12,11 @@ using Shipping.DAL.Persistent.Data.Context;
 namespace Shipping.DAL.Migrations
 {
     [DbContext(typeof(ShippingContext))]
-    partial class ShippingContextModelSnapshot : ModelSnapshot
+    [Migration("20250330170312_addedOrderStatus")]
+    partial class addedOrderStatus
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -78,7 +81,7 @@ namespace Shipping.DAL.Migrations
                     b.Property<double>("TotalWeight")
                         .HasColumnType("float");
 
-                    b.Property<int?>("VillageDeliveryId")
+                    b.Property<int>("VillageDeliveryId")
                         .HasColumnType("int");
 
                     b.Property<int>("WeightPriceId")
@@ -297,6 +300,9 @@ namespace Shipping.DAL.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
+                    b.Property<decimal>("DefaultPrice")
+                        .HasColumnType("decimal(18,2)");
+
                     b.Property<int>("DefaultWeight")
                         .HasColumnType("int");
 
@@ -333,7 +339,9 @@ namespace Shipping.DAL.Migrations
 
                     b.HasOne("Shipping.DAL.Entities.VillageDelivery", "VillageDelivery")
                         .WithMany("orders")
-                        .HasForeignKey("VillageDeliveryId");
+                        .HasForeignKey("VillageDeliveryId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.HasOne("Shipping.DAL.Entities.WeightPrice", "weightPrice")
                         .WithMany("orders")
