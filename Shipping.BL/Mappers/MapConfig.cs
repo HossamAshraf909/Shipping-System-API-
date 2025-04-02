@@ -8,13 +8,15 @@ using Shipping.DAL.Entities;
 using Shipping.BL.DTOs.City;
 using Shipping.BL.DTOs.Branch;
 using Shipping.BL.DTOs.Governorate;
-using Shipping.BL.DTOs.Product;
 using Shipping.BL.DTOs.ShippingType;
 using Shipping.BL.DTOs.Weight;
 using Shipping.PL.DTOs.Governorate;
 using Shipping.BL.DTOs.SpecialPackage;
 using Shipping.BL.DTOs.VillageDelivery;
 using Shipping.BL.DTOs.Order;
+using Microsoft.EntityFrameworkCore.Query.SqlExpressions;
+using Shipping.BL.DTOs.product;
+using System.Net;
 
 
 
@@ -43,7 +45,16 @@ namespace Shipping.BL.Mappers
             CreateMap<SpecialPackages, AddPackageDto>().ReverseMap();
             CreateMap<VillageDelivery, ReadVillageDTO>().ReverseMap();
             CreateMap<VillageDelivery, AddVillageDTO>().ReverseMap();
-            CreateMap<OrderDTO ,Order>().ReverseMap();
+            CreateMap<AddOrderDTO, Order>().AfterMap((src, dist) =>
+            {
+               dist.TotalWeight = src.Products.Sum(p => p.Weight * p.Quantity);
+              
+            }).ReverseMap();
+            CreateMap<Order, ReadOrderDTO>().AfterMap((src, dist) =>
+            {
+                dist.Governorate = src.Governorate.Name;
+                dist.City = src.City.Name;
+            }).ReverseMap();
         }
 
     }

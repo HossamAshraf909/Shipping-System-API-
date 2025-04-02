@@ -5,10 +5,11 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 public class Order : BaseEntity
 {
+    
     public ShippingMethod ShippingMethod { get; set; }
     public PaymentMethod PaymentType { get; set; }
     public RejectionReason RejectionReason { get; set; }
-
+    public  OrderStatus orderStatus { get; set; }
     public string CustomerName { get; set; } = null!;
     public string CustomerPhone { get; set; } = null!;
     public string CustomerEmail { get; set; } = null!;
@@ -22,8 +23,8 @@ public class Order : BaseEntity
     public double TotalWeight { get; set; }
 
     // Foreign Keys
-    public int VillageDeliveryId { get; set; }
-    public virtual VillageDelivery VillageDelivery { get; set; }
+    public int? VillageDeliveryId { get; set; }
+    public virtual VillageDelivery? VillageDelivery { get; set; }
 
     public bool IsVillageDelivery { get; set; } = false;  
 
@@ -32,7 +33,6 @@ public class Order : BaseEntity
 
     public int GovernorateId { get; set; }
     public virtual Governorate Governorate { get; set; } 
-
     public int ShippingTypeId { get; set; }
     public virtual ShippingType ShippingType { get; set; } 
 
