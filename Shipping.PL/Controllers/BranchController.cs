@@ -8,10 +8,10 @@ namespace Shipping.PL.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class BranchControler : ControllerBase
+    public class BranchController : ControllerBase
     {
         BranchService branchService;
-        public BranchControler(BranchService branchService)
+        public BranchController(BranchService branchService)
         {
             this.branchService = branchService;
         }

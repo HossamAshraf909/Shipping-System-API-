@@ -19,6 +19,7 @@ namespace Shipping.DAL.Persistent.Data.Context
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
+
            // modelBuilder.ApplyConfiguration(new ProductOrderCon());
            modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
         }

@@ -29,8 +29,8 @@ namespace Shipping.PL
                     builder.Services.AddDbContext<ShippingContext>(options =>
                         options.UseLazyLoadingProxies().UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"))
                         );
-                    builder.Services.AddScoped<UnitOfWork>();
                     builder.Services.AddAutoMapper(typeof(MapConfig));
+                    builder.Services.AddScoped<IUnitOfWork,UnitOfWork>();
 
                     builder.Services.AddScoped<ProductService>();
                     builder.Services.AddScoped<OrderProductService>();
