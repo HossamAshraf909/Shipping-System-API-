@@ -26,8 +26,8 @@ namespace Shipping.DAL.Persistent.Repositories
 
         public async Task<T?> GetByIdAsync(int id)
         {
-            var entity = await _dbSet.FindAsync(id);
-            return entity ;
+             
+            return await _dbSet.FindAsync(id);
         }
 
         public async Task<(IEnumerable<T> Data, int TotalRecords, int TotalPages)> GetPaginatedAsync(int page, int pageSize)

@@ -33,6 +33,13 @@ namespace Shipping.PL.Controllers
             if (!orders.Any()) return NotFound("No orders found");
             return Ok(orders);
         }
+        [HttpDelete("{id:int}")]
+        public async Task<IActionResult> DeleteOrder(int id)
+        {
+            if (id == 0) BadRequest();
+            await OrderService.DeleteOrderAsync(id);
+            return Ok();
+        }
         [HttpPost]
         public async Task<IActionResult> AddOrder(AddOrderDTO orderDTO)
         {
@@ -55,7 +62,7 @@ namespace Shipping.PL.Controllers
             await ProductService.UpdateProductAsync(productDTO);
             return Ok();
         }
-        [HttpDelete("{id:int}")]
+        [HttpDelete("/product/{id:int}")]
         public async Task<IActionResult> DeleteProductAsync(int id)
         {
             if (id == 0) BadRequest();
