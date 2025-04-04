@@ -10,6 +10,7 @@ namespace Shipping.BL.DTOs.Order
 {
     public class ReadOrderDTO
     {
+        public DateTime OrderDate { get; set; }
         public int Id { get; set; }
         public OrderStatus orderStatus { get; set; }
         public string CustomerName { get; set; } = null!;

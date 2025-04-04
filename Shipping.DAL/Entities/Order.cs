@@ -13,6 +13,8 @@ public class Order : BaseEntity
     public string CustomerName { get; set; } = null!;
     public string CustomerPhone { get; set; } = null!;
     public string CustomerEmail { get; set; } = null!;
+    [DataType(DataType.Date)]
+    public DateTime OrderDate { get; set; } = DateTime.Now; 
 
     [DataType(DataType.Currency)]
     public decimal OrderPrice { get; set; }
