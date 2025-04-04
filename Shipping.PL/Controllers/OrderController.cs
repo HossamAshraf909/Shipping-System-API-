@@ -54,6 +54,14 @@ namespace Shipping.PL.Controllers
 
             return Ok();
         }
+        [HttpPut]
+        public async Task<IActionResult> UpdateOrder(int id, AddOrderDTO orderDTO)
+        {
+            if (orderDTO == null) BadRequest();
+            if (!ModelState.IsValid) BadRequest(ModelState);
+            await OrderService.UpdateOrderAsync(id, orderDTO);
+            return Ok();
+        }
         [HttpPut("product-Edit")]
         public async Task<IActionResult> UpdateProduct(EditProductDTO productDTO)
         {
