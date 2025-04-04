@@ -169,7 +169,7 @@
   },
   {
     "ContainingType": "Shipping.PL.Controllers.OrderController",
-    "Method": "DeleteProductAsync",
+    "Method": "DeleteOrder",
     "RelativePath": "api/Order/{id}",
     "HttpMethod": "DELETE",
     "IsController": true,
@@ -210,6 +210,53 @@
       {
         "Name": "productDTO",
         "Type": "Shipping.BL.DTOs.product.EditProductDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Shipping.PL.Controllers.OrderReportController",
+    "Method": "GetAllOrders",
+    "RelativePath": "api/OrderReport",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Shipping.PL.Controllers.OrderReportController",
+    "Method": "GetOrderByDate",
+    "RelativePath": "api/OrderReport/{FromDate}/{ToDate}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "FromDate",
+        "Type": "System.DateTime",
+        "IsRequired": true
+      },
+      {
+        "Name": "ToDate",
+        "Type": "System.DateTime",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Shipping.PL.Controllers.OrderReportController",
+    "Method": "GetOrderByStatus",
+    "RelativePath": "api/OrderReport/{Status}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Status",
+        "Type": "System.String",
         "IsRequired": true
       }
     ],
@@ -300,6 +347,22 @@
       {
         "Name": "searchWord",
         "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Shipping.PL.Controllers.OrderController",
+    "Method": "DeleteProductAsync",
+    "RelativePath": "product/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
         "IsRequired": true
       }
     ],

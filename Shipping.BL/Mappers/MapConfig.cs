@@ -17,6 +17,7 @@ using Shipping.BL.DTOs.Order;
 using Microsoft.EntityFrameworkCore.Query.SqlExpressions;
 using Shipping.BL.DTOs.product;
 using System.Net;
+using Shipping.BL.DTOs.OrderReport;
 
 
 
@@ -54,6 +55,13 @@ namespace Shipping.BL.Mappers
             {
                 dist.Governorate = src.Governorate.Name;
                 dist.City = src.City.Name;
+            }).ReverseMap();
+            CreateMap<Order, ReadOrderReportDTO>().AfterMap((src, dist) =>
+            {
+                dist.Governorate = src.Governorate.Name;
+                dist.city = src.City.Name;
+                dist.PaidShippingPrice = src.ShippingPrice;
+                
             }).ReverseMap();
         }
 

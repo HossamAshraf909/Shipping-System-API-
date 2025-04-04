@@ -18,6 +18,7 @@ namespace Shipping.BL.DTOs.OrderReport
         public decimal OrderPrice { get; set; }
         public decimal ShippingPrice { get; set; }
         public decimal PaidShippingPrice { get; set; }
+        public DateTime OrderDate {  get; set; }
         
     }
 }
