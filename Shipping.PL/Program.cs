@@ -57,6 +57,7 @@ namespace Shipping.PL
                     builder.Services.AddScoped<CityService>();
                     builder.Services.AddScoped<WeightPriceService>();
                     builder.Services.AddScoped<OrderService>();
+                    builder.Services.AddScoped<OrderReportService>();
          
 
             #endregion
