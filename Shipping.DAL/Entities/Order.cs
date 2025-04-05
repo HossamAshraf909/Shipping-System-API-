@@ -23,12 +23,13 @@ public class Order : BaseEntity
     public decimal ShippingPrice { get; set; }
 
     public double TotalWeight { get; set; }
+    public bool IsVillageDelivery { get; set; } = false;
+    public string? VillageStreetAddress { get; set; } = null!;
 
     // Foreign Keys
     public int? VillageDeliveryId { get; set; }
     public virtual VillageDelivery? VillageDelivery { get; set; }
 
-    public bool IsVillageDelivery { get; set; } = false;  
 
     public int CityId { get; set; }
     public virtual City City { get; set; }
