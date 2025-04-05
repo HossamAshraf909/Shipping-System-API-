@@ -30,7 +30,11 @@ namespace Shipping.PL.Controllers
         public async Task<IActionResult> GetOrderBystatus(string search)
         {
             var orders = await OrderService.GetOrderByStatusAsync(search);
-            if (!orders.Any()) return NotFound("No orders found");
+            if(!orders.Any()) return Ok(new
+            {
+                Data = orders,
+                Message = "No orders found with the given status.",
+            });
             return Ok(orders);
         }
         [HttpDelete("{id:int}")]
