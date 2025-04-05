@@ -53,7 +53,6 @@ namespace Shipping.BL.Services
         {
             var city = await _unitOfWork.Cities.GetByIdAsync(id);
             if (city == null) return;
-
             city.IsDeleted = true;
             await _unitOfWork.SaveChangesAsync();
         }

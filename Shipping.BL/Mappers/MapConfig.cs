@@ -49,6 +49,10 @@ namespace Shipping.BL.Mappers
             CreateMap<AddOrderDTO, Order>().AfterMap((src, dist) =>
             {
                dist.TotalWeight = src.Products.Sum(p => p.Weight * p.Quantity);
+                if (src.IsVillageDelivery == true) 
+                {
+                    dist.VillageStreetAddress = src.VillageStreetAddress;
+                }
               
             }).ReverseMap();
             CreateMap<Order, ReadOrderDTO>().AfterMap((src, dist) =>
