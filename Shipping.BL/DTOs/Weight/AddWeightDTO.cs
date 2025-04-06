@@ -8,7 +8,7 @@ namespace Shipping.BL.DTOs.Weight
 {
     public class AddWeightDTO
     {
-        public decimal DefualPrice { get; set; }
+        public int Id { get; set; }
         public decimal DefualtWeight {  get; set; } //Not in SRS only Default Price na extra price per Kilo 
         public decimal ExtraPricePerKilo {  get; set; }
 

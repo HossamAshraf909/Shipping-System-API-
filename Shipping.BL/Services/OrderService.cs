@@ -41,20 +41,21 @@ namespace Shipping.BL.Services
             var order = _mapper.Map<Order>(orderDto);
             var city = await _unitOfWork.Cities.GetByIdAsync(orderDto.CityId);
             var shippingType = await _unitOfWork.ShippingTypes.GetByIdAsync(orderDto.ShippingTypeId);
+            order.ShippingPrice = (city.ShippingPrice+shippingType.ShippingPrice);
             if(orderDto.IsVillageDelivery== true)
             {
                 var deliveryTovillage = await _unitOfWork.VillageDelivery.GetAllAsync();
                 var delivery= deliveryTovillage.First();    
-                order.ShippingPrice = (city.ShippingPrice + shippingType.ShippingPrice + delivery.Price);
+                order.ShippingPrice += delivery.Price;
             }
             var wieghtSetting= await _unitOfWork.WeightPrices.GetAllAsync();
             var settingOfWieght = wieghtSetting.First();
                 order.WeightPriceId = settingOfWieght.Id;
-            if (orderDto.TotalWeight > settingOfWieght.DefaultWeight)
+            if (order.TotalWeight > settingOfWieght.DefaultWeight)
             {
-                order.ShippingPrice = (city.ShippingPrice + shippingType.ShippingPrice + settingOfWieght.ExtraPricePerKilo);
+                var ExtraKilos= (int)(order.TotalWeight)-settingOfWieght.DefaultWeight;
+                order.ShippingPrice += (settingOfWieght.ExtraPricePerKilo)*ExtraKilos;
             }
-            order.ShippingPrice = (city.ShippingPrice+shippingType.ShippingPrice);
             await _unitOfWork.Orders.AddAsync(order);
             await _unitOfWork.SaveChangesAsync();  // Ensure changes are saved
         }

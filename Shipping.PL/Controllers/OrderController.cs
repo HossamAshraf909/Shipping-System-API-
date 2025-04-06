@@ -10,7 +10,7 @@ namespace Shipping.PL.Controllers
     [ApiController]
     public class OrderController : ControllerBase
     {
-        public OrderController(OrderService orderService,ProductService productService, OrderProductService orderProductService)
+        public OrderController(OrderService orderService, ProductService productService, OrderProductService orderProductService)
         {
             OrderService = orderService;
             ProductService = productService;
@@ -30,7 +30,7 @@ namespace Shipping.PL.Controllers
         public async Task<IActionResult> GetOrderBystatus(string search)
         {
             var orders = await OrderService.GetOrderByStatusAsync(search);
-            if(!orders.Any()) return Ok(new
+            if (!orders.Any()) return Ok(new
             {
                 Data = orders,
                 Message = "No orders found with the given status.",
@@ -58,7 +58,7 @@ namespace Shipping.PL.Controllers
 
             return Ok();
         }
-        [HttpPut]
+        [HttpPut("{id:int}")]
         public async Task<IActionResult> UpdateOrder(int id, AddOrderDTO orderDTO)
         {
             if (orderDTO == null) BadRequest();

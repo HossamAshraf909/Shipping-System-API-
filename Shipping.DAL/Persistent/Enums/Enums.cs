@@ -25,7 +25,8 @@ namespace Shipping.DAL.Persistent.Enums
         CannotBeReached = 8,
         Processing = 9,
         Shipped = 10,
-        AwaitingConfirmation = 11
+        AwaitingConfirmation = 11,
+        All=16,
     }
     [JsonConverter(typeof(JsonStringEnumConverter))]
     public enum PaymentMethod
