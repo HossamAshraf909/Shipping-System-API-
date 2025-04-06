@@ -14,13 +14,23 @@ namespace Shipping.PL.Controllers
         {
             this.weightPriceService = weightPriceService;
         }
+        [HttpGet]
+         public async Task<IActionResult> GetWeightSettings()
+        {
+            return Ok(await weightPriceService.GetAllAsync());
+        }
 
         [HttpPost]
         public async Task<IActionResult> AddWeightSetting(AddWeightDTO weight)
         {
             if (weight == null) return BadRequest();
             if(!ModelState.IsValid) return BadRequest();
-            await weightPriceService.AddAsync(weight);
+            var existingWeightSetting = await weightPriceService.GetAllAsync();
+                weight.Id = existingWeightSetting[0].Id;
+            if (!existingWeightSetting.Any())
+                await weightPriceService.AddAsync(weight);
+            else  
+                await weightPriceService.UpdateAsync(weight);
             return Ok ();   
         }
     }

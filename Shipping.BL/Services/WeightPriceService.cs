@@ -41,8 +41,11 @@ namespace Shipping.BL.Services
 
         public async Task UpdateAsync(AddWeightDTO weightDTO)
         {
-            var weightPrice = _map.Map<WeightPrice>(weightDTO);
-           await _unit.WeightPrices.UpdateAsync(weightPrice);
+            var existingWeightPrice = await _unit.WeightPrices.GetByIdAsync(weightDTO.Id);
+            if (existingWeightPrice == null) return;
+          _map.Map(weightDTO, existingWeightPrice);
+            
+            await _unit.WeightPrices.UpdateAsync(existingWeightPrice);
             await _unit.SaveChangesAsync();
         }
 

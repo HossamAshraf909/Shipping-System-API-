@@ -64,6 +64,7 @@ namespace Shipping.DAL.Persistent.Repositories
             var entity = await _dbSet.FindAsync(id);
             if (entity != null)
             {
+                entity.GetType().GetProperty("IsDeleted")?.SetValue(entity, true); // Assuming you have a soft delete property
                 _dbSet.Update(entity);
                 await _context.SaveChangesAsync(); // Ensure the delete is saved asynchronously
             }
