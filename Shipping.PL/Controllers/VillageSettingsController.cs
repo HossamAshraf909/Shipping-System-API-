@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Shipping.BL.DTOs.VillageDelivery;
+using Shipping.BL.DTOs.Village;
 using Shipping.BL.Services;
 
 namespace Shipping.PL.Controllers

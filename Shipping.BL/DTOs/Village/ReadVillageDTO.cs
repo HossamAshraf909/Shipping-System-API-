@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Shipping.BL.DTOs.VillageDelivery
+namespace Shipping.BL.DTOs.Village
 {
     public class ReadVillageDTO
     {
