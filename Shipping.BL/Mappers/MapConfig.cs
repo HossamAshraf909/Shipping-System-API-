@@ -12,7 +12,7 @@ using Shipping.BL.DTOs.ShippingType;
 using Shipping.BL.DTOs.Weight;
 using Shipping.PL.DTOs.Governorate;
 using Shipping.BL.DTOs.SpecialPackage;
-using Shipping.BL.DTOs.VillageDelivery;
+using Shipping.BL.DTOs.Village;
 using Shipping.BL.DTOs.Order;
 using Microsoft.EntityFrameworkCore.Query.SqlExpressions;
 using Shipping.BL.DTOs.product;

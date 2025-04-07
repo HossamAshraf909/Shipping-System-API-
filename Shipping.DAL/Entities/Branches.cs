@@ -15,5 +15,7 @@ namespace Shipping.DAL.Entities
         [Column(TypeName ="date")]
         public DateTime Date { get; set; }
 
+        public virtual ICollection<MerchantBranch> MerchantBranches { get; set; }
+        public virtual ICollection<DeliveryBranch> DeliveryBranches { get; set; }
     }
 }

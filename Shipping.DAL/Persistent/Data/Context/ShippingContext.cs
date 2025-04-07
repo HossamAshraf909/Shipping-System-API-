@@ -8,11 +8,12 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Shipping.DAL.Entities;
+using Shipping.DAL.Entities.Identity;
 using Shipping.DAL.Persistent.Data.ModelConfigruation;
 
 namespace Shipping.DAL.Persistent.Data.Context
 {
-    public class ShippingContext:DbContext
+    public class ShippingContext:IdentityDbContext<ApplicationUser>
     {
         public ShippingContext(DbContextOptions<ShippingContext> options): base(options)
         {
@@ -45,6 +46,10 @@ namespace Shipping.DAL.Persistent.Data.Context
        public DbSet<SpecialPackages> specialPackages { get; set; }
        public DbSet<VillageDelivery> villageDeliveries { get; set; }
        public DbSet<WeightPrice> weightPrices { get; set; }
-
+        public DbSet<Employee> Employees { get; set; }
+        public DbSet<Merchant> Merchants { get; set; }
+        public DbSet<Delivery> Deliveries { get; set; }
+        public DbSet<MerchantBranch> MerchantBranches { get; set; }
+        public DbSet<DeliveryBranch> DeliveryBranches { get; set; }
     }
 }
