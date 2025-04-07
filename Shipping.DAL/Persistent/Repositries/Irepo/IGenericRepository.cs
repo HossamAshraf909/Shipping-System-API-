@@ -9,7 +9,7 @@ namespace Shipping.DAL.Persistent.Repositories
     {
         Task<IEnumerable<T>> GetAllAsync();
         Task<T?> GetByIdAsync(int id);
-        Task<IEnumerable<T>> GetPaginatedAsync(int page, int pageSize);
+        Task<(IEnumerable<T> Data, int TotalRecords, int TotalPages)> GetPaginatedAsync(int page, int pageSize);
         Task<IEnumerable<T>> SearchAsync(Expression<Func<T, bool>> predicate);
         Task AddAsync(T entity);
         Task UpdateAsync(T entity);

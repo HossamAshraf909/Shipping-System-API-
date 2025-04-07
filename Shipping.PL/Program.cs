@@ -1,4 +1,5 @@
 
+using System.Text.Json.Serialization;
 using AutoMapper;
 using Microsoft.EntityFrameworkCore;
 using Shipping.BL.Mappers;
@@ -14,18 +15,33 @@ namespace Shipping.PL
     {
         public static void Main(string[] args)
         {
+            string MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
             var builder = WebApplication.CreateBuilder(args);
 
             // Add services to the container.
 
-            builder.Services.AddControllers();
+            builder.Services.AddControllers()
+                     .AddJsonOptions(options =>
+                     {
+                         options.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter());
+                     });
             // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
-            
-            builder.Services.AddOpenApi();
-            
-            
-            #region Add Services
 
+            builder.Services.AddOpenApi();
+
+
+            #region Add Services
+            //allow cors
+                    builder.Services.AddCors(options =>
+                    {
+                        options.AddPolicy(MyAllowSpecificOrigins,
+                        builder =>
+                        {
+                            builder.AllowAnyOrigin();
+                            builder.AllowAnyMethod();
+                            builder.AllowAnyHeader();
+                        });
+                    });
                     builder.Services.AddDbContext<ShippingContext>(options =>
                         options.UseLazyLoadingProxies().UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"))
                         );
@@ -40,6 +56,9 @@ namespace Shipping.PL
                     builder.Services.AddScoped<GovernorateService>();
                     builder.Services.AddScoped<CityService>();
                     builder.Services.AddScoped<WeightPriceService>();
+                    builder.Services.AddScoped<OrderService>();
+                    builder.Services.AddScoped<OrderReportService>();
+                    builder.Services.AddScoped<VillageDeliveryService>();
          
 
             #endregion
@@ -57,6 +76,8 @@ namespace Shipping.PL
             app.UseHttpsRedirection();
 
             app.UseAuthorization();
+
+            app.UseCors(MyAllowSpecificOrigins);
 
             app.MapControllers();
 

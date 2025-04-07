@@ -18,5 +18,13 @@ namespace Shipping.DAL.Persistent.Repositries
         {
             return await _context.Orders.Where(o => o.CustomerName == customerName).ToListAsync();
         }
+        public async Task<IEnumerable<Order>> GetOrderByStatusAsync(string Status)
+        {
+            return await _context.Orders.Where(o => o.orderStatus.ToString() == Status).ToListAsync();
+        }
+        public async Task<IEnumerable<Order>> GetOrderByDateAsync(DateTime FromDate, DateTime ToDate)
+        {
+            return await _context.Orders.Where(o => o.OrderDate.Date >= FromDate.Date && o.OrderDate.Date<=ToDate.Date).ToListAsync();
+        }
     }
 }

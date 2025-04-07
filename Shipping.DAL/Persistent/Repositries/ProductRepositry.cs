@@ -21,7 +21,7 @@ namespace Shipping.DAL.Persistent.Repositries
                 throw new ArgumentException($"Product with ID {id} not found.");
             }
 
-           await DeleteAsync(id); 
+            await DeleteAsync(id); 
             await SaveChangesAsync(); 
         }
     }
