@@ -448,6 +448,16 @@
   },
   {
     "ContainingType": "Shipping.PL.Controllers.WeightController",
+    "Method": "GetWeightSettings",
+    "RelativePath": "api/Weight",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Shipping.PL.Controllers.WeightController",
     "Method": "AddWeightSetting",
     "RelativePath": "api/Weight",
     "HttpMethod": "POST",
