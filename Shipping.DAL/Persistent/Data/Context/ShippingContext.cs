@@ -5,6 +5,7 @@ using System.Linq.Expressions;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Shipping.DAL.Entities;
@@ -13,9 +14,9 @@ using Shipping.DAL.Persistent.Data.ModelConfigruation;
 
 namespace Shipping.DAL.Persistent.Data.Context
 {
-    public class ShippingContext:IdentityDbContext<ApplicationUser>
+    public class ShippingContext : IdentityDbContext<ApplicationUser>
     {
-        public ShippingContext(DbContextOptions<ShippingContext> options): base(options)
+        public ShippingContext(DbContextOptions<ShippingContext> options) : base(options)
         {
 
         }
@@ -23,8 +24,8 @@ namespace Shipping.DAL.Persistent.Data.Context
         {
             base.OnModelCreating(modelBuilder);
 
-           
-           modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
+
+            modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
             foreach (var entityType in modelBuilder.Model.GetEntityTypes())
             {
                 if (typeof(BaseEntity).IsAssignableFrom(entityType.ClrType))
@@ -34,18 +35,18 @@ namespace Shipping.DAL.Persistent.Data.Context
                 }
             }
         }
-        
+
 
         public DbSet<Branches> Branches { get; set; }
-       public DbSet<City> Cities { get; set; }
-       public DbSet<Governorate> governorates { get; set; }
-       public DbSet<Order> Orders { get; set; }
-       public DbSet<Order_Product> OrderProducts { get; set; }
-       public DbSet<Product> Products { get; set; }
-       public DbSet<ShippingType> shippingTypes { get; set; }
-       public DbSet<SpecialPackages> specialPackages { get; set; }
-       public DbSet<VillageDelivery> villageDeliveries { get; set; }
-       public DbSet<WeightPrice> weightPrices { get; set; }
+        public DbSet<City> Cities { get; set; }
+        public DbSet<Governorate> governorates { get; set; }
+        public DbSet<Order> Orders { get; set; }
+        public DbSet<Order_Product> OrderProducts { get; set; }
+        public DbSet<Product> Products { get; set; }
+        public DbSet<ShippingType> shippingTypes { get; set; }
+        public DbSet<SpecialPackages> specialPackages { get; set; }
+        public DbSet<VillageDelivery> villageDeliveries { get; set; }
+        public DbSet<WeightPrice> weightPrices { get; set; }
         public DbSet<Employee> Employees { get; set; }
         public DbSet<Merchant> Merchants { get; set; }
         public DbSet<Delivery> Deliveries { get; set; }

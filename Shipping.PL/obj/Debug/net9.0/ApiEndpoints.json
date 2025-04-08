@@ -440,10 +440,20 @@
     "Parameters": [
       {
         "Name": "addVillageDTO",
-        "Type": "Shipping.BL.DTOs.VillageDelivery.AddVillageDTO",
+        "Type": "Shipping.BL.DTOs.Village.AddVillageDTO",
         "IsRequired": true
       }
     ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Shipping.PL.Controllers.WeightController",
+    "Method": "GetWeightSettings",
+    "RelativePath": "api/Weight",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
     "ReturnTypes": []
   },
   {

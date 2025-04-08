@@ -1,9 +1,11 @@
 
 using System.Text.Json.Serialization;
 using AutoMapper;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Shipping.BL.Mappers;
 using Shipping.BL.Services;
+using Shipping.DAL.Entities.Identity;
 using Shipping.DAL.Persistent.Data.Context;
 
 using Shipping.DAL.Persistent.UnitOfWork;
@@ -59,12 +61,24 @@ namespace Shipping.PL
                     builder.Services.AddScoped<OrderService>();
                     builder.Services.AddScoped<OrderReportService>();
                     builder.Services.AddScoped<VillageDeliveryService>();
-         
+
 
             #endregion
-
+            builder.Services.AddIdentity<ApplicationUser, IdentityRole>()
+    .AddEntityFrameworkStores<ShippingContext>()
+    .AddDefaultTokenProviders();
 
             var app = builder.Build();
+
+            using (var scope = app.Services.CreateScope())
+            {
+                var serviceProvider = scope.ServiceProvider;
+                var userManager = serviceProvider.GetRequiredService<UserManager<ApplicationUser>>();
+
+                // Call the seed method
+                ShippingContextSeed.Initialize(serviceProvider, userManager);
+               
+            }
 
             // Configure the HTTP request pipeline.
             if (app.Environment.IsDevelopment())
