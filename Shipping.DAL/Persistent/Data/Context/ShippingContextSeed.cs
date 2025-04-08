@@ -11,7 +11,7 @@ namespace Shipping.DAL.Persistent.Data.Context
 {
     public static class ShippingContextSeed
     {
-        public static void Initialize(IServiceProvider serviceProvider , UserManager<ApplicationUser>userManager)
+        public static async void Initialize(IServiceProvider serviceProvider , UserManager<ApplicationUser>userManager)
         {
             using (var scope = serviceProvider.CreateScope())
             {

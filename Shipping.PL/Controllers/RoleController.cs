@@ -13,19 +13,18 @@ namespace Shipping.PL.Controllers
     public class RoleController : ControllerBase
     {
         private AuthService AuthService { get; }
-        public RoleManager<ApplicationRole> RoleManager { get; }
 
-        public RoleController(AuthService authService , RoleManager<ApplicationRole> roleManager)
+
+        public RoleController(AuthService authService)
         {
             AuthService = authService;
-            RoleManager = roleManager;
+
         }
+       
         [HttpGet]
         public async Task<IActionResult> GetAllRoles()
         {
-            var Roles = await RoleManager.Roles.Select(r => new { r.Name, r.CreatedDate }).ToListAsync();
-            return Ok(Roles);
-        
+            return Ok(await AuthService.GetApplicationRolesAsync());
         }
 
         [HttpPost("CreateRole")]
@@ -38,15 +37,28 @@ namespace Shipping.PL.Controllers
 
             return BadRequest("Role Creation Failed");
         }
+       
         [HttpPost("AssignPermissionToRole")]
         public async Task<IActionResult> AssignPermissionToRole(AssignPermissionsToRoleDTO permissionsToRoleDTO)
         {
-            var result = await AuthService.AssignPermissionTorole(permissionsToRoleDTO);
+            var result = await AuthService.AssignPermissionToRole(permissionsToRoleDTO);
             if (result)
                 return Ok("Permission Assigned Successfully");
 
 
             return BadRequest("Permission Assignment Failed");
+        }
+        
+        [HttpGet("GetRolePermissions")]
+        public async Task<IActionResult> GetRolePermissions(string roleId)
+        {
+            var result = await AuthService.GetRolePermissions(roleId);
+           
+            if (result == null)
+                     return BadRequest("Role Not Found");
+            
+            return Ok(result);
+
         }
     }
 }

@@ -10,7 +10,8 @@ namespace Shipping.DAL.Entities
 {
     public class City:BaseEntity
     {
-       
+        [Key]
+        public int Id { get; set; }
         public string Name { get; set; }
       
 

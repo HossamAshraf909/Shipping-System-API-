@@ -415,6 +415,22 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "Shipping.PL.Controllers.RoleController",
+    "Method": "GetRolePermissions",
+    "RelativePath": "api/Role/GetRolePermissions",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "roleId",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "Shipping.PL.Controllers.ShippingTypeController",
     "Method": "GetAllType",
     "RelativePath": "api/ShippingType",
