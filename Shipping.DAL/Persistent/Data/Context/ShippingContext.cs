@@ -13,7 +13,7 @@ using Shipping.DAL.Persistent.Data.ModelConfigruation;
 
 namespace Shipping.DAL.Persistent.Data.Context
 {
-    public class ShippingContext:IdentityDbContext<ApplicationUser>
+    public class ShippingContext:IdentityDbContext<ApplicationUser,ApplicationRole,string>
     {
         public ShippingContext(DbContextOptions<ShippingContext> options): base(options)
         {
@@ -36,7 +36,7 @@ namespace Shipping.DAL.Persistent.Data.Context
         }
         
 
-        public DbSet<Branches> Branches { get; set; }
+       public DbSet<Branches> Branches { get; set; }
        public DbSet<City> Cities { get; set; }
        public DbSet<Governorate> governorates { get; set; }
        public DbSet<Order> Orders { get; set; }

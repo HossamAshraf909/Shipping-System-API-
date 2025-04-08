@@ -1,9 +1,11 @@
 
 using System.Text.Json.Serialization;
 using AutoMapper;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Shipping.BL.Mappers;
 using Shipping.BL.Services;
+using Shipping.DAL.Entities.Identity;
 using Shipping.DAL.Persistent.Data.Context;
 
 using Shipping.DAL.Persistent.UnitOfWork;
@@ -45,13 +47,17 @@ namespace Shipping.PL
                     builder.Services.AddDbContext<ShippingContext>(options =>
                         options.UseLazyLoadingProxies().UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"))
                         );
-                    builder.Services.AddAutoMapper(typeof(MapConfig));
-                    builder.Services.AddScoped<IUnitOfWork,UnitOfWork>();
+                     // Add Identity
+                     builder.Services.AddIdentity<ApplicationUser,ApplicationRole>()
+                        .AddEntityFrameworkStores<ShippingContext>()
+                        .AddDefaultTokenProviders();
 
+                    builder.Services.AddAutoMapper(typeof(MapConfig));
+                    
+                    builder.Services.AddScoped<IUnitOfWork,UnitOfWork>();
                     builder.Services.AddScoped<ProductService>();
                     builder.Services.AddScoped<OrderProductService>();
                     builder.Services.AddScoped<ShippingTypeService>();
-
                     builder.Services.AddScoped<BranchService>();
                     builder.Services.AddScoped<GovernorateService>();
                     builder.Services.AddScoped<CityService>();
@@ -59,6 +65,7 @@ namespace Shipping.PL
                     builder.Services.AddScoped<OrderService>();
                     builder.Services.AddScoped<OrderReportService>();
                     builder.Services.AddScoped<VillageDeliveryService>();
+                    builder.Services.AddScoped<AuthService>();
          
 
             #endregion
