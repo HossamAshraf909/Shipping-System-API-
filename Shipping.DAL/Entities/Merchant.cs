@@ -25,5 +25,7 @@ namespace Shipping.DAL.Entities
 
         // Navigation to branches (many-to-many)
         public virtual ICollection<MerchantBranch> MerchantBranches { get; set; }
+        public virtual ICollection<Order> Orders { get; set; }
+
     }
 }

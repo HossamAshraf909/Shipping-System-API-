@@ -65,13 +65,23 @@ namespace Shipping.PL
                     builder.Services.AddScoped<OrderService>();
                     builder.Services.AddScoped<OrderReportService>();
                     builder.Services.AddScoped<VillageDeliveryService>();
+
                     builder.Services.AddScoped<AuthService>();
          
 
+
             #endregion
 
-
             var app = builder.Build();
+            using (var scope = app.Services.CreateScope())
+            {
+                var serviceProvider = scope.ServiceProvider;
+                var userManager = serviceProvider.GetRequiredService<UserManager<ApplicationUser>>();
+
+                // Call the seed method
+                ShippingContextSeed.Initialize(serviceProvider, userManager);
+               
+            }
 
             // Configure the HTTP request pipeline.
             if (app.Environment.IsDevelopment())

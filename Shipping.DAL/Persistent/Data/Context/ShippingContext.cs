@@ -5,6 +5,7 @@ using System.Linq.Expressions;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Shipping.DAL.Entities;
@@ -13,9 +14,10 @@ using Shipping.DAL.Persistent.Data.ModelConfigruation;
 
 namespace Shipping.DAL.Persistent.Data.Context
 {
+
     public class ShippingContext:IdentityDbContext<ApplicationUser,ApplicationRole,string>
     {
-        public ShippingContext(DbContextOptions<ShippingContext> options): base(options)
+        public ShippingContext(DbContextOptions<ShippingContext> options) : base(options)
         {
 
         }
@@ -23,8 +25,8 @@ namespace Shipping.DAL.Persistent.Data.Context
         {
             base.OnModelCreating(modelBuilder);
 
-           
-           modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
+
+            modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
             foreach (var entityType in modelBuilder.Model.GetEntityTypes())
             {
                 if (typeof(BaseEntity).IsAssignableFrom(entityType.ClrType))
@@ -34,7 +36,8 @@ namespace Shipping.DAL.Persistent.Data.Context
                 }
             }
         }
-        
+
+
 
        public DbSet<Branches> Branches { get; set; }
        public DbSet<City> Cities { get; set; }
