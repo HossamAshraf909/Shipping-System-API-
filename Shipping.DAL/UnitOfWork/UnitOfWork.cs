@@ -23,6 +23,9 @@ namespace Shipping.DAL.Persistent.UnitOfWork
         private IGenericRepository<WeightPrice>? _weightPrices;
         private IGenericRepository<VillageDelivery>? _villageDelivery;
         private IGenericRepository<SpecialPackages>? _specialPackages;
+        private IGenericRepository<Merchant>? _merchent;
+        private IGenericRepository<Delivery>? _delivery;
+        private IGenericRepository<Employee>? _employee;
         public UnitOfWork(ShippingContext context)
         {
             _context = context ?? throw new ArgumentNullException(nameof(context));
@@ -35,6 +38,13 @@ namespace Shipping.DAL.Persistent.UnitOfWork
         public IGenericRepository<SpecialPackages> SpecialPackage =>
             _specialPackages ??= new GenericRepository<SpecialPackages>(_context);
 
+        public IGenericRepository<Merchant> Merchant =>
+            _merchent ??= new GenericRepository<Merchant>(_context);
+        public IGenericRepository<Delivery> Delivery =>
+            _delivery ??= new GenericRepository<Delivery>(_context);
+
+        public IGenericRepository<Employee> Employee =>
+           _employee ??= new GenericRepository<Employee>(_context);
         public OrderProductRepository OrderProducts =>
             _orderProducts ??= new OrderProductRepository(_context);
 
@@ -73,7 +83,6 @@ namespace Shipping.DAL.Persistent.UnitOfWork
         {
             _context.Dispose();
             GC.SuppressFinalize(this);
-        
         }
 
 

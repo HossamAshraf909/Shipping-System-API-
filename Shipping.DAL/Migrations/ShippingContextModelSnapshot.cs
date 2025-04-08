@@ -25,33 +25,6 @@ namespace Shipping.DAL.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
-                {
-                    b.Property<string>("Id")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<string>("ConcurrencyStamp")
-                        .IsConcurrencyToken()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Name")
-                        .HasMaxLength(256)
-                        .HasColumnType("nvarchar(256)");
-
-                    b.Property<string>("NormalizedName")
-                        .HasMaxLength(256)
-                        .HasColumnType("nvarchar(256)");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("NormalizedName")
-                        .IsUnique()
-                        .HasDatabaseName("RoleNameIndex")
-                        .HasFilter("[NormalizedName] IS NOT NULL");
-
-                    b.ToTable("AspNetRoles", (string)null);
-                });
-
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
                 {
                     b.Property<int>("Id")
@@ -181,6 +154,9 @@ namespace Shipping.DAL.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int?>("DeliveryId")
+                        .HasColumnType("int");
+
                     b.Property<int>("GovernorateId")
                         .HasColumnType("int");
 
@@ -189,6 +165,9 @@ namespace Shipping.DAL.Migrations
 
                     b.Property<bool>("IsVillageDelivery")
                         .HasColumnType("bit");
+
+                    b.Property<int?>("MerchantId")
+                        .HasColumnType("int");
 
                     b.Property<DateTime>("OrderDate")
                         .HasColumnType("datetime2");
@@ -230,7 +209,11 @@ namespace Shipping.DAL.Migrations
 
                     b.HasIndex("CityId");
 
+                    b.HasIndex("DeliveryId");
+
                     b.HasIndex("GovernorateId");
+
+                    b.HasIndex("MerchantId");
 
                     b.HasIndex("ShippingTypeId");
 
@@ -421,6 +404,36 @@ namespace Shipping.DAL.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("governorates");
+                });
+
+            modelBuilder.Entity("Shipping.DAL.Entities.Identity.ApplicationRole", b =>
+                {
+                    b.Property<string>("Id")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("ConcurrencyStamp")
+                        .IsConcurrencyToken()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Name")
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)");
+
+                    b.Property<string>("NormalizedName")
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("NormalizedName")
+                        .IsUnique()
+                        .HasDatabaseName("RoleNameIndex")
+                        .HasFilter("[NormalizedName] IS NOT NULL");
+
+                    b.ToTable("AspNetRoles", (string)null);
                 });
 
             modelBuilder.Entity("Shipping.DAL.Entities.Identity.ApplicationUser", b =>
@@ -631,7 +644,7 @@ namespace Shipping.DAL.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
                 {
-                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole", null)
+                    b.HasOne("Shipping.DAL.Entities.Identity.ApplicationRole", null)
                         .WithMany()
                         .HasForeignKey("RoleId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -658,7 +671,7 @@ namespace Shipping.DAL.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserRole<string>", b =>
                 {
-                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole", null)
+                    b.HasOne("Shipping.DAL.Entities.Identity.ApplicationRole", null)
                         .WithMany()
                         .HasForeignKey("RoleId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -688,11 +701,19 @@ namespace Shipping.DAL.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("Shipping.DAL.Entities.Delivery", "Delivery")
+                        .WithMany("Orders")
+                        .HasForeignKey("DeliveryId");
+
                     b.HasOne("Shipping.DAL.Entities.Governorate", "Governorate")
                         .WithMany("orders")
                         .HasForeignKey("GovernorateId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.HasOne("Shipping.DAL.Entities.Merchant", "Merchant")
+                        .WithMany("Orders")
+                        .HasForeignKey("MerchantId");
 
                     b.HasOne("Shipping.DAL.Entities.ShippingType", "ShippingType")
                         .WithMany("orders")
@@ -712,7 +733,11 @@ namespace Shipping.DAL.Migrations
 
                     b.Navigation("City");
 
+                    b.Navigation("Delivery");
+
                     b.Navigation("Governorate");
+
+                    b.Navigation("Merchant");
 
                     b.Navigation("ShippingType");
 
@@ -868,6 +893,8 @@ namespace Shipping.DAL.Migrations
             modelBuilder.Entity("Shipping.DAL.Entities.Delivery", b =>
                 {
                     b.Navigation("DeliveryBranches");
+
+                    b.Navigation("Orders");
                 });
 
             modelBuilder.Entity("Shipping.DAL.Entities.Governorate", b =>
@@ -894,6 +921,8 @@ namespace Shipping.DAL.Migrations
             modelBuilder.Entity("Shipping.DAL.Entities.Merchant", b =>
                 {
                     b.Navigation("MerchantBranches");
+
+                    b.Navigation("Orders");
                 });
 
             modelBuilder.Entity("Shipping.DAL.Entities.ShippingType", b =>

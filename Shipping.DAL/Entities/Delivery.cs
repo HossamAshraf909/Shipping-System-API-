@@ -24,6 +24,8 @@ namespace Shipping.DAL.Entities
 
         public virtual ApplicationUser User { get; set; }
 
+        public virtual ICollection<Order> Orders { get; set; }
+
         public virtual ICollection<DeliveryBranch> DeliveryBranches { get; set; }
     }
 }

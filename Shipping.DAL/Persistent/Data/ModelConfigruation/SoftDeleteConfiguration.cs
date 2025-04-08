@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Shipping.DAL.Persistent.Data.ModelConfigruation
 {
-    public  class SoftDeleteConfiguration
+    public static class SoftDeleteConfiguration
     {
         public static LambdaExpression CreateFilterExpression(Type entityType)
         {

@@ -9,13 +9,18 @@ using System.Threading.Tasks;
 
 namespace Shipping.DAL.Entities
 {
-    public class Merchant
+    public class Merchant:BaseEntity
     {
         [Key]
         public int ID { get; set; }
 
         public decimal PickUpPrice { get; set; }
         public decimal RejectedOrderPrice { get; set; }
+        [ForeignKey("City")]
+        public int cityId { get; set; }
+        [ForeignKey("Governorate")]
+
+        public int governrateId { get; set; }
 
         [Required]
         [ForeignKey("User")]
@@ -25,5 +30,8 @@ namespace Shipping.DAL.Entities
 
         // Navigation to branches (many-to-many)
         public virtual ICollection<MerchantBranch> MerchantBranches { get; set; }
+        public virtual ICollection<Order> Orders { get; set; }
+        public virtual City City { get; set; }
+        public virtual Governorate Governorate  { get; set; }
     }
 }

@@ -13,6 +13,7 @@ namespace Shipping.PL.Controllers
         {
             OrderReportService = orderReportService;
         }
+        
         [HttpGet]
         public async Task<IActionResult> GetAllOrders()
         {
@@ -23,6 +24,7 @@ namespace Shipping.PL.Controllers
             }
             return Ok(orders);
         }
+       
         [HttpGet("{Status:alpha}")]
         public async Task<IActionResult> GetOrderByStatus(string Status)
         {
@@ -33,6 +35,7 @@ namespace Shipping.PL.Controllers
             }
             return Ok(order);
         }
+        
         [HttpGet("{FromDate:datetime}/{ToDate:datetime}")]
         public async Task<IActionResult> GetOrderByDate(DateTime FromDate, DateTime ToDate)
         {

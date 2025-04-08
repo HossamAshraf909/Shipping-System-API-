@@ -221,6 +221,16 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "Shipping.PL.Controllers.MetadataController",
+    "Method": "GetControllers",
+    "RelativePath": "api/Metadata/controllers",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "Shipping.PL.Controllers.OrderController",
     "Method": "GetAllOrders",
     "RelativePath": "api/Order",
@@ -363,6 +373,64 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "Shipping.PL.Controllers.RoleController",
+    "Method": "GetAllRoles",
+    "RelativePath": "api/Role",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Shipping.PL.Controllers.RoleController",
+    "Method": "AssignPermissionToRole",
+    "RelativePath": "api/Role/AssignPermissionToRole",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "permissionsToRoleDTO",
+        "Type": "Shipping.BL.DTOs.Auth.Permission.AssignPermissionsToRoleDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Shipping.PL.Controllers.RoleController",
+    "Method": "CreateRole",
+    "RelativePath": "api/Role/CreateRole",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "roleName",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Shipping.PL.Controllers.RoleController",
+    "Method": "GetRolePermissions",
+    "RelativePath": "api/Role/GetRolePermissions",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "roleId",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "Shipping.PL.Controllers.ShippingTypeController",
     "Method": "GetAllType",
     "RelativePath": "api/ShippingType",
@@ -440,10 +508,20 @@
     "Parameters": [
       {
         "Name": "addVillageDTO",
-        "Type": "Shipping.BL.DTOs.VillageDelivery.AddVillageDTO",
+        "Type": "Shipping.BL.DTOs.Village.AddVillageDTO",
         "IsRequired": true
       }
     ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Shipping.PL.Controllers.WeightController",
+    "Method": "GetWeightSettings",
+    "RelativePath": "api/Weight",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
     "ReturnTypes": []
   },
   {
