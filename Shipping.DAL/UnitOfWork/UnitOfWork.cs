@@ -5,25 +5,13 @@ using Shipping.DAL.Persistent.Data.Context;
 using Shipping.DAL.Persistent.Repositories;
 using Shipping.DAL.Persistent.Repositries.Irepo;
 using Shipping.DAL.Persistent.Repositries;
+using Shipping.DAL.Entities.Identity;
 
 namespace Shipping.DAL.Persistent.UnitOfWork
 {
     public class UnitOfWork : IUnitOfWork
     {
 
-<<<<<<< HEAD
-        private readonly ShippingContext context;
-        private ProductRepositry _ProductRepositry;
-        private OrderProductRepositry _OrderProductRepositry;
-        private GenericRepositry<City> cityRep;
-        private GenericRepositry<Governorate> govRep;
-        private GenericRepositry<Branches> branchRep;
-        private GenericRepositry<ShippingType> _ShippingTypeRepositry;
-        GenericRepositry<WeightPrice> weightPriceRepo;
-        private GenericRepositry<SpecialPackages> _specialPackagesRepo;
-        private GenericRepositry<VillageDelivery> _villageDeliveryRepo;
-        public UnitOfWork( ShippingContext context)
-=======
         private readonly ShippingContext _context;
 
         private ProductRepository? _products;
@@ -36,96 +24,16 @@ namespace Shipping.DAL.Persistent.UnitOfWork
         private IGenericRepository<WeightPrice>? _weightPrices;
         private IGenericRepository<VillageDelivery>? _villageDelivery;
         private IGenericRepository<SpecialPackages>? _specialPackages;
+        private IGenericRepository<Merchant>? _merchent;
+        private IGenericRepository<Delivery>? _delivery;
+        private IGenericRepository<Employee>? _employee;
+        private IGenericRepository<ApplicationUser>? _applicationUser;
         public UnitOfWork(ShippingContext context)
->>>>>>> master
+
         {
             _context = context ?? throw new ArgumentNullException(nameof(context));
         }
-<<<<<<< HEAD
-        
-        public GenericRepositry<City> CityRep
-        {
-            get
-            {
-                if (cityRep == null)
-                    cityRep = new GenericRepositry<City>(context);
-                return cityRep;
 
-            }
-        }
-
-        public GenericRepositry<Governorate> GovRep
-        {
-            get
-            {
-                if (govRep == null)
-                    govRep = new GenericRepositry<Governorate>(context);
-                return govRep;
-
-            }
-        }
-
-        public GenericRepositry<Branches> BranchRep
-        {
-            get
-            {
-                if (branchRep == null)
-                    branchRep = new GenericRepositry<Branches>(context);
-                return branchRep;
-
-            }
-        }
-
-        public ProductRepositry ProductRepositry
-        {
-            get
-            {
-                if (_ProductRepositry == null)
-                    _ProductRepositry = new ProductRepositry(context);
-                return _ProductRepositry;
-            }
-        }
-
-        public OrderProductRepositry orderProductRepositry
-        {
-            get
-            {
-                if (_OrderProductRepositry == null)
-                    _OrderProductRepositry = new(context);
-                return _OrderProductRepositry;
-            }
-        }
-
-        public GenericRepositry<ShippingType> shippingTypeRepositry
-        {
-            get
-            {
-                if (_ShippingTypeRepositry == null)
-                    _ShippingTypeRepositry = new(context);
-                return _ShippingTypeRepositry;
-            }
-        }
-
-        public GenericRepositry<VillageDelivery> villageDelivery
-        {
-            get
-            {
-                if (_villageDeliveryRepo == null)
-                    _villageDeliveryRepo = new GenericRepositry<VillageDelivery>(context);
-                return _villageDeliveryRepo;
-            }
-        }
-        public GenericRepositry<SpecialPackages> specialPackage
-        {
-            get
-            {
-                if (_specialPackagesRepo == null)
-                    _specialPackagesRepo = new GenericRepositry<SpecialPackages>(context);
-                return _specialPackagesRepo;
-            }
-        }
-        public void Save()
-=======
 
         public ProductRepository Products =>
             _products ??= new ProductRepository(_context);
@@ -134,6 +42,13 @@ namespace Shipping.DAL.Persistent.UnitOfWork
         public IGenericRepository<SpecialPackages> SpecialPackage =>
             _specialPackages ??= new GenericRepository<SpecialPackages>(_context);
 
+        public IGenericRepository<Merchant> Merchant =>
+            _merchent ??= new GenericRepository<Merchant>(_context);
+        public IGenericRepository<Delivery> Delivery =>
+            _delivery ??= new GenericRepository<Delivery>(_context);
+
+        public IGenericRepository<Employee> Employee =>
+           _employee ??= new GenericRepository<Employee>(_context);
         public OrderProductRepository OrderProducts =>
             _orderProducts ??= new OrderProductRepository(_context);
 
@@ -158,8 +73,10 @@ namespace Shipping.DAL.Persistent.UnitOfWork
             _weightPrices ??= new GenericRepository<WeightPrice>(_context);
 
 
+        public IGenericRepository<ApplicationUser> ApplicationUser =>
+            _applicationUser ??= new GenericRepository<ApplicationUser>(_context);
         public async Task<int> SaveChangesAsync()
->>>>>>> master
+
         {
             return await _context.SaveChangesAsync();
         }

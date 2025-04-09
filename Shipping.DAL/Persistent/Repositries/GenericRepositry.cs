@@ -26,13 +26,22 @@ namespace Shipping.DAL.Persistent.Repositories
 
         public async Task<T?> GetByIdAsync(int id)
         {
+             
             return await _dbSet.FindAsync(id);
         }
 
-        public async Task<IEnumerable<T>> GetPaginatedAsync(int page, int pageSize)
-        {
-            return await _dbSet.Skip((page - 1) * pageSize).Take(pageSize).ToListAsync();
-        }
+        public async Task<(IEnumerable<T> Data, int TotalRecords, int TotalPages)> GetPaginatedAsync(int page, int pageSize)
+    {
+        var totalRecords = await _dbSet.CountAsync();
+        var totalPages = (int)Math.Ceiling(totalRecords / (double)pageSize);
+
+        var paginatedData = await _dbSet
+            .Skip((page - 1) * pageSize)
+            .Take(pageSize)
+            .ToListAsync();
+
+        return (paginatedData, totalRecords, totalPages);
+    }
 
         public async Task<IEnumerable<T>> SearchAsync(Expression<Func<T, bool>> predicate)
         {
@@ -55,7 +64,8 @@ namespace Shipping.DAL.Persistent.Repositories
             var entity = await _dbSet.FindAsync(id);
             if (entity != null)
             {
-                _dbSet.Remove(entity);
+                entity.GetType().GetProperty("IsDeleted")?.SetValue(entity, true); // Assuming you have a soft delete property
+                _dbSet.Update(entity);
                 await _context.SaveChangesAsync(); // Ensure the delete is saved asynchronously
             }
         }

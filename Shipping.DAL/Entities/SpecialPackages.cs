@@ -11,8 +11,10 @@ namespace Shipping.DAL.Entities
     public class SpecialPackages:BaseEntity
     {
         public int Id { get; set; }
+       
+        [ForeignKey("merchant")]
+        public int merchantID { get; set; }
 
-        //public int merchantID { get; set; }
         [ForeignKey("city")]
         public int cityID { get; set; }
         [ForeignKey("governorate")]
@@ -24,7 +26,7 @@ namespace Shipping.DAL.Entities
 
         public virtual Governorate governorate { get; set; } 
         
-
+        public virtual Merchant merchant { get; set; }
 
     }
 }

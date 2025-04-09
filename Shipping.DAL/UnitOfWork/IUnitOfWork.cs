@@ -1,4 +1,5 @@
 ﻿using Shipping.DAL.Entities;
+using Shipping.DAL.Entities.Identity;
 using Shipping.DAL.Persistent.Repositories;
 using Shipping.DAL.Persistent.Repositries;
 
@@ -16,6 +17,7 @@ public interface IUnitOfWork : IDisposable
     IGenericRepository<Branches> Branches { get; }
     IGenericRepository<ShippingType> ShippingTypes { get; }
     IGenericRepository<WeightPrice> WeightPrices { get; }
-
+    IGenericRepository<Merchant> Merchant { get; }
+    IGenericRepository<ApplicationUser> ApplicationUser { get; }
     Task<int> SaveChangesAsync();
 }

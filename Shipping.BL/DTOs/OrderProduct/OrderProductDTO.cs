@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Shipping.BL.DTOs.OrderProduct
 {
-    public class OrderProductDTO
+    public class ReadOrderProductDTO
     {
         public int ProductId { get; set; }
         public string ProductName { get; set; } = null!;

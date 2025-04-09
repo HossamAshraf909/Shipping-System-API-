@@ -1,0 +1,540 @@
+D:\Shipping System\Shipping.PL\bin\Debug\net9.0\appsettings.Development.json
+D:\Shipping System\Shipping.PL\bin\Debug\net9.0\appsettings.json
+D:\Shipping System\Shipping.PL\bin\Debug\net9.0\Shipping.PL.staticwebassets.endpoints.json
+D:\Shipping System\Shipping.PL\bin\Debug\net9.0\Shipping.PL.exe
+D:\Shipping System\Shipping.PL\bin\Debug\net9.0\Shipping.PL.deps.json
+D:\Shipping System\Shipping.PL\bin\Debug\net9.0\Shipping.PL.runtimeconfig.json
+D:\Shipping System\Shipping.PL\bin\Debug\net9.0\Shipping.PL.dll
+D:\Shipping System\Shipping.PL\bin\Debug\net9.0\Shipping.PL.pdb
+D:\Shipping System\Shipping.PL\bin\Debug\net9.0\AutoMapper.dll
+D:\Shipping System\Shipping.PL\bin\Debug\net9.0\Azure.Core.dll
+D:\Shipping System\Shipping.PL\bin\Debug\net9.0\Azure.Identity.dll
+D:\Shipping System\Shipping.PL\bin\Debug\net9.0\Microsoft.AspNetCore.OpenApi.dll
+D:\Shipping System\Shipping.PL\bin\Debug\net9.0\Microsoft.Bcl.AsyncInterfaces.dll
+D:\Shipping System\Shipping.PL\bin\Debug\net9.0\Microsoft.Data.SqlClient.dll
+D:\Shipping System\Shipping.PL\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.dll
+D:\Shipping System\Shipping.PL\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+D:\Shipping System\Shipping.PL\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.Relational.dll
+D:\Shipping System\Shipping.PL\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.SqlServer.dll
+D:\Shipping System\Shipping.PL\bin\Debug\net9.0\Microsoft.Extensions.Caching.Abstractions.dll
+D:\Shipping System\Shipping.PL\bin\Debug\net9.0\Microsoft.Extensions.Caching.Memory.dll
+D:\Shipping System\Shipping.PL\bin\Debug\net9.0\Microsoft.Extensions.Configuration.Abstractions.dll
+D:\Shipping System\Shipping.PL\bin\Debug\net9.0\Microsoft.Extensions.DependencyInjection.dll
+D:\Shipping System\Shipping.PL\bin\Debug\net9.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\Shipping System\Shipping.PL\bin\Debug\net9.0\Microsoft.Extensions.Logging.dll
+D:\Shipping System\Shipping.PL\bin\Debug\net9.0\Microsoft.Extensions.Logging.Abstractions.dll
+D:\Shipping System\Shipping.PL\bin\Debug\net9.0\Microsoft.Extensions.Options.dll
+D:\Shipping System\Shipping.PL\bin\Debug\net9.0\Microsoft.Extensions.Primitives.dll
+D:\Shipping System\Shipping.PL\bin\Debug\net9.0\Microsoft.Identity.Client.dll
+D:\Shipping System\Shipping.PL\bin\Debug\net9.0\Microsoft.Identity.Client.Extensions.Msal.dll
+D:\Shipping System\Shipping.PL\bin\Debug\net9.0\Microsoft.IdentityModel.Abstractions.dll
+D:\Shipping System\Shipping.PL\bin\Debug\net9.0\Microsoft.IdentityModel.JsonWebTokens.dll
+D:\Shipping System\Shipping.PL\bin\Debug\net9.0\Microsoft.IdentityModel.Logging.dll
+D:\Shipping System\Shipping.PL\bin\Debug\net9.0\Microsoft.IdentityModel.Protocols.dll
+D:\Shipping System\Shipping.PL\bin\Debug\net9.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+D:\Shipping System\Shipping.PL\bin\Debug\net9.0\Microsoft.IdentityModel.Tokens.dll
+D:\Shipping System\Shipping.PL\bin\Debug\net9.0\Microsoft.OpenApi.dll
+D:\Shipping System\Shipping.PL\bin\Debug\net9.0\Microsoft.SqlServer.Server.dll
+D:\Shipping System\Shipping.PL\bin\Debug\net9.0\Microsoft.Win32.SystemEvents.dll
+D:\Shipping System\Shipping.PL\bin\Debug\net9.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+D:\Shipping System\Shipping.PL\bin\Debug\net9.0\System.ClientModel.dll
+D:\Shipping System\Shipping.PL\bin\Debug\net9.0\System.Configuration.ConfigurationManager.dll
+D:\Shipping System\Shipping.PL\bin\Debug\net9.0\System.Drawing.Common.dll
+D:\Shipping System\Shipping.PL\bin\Debug\net9.0\System.Formats.Asn1.dll
+D:\Shipping System\Shipping.PL\bin\Debug\net9.0\System.IdentityModel.Tokens.Jwt.dll
+D:\Shipping System\Shipping.PL\bin\Debug\net9.0\System.Memory.Data.dll
+D:\Shipping System\Shipping.PL\bin\Debug\net9.0\System.Runtime.Caching.dll
+D:\Shipping System\Shipping.PL\bin\Debug\net9.0\System.Security.Cryptography.ProtectedData.dll
+D:\Shipping System\Shipping.PL\bin\Debug\net9.0\System.Security.Permissions.dll
+D:\Shipping System\Shipping.PL\bin\Debug\net9.0\System.Text.Json.dll
+D:\Shipping System\Shipping.PL\bin\Debug\net9.0\System.Windows.Extensions.dll
+D:\Shipping System\Shipping.PL\bin\Debug\net9.0\runtimes\unix\lib\net6.0\Microsoft.Data.SqlClient.dll
+D:\Shipping System\Shipping.PL\bin\Debug\net9.0\runtimes\win\lib\net6.0\Microsoft.Data.SqlClient.dll
+D:\Shipping System\Shipping.PL\bin\Debug\net9.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+D:\Shipping System\Shipping.PL\bin\Debug\net9.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+D:\Shipping System\Shipping.PL\bin\Debug\net9.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+D:\Shipping System\Shipping.PL\bin\Debug\net9.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+D:\Shipping System\Shipping.PL\bin\Debug\net9.0\runtimes\win\lib\net6.0\Microsoft.Win32.SystemEvents.dll
+D:\Shipping System\Shipping.PL\bin\Debug\net9.0\runtimes\unix\lib\net6.0\System.Drawing.Common.dll
+D:\Shipping System\Shipping.PL\bin\Debug\net9.0\runtimes\win\lib\net6.0\System.Drawing.Common.dll
+D:\Shipping System\Shipping.PL\bin\Debug\net9.0\runtimes\win\lib\net6.0\System.Runtime.Caching.dll
+D:\Shipping System\Shipping.PL\bin\Debug\net9.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
+D:\Shipping System\Shipping.PL\bin\Debug\net9.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
+D:\Shipping System\Shipping.PL\bin\Debug\net9.0\Shipping.BL.dll
+D:\Shipping System\Shipping.PL\bin\Debug\net9.0\Shipping.DAL.dll
+D:\Shipping System\Shipping.PL\bin\Debug\net9.0\Shipping.BL.pdb
+D:\Shipping System\Shipping.PL\bin\Debug\net9.0\Shipping.DAL.pdb
+D:\Shipping System\Shipping.PL\obj\Debug\net9.0\Shipping.PL.csproj.AssemblyReference.cache
+D:\Shipping System\Shipping.PL\obj\Debug\net9.0\Shipping.PL.GeneratedMSBuildEditorConfig.editorconfig
+D:\Shipping System\Shipping.PL\obj\Debug\net9.0\Shipping.PL.AssemblyInfoInputs.cache
+D:\Shipping System\Shipping.PL\obj\Debug\net9.0\Shipping.PL.AssemblyInfo.cs
+D:\Shipping System\Shipping.PL\obj\Debug\net9.0\Shipping.PL.csproj.CoreCompileInputs.cache
+D:\Shipping System\Shipping.PL\obj\Debug\net9.0\Shipping.PL.MvcApplicationPartsAssemblyInfo.cs
+D:\Shipping System\Shipping.PL\obj\Debug\net9.0\Shipping.PL.MvcApplicationPartsAssemblyInfo.cache
+D:\Shipping System\Shipping.PL\obj\Debug\net9.0\scopedcss\bundle\Shipping.PL.styles.css
+D:\Shipping System\Shipping.PL\obj\Debug\net9.0\staticwebassets.build.json
+D:\Shipping System\Shipping.PL\obj\Debug\net9.0\staticwebassets.development.json
+D:\Shipping System\Shipping.PL\obj\Debug\net9.0\staticwebassets.build.endpoints.json
+D:\Shipping System\Shipping.PL\obj\Debug\net9.0\staticwebassets\msbuild.Shipping.PL.Microsoft.AspNetCore.StaticWebAssets.props
+D:\Shipping System\Shipping.PL\obj\Debug\net9.0\staticwebassets\msbuild.Shipping.PL.Microsoft.AspNetCore.StaticWebAssetEndpoints.props
+D:\Shipping System\Shipping.PL\obj\Debug\net9.0\staticwebassets\msbuild.build.Shipping.PL.props
+D:\Shipping System\Shipping.PL\obj\Debug\net9.0\staticwebassets\msbuild.buildMultiTargeting.Shipping.PL.props
+D:\Shipping System\Shipping.PL\obj\Debug\net9.0\staticwebassets\msbuild.buildTransitive.Shipping.PL.props
+D:\Shipping System\Shipping.PL\obj\Debug\net9.0\staticwebassets.pack.json
+D:\Shipping System\Shipping.PL\obj\Debug\net9.0\staticwebassets.upToDateCheck.txt
+D:\Shipping System\Shipping.PL\obj\Debug\net9.0\Shipping.EEFF201A.Up2Date
+D:\Shipping System\Shipping.PL\obj\Debug\net9.0\Shipping.PL.dll
+D:\Shipping System\Shipping.PL\obj\Debug\net9.0\refint\Shipping.PL.dll
+D:\Shipping System\Shipping.PL\obj\Debug\net9.0\Shipping.PL.pdb
+D:\Shipping System\Shipping.PL\obj\Debug\net9.0\Shipping.PL.genruntimeconfig.cache
+D:\Shipping System\Shipping.PL\obj\Debug\net9.0\ref\Shipping.PL.dll
+D:\Shipping System\Shipping.PL\obj\Debug\net9.0\Shipping.PL.sourcelink.json
+D:\Shipping System\Shipping.PL\bin\Debug\net9.0\Castle.Core.dll
+D:\Shipping System\Shipping.PL\bin\Debug\net9.0\Microsoft.AspNetCore.Cryptography.Internal.dll
+D:\Shipping System\Shipping.PL\bin\Debug\net9.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+D:\Shipping System\Shipping.PL\bin\Debug\net9.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+D:\Shipping System\Shipping.PL\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.Proxies.dll
+D:\Shipping System\Shipping.PL\bin\Debug\net9.0\Microsoft.Extensions.Identity.Core.dll
+D:\Shipping System\Shipping.PL\bin\Debug\net9.0\Microsoft.Extensions.Identity.Stores.dll
+D:\Shipping System\Shipping.PL\bin\Debug\net9.0\Humanizer.dll
+D:\Shipping System\Shipping.PL\bin\Debug\net9.0\Microsoft.Build.Locator.dll
+D:\Shipping System\Shipping.PL\bin\Debug\net9.0\Microsoft.CodeAnalysis.dll
+D:\Shipping System\Shipping.PL\bin\Debug\net9.0\Microsoft.CodeAnalysis.CSharp.dll
+D:\Shipping System\Shipping.PL\bin\Debug\net9.0\Microsoft.CodeAnalysis.CSharp.Workspaces.dll
+D:\Shipping System\Shipping.PL\bin\Debug\net9.0\Microsoft.CodeAnalysis.Workspaces.dll
+D:\Shipping System\Shipping.PL\bin\Debug\net9.0\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.dll
+D:\Shipping System\Shipping.PL\bin\Debug\net9.0\Microsoft.CodeAnalysis.Workspaces.MSBuild.dll
+D:\Shipping System\Shipping.PL\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.Design.dll
+D:\Shipping System\Shipping.PL\bin\Debug\net9.0\Microsoft.Extensions.DependencyModel.dll
+D:\Shipping System\Shipping.PL\bin\Debug\net9.0\Mono.TextTemplating.dll
+D:\Shipping System\Shipping.PL\bin\Debug\net9.0\System.CodeDom.dll
+D:\Shipping System\Shipping.PL\bin\Debug\net9.0\System.Composition.AttributedModel.dll
+D:\Shipping System\Shipping.PL\bin\Debug\net9.0\System.Composition.Convention.dll
+D:\Shipping System\Shipping.PL\bin\Debug\net9.0\System.Composition.Hosting.dll
+D:\Shipping System\Shipping.PL\bin\Debug\net9.0\System.Composition.Runtime.dll
+D:\Shipping System\Shipping.PL\bin\Debug\net9.0\System.Composition.TypedParts.dll
+D:\Shipping System\Shipping.PL\bin\Debug\net9.0\cs\Microsoft.CodeAnalysis.resources.dll
+D:\Shipping System\Shipping.PL\bin\Debug\net9.0\de\Microsoft.CodeAnalysis.resources.dll
+D:\Shipping System\Shipping.PL\bin\Debug\net9.0\es\Microsoft.CodeAnalysis.resources.dll
+D:\Shipping System\Shipping.PL\bin\Debug\net9.0\fr\Microsoft.CodeAnalysis.resources.dll
+D:\Shipping System\Shipping.PL\bin\Debug\net9.0\it\Microsoft.CodeAnalysis.resources.dll
+D:\Shipping System\Shipping.PL\bin\Debug\net9.0\ja\Microsoft.CodeAnalysis.resources.dll
+D:\Shipping System\Shipping.PL\bin\Debug\net9.0\ko\Microsoft.CodeAnalysis.resources.dll
+D:\Shipping System\Shipping.PL\bin\Debug\net9.0\pl\Microsoft.CodeAnalysis.resources.dll
+D:\Shipping System\Shipping.PL\bin\Debug\net9.0\pt-BR\Microsoft.CodeAnalysis.resources.dll
+D:\Shipping System\Shipping.PL\bin\Debug\net9.0\ru\Microsoft.CodeAnalysis.resources.dll
+D:\Shipping System\Shipping.PL\bin\Debug\net9.0\tr\Microsoft.CodeAnalysis.resources.dll
+D:\Shipping System\Shipping.PL\bin\Debug\net9.0\zh-Hans\Microsoft.CodeAnalysis.resources.dll
+D:\Shipping System\Shipping.PL\bin\Debug\net9.0\zh-Hant\Microsoft.CodeAnalysis.resources.dll
+D:\Shipping System\Shipping.PL\bin\Debug\net9.0\cs\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Shipping System\Shipping.PL\bin\Debug\net9.0\de\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Shipping System\Shipping.PL\bin\Debug\net9.0\es\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Shipping System\Shipping.PL\bin\Debug\net9.0\fr\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Shipping System\Shipping.PL\bin\Debug\net9.0\it\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Shipping System\Shipping.PL\bin\Debug\net9.0\ja\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Shipping System\Shipping.PL\bin\Debug\net9.0\ko\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Shipping System\Shipping.PL\bin\Debug\net9.0\pl\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Shipping System\Shipping.PL\bin\Debug\net9.0\pt-BR\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Shipping System\Shipping.PL\bin\Debug\net9.0\ru\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Shipping System\Shipping.PL\bin\Debug\net9.0\tr\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Shipping System\Shipping.PL\bin\Debug\net9.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Shipping System\Shipping.PL\bin\Debug\net9.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Shipping System\Shipping.PL\bin\Debug\net9.0\cs\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Shipping System\Shipping.PL\bin\Debug\net9.0\de\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Shipping System\Shipping.PL\bin\Debug\net9.0\es\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Shipping System\Shipping.PL\bin\Debug\net9.0\fr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Shipping System\Shipping.PL\bin\Debug\net9.0\it\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Shipping System\Shipping.PL\bin\Debug\net9.0\ja\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Shipping System\Shipping.PL\bin\Debug\net9.0\ko\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Shipping System\Shipping.PL\bin\Debug\net9.0\pl\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Shipping System\Shipping.PL\bin\Debug\net9.0\pt-BR\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Shipping System\Shipping.PL\bin\Debug\net9.0\ru\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Shipping System\Shipping.PL\bin\Debug\net9.0\tr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Shipping System\Shipping.PL\bin\Debug\net9.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Shipping System\Shipping.PL\bin\Debug\net9.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Shipping System\Shipping.PL\bin\Debug\net9.0\cs\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Shipping System\Shipping.PL\bin\Debug\net9.0\de\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Shipping System\Shipping.PL\bin\Debug\net9.0\es\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Shipping System\Shipping.PL\bin\Debug\net9.0\fr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Shipping System\Shipping.PL\bin\Debug\net9.0\it\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Shipping System\Shipping.PL\bin\Debug\net9.0\ja\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Shipping System\Shipping.PL\bin\Debug\net9.0\ko\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Shipping System\Shipping.PL\bin\Debug\net9.0\pl\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Shipping System\Shipping.PL\bin\Debug\net9.0\pt-BR\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Shipping System\Shipping.PL\bin\Debug\net9.0\ru\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Shipping System\Shipping.PL\bin\Debug\net9.0\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Shipping System\Shipping.PL\bin\Debug\net9.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Shipping System\Shipping.PL\bin\Debug\net9.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Shipping System\Shipping.PL\bin\Debug\net9.0\cs\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+D:\Shipping System\Shipping.PL\bin\Debug\net9.0\de\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+D:\Shipping System\Shipping.PL\bin\Debug\net9.0\es\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+D:\Shipping System\Shipping.PL\bin\Debug\net9.0\fr\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+D:\Shipping System\Shipping.PL\bin\Debug\net9.0\it\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+D:\Shipping System\Shipping.PL\bin\Debug\net9.0\ja\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+D:\Shipping System\Shipping.PL\bin\Debug\net9.0\ko\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+D:\Shipping System\Shipping.PL\bin\Debug\net9.0\pl\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+D:\Shipping System\Shipping.PL\bin\Debug\net9.0\pt-BR\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+D:\Shipping System\Shipping.PL\bin\Debug\net9.0\ru\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+D:\Shipping System\Shipping.PL\bin\Debug\net9.0\tr\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+D:\Shipping System\Shipping.PL\bin\Debug\net9.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+D:\Shipping System\Shipping.PL\bin\Debug\net9.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+D:\shippingsys\Shipping.PL\obj\Debug\net9.0\Shipping.PL.csproj.AssemblyReference.cache
+D:\shippingsys\Shipping.PL\obj\Debug\net9.0\Shipping.PL.GeneratedMSBuildEditorConfig.editorconfig
+D:\shippingsys\Shipping.PL\obj\Debug\net9.0\Shipping.PL.AssemblyInfoInputs.cache
+D:\shippingsys\Shipping.PL\obj\Debug\net9.0\Shipping.PL.AssemblyInfo.cs
+D:\shippingsys\Shipping.PL\obj\Debug\net9.0\Shipping.PL.csproj.CoreCompileInputs.cache
+D:\shippingsys\Shipping.PL\obj\Debug\net9.0\Shipping.PL.MvcApplicationPartsAssemblyInfo.cs
+D:\shippingsys\Shipping.PL\obj\Debug\net9.0\Shipping.PL.MvcApplicationPartsAssemblyInfo.cache
+D:\shippingsys\Shipping.PL\obj\Debug\net9.0\Shipping.PL.sourcelink.json
+D:\shippingsys\Shipping.PL\obj\Debug\net9.0\Shipping.PL.dll
+D:\shippingsys\Shipping.PL\obj\Debug\net9.0\refint\Shipping.PL.dll
+D:\shippingsys\Shipping.PL\obj\Debug\net9.0\Shipping.PL.pdb
+D:\shippingsys\Shipping.PL\bin\Debug\net9.0\appsettings.Development.json
+D:\shippingsys\Shipping.PL\bin\Debug\net9.0\appsettings.json
+D:\shippingsys\Shipping.PL\bin\Debug\net9.0\Shipping.PL.staticwebassets.endpoints.json
+D:\shippingsys\Shipping.PL\bin\Debug\net9.0\Shipping.PL.exe
+D:\shippingsys\Shipping.PL\bin\Debug\net9.0\Shipping.PL.deps.json
+D:\shippingsys\Shipping.PL\bin\Debug\net9.0\Shipping.PL.runtimeconfig.json
+D:\shippingsys\Shipping.PL\bin\Debug\net9.0\Shipping.PL.dll
+D:\shippingsys\Shipping.PL\bin\Debug\net9.0\Shipping.PL.pdb
+D:\shippingsys\Shipping.PL\bin\Debug\net9.0\AutoMapper.dll
+D:\shippingsys\Shipping.PL\bin\Debug\net9.0\Azure.Core.dll
+D:\shippingsys\Shipping.PL\bin\Debug\net9.0\Azure.Identity.dll
+D:\shippingsys\Shipping.PL\bin\Debug\net9.0\Castle.Core.dll
+D:\shippingsys\Shipping.PL\bin\Debug\net9.0\Humanizer.dll
+D:\shippingsys\Shipping.PL\bin\Debug\net9.0\Microsoft.AspNetCore.Cryptography.Internal.dll
+D:\shippingsys\Shipping.PL\bin\Debug\net9.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+D:\shippingsys\Shipping.PL\bin\Debug\net9.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+D:\shippingsys\Shipping.PL\bin\Debug\net9.0\Microsoft.AspNetCore.OpenApi.dll
+D:\shippingsys\Shipping.PL\bin\Debug\net9.0\Microsoft.Bcl.AsyncInterfaces.dll
+D:\shippingsys\Shipping.PL\bin\Debug\net9.0\Microsoft.Build.Locator.dll
+D:\shippingsys\Shipping.PL\bin\Debug\net9.0\Microsoft.CodeAnalysis.dll
+D:\shippingsys\Shipping.PL\bin\Debug\net9.0\Microsoft.CodeAnalysis.CSharp.dll
+D:\shippingsys\Shipping.PL\bin\Debug\net9.0\Microsoft.CodeAnalysis.CSharp.Workspaces.dll
+D:\shippingsys\Shipping.PL\bin\Debug\net9.0\Microsoft.CodeAnalysis.Workspaces.dll
+D:\shippingsys\Shipping.PL\bin\Debug\net9.0\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.dll
+D:\shippingsys\Shipping.PL\bin\Debug\net9.0\Microsoft.CodeAnalysis.Workspaces.MSBuild.dll
+D:\shippingsys\Shipping.PL\bin\Debug\net9.0\Microsoft.Data.SqlClient.dll
+D:\shippingsys\Shipping.PL\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.dll
+D:\shippingsys\Shipping.PL\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+D:\shippingsys\Shipping.PL\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.Design.dll
+D:\shippingsys\Shipping.PL\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.Proxies.dll
+D:\shippingsys\Shipping.PL\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.Relational.dll
+D:\shippingsys\Shipping.PL\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.SqlServer.dll
+D:\shippingsys\Shipping.PL\bin\Debug\net9.0\Microsoft.Extensions.Caching.Abstractions.dll
+D:\shippingsys\Shipping.PL\bin\Debug\net9.0\Microsoft.Extensions.Caching.Memory.dll
+D:\shippingsys\Shipping.PL\bin\Debug\net9.0\Microsoft.Extensions.Configuration.Abstractions.dll
+D:\shippingsys\Shipping.PL\bin\Debug\net9.0\Microsoft.Extensions.DependencyInjection.dll
+D:\shippingsys\Shipping.PL\bin\Debug\net9.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\shippingsys\Shipping.PL\bin\Debug\net9.0\Microsoft.Extensions.DependencyModel.dll
+D:\shippingsys\Shipping.PL\bin\Debug\net9.0\Microsoft.Extensions.Identity.Core.dll
+D:\shippingsys\Shipping.PL\bin\Debug\net9.0\Microsoft.Extensions.Identity.Stores.dll
+D:\shippingsys\Shipping.PL\bin\Debug\net9.0\Microsoft.Extensions.Logging.dll
+D:\shippingsys\Shipping.PL\bin\Debug\net9.0\Microsoft.Extensions.Logging.Abstractions.dll
+D:\shippingsys\Shipping.PL\bin\Debug\net9.0\Microsoft.Extensions.Options.dll
+D:\shippingsys\Shipping.PL\bin\Debug\net9.0\Microsoft.Extensions.Primitives.dll
+D:\shippingsys\Shipping.PL\bin\Debug\net9.0\Microsoft.Identity.Client.dll
+D:\shippingsys\Shipping.PL\bin\Debug\net9.0\Microsoft.Identity.Client.Extensions.Msal.dll
+D:\shippingsys\Shipping.PL\bin\Debug\net9.0\Microsoft.IdentityModel.Abstractions.dll
+D:\shippingsys\Shipping.PL\bin\Debug\net9.0\Microsoft.IdentityModel.JsonWebTokens.dll
+D:\shippingsys\Shipping.PL\bin\Debug\net9.0\Microsoft.IdentityModel.Logging.dll
+D:\shippingsys\Shipping.PL\bin\Debug\net9.0\Microsoft.IdentityModel.Protocols.dll
+D:\shippingsys\Shipping.PL\bin\Debug\net9.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+D:\shippingsys\Shipping.PL\bin\Debug\net9.0\Microsoft.IdentityModel.Tokens.dll
+D:\shippingsys\Shipping.PL\bin\Debug\net9.0\Microsoft.OpenApi.dll
+D:\shippingsys\Shipping.PL\bin\Debug\net9.0\Microsoft.SqlServer.Server.dll
+D:\shippingsys\Shipping.PL\bin\Debug\net9.0\Microsoft.Win32.SystemEvents.dll
+D:\shippingsys\Shipping.PL\bin\Debug\net9.0\Mono.TextTemplating.dll
+D:\shippingsys\Shipping.PL\bin\Debug\net9.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+D:\shippingsys\Shipping.PL\bin\Debug\net9.0\System.ClientModel.dll
+D:\shippingsys\Shipping.PL\bin\Debug\net9.0\System.CodeDom.dll
+D:\shippingsys\Shipping.PL\bin\Debug\net9.0\System.Composition.AttributedModel.dll
+D:\shippingsys\Shipping.PL\bin\Debug\net9.0\System.Composition.Convention.dll
+D:\shippingsys\Shipping.PL\bin\Debug\net9.0\System.Composition.Hosting.dll
+D:\shippingsys\Shipping.PL\bin\Debug\net9.0\System.Composition.Runtime.dll
+D:\shippingsys\Shipping.PL\bin\Debug\net9.0\System.Composition.TypedParts.dll
+D:\shippingsys\Shipping.PL\bin\Debug\net9.0\System.Configuration.ConfigurationManager.dll
+D:\shippingsys\Shipping.PL\bin\Debug\net9.0\System.Drawing.Common.dll
+D:\shippingsys\Shipping.PL\bin\Debug\net9.0\System.Formats.Asn1.dll
+D:\shippingsys\Shipping.PL\bin\Debug\net9.0\System.IdentityModel.Tokens.Jwt.dll
+D:\shippingsys\Shipping.PL\bin\Debug\net9.0\System.Memory.Data.dll
+D:\shippingsys\Shipping.PL\bin\Debug\net9.0\System.Runtime.Caching.dll
+D:\shippingsys\Shipping.PL\bin\Debug\net9.0\System.Security.Cryptography.ProtectedData.dll
+D:\shippingsys\Shipping.PL\bin\Debug\net9.0\System.Security.Permissions.dll
+D:\shippingsys\Shipping.PL\bin\Debug\net9.0\System.Text.Json.dll
+D:\shippingsys\Shipping.PL\bin\Debug\net9.0\System.Windows.Extensions.dll
+D:\shippingsys\Shipping.PL\bin\Debug\net9.0\cs\Microsoft.CodeAnalysis.resources.dll
+D:\shippingsys\Shipping.PL\bin\Debug\net9.0\de\Microsoft.CodeAnalysis.resources.dll
+D:\shippingsys\Shipping.PL\bin\Debug\net9.0\es\Microsoft.CodeAnalysis.resources.dll
+D:\shippingsys\Shipping.PL\bin\Debug\net9.0\fr\Microsoft.CodeAnalysis.resources.dll
+D:\shippingsys\Shipping.PL\bin\Debug\net9.0\it\Microsoft.CodeAnalysis.resources.dll
+D:\shippingsys\Shipping.PL\bin\Debug\net9.0\ja\Microsoft.CodeAnalysis.resources.dll
+D:\shippingsys\Shipping.PL\bin\Debug\net9.0\ko\Microsoft.CodeAnalysis.resources.dll
+D:\shippingsys\Shipping.PL\bin\Debug\net9.0\pl\Microsoft.CodeAnalysis.resources.dll
+D:\shippingsys\Shipping.PL\bin\Debug\net9.0\pt-BR\Microsoft.CodeAnalysis.resources.dll
+D:\shippingsys\Shipping.PL\bin\Debug\net9.0\ru\Microsoft.CodeAnalysis.resources.dll
+D:\shippingsys\Shipping.PL\bin\Debug\net9.0\tr\Microsoft.CodeAnalysis.resources.dll
+D:\shippingsys\Shipping.PL\bin\Debug\net9.0\zh-Hans\Microsoft.CodeAnalysis.resources.dll
+D:\shippingsys\Shipping.PL\bin\Debug\net9.0\zh-Hant\Microsoft.CodeAnalysis.resources.dll
+D:\shippingsys\Shipping.PL\bin\Debug\net9.0\cs\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\shippingsys\Shipping.PL\bin\Debug\net9.0\de\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\shippingsys\Shipping.PL\bin\Debug\net9.0\es\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\shippingsys\Shipping.PL\bin\Debug\net9.0\fr\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\shippingsys\Shipping.PL\bin\Debug\net9.0\it\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\shippingsys\Shipping.PL\bin\Debug\net9.0\ja\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\shippingsys\Shipping.PL\bin\Debug\net9.0\ko\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\shippingsys\Shipping.PL\bin\Debug\net9.0\pl\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\shippingsys\Shipping.PL\bin\Debug\net9.0\pt-BR\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\shippingsys\Shipping.PL\bin\Debug\net9.0\ru\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\shippingsys\Shipping.PL\bin\Debug\net9.0\tr\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\shippingsys\Shipping.PL\bin\Debug\net9.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\shippingsys\Shipping.PL\bin\Debug\net9.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\shippingsys\Shipping.PL\bin\Debug\net9.0\cs\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\shippingsys\Shipping.PL\bin\Debug\net9.0\de\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\shippingsys\Shipping.PL\bin\Debug\net9.0\es\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\shippingsys\Shipping.PL\bin\Debug\net9.0\fr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\shippingsys\Shipping.PL\bin\Debug\net9.0\it\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\shippingsys\Shipping.PL\bin\Debug\net9.0\ja\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\shippingsys\Shipping.PL\bin\Debug\net9.0\ko\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\shippingsys\Shipping.PL\bin\Debug\net9.0\pl\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\shippingsys\Shipping.PL\bin\Debug\net9.0\pt-BR\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\shippingsys\Shipping.PL\bin\Debug\net9.0\ru\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\shippingsys\Shipping.PL\bin\Debug\net9.0\tr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\shippingsys\Shipping.PL\bin\Debug\net9.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\shippingsys\Shipping.PL\bin\Debug\net9.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\shippingsys\Shipping.PL\bin\Debug\net9.0\cs\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\shippingsys\Shipping.PL\bin\Debug\net9.0\de\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\shippingsys\Shipping.PL\bin\Debug\net9.0\es\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\shippingsys\Shipping.PL\bin\Debug\net9.0\fr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\shippingsys\Shipping.PL\bin\Debug\net9.0\it\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\shippingsys\Shipping.PL\bin\Debug\net9.0\ja\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\shippingsys\Shipping.PL\bin\Debug\net9.0\ko\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\shippingsys\Shipping.PL\bin\Debug\net9.0\pl\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\shippingsys\Shipping.PL\bin\Debug\net9.0\pt-BR\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\shippingsys\Shipping.PL\bin\Debug\net9.0\ru\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\shippingsys\Shipping.PL\bin\Debug\net9.0\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\shippingsys\Shipping.PL\bin\Debug\net9.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\shippingsys\Shipping.PL\bin\Debug\net9.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\shippingsys\Shipping.PL\bin\Debug\net9.0\cs\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+D:\shippingsys\Shipping.PL\bin\Debug\net9.0\de\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+D:\shippingsys\Shipping.PL\bin\Debug\net9.0\es\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+D:\shippingsys\Shipping.PL\bin\Debug\net9.0\fr\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+D:\shippingsys\Shipping.PL\bin\Debug\net9.0\it\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+D:\shippingsys\Shipping.PL\bin\Debug\net9.0\ja\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+D:\shippingsys\Shipping.PL\bin\Debug\net9.0\ko\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+D:\shippingsys\Shipping.PL\bin\Debug\net9.0\pl\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+D:\shippingsys\Shipping.PL\bin\Debug\net9.0\pt-BR\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+D:\shippingsys\Shipping.PL\bin\Debug\net9.0\ru\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+D:\shippingsys\Shipping.PL\bin\Debug\net9.0\tr\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+D:\shippingsys\Shipping.PL\bin\Debug\net9.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+D:\shippingsys\Shipping.PL\bin\Debug\net9.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+D:\shippingsys\Shipping.PL\bin\Debug\net9.0\runtimes\unix\lib\net6.0\Microsoft.Data.SqlClient.dll
+D:\shippingsys\Shipping.PL\bin\Debug\net9.0\runtimes\win\lib\net6.0\Microsoft.Data.SqlClient.dll
+D:\shippingsys\Shipping.PL\bin\Debug\net9.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+D:\shippingsys\Shipping.PL\bin\Debug\net9.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+D:\shippingsys\Shipping.PL\bin\Debug\net9.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+D:\shippingsys\Shipping.PL\bin\Debug\net9.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+D:\shippingsys\Shipping.PL\bin\Debug\net9.0\runtimes\win\lib\net6.0\Microsoft.Win32.SystemEvents.dll
+D:\shippingsys\Shipping.PL\bin\Debug\net9.0\runtimes\unix\lib\net6.0\System.Drawing.Common.dll
+D:\shippingsys\Shipping.PL\bin\Debug\net9.0\runtimes\win\lib\net6.0\System.Drawing.Common.dll
+D:\shippingsys\Shipping.PL\bin\Debug\net9.0\runtimes\win\lib\net6.0\System.Runtime.Caching.dll
+D:\shippingsys\Shipping.PL\bin\Debug\net9.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
+D:\shippingsys\Shipping.PL\bin\Debug\net9.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
+D:\shippingsys\Shipping.PL\bin\Debug\net9.0\Shipping.BL.dll
+D:\shippingsys\Shipping.PL\bin\Debug\net9.0\Shipping.DAL.dll
+D:\shippingsys\Shipping.PL\bin\Debug\net9.0\Shipping.BL.pdb
+D:\shippingsys\Shipping.PL\bin\Debug\net9.0\Shipping.DAL.pdb
+D:\shippingsys\Shipping.PL\obj\Debug\net9.0\scopedcss\bundle\Shipping.PL.styles.css
+D:\shippingsys\Shipping.PL\obj\Debug\net9.0\staticwebassets.build.json
+D:\shippingsys\Shipping.PL\obj\Debug\net9.0\staticwebassets.development.json
+D:\shippingsys\Shipping.PL\obj\Debug\net9.0\staticwebassets.build.endpoints.json
+D:\shippingsys\Shipping.PL\obj\Debug\net9.0\staticwebassets\msbuild.Shipping.PL.Microsoft.AspNetCore.StaticWebAssets.props
+D:\shippingsys\Shipping.PL\obj\Debug\net9.0\staticwebassets\msbuild.Shipping.PL.Microsoft.AspNetCore.StaticWebAssetEndpoints.props
+D:\shippingsys\Shipping.PL\obj\Debug\net9.0\staticwebassets\msbuild.build.Shipping.PL.props
+D:\shippingsys\Shipping.PL\obj\Debug\net9.0\staticwebassets\msbuild.buildMultiTargeting.Shipping.PL.props
+D:\shippingsys\Shipping.PL\obj\Debug\net9.0\staticwebassets\msbuild.buildTransitive.Shipping.PL.props
+D:\shippingsys\Shipping.PL\obj\Debug\net9.0\staticwebassets.pack.json
+D:\shippingsys\Shipping.PL\obj\Debug\net9.0\staticwebassets.upToDateCheck.txt
+D:\shippingsys\Shipping.PL\obj\Debug\net9.0\Shipping.EEFF201A.Up2Date
+D:\shippingsys\Shipping.PL\obj\Debug\net9.0\Shipping.PL.genruntimeconfig.cache
+D:\shippingsys\Shipping.PL\obj\Debug\net9.0\ref\Shipping.PL.dll
+C:\Users\emans\source\repos\Shipping\Shipping-System-API-\Shipping.PL\obj\Debug\net9.0\Shipping.PL.csproj.AssemblyReference.cache
+C:\Users\emans\source\repos\Shipping\Shipping-System-API-\Shipping.PL\obj\Debug\net9.0\Shipping.PL.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\emans\source\repos\Shipping\Shipping-System-API-\Shipping.PL\obj\Debug\net9.0\Shipping.PL.AssemblyInfoInputs.cache
+C:\Users\emans\source\repos\Shipping\Shipping-System-API-\Shipping.PL\obj\Debug\net9.0\Shipping.PL.AssemblyInfo.cs
+C:\Users\emans\source\repos\Shipping\Shipping-System-API-\Shipping.PL\obj\Debug\net9.0\Shipping.PL.csproj.CoreCompileInputs.cache
+C:\Users\emans\source\repos\Shipping\Shipping-System-API-\Shipping.PL\obj\Debug\net9.0\Shipping.PL.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\emans\source\repos\Shipping\Shipping-System-API-\Shipping.PL\obj\Debug\net9.0\Shipping.PL.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\emans\source\repos\Shipping\Shipping-System-API-\Shipping.PL\obj\Debug\net9.0\Shipping.PL.sourcelink.json
+C:\Users\emans\source\repos\Shipping\Shipping-System-API-\Shipping.PL\obj\Debug\net9.0\Shipping.PL.dll
+C:\Users\emans\source\repos\Shipping\Shipping-System-API-\Shipping.PL\obj\Debug\net9.0\refint\Shipping.PL.dll
+C:\Users\emans\source\repos\Shipping\Shipping-System-API-\Shipping.PL\obj\Debug\net9.0\Shipping.PL.pdb
+C:\Users\emans\source\repos\Shipping\Shipping-System-API-\Shipping.PL\bin\Debug\net9.0\appsettings.Development.json
+C:\Users\emans\source\repos\Shipping\Shipping-System-API-\Shipping.PL\bin\Debug\net9.0\appsettings.json
+C:\Users\emans\source\repos\Shipping\Shipping-System-API-\Shipping.PL\bin\Debug\net9.0\Shipping.PL.staticwebassets.endpoints.json
+C:\Users\emans\source\repos\Shipping\Shipping-System-API-\Shipping.PL\bin\Debug\net9.0\Shipping.PL.exe
+C:\Users\emans\source\repos\Shipping\Shipping-System-API-\Shipping.PL\bin\Debug\net9.0\Shipping.PL.deps.json
+C:\Users\emans\source\repos\Shipping\Shipping-System-API-\Shipping.PL\bin\Debug\net9.0\Shipping.PL.runtimeconfig.json
+C:\Users\emans\source\repos\Shipping\Shipping-System-API-\Shipping.PL\bin\Debug\net9.0\Shipping.PL.dll
+C:\Users\emans\source\repos\Shipping\Shipping-System-API-\Shipping.PL\bin\Debug\net9.0\Shipping.PL.pdb
+C:\Users\emans\source\repos\Shipping\Shipping-System-API-\Shipping.PL\bin\Debug\net9.0\AutoMapper.dll
+C:\Users\emans\source\repos\Shipping\Shipping-System-API-\Shipping.PL\bin\Debug\net9.0\Azure.Core.dll
+C:\Users\emans\source\repos\Shipping\Shipping-System-API-\Shipping.PL\bin\Debug\net9.0\Azure.Identity.dll
+C:\Users\emans\source\repos\Shipping\Shipping-System-API-\Shipping.PL\bin\Debug\net9.0\Castle.Core.dll
+C:\Users\emans\source\repos\Shipping\Shipping-System-API-\Shipping.PL\bin\Debug\net9.0\Humanizer.dll
+C:\Users\emans\source\repos\Shipping\Shipping-System-API-\Shipping.PL\bin\Debug\net9.0\Microsoft.AspNetCore.Cryptography.Internal.dll
+C:\Users\emans\source\repos\Shipping\Shipping-System-API-\Shipping.PL\bin\Debug\net9.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+C:\Users\emans\source\repos\Shipping\Shipping-System-API-\Shipping.PL\bin\Debug\net9.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+C:\Users\emans\source\repos\Shipping\Shipping-System-API-\Shipping.PL\bin\Debug\net9.0\Microsoft.AspNetCore.OpenApi.dll
+C:\Users\emans\source\repos\Shipping\Shipping-System-API-\Shipping.PL\bin\Debug\net9.0\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\emans\source\repos\Shipping\Shipping-System-API-\Shipping.PL\bin\Debug\net9.0\Microsoft.Build.Locator.dll
+C:\Users\emans\source\repos\Shipping\Shipping-System-API-\Shipping.PL\bin\Debug\net9.0\Microsoft.CodeAnalysis.dll
+C:\Users\emans\source\repos\Shipping\Shipping-System-API-\Shipping.PL\bin\Debug\net9.0\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\emans\source\repos\Shipping\Shipping-System-API-\Shipping.PL\bin\Debug\net9.0\Microsoft.CodeAnalysis.CSharp.Workspaces.dll
+C:\Users\emans\source\repos\Shipping\Shipping-System-API-\Shipping.PL\bin\Debug\net9.0\Microsoft.CodeAnalysis.Workspaces.dll
+C:\Users\emans\source\repos\Shipping\Shipping-System-API-\Shipping.PL\bin\Debug\net9.0\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.dll
+C:\Users\emans\source\repos\Shipping\Shipping-System-API-\Shipping.PL\bin\Debug\net9.0\Microsoft.CodeAnalysis.Workspaces.MSBuild.dll
+C:\Users\emans\source\repos\Shipping\Shipping-System-API-\Shipping.PL\bin\Debug\net9.0\Microsoft.Data.SqlClient.dll
+C:\Users\emans\source\repos\Shipping\Shipping-System-API-\Shipping.PL\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.dll
+C:\Users\emans\source\repos\Shipping\Shipping-System-API-\Shipping.PL\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\emans\source\repos\Shipping\Shipping-System-API-\Shipping.PL\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.Design.dll
+C:\Users\emans\source\repos\Shipping\Shipping-System-API-\Shipping.PL\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.Proxies.dll
+C:\Users\emans\source\repos\Shipping\Shipping-System-API-\Shipping.PL\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\emans\source\repos\Shipping\Shipping-System-API-\Shipping.PL\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.SqlServer.dll
+C:\Users\emans\source\repos\Shipping\Shipping-System-API-\Shipping.PL\bin\Debug\net9.0\Microsoft.Extensions.Caching.Abstractions.dll
+C:\Users\emans\source\repos\Shipping\Shipping-System-API-\Shipping.PL\bin\Debug\net9.0\Microsoft.Extensions.Caching.Memory.dll
+C:\Users\emans\source\repos\Shipping\Shipping-System-API-\Shipping.PL\bin\Debug\net9.0\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\Users\emans\source\repos\Shipping\Shipping-System-API-\Shipping.PL\bin\Debug\net9.0\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\emans\source\repos\Shipping\Shipping-System-API-\Shipping.PL\bin\Debug\net9.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\emans\source\repos\Shipping\Shipping-System-API-\Shipping.PL\bin\Debug\net9.0\Microsoft.Extensions.DependencyModel.dll
+C:\Users\emans\source\repos\Shipping\Shipping-System-API-\Shipping.PL\bin\Debug\net9.0\Microsoft.Extensions.Identity.Core.dll
+C:\Users\emans\source\repos\Shipping\Shipping-System-API-\Shipping.PL\bin\Debug\net9.0\Microsoft.Extensions.Identity.Stores.dll
+C:\Users\emans\source\repos\Shipping\Shipping-System-API-\Shipping.PL\bin\Debug\net9.0\Microsoft.Extensions.Logging.dll
+C:\Users\emans\source\repos\Shipping\Shipping-System-API-\Shipping.PL\bin\Debug\net9.0\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\emans\source\repos\Shipping\Shipping-System-API-\Shipping.PL\bin\Debug\net9.0\Microsoft.Extensions.Options.dll
+C:\Users\emans\source\repos\Shipping\Shipping-System-API-\Shipping.PL\bin\Debug\net9.0\Microsoft.Extensions.Primitives.dll
+C:\Users\emans\source\repos\Shipping\Shipping-System-API-\Shipping.PL\bin\Debug\net9.0\Microsoft.Identity.Client.dll
+C:\Users\emans\source\repos\Shipping\Shipping-System-API-\Shipping.PL\bin\Debug\net9.0\Microsoft.Identity.Client.Extensions.Msal.dll
+C:\Users\emans\source\repos\Shipping\Shipping-System-API-\Shipping.PL\bin\Debug\net9.0\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\emans\source\repos\Shipping\Shipping-System-API-\Shipping.PL\bin\Debug\net9.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\emans\source\repos\Shipping\Shipping-System-API-\Shipping.PL\bin\Debug\net9.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\emans\source\repos\Shipping\Shipping-System-API-\Shipping.PL\bin\Debug\net9.0\Microsoft.IdentityModel.Protocols.dll
+C:\Users\emans\source\repos\Shipping\Shipping-System-API-\Shipping.PL\bin\Debug\net9.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\emans\source\repos\Shipping\Shipping-System-API-\Shipping.PL\bin\Debug\net9.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\emans\source\repos\Shipping\Shipping-System-API-\Shipping.PL\bin\Debug\net9.0\Microsoft.OpenApi.dll
+C:\Users\emans\source\repos\Shipping\Shipping-System-API-\Shipping.PL\bin\Debug\net9.0\Microsoft.SqlServer.Server.dll
+C:\Users\emans\source\repos\Shipping\Shipping-System-API-\Shipping.PL\bin\Debug\net9.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\emans\source\repos\Shipping\Shipping-System-API-\Shipping.PL\bin\Debug\net9.0\Mono.TextTemplating.dll
+C:\Users\emans\source\repos\Shipping\Shipping-System-API-\Shipping.PL\bin\Debug\net9.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\emans\source\repos\Shipping\Shipping-System-API-\Shipping.PL\bin\Debug\net9.0\System.ClientModel.dll
+C:\Users\emans\source\repos\Shipping\Shipping-System-API-\Shipping.PL\bin\Debug\net9.0\System.CodeDom.dll
+C:\Users\emans\source\repos\Shipping\Shipping-System-API-\Shipping.PL\bin\Debug\net9.0\System.Composition.AttributedModel.dll
+C:\Users\emans\source\repos\Shipping\Shipping-System-API-\Shipping.PL\bin\Debug\net9.0\System.Composition.Convention.dll
+C:\Users\emans\source\repos\Shipping\Shipping-System-API-\Shipping.PL\bin\Debug\net9.0\System.Composition.Hosting.dll
+C:\Users\emans\source\repos\Shipping\Shipping-System-API-\Shipping.PL\bin\Debug\net9.0\System.Composition.Runtime.dll
+C:\Users\emans\source\repos\Shipping\Shipping-System-API-\Shipping.PL\bin\Debug\net9.0\System.Composition.TypedParts.dll
+C:\Users\emans\source\repos\Shipping\Shipping-System-API-\Shipping.PL\bin\Debug\net9.0\System.Configuration.ConfigurationManager.dll
+C:\Users\emans\source\repos\Shipping\Shipping-System-API-\Shipping.PL\bin\Debug\net9.0\System.Drawing.Common.dll
+C:\Users\emans\source\repos\Shipping\Shipping-System-API-\Shipping.PL\bin\Debug\net9.0\System.Formats.Asn1.dll
+C:\Users\emans\source\repos\Shipping\Shipping-System-API-\Shipping.PL\bin\Debug\net9.0\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\emans\source\repos\Shipping\Shipping-System-API-\Shipping.PL\bin\Debug\net9.0\System.Memory.Data.dll
+C:\Users\emans\source\repos\Shipping\Shipping-System-API-\Shipping.PL\bin\Debug\net9.0\System.Runtime.Caching.dll
+C:\Users\emans\source\repos\Shipping\Shipping-System-API-\Shipping.PL\bin\Debug\net9.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\emans\source\repos\Shipping\Shipping-System-API-\Shipping.PL\bin\Debug\net9.0\System.Security.Permissions.dll
+C:\Users\emans\source\repos\Shipping\Shipping-System-API-\Shipping.PL\bin\Debug\net9.0\System.Text.Json.dll
+C:\Users\emans\source\repos\Shipping\Shipping-System-API-\Shipping.PL\bin\Debug\net9.0\System.Windows.Extensions.dll
+C:\Users\emans\source\repos\Shipping\Shipping-System-API-\Shipping.PL\bin\Debug\net9.0\cs\Microsoft.CodeAnalysis.resources.dll
+C:\Users\emans\source\repos\Shipping\Shipping-System-API-\Shipping.PL\bin\Debug\net9.0\de\Microsoft.CodeAnalysis.resources.dll
+C:\Users\emans\source\repos\Shipping\Shipping-System-API-\Shipping.PL\bin\Debug\net9.0\es\Microsoft.CodeAnalysis.resources.dll
+C:\Users\emans\source\repos\Shipping\Shipping-System-API-\Shipping.PL\bin\Debug\net9.0\fr\Microsoft.CodeAnalysis.resources.dll
+C:\Users\emans\source\repos\Shipping\Shipping-System-API-\Shipping.PL\bin\Debug\net9.0\it\Microsoft.CodeAnalysis.resources.dll
+C:\Users\emans\source\repos\Shipping\Shipping-System-API-\Shipping.PL\bin\Debug\net9.0\ja\Microsoft.CodeAnalysis.resources.dll
+C:\Users\emans\source\repos\Shipping\Shipping-System-API-\Shipping.PL\bin\Debug\net9.0\ko\Microsoft.CodeAnalysis.resources.dll
+C:\Users\emans\source\repos\Shipping\Shipping-System-API-\Shipping.PL\bin\Debug\net9.0\pl\Microsoft.CodeAnalysis.resources.dll
+C:\Users\emans\source\repos\Shipping\Shipping-System-API-\Shipping.PL\bin\Debug\net9.0\pt-BR\Microsoft.CodeAnalysis.resources.dll
+C:\Users\emans\source\repos\Shipping\Shipping-System-API-\Shipping.PL\bin\Debug\net9.0\ru\Microsoft.CodeAnalysis.resources.dll
+C:\Users\emans\source\repos\Shipping\Shipping-System-API-\Shipping.PL\bin\Debug\net9.0\tr\Microsoft.CodeAnalysis.resources.dll
+C:\Users\emans\source\repos\Shipping\Shipping-System-API-\Shipping.PL\bin\Debug\net9.0\zh-Hans\Microsoft.CodeAnalysis.resources.dll
+C:\Users\emans\source\repos\Shipping\Shipping-System-API-\Shipping.PL\bin\Debug\net9.0\zh-Hant\Microsoft.CodeAnalysis.resources.dll
+C:\Users\emans\source\repos\Shipping\Shipping-System-API-\Shipping.PL\bin\Debug\net9.0\cs\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\emans\source\repos\Shipping\Shipping-System-API-\Shipping.PL\bin\Debug\net9.0\de\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\emans\source\repos\Shipping\Shipping-System-API-\Shipping.PL\bin\Debug\net9.0\es\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\emans\source\repos\Shipping\Shipping-System-API-\Shipping.PL\bin\Debug\net9.0\fr\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\emans\source\repos\Shipping\Shipping-System-API-\Shipping.PL\bin\Debug\net9.0\it\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\emans\source\repos\Shipping\Shipping-System-API-\Shipping.PL\bin\Debug\net9.0\ja\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\emans\source\repos\Shipping\Shipping-System-API-\Shipping.PL\bin\Debug\net9.0\ko\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\emans\source\repos\Shipping\Shipping-System-API-\Shipping.PL\bin\Debug\net9.0\pl\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\emans\source\repos\Shipping\Shipping-System-API-\Shipping.PL\bin\Debug\net9.0\pt-BR\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\emans\source\repos\Shipping\Shipping-System-API-\Shipping.PL\bin\Debug\net9.0\ru\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\emans\source\repos\Shipping\Shipping-System-API-\Shipping.PL\bin\Debug\net9.0\tr\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\emans\source\repos\Shipping\Shipping-System-API-\Shipping.PL\bin\Debug\net9.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\emans\source\repos\Shipping\Shipping-System-API-\Shipping.PL\bin\Debug\net9.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\emans\source\repos\Shipping\Shipping-System-API-\Shipping.PL\bin\Debug\net9.0\cs\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\emans\source\repos\Shipping\Shipping-System-API-\Shipping.PL\bin\Debug\net9.0\de\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\emans\source\repos\Shipping\Shipping-System-API-\Shipping.PL\bin\Debug\net9.0\es\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\emans\source\repos\Shipping\Shipping-System-API-\Shipping.PL\bin\Debug\net9.0\fr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\emans\source\repos\Shipping\Shipping-System-API-\Shipping.PL\bin\Debug\net9.0\it\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\emans\source\repos\Shipping\Shipping-System-API-\Shipping.PL\bin\Debug\net9.0\ja\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\emans\source\repos\Shipping\Shipping-System-API-\Shipping.PL\bin\Debug\net9.0\ko\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\emans\source\repos\Shipping\Shipping-System-API-\Shipping.PL\bin\Debug\net9.0\pl\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\emans\source\repos\Shipping\Shipping-System-API-\Shipping.PL\bin\Debug\net9.0\pt-BR\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\emans\source\repos\Shipping\Shipping-System-API-\Shipping.PL\bin\Debug\net9.0\ru\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\emans\source\repos\Shipping\Shipping-System-API-\Shipping.PL\bin\Debug\net9.0\tr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\emans\source\repos\Shipping\Shipping-System-API-\Shipping.PL\bin\Debug\net9.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\emans\source\repos\Shipping\Shipping-System-API-\Shipping.PL\bin\Debug\net9.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\emans\source\repos\Shipping\Shipping-System-API-\Shipping.PL\bin\Debug\net9.0\cs\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\emans\source\repos\Shipping\Shipping-System-API-\Shipping.PL\bin\Debug\net9.0\de\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\emans\source\repos\Shipping\Shipping-System-API-\Shipping.PL\bin\Debug\net9.0\es\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\emans\source\repos\Shipping\Shipping-System-API-\Shipping.PL\bin\Debug\net9.0\fr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\emans\source\repos\Shipping\Shipping-System-API-\Shipping.PL\bin\Debug\net9.0\it\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\emans\source\repos\Shipping\Shipping-System-API-\Shipping.PL\bin\Debug\net9.0\ja\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\emans\source\repos\Shipping\Shipping-System-API-\Shipping.PL\bin\Debug\net9.0\ko\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\emans\source\repos\Shipping\Shipping-System-API-\Shipping.PL\bin\Debug\net9.0\pl\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\emans\source\repos\Shipping\Shipping-System-API-\Shipping.PL\bin\Debug\net9.0\pt-BR\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\emans\source\repos\Shipping\Shipping-System-API-\Shipping.PL\bin\Debug\net9.0\ru\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\emans\source\repos\Shipping\Shipping-System-API-\Shipping.PL\bin\Debug\net9.0\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\emans\source\repos\Shipping\Shipping-System-API-\Shipping.PL\bin\Debug\net9.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\emans\source\repos\Shipping\Shipping-System-API-\Shipping.PL\bin\Debug\net9.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\emans\source\repos\Shipping\Shipping-System-API-\Shipping.PL\bin\Debug\net9.0\cs\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+C:\Users\emans\source\repos\Shipping\Shipping-System-API-\Shipping.PL\bin\Debug\net9.0\de\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+C:\Users\emans\source\repos\Shipping\Shipping-System-API-\Shipping.PL\bin\Debug\net9.0\es\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+C:\Users\emans\source\repos\Shipping\Shipping-System-API-\Shipping.PL\bin\Debug\net9.0\fr\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+C:\Users\emans\source\repos\Shipping\Shipping-System-API-\Shipping.PL\bin\Debug\net9.0\it\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+C:\Users\emans\source\repos\Shipping\Shipping-System-API-\Shipping.PL\bin\Debug\net9.0\ja\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+C:\Users\emans\source\repos\Shipping\Shipping-System-API-\Shipping.PL\bin\Debug\net9.0\ko\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+C:\Users\emans\source\repos\Shipping\Shipping-System-API-\Shipping.PL\bin\Debug\net9.0\pl\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+C:\Users\emans\source\repos\Shipping\Shipping-System-API-\Shipping.PL\bin\Debug\net9.0\pt-BR\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+C:\Users\emans\source\repos\Shipping\Shipping-System-API-\Shipping.PL\bin\Debug\net9.0\ru\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+C:\Users\emans\source\repos\Shipping\Shipping-System-API-\Shipping.PL\bin\Debug\net9.0\tr\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+C:\Users\emans\source\repos\Shipping\Shipping-System-API-\Shipping.PL\bin\Debug\net9.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+C:\Users\emans\source\repos\Shipping\Shipping-System-API-\Shipping.PL\bin\Debug\net9.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+C:\Users\emans\source\repos\Shipping\Shipping-System-API-\Shipping.PL\bin\Debug\net9.0\runtimes\unix\lib\net6.0\Microsoft.Data.SqlClient.dll
+C:\Users\emans\source\repos\Shipping\Shipping-System-API-\Shipping.PL\bin\Debug\net9.0\runtimes\win\lib\net6.0\Microsoft.Data.SqlClient.dll
+C:\Users\emans\source\repos\Shipping\Shipping-System-API-\Shipping.PL\bin\Debug\net9.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\emans\source\repos\Shipping\Shipping-System-API-\Shipping.PL\bin\Debug\net9.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\emans\source\repos\Shipping\Shipping-System-API-\Shipping.PL\bin\Debug\net9.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\emans\source\repos\Shipping\Shipping-System-API-\Shipping.PL\bin\Debug\net9.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\emans\source\repos\Shipping\Shipping-System-API-\Shipping.PL\bin\Debug\net9.0\runtimes\win\lib\net6.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\emans\source\repos\Shipping\Shipping-System-API-\Shipping.PL\bin\Debug\net9.0\runtimes\unix\lib\net6.0\System.Drawing.Common.dll
+C:\Users\emans\source\repos\Shipping\Shipping-System-API-\Shipping.PL\bin\Debug\net9.0\runtimes\win\lib\net6.0\System.Drawing.Common.dll
+C:\Users\emans\source\repos\Shipping\Shipping-System-API-\Shipping.PL\bin\Debug\net9.0\runtimes\win\lib\net6.0\System.Runtime.Caching.dll
+C:\Users\emans\source\repos\Shipping\Shipping-System-API-\Shipping.PL\bin\Debug\net9.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\emans\source\repos\Shipping\Shipping-System-API-\Shipping.PL\bin\Debug\net9.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
+C:\Users\emans\source\repos\Shipping\Shipping-System-API-\Shipping.PL\bin\Debug\net9.0\Shipping.BL.dll
+C:\Users\emans\source\repos\Shipping\Shipping-System-API-\Shipping.PL\bin\Debug\net9.0\Shipping.DAL.dll
+C:\Users\emans\source\repos\Shipping\Shipping-System-API-\Shipping.PL\bin\Debug\net9.0\Shipping.BL.pdb
+C:\Users\emans\source\repos\Shipping\Shipping-System-API-\Shipping.PL\bin\Debug\net9.0\Shipping.DAL.pdb
+C:\Users\emans\source\repos\Shipping\Shipping-System-API-\Shipping.PL\obj\Debug\net9.0\scopedcss\bundle\Shipping.PL.styles.css
+C:\Users\emans\source\repos\Shipping\Shipping-System-API-\Shipping.PL\obj\Debug\net9.0\staticwebassets.build.json
+C:\Users\emans\source\repos\Shipping\Shipping-System-API-\Shipping.PL\obj\Debug\net9.0\staticwebassets.development.json
+C:\Users\emans\source\repos\Shipping\Shipping-System-API-\Shipping.PL\obj\Debug\net9.0\staticwebassets.build.endpoints.json
+C:\Users\emans\source\repos\Shipping\Shipping-System-API-\Shipping.PL\obj\Debug\net9.0\staticwebassets\msbuild.Shipping.PL.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\emans\source\repos\Shipping\Shipping-System-API-\Shipping.PL\obj\Debug\net9.0\staticwebassets\msbuild.Shipping.PL.Microsoft.AspNetCore.StaticWebAssetEndpoints.props
+C:\Users\emans\source\repos\Shipping\Shipping-System-API-\Shipping.PL\obj\Debug\net9.0\staticwebassets\msbuild.build.Shipping.PL.props
+C:\Users\emans\source\repos\Shipping\Shipping-System-API-\Shipping.PL\obj\Debug\net9.0\staticwebassets\msbuild.buildMultiTargeting.Shipping.PL.props
+C:\Users\emans\source\repos\Shipping\Shipping-System-API-\Shipping.PL\obj\Debug\net9.0\staticwebassets\msbuild.buildTransitive.Shipping.PL.props
+C:\Users\emans\source\repos\Shipping\Shipping-System-API-\Shipping.PL\obj\Debug\net9.0\staticwebassets.pack.json
+C:\Users\emans\source\repos\Shipping\Shipping-System-API-\Shipping.PL\obj\Debug\net9.0\staticwebassets.upToDateCheck.txt
+C:\Users\emans\source\repos\Shipping\Shipping-System-API-\Shipping.PL\obj\Debug\net9.0\Shipping.EEFF201A.Up2Date
+C:\Users\emans\source\repos\Shipping\Shipping-System-API-\Shipping.PL\obj\Debug\net9.0\Shipping.PL.genruntimeconfig.cache
+C:\Users\emans\source\repos\Shipping\Shipping-System-API-\Shipping.PL\obj\Debug\net9.0\ref\Shipping.PL.dll

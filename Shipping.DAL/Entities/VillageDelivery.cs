@@ -9,6 +9,8 @@ namespace Shipping.DAL.Entities
 {
     public class VillageDelivery: BaseEntity
     {
+        [Key]
+        public int Id { get; set; }
         [DataType(DataType.Currency)]
         public decimal Price { get; set; }
 

@@ -53,9 +53,16 @@ namespace Shipping.BL.Services
         {
             var branch = await _unitOfWork.Branches.GetByIdAsync(id);
             if (branch == null) return;
-
             branch.IsDeleted = true;
             await _unitOfWork.SaveChangesAsync();
         }
+
+        public async Task <IEnumerable<Branches>> SearchAsync(string Searchword)
+        {
+            var Branches= await _unitOfWork.Branches.SearchAsync(B => B.Name.Contains(Searchword));
+            return Branches;
+        }
+
+
     }
 }

@@ -1,19 +1,7 @@
-<<<<<<< HEAD
-﻿using AutoMapper;
-using Shipping.BL.DTOs.VillageDelivery;
-using Shipping.DAL.Entities;
-using Shipping.DAL.UnitOfWork;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-=======
-
-﻿using System.Collections.Generic;
->>>>>>> master
 using System.Threading.Tasks;
 using AutoMapper;
-using Shipping.BL.DTOs.VillageDelivery;
+using Shipping.BL.DTOs.Village;
 using Shipping.DAL.Entities;
 using Shipping.DAL.Persistent.UnitOfWork;
 
@@ -21,59 +9,15 @@ namespace Shipping.BL.Services
 {
     public class VillageDeliveryService
     {
-<<<<<<< HEAD
-
-        private readonly IMapper _mapper;
-        private readonly UnitOfWork _unitOfWork;
-
-        public VillageDeliveryService(IMapper mapper, UnitOfWork unitOfWork)
-=======
         private readonly IMapper _mapper;
         private readonly IUnitOfWork _unitOfWork;
 
         public VillageDeliveryService(IMapper mapper, IUnitOfWork unitOfWork)
->>>>>>> master
         {
             _mapper = mapper;
             _unitOfWork = unitOfWork;
         }
 
-<<<<<<< HEAD
-        public List<ReadVillageDTO> GetAll()
-        {
-            var deliveries = _unitOfWork.villageDelivery.GetAll().ToList();
-            return _mapper.Map<List<ReadVillageDTO>>(deliveries);
-        }
-
-        public ReadVillageDTO GetById(int id)
-        {
-            var delivery = _unitOfWork.villageDelivery.GetById(id);
-            return _mapper.Map<ReadVillageDTO>(delivery);
-        }
-
-        public void Add(AddVillageDTO deliveryDto)
-        {
-            var delivery = _mapper.Map<VillageDelivery>(deliveryDto);
-            _unitOfWork.villageDelivery.Add(delivery);
-            _unitOfWork.Save();
-        }
-
-        public void Update(AddVillageDTO deliveryDto)
-        {
-            var delivery = _mapper.Map<VillageDelivery>(deliveryDto);
-            _unitOfWork.villageDelivery.Update(delivery);
-            _unitOfWork.Save();
-        }
-
-        public void Delete(int id)
-        {
-            var delivery = _unitOfWork.villageDelivery.GetById(id);
-            if (delivery != null)
-            {
-                delivery.IsDeleted = true;
-                _unitOfWork.Save();
-            }
-=======
         public async Task<List<ReadVillageDTO>> GetAllAsync()
         {
             var deliveries = await _unitOfWork.VillageDelivery.GetAllAsync();
@@ -110,7 +54,6 @@ namespace Shipping.BL.Services
 
             delivery.IsDeleted = true;
             await _unitOfWork.SaveChangesAsync();
->>>>>>> master
         }
     }
 }
