@@ -19,7 +19,10 @@ namespace Shipping.DAL.Entities
         [Required , MaxLength(50)]
         public string Branch { get; set; }
         [Required, MaxLength(50)]
-        public string Job { get; set; }
+        
+        public string UserRole { get; set; }
+        [Required,MaxLength(50)]
+        public string password { get; set; }
 
         [Required]
         [ForeignKey("User")]

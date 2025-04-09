@@ -35,7 +35,7 @@ namespace Shipping.BL.Services
                 Address = deliveryDTO.address,
 
             };
-            await unit.ApplicationUser.AddAsync(applicationUser);
+            await userManager.CreateAsync(applicationUser);
 
             var user = await userManager.FindByNameAsync(deliveryDTO.Name);
 
@@ -61,6 +61,7 @@ namespace Shipping.BL.Services
             var deliveries = await unit.Delivery.GetAllAsync();
             var deliveriesNames = deliveries.Where(x=>x.Governorate == governorate)
                                             .Select(s=>s.User.UserName).ToList();
+
             return deliveriesNames;
 
         }

@@ -81,11 +81,11 @@ namespace Shipping.BL.Mappers
                 dist.Email = src.User.Email;
             }).ReverseMap();
 
-            CreateMap<Employee, AddEmployeeDTO>().AfterMap((src, dist) =>
-            {
-                dist.Name = src.User.UserName;
-                dist.Email = src.User.Email;
-            }).ReverseMap();
+            //CreateMap<Employee, AddEmployeeDTO>().AfterMap((src, dist) =>
+            //{
+            //    dist.Name = src.User.UserName;
+            //    dist.Email = src.User.Email;
+            //}).ReverseMap();
 
 
         }
