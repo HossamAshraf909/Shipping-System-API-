@@ -37,6 +37,14 @@ namespace Shipping.PL.Controllers
             });
             return Ok(orders);
         }
+        [HttpGet("{id:int}")]
+        public async Task<IActionResult> GetOrderById(int id)
+        {
+            if (id == 0) BadRequest();
+            var order = await OrderService.GetOrderByIdAsync(id);
+            if (order == null) return NotFound();
+            return Ok(order);
+        }
         [HttpDelete("{id:int}")]
         public async Task<IActionResult> DeleteOrder(int id)
         {
