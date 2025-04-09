@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Shipping.BL.Consistants
+namespace Shipping.DAL.Consistants
 {
     public static class Permissions
     {
