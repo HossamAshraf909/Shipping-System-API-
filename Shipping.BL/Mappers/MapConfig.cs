@@ -62,6 +62,19 @@ namespace Shipping.BL.Mappers
                 dist.Governorate = src.Governorate.Name;
                 dist.City = src.City.Name;
             }).ReverseMap();
+            CreateMap<Order, ReadOrderWithProducts>().AfterMap((src, dist) =>
+            {
+                foreach (var product in src.OrderProducts)
+                {
+                    dist.Products.Add(new EditProductDTO
+                    {
+                        Id = product.ProductId,
+                        Name = product.Product.Name,
+                        Quantity = product.Product.Quantity,
+                        Weight = product.Product.Weight,
+                    });
+                }
+            }).ReverseMap();
             CreateMap<Order, ReadOrderReportDTO>().AfterMap((src, dist) =>
             {
                 dist.Governorate = src.Governorate.Name;

@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity;
 using Shipping.BL.DTOs.Auth.Permission;
 using Shipping.DAL.Entities.Identity;
-using Shipping.BL.Consistants;
+using Shipping.DAL.Consistants;
 using Microsoft.EntityFrameworkCore;
 using Shipping.BL.DTOs.Auth.Role;
 using AutoMapper;

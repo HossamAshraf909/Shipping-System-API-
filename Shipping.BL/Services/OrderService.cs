@@ -25,10 +25,10 @@ namespace Shipping.BL.Services
             return _mapper.Map<IEnumerable<ReadOrderDTO>>(orders);
         }
 
-        public async Task<ReadOrderDTO?> GetOrderByIdAsync(int orderId)
+        public async Task<ReadOrderWithProducts?> GetOrderByIdAsync(int orderId)
         {
             var order = await _unitOfWork.Orders.GetByIdAsync(orderId);
-            return _mapper.Map<ReadOrderDTO>(order);
+            return _mapper.Map<ReadOrderWithProducts>(order);
         }
        public async Task<List<ReadOrderDTO>> GetOrderByStatusAsync(string Status)
         {
