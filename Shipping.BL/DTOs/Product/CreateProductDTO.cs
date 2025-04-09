@@ -9,7 +9,7 @@ namespace Shipping.BL.DTOs.product
 {
     public record CreateProductDTO
     {
-       
+        public int Id { get; set; }
         public bool IsDeleted { get; set; } = false;
         [Required]
         [MaxLength(50)]

@@ -284,6 +284,22 @@
   },
   {
     "ContainingType": "Shipping.PL.Controllers.OrderController",
+    "Method": "GetOrderById",
+    "RelativePath": "api/Order/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Shipping.PL.Controllers.OrderController",
     "Method": "DeleteOrder",
     "RelativePath": "api/Order/{id}",
     "HttpMethod": "DELETE",
