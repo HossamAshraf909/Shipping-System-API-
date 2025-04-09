@@ -18,6 +18,8 @@ using Microsoft.EntityFrameworkCore.Query.SqlExpressions;
 using Shipping.BL.DTOs.product;
 using System.Net;
 using Shipping.BL.DTOs.OrderReport;
+using Shipping.DAL.Entities.Identity;
+using Shipping.BL.DTOs.Auth.Role;
 
 
 
@@ -66,6 +68,10 @@ namespace Shipping.BL.Mappers
                 dist.city = src.City.Name;
                 dist.PaidShippingPrice = src.ShippingPrice;
                 
+            }).ReverseMap();
+            CreateMap<ApplicationRole, ReadRoleDTO>().AfterMap((dist, src) =>
+            {
+                dist.Id = src.Id;
             }).ReverseMap();
         }
 

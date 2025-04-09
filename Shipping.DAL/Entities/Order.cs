@@ -5,7 +5,8 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 public class Order : BaseEntity
 {
-
+    [Key]
+    public int Id { get; set; }
     public ShippingMethod ShippingMethod { get; set; }
     public PaymentMethod PaymentType { get; set; }
     public RejectionReason RejectionReason { get; set; }

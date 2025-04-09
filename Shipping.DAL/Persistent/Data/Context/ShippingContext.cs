@@ -14,7 +14,8 @@ using Shipping.DAL.Persistent.Data.ModelConfigruation;
 
 namespace Shipping.DAL.Persistent.Data.Context
 {
-    public class ShippingContext : IdentityDbContext<ApplicationUser>
+
+    public class ShippingContext:IdentityDbContext<ApplicationUser,ApplicationRole,string>
     {
         public ShippingContext(DbContextOptions<ShippingContext> options) : base(options)
         {
@@ -37,16 +38,17 @@ namespace Shipping.DAL.Persistent.Data.Context
         }
 
 
-        public DbSet<Branches> Branches { get; set; }
-        public DbSet<City> Cities { get; set; }
-        public DbSet<Governorate> governorates { get; set; }
-        public DbSet<Order> Orders { get; set; }
-        public DbSet<Order_Product> OrderProducts { get; set; }
-        public DbSet<Product> Products { get; set; }
-        public DbSet<ShippingType> shippingTypes { get; set; }
-        public DbSet<SpecialPackages> specialPackages { get; set; }
-        public DbSet<VillageDelivery> villageDeliveries { get; set; }
-        public DbSet<WeightPrice> weightPrices { get; set; }
+
+       public DbSet<Branches> Branches { get; set; }
+       public DbSet<City> Cities { get; set; }
+       public DbSet<Governorate> governorates { get; set; }
+       public DbSet<Order> Orders { get; set; }
+       public DbSet<Order_Product> OrderProducts { get; set; }
+       public DbSet<Product> Products { get; set; }
+       public DbSet<ShippingType> shippingTypes { get; set; }
+       public DbSet<SpecialPackages> specialPackages { get; set; }
+       public DbSet<VillageDelivery> villageDeliveries { get; set; }
+       public DbSet<WeightPrice> weightPrices { get; set; }
         public DbSet<Employee> Employees { get; set; }
         public DbSet<Merchant> Merchants { get; set; }
         public DbSet<Delivery> Deliveries { get; set; }

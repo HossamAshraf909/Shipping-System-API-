@@ -9,7 +9,8 @@ namespace Shipping.DAL.Entities
 {
     public class ShippingType:BaseEntity
     {
-
+        [Key]
+        public int Id { get; set; }
         public string Type { get; set; } = null!;
 
         [DataType(DataType.Currency)]
