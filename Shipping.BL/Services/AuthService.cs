@@ -64,7 +64,7 @@ namespace Shipping.BL.Services
                 {
                     if (_permission.canRead == true)
                     {
-                        var perm = Permissions.GeneratePermission(_permission.pageName, "Create");
+                        var perm = Permissions.GeneratePermission(_permission.pageName, "Read");
                         await roleManager.AddClaimAsync(role, new Claim("Permission", perm));
                     }
                     if (_permission.canUpdate == true)
@@ -79,7 +79,7 @@ namespace Shipping.BL.Services
                     }
                     if (_permission.canCreate == true)
                     {
-                        var perm = Permissions.GeneratePermission(_permission.pageName, "Read");
+                        var perm = Permissions.GeneratePermission(_permission.pageName, "Create");
                         await roleManager.AddClaimAsync(role, new Claim("Permission", perm));
                     }
 
@@ -104,39 +104,23 @@ namespace Shipping.BL.Services
                 var permission = rolePermission.Value;
                 var pageName = permission.Split('.')[1];
                 var permissionType = permission.Split('.')[2];
-                if (permissionType == "Create")
+                var PermissionDTO = new PermissionDTO
                 {
-                    PermissionDTOList.Add(
-                     new PermissionDTO
-                     {
-                         pageName = pageName,
-                         canCreate = true
-                     });
-                }
-                 if (permissionType == "Read")
-                {
-                   PermissionDTOList.Add( new PermissionDTO
-                    {
-                        pageName = pageName,
-                        canRead = true
-                    });
-                }
-                 if (permissionType == "Update")
-                {
-                    PermissionDTOList.Add( new PermissionDTO
-                    {
-                        pageName = pageName,
-                        canUpdate = true
-                    });
-                }
-                 if (permissionType == "Delete")
-                {
-                    PermissionDTOList.Add( new PermissionDTO
-                    {
-                        pageName = pageName,
-                        canDelete = true
-                    });
-                }
+                    pageName = pageName
+                };
+                        if (permissionType == "Create")
+                             PermissionDTO.canCreate = true;            
+                
+                        if (permissionType == "Read")
+                             PermissionDTO.canRead = true;
+                
+                        if (permissionType == "Update")
+                             PermissionDTO.canUpdate = true;
+                
+                        if (permissionType == "Delete")
+                             PermissionDTO.canDelete = true;
+               
+                PermissionDTOList.Add(PermissionDTO);
             }
             return PermissionDTOList;
         }
