@@ -1,5 +1,31 @@
 [
   {
+    "ContainingType": "Shipping.PL.Controllers.AccountController",
+    "Method": "Login",
+    "RelativePath": "api/Account/Login",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "model",
+        "Type": "Shipping.BL.DTOs.Auth.Account.LoginDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Shipping.BL.DTOs.Auth.Account.UserDTO",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
     "ContainingType": "Shipping.PL.Controllers.BranchController",
     "Method": "GetAllBranchs",
     "RelativePath": "api/Branch",

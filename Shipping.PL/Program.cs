@@ -1,10 +1,14 @@
 
+using System.Text;
 using System.Text.Json.Serialization;
 using AutoMapper;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
 using Shipping.BL.Mappers;
 using Shipping.BL.Services;
+using Shipping.BL.Services.Imodel;
 using Shipping.DAL.Entities.Identity;
 using Shipping.DAL.Persistent.Data.Context;
 
@@ -34,40 +38,62 @@ namespace Shipping.PL
 
             #region Add Services
             //allow cors
-                    builder.Services.AddCors(options =>
-                    {
-                        options.AddPolicy(MyAllowSpecificOrigins,
-                        builder =>
-                        {
-                            builder.AllowAnyOrigin();
-                            builder.AllowAnyMethod();
-                            builder.AllowAnyHeader();
-                        });
-                    });
-                    builder.Services.AddDbContext<ShippingContext>(options =>
-                        options.UseLazyLoadingProxies().UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"))
-                        );
-                     // Add Identity
-                     builder.Services.AddIdentity<ApplicationUser,ApplicationRole>()
-                        .AddEntityFrameworkStores<ShippingContext>()
-                        .AddDefaultTokenProviders();
+            builder.Services.AddCors(options =>
+            {
+                options.AddPolicy(MyAllowSpecificOrigins,
+                builder =>
+                {
+                    builder.AllowAnyOrigin();
+                    builder.AllowAnyMethod();
+                    builder.AllowAnyHeader();
+                });
+            });
+            builder.Services.AddDbContext<ShippingContext>(options =>
+                options.UseLazyLoadingProxies().UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"))
+                );
+            // Add Identity
+            builder.Services.AddIdentity<ApplicationUser, ApplicationRole>()
+               .AddEntityFrameworkStores<ShippingContext>()
+               .AddDefaultTokenProviders();
+            builder.Services.AddAuthentication(options =>
+            {
+                options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+                options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+            })
+             .AddJwtBearer(options =>
+              {
+                      options.RequireHttpsMetadata = false;
+                      options.SaveToken = true;
+                  
+                      options.TokenValidationParameters = new TokenValidationParameters
+                      {
+                          ValidateIssuer = true,
+                          ValidateAudience = true,
+                          ValidateLifetime = true,
+                          ValidateIssuerSigningKey = true,
+                          ValidIssuer = builder.Configuration["JWT:Issuer"],
+                          ValidAudience = builder.Configuration["JWT:Audience"],
+                          IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["JWT:Key"]))
+                      };
+              });
 
-                    builder.Services.AddAutoMapper(typeof(MapConfig));
-                    
-                    builder.Services.AddScoped<IUnitOfWork,UnitOfWork>();
-                    builder.Services.AddScoped<ProductService>();
-                    builder.Services.AddScoped<OrderProductService>();
-                    builder.Services.AddScoped<ShippingTypeService>();
-                    builder.Services.AddScoped<BranchService>();
-                    builder.Services.AddScoped<GovernorateService>();
-                    builder.Services.AddScoped<CityService>();
-                    builder.Services.AddScoped<WeightPriceService>();
-                    builder.Services.AddScoped<OrderService>();
-                    builder.Services.AddScoped<OrderReportService>();
-                    builder.Services.AddScoped<VillageDeliveryService>();
+            builder.Services.AddAutoMapper(typeof(MapConfig));
 
-                    builder.Services.AddScoped<AuthService>();
-         
+            builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
+            builder.Services.AddScoped<ProductService>();
+            builder.Services.AddScoped<OrderProductService>();
+            builder.Services.AddScoped<ShippingTypeService>();
+            builder.Services.AddScoped<BranchService>();
+            builder.Services.AddScoped<GovernorateService>();
+            builder.Services.AddScoped<CityService>();
+            builder.Services.AddScoped<WeightPriceService>();
+            builder.Services.AddScoped<OrderService>();
+            builder.Services.AddScoped<OrderReportService>();
+            builder.Services.AddScoped<VillageDeliveryService>();
+            builder.Services.AddScoped<ITokenGeneration, TokenGeneration>();
+
+            builder.Services.AddScoped<AuthService>();
+
 
 
             #endregion
@@ -79,14 +105,14 @@ namespace Shipping.PL
                 var userManager = serviceProvider.GetRequiredService<UserManager<ApplicationUser>>();
 
                 ShippingContextSeed.Initialize(serviceProvider, userManager);
-               
+
             }
 
             // Configure the HTTP request pipeline.
             if (app.Environment.IsDevelopment())
             {
                 app.MapOpenApi();
-                app.UseSwaggerUI(op => op.SwaggerEndpoint("/openapi/v1.json","v1"));
+                app.UseSwaggerUI(op => op.SwaggerEndpoint("/openapi/v1.json", "v1"));
             }
 
             app.UseHttpsRedirection();
