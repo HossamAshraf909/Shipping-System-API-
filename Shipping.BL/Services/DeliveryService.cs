@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Identity;
 using Shipping.BL.DTOs.Delivery;
 using Shipping.DAL.Entities;
 using Shipping.DAL.Entities.Identity;
@@ -13,9 +14,12 @@ namespace Shipping.BL.Services
     {
         private readonly IUnitOfWork unit;
 
-        public DeliveryService(IUnitOfWork unit)
+        UserManager<ApplicationUser> userManager;
+
+        public DeliveryService(IUnitOfWork unit , UserManager<ApplicationUser> userManager)
         {
             this.unit = unit;
+            this.userManager = userManager;
             
         }
 
@@ -31,6 +35,10 @@ namespace Shipping.BL.Services
                 Address = deliveryDTO.address,
 
             };
+            await unit.ApplicationUser.AddAsync(applicationUser);
+
+            var user = await userManager.FindByNameAsync(deliveryDTO.Name);
+
             var delivery = new Delivery 
             { 
                 Branch = deliveryDTO.Branch,
@@ -38,10 +46,10 @@ namespace Shipping.BL.Services
                 PhoneNumber = deliveryDTO.PhoneNumber,
                 TypeOfDiscount = deliveryDTO.TypeOfDiscount,
                 CompanyPercent = deliveryDTO.CompanyPercent,
-                UserID = applicationUser.Id,
+                UserID = user.Id,
             };
 
-            await unit.ApplicationUser.AddAsync(applicationUser);
+           
             await unit.Delivery.AddAsync(delivery);
 
         }

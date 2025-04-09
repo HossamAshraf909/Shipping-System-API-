@@ -66,6 +66,8 @@ namespace Shipping.PL
                     builder.Services.AddScoped<OrderReportService>();
                     builder.Services.AddScoped<VillageDeliveryService>();
                     builder.Services.AddScoped<DeliveryService>();
+                    builder.Services.AddScoped<UserManager<ApplicationUser>>();
+            builder.Services.AddScoped<EmployeeService>();
 
                     builder.Services.AddScoped<AuthService>();
          

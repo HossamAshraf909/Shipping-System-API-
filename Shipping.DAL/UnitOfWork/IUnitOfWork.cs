@@ -19,6 +19,7 @@ public interface IUnitOfWork : IDisposable
     IGenericRepository<WeightPrice> WeightPrices { get; }
     IGenericRepository<Delivery> Delivery { get; }
     IGenericRepository<ApplicationUser> ApplicationUser { get; }
+    IGenericRepository<Employee> Employee { get; }
 
     Task<int> SaveChangesAsync();
 }

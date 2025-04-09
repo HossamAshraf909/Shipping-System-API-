@@ -28,7 +28,8 @@ namespace Shipping.DAL.Persistent.UnitOfWork
         private IGenericRepository<Delivery>? _delivery;
         private IGenericRepository<Employee>? _employee;
         // private IGenericRepository<Delivery>? _delivery;
-        private IGenericRepository<ApplicationUser> _applicationUser;
+        private IGenericRepository<ApplicationUser>? _applicationUser;
+        //private IGenericRepository<Employee>? _employee;
         public UnitOfWork(ShippingContext context)
         {
             _context = context ?? throw new ArgumentNullException(nameof(context));
@@ -73,6 +74,9 @@ namespace Shipping.DAL.Persistent.UnitOfWork
 
         public IGenericRepository<ApplicationUser> ApplicationUser =>
             _applicationUser ??= new GenericRepository<ApplicationUser>(_context);
+
+        //public IGenericRepository<Employee> Employee =>
+        //   _employee ??= new GenericRepository<Employee>(_context);
 
 
         public async Task<int> SaveChangesAsync()

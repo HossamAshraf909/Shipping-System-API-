@@ -20,6 +20,7 @@ using System.Net;
 using Shipping.BL.DTOs.OrderReport;
 using Shipping.DAL.Entities.Identity;
 using Shipping.BL.DTOs.Auth.Role;
+using Shipping.BL.DTOs.Employee;
 
 
 
@@ -73,6 +74,20 @@ namespace Shipping.BL.Mappers
             {
                 dist.Id = src.Id;
             }).ReverseMap();
+
+            CreateMap<Employee, ReadEmployeeDTO>().AfterMap((src, dist) =>
+            {
+                dist.Name = src.User.UserName;
+                dist.Email = src.User.Email;
+            }).ReverseMap();
+
+            CreateMap<Employee, AddEmployeeDTO>().AfterMap((src, dist) =>
+            {
+                dist.Name = src.User.UserName;
+                dist.Email = src.User.Email;
+            }).ReverseMap();
+
+
         }
 
     }

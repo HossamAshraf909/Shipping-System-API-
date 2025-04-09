@@ -14,6 +14,12 @@ namespace Shipping.DAL.Entities
 
         [Key]
         public int ID { get; set; }
+        [Required,MaxLength(20)]
+        public string PhoneNumber { get; set; }
+        [Required , MaxLength(50)]
+        public string Branch { get; set; }
+        [Required, MaxLength(50)]
+        public string Job { get; set; }
 
         [Required]
         [ForeignKey("User")]
