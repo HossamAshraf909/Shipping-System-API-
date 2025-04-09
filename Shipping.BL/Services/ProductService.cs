@@ -37,7 +37,7 @@ namespace Shipping.BL.Services
             var product = await _unitOfWork.Products.GetByIdAsync(id);
             if (product == null) return;
 
-            await _unitOfWork.Products.UpdateAsync(product);
+            await _unitOfWork.Products.DeleteAsync(id);
             await _unitOfWork.SaveChangesAsync();
         }
     }

@@ -44,7 +44,7 @@ namespace Shipping.PL.Controllers
             var order = await OrderService.GetOrderByIdAsync(id);
             if (order == null) return NotFound();
             return Ok(order);
-        }
+        } 
         [HttpDelete("{id:int}")]
         public async Task<IActionResult> DeleteOrder(int id)
         {
@@ -57,11 +57,9 @@ namespace Shipping.PL.Controllers
         {
             if (orderDTO == null) BadRequest();
             if (!ModelState.IsValid) BadRequest(ModelState);
-            var products = orderDTO.Products;
-            foreach (var product in products)
-            {
-                await ProductService.AddProductAsync(product);
-            }
+            
+            
+            
             await OrderService.AddOrderAsync(orderDTO);
 
             return Ok();

@@ -29,6 +29,7 @@ namespace Shipping.BL.Services
         }
         public async Task<List<ReadRoleDTO>> GetApplicationRolesAsync()
         {
+            
             var Roles = mapper.Map<List<ReadRoleDTO>>(await roleManager.Roles.ToListAsync());
             return Roles;
         }
