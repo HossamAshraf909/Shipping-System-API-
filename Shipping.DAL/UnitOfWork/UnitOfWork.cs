@@ -31,9 +31,11 @@ namespace Shipping.DAL.Persistent.UnitOfWork
        // private IGenericRepository<ApplicationUser>? _applicationUser;
         //private IGenericRepository<Employee>? _employee;
         public UnitOfWork(ShippingContext context)
+
         {
             _context = context ?? throw new ArgumentNullException(nameof(context));
         }
+
 
         public ProductRepository Products =>
             _products ??= new ProductRepository(_context);
@@ -79,6 +81,7 @@ namespace Shipping.DAL.Persistent.UnitOfWork
 
 
         public async Task<int> SaveChangesAsync()
+
         {
             return await _context.SaveChangesAsync();
         }

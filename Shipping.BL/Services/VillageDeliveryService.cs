@@ -1,5 +1,4 @@
-
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using AutoMapper;
 using Shipping.BL.DTOs.Village;

@@ -77,6 +77,7 @@ namespace Shipping.PL
                       };
               });
 
+
             builder.Services.AddAutoMapper(typeof(MapConfig));
 
             builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
@@ -90,6 +91,8 @@ namespace Shipping.PL
             builder.Services.AddScoped<OrderService>();
             builder.Services.AddScoped<OrderReportService>();
             builder.Services.AddScoped<VillageDeliveryService>();
+            builder.Services.AddScoped<DeliveryService>();
+            builder.Services.AddScoped<EmployeeService>();
             builder.Services.AddScoped<ITokenGeneration, TokenGeneration>();
 
             builder.Services.AddScoped<AuthService>();
