@@ -3,6 +3,22 @@
   "WorkspaceRootPath": "D:\\Shipping System\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{AD701035-5C87-4D32-AE49-2F1EEDF305B3}|Shipping.BL\\Shipping.BL.csproj|d:\\shipping system\\shipping.bl\\services\\branchservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AD701035-5C87-4D32-AE49-2F1EEDF305B3}|Shipping.BL\\Shipping.BL.csproj|solutionrelative:shipping.bl\\services\\branchservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AD701035-5C87-4D32-AE49-2F1EEDF305B3}|Shipping.BL\\Shipping.BL.csproj|d:\\shipping system\\shipping.bl\\mappers\\mapconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AD701035-5C87-4D32-AE49-2F1EEDF305B3}|Shipping.BL\\Shipping.BL.csproj|solutionrelative:shipping.bl\\mappers\\mapconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AD701035-5C87-4D32-AE49-2F1EEDF305B3}|Shipping.BL\\Shipping.BL.csproj|d:\\shipping system\\shipping.bl\\services\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AD701035-5C87-4D32-AE49-2F1EEDF305B3}|Shipping.BL\\Shipping.BL.csproj|solutionrelative:shipping.bl\\services\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BD8A6E5E-26D4-4181-BE21-B5ACA2AE1B4F}|Shipping.DAL\\Shipping.DAL.csproj|d:\\shipping system\\shipping.dal\\persistent\\repositries\\genericrepositry.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BD8A6E5E-26D4-4181-BE21-B5ACA2AE1B4F}|Shipping.DAL\\Shipping.DAL.csproj|solutionrelative:shipping.dal\\persistent\\repositries\\genericrepositry.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{BD8A6E5E-26D4-4181-BE21-B5ACA2AE1B4F}|Shipping.DAL\\Shipping.DAL.csproj|d:\\shipping system\\shipping.dal\\unitofwork\\unitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{BD8A6E5E-26D4-4181-BE21-B5ACA2AE1B4F}|Shipping.DAL\\Shipping.DAL.csproj|solutionrelative:shipping.dal\\unitofwork\\unitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -15,10 +31,6 @@
       "RelativeMoniker": "D:0:0:{AD701035-5C87-4D32-AE49-2F1EEDF305B3}|Shipping.BL\\Shipping.BL.csproj|solutionrelative:shipping.bl\\services\\orderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BD8A6E5E-26D4-4181-BE21-B5ACA2AE1B4F}|Shipping.DAL\\Shipping.DAL.csproj|d:\\shipping system\\shipping.dal\\persistent\\repositries\\genericrepositry.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BD8A6E5E-26D4-4181-BE21-B5ACA2AE1B4F}|Shipping.DAL\\Shipping.DAL.csproj|solutionrelative:shipping.dal\\persistent\\repositries\\genericrepositry.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{BD8A6E5E-26D4-4181-BE21-B5ACA2AE1B4F}|Shipping.DAL\\Shipping.DAL.csproj|d:\\shipping system\\shipping.dal\\entities\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{BD8A6E5E-26D4-4181-BE21-B5ACA2AE1B4F}|Shipping.DAL\\Shipping.DAL.csproj|solutionrelative:shipping.dal\\entities\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -29,10 +41,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{AD701035-5C87-4D32-AE49-2F1EEDF305B3}|Shipping.BL\\Shipping.BL.csproj|d:\\shipping system\\shipping.bl\\dtos\\order\\readorderwithproducts.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{AD701035-5C87-4D32-AE49-2F1EEDF305B3}|Shipping.BL\\Shipping.BL.csproj|solutionrelative:shipping.bl\\dtos\\order\\readorderwithproducts.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AD701035-5C87-4D32-AE49-2F1EEDF305B3}|Shipping.BL\\Shipping.BL.csproj|d:\\shipping system\\shipping.bl\\mappers\\mapconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AD701035-5C87-4D32-AE49-2F1EEDF305B3}|Shipping.BL\\Shipping.BL.csproj|solutionrelative:shipping.bl\\mappers\\mapconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{AD701035-5C87-4D32-AE49-2F1EEDF305B3}|Shipping.BL\\Shipping.BL.csproj|d:\\shipping system\\shipping.bl\\services\\productservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -65,10 +73,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{BD8A6E5E-26D4-4181-BE21-B5ACA2AE1B4F}|Shipping.DAL\\Shipping.DAL.csproj|d:\\shipping system\\shipping.dal\\entities\\order_product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{BD8A6E5E-26D4-4181-BE21-B5ACA2AE1B4F}|Shipping.DAL\\Shipping.DAL.csproj|solutionrelative:shipping.dal\\entities\\order_product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AD701035-5C87-4D32-AE49-2F1EEDF305B3}|Shipping.BL\\Shipping.BL.csproj|d:\\shipping system\\shipping.bl\\services\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AD701035-5C87-4D32-AE49-2F1EEDF305B3}|Shipping.BL\\Shipping.BL.csproj|solutionrelative:shipping.bl\\services\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{AD701035-5C87-4D32-AE49-2F1EEDF305B3}|Shipping.BL\\Shipping.BL.csproj|d:\\shipping system\\shipping.bl\\services\\orderreportservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -223,10 +227,6 @@
       "RelativeMoniker": "D:0:0:{AD701035-5C87-4D32-AE49-2F1EEDF305B3}|Shipping.BL\\Shipping.BL.csproj|solutionrelative:shipping.bl\\dtos\\weight\\addweightdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AD701035-5C87-4D32-AE49-2F1EEDF305B3}|Shipping.BL\\Shipping.BL.csproj|d:\\shipping system\\shipping.bl\\services\\branchservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AD701035-5C87-4D32-AE49-2F1EEDF305B3}|Shipping.BL\\Shipping.BL.csproj|solutionrelative:shipping.bl\\services\\branchservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{AD701035-5C87-4D32-AE49-2F1EEDF305B3}|Shipping.BL\\Shipping.BL.csproj|d:\\shipping system\\shipping.bl\\services\\cityservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{AD701035-5C87-4D32-AE49-2F1EEDF305B3}|Shipping.BL\\Shipping.BL.csproj|solutionrelative:shipping.bl\\services\\cityservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -318,7 +318,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 10,
+          "SelectedChildIndex": 11,
           "Children": [
             {
               "$type": "Bookmark",
@@ -342,59 +342,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "EditProductDTO.cs",
-              "DocumentMoniker": "D:\\Shipping System\\Shipping.BL\\DTOs\\product\\EditProductDTO.cs",
-              "RelativeDocumentMoniker": "Shipping.BL\\DTOs\\product\\EditProductDTO.cs",
-              "ToolTip": "D:\\Shipping System\\Shipping.BL\\DTOs\\product\\EditProductDTO.cs",
-              "RelativeToolTip": "Shipping.BL\\DTOs\\product\\EditProductDTO.cs",
-              "ViewState": "AgIAAAcAAAAAAAAAAAAowAsAAAAjAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-26T00:10:47.08Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "MapConfig.cs",
-              "DocumentMoniker": "D:\\Shipping System\\Shipping.BL\\Mappers\\MapConfig.cs",
-              "RelativeDocumentMoniker": "Shipping.BL\\Mappers\\MapConfig.cs",
-              "ToolTip": "D:\\Shipping System\\Shipping.BL\\Mappers\\MapConfig.cs",
-              "RelativeToolTip": "Shipping.BL\\Mappers\\MapConfig.cs",
-              "ViewState": "AgIAAB4AAABgZmZmZmYuwDkAAAAOAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-25T19:39:27.226Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 3,
               "Title": "GenericRepositry.cs",
               "DocumentMoniker": "D:\\Shipping System\\Shipping.DAL\\Persistent\\Repositries\\GenericRepositry.cs",
               "RelativeDocumentMoniker": "Shipping.DAL\\Persistent\\Repositries\\GenericRepositry.cs",
               "ToolTip": "D:\\Shipping System\\Shipping.DAL\\Persistent\\Repositries\\GenericRepositry.cs",
               "RelativeToolTip": "Shipping.DAL\\Persistent\\Repositries\\GenericRepositry.cs",
-              "ViewState": "AgIAACkAAAAAAAAAAADwvzUAAAAIAAAAAAAAAA==",
+              "ViewState": "AgIAABAAAAAAAAAAAAAowBwAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-25T15:00:57.847Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "OrderController.cs",
-              "DocumentMoniker": "D:\\Shipping System\\Shipping.PL\\Controllers\\OrderController.cs",
-              "RelativeDocumentMoniker": "Shipping.PL\\Controllers\\OrderController.cs",
-              "ToolTip": "D:\\Shipping System\\Shipping.PL\\Controllers\\OrderController.cs",
-              "RelativeToolTip": "Shipping.PL\\Controllers\\OrderController.cs",
-              "ViewState": "AgIAADUAAAAAAAAAAAAIwEEAAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-26T13:14:14.887Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 9,
               "Title": "ReadOrderWithProducts.cs",
               "DocumentMoniker": "D:\\Shipping System\\Shipping.BL\\DTOs\\Order\\ReadOrderWithProducts.cs",
               "RelativeDocumentMoniker": "Shipping.BL\\DTOs\\Order\\ReadOrderWithProducts.cs",
@@ -402,25 +363,24 @@
               "RelativeToolTip": "Shipping.BL\\DTOs\\Order\\ReadOrderWithProducts.cs",
               "ViewState": "AgIAABUAAAAAAAAAAADgvxsAAAAvAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-09T19:29:58.835Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-09T19:29:58.835Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 4,
               "Title": "UnitOfWork.cs",
               "DocumentMoniker": "D:\\Shipping System\\Shipping.DAL\\UnitOfWork\\UnitOfWork.cs",
               "RelativeDocumentMoniker": "Shipping.DAL\\UnitOfWork\\UnitOfWork.cs",
               "ToolTip": "D:\\Shipping System\\Shipping.DAL\\UnitOfWork\\UnitOfWork.cs",
               "RelativeToolTip": "Shipping.DAL\\UnitOfWork\\UnitOfWork.cs",
-              "ViewState": "AgIAAEUAAAAAAAAAAAAuwFUAAAAIAAAAAAAAAA==",
+              "ViewState": "AgIAAEkAAAAAAAAAAAAuwF4AAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-25T22:22:47.36Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 6,
               "Title": "OrderService.cs",
               "DocumentMoniker": "D:\\Shipping System\\Shipping.BL\\Services\\OrderService.cs",
               "RelativeDocumentMoniker": "Shipping.BL\\Services\\OrderService.cs",
@@ -428,12 +388,11 @@
               "RelativeToolTip": "Shipping.BL\\Services\\OrderService.cs",
               "ViewState": "AgIAAD4AAAAAAAAAAAAkwFQAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-25T19:39:22.014Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-25T19:39:22.014Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 7,
               "Title": "Product.cs",
               "DocumentMoniker": "D:\\Shipping System\\Shipping.DAL\\Entities\\Product.cs",
               "RelativeDocumentMoniker": "Shipping.DAL\\Entities\\Product.cs",
@@ -441,12 +400,74 @@
               "RelativeToolTip": "Shipping.DAL\\Entities\\Product.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAuwBMAAABMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-30T18:39:49.889Z",
+              "WhenOpened": "2025-03-30T18:39:49.889Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "AuthService.cs",
+              "DocumentMoniker": "D:\\Shipping System\\Shipping.BL\\Services\\AuthService.cs",
+              "RelativeDocumentMoniker": "Shipping.BL\\Services\\AuthService.cs",
+              "ToolTip": "D:\\Shipping System\\Shipping.BL\\Services\\AuthService.cs",
+              "RelativeToolTip": "Shipping.BL\\Services\\AuthService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB8AAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-07T21:08:35.753Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "BranchService.cs",
+              "DocumentMoniker": "D:\\Shipping System\\Shipping.BL\\Services\\BranchService.cs",
+              "RelativeDocumentMoniker": "Shipping.BL\\Services\\BranchService.cs",
+              "ToolTip": "D:\\Shipping System\\Shipping.BL\\Services\\BranchService.cs",
+              "RelativeToolTip": "Shipping.BL\\Services\\BranchService.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAgwBEAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-26T11:47:49.224Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "MapConfig.cs",
+              "DocumentMoniker": "D:\\Shipping System\\Shipping.BL\\Mappers\\MapConfig.cs",
+              "RelativeDocumentMoniker": "Shipping.BL\\Mappers\\MapConfig.cs",
+              "ToolTip": "D:\\Shipping System\\Shipping.BL\\Mappers\\MapConfig.cs",
+              "RelativeToolTip": "Shipping.BL\\Mappers\\MapConfig.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAADkAAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-25T19:39:27.226Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
+              "Title": "OrderController.cs",
+              "DocumentMoniker": "D:\\Shipping System\\Shipping.PL\\Controllers\\OrderController.cs",
+              "RelativeDocumentMoniker": "Shipping.PL\\Controllers\\OrderController.cs",
+              "ToolTip": "D:\\Shipping System\\Shipping.PL\\Controllers\\OrderController.cs",
+              "RelativeToolTip": "Shipping.PL\\Controllers\\OrderController.cs",
+              "ViewState": "AgIAADUAAAAAAAAAAAAIwEEAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-26T13:14:14.887Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "EditProductDTO.cs",
+              "DocumentMoniker": "D:\\Shipping System\\Shipping.BL\\DTOs\\product\\EditProductDTO.cs",
+              "RelativeDocumentMoniker": "Shipping.BL\\DTOs\\product\\EditProductDTO.cs",
+              "ToolTip": "D:\\Shipping System\\Shipping.BL\\DTOs\\product\\EditProductDTO.cs",
+              "RelativeToolTip": "Shipping.BL\\DTOs\\product\\EditProductDTO.cs",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAowAsAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-26T00:10:47.08Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
               "Title": "BaseEntity.cs",
               "DocumentMoniker": "D:\\Shipping System\\Shipping.DAL\\Entities\\BaseEntity.cs",
               "RelativeDocumentMoniker": "Shipping.DAL\\Entities\\BaseEntity.cs",
@@ -454,12 +475,11 @@
               "RelativeToolTip": "Shipping.DAL\\Entities\\BaseEntity.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAuAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-26T12:03:30.345Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-26T12:03:30.345Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 11,
               "Title": "CreateProductDTO.cs",
               "DocumentMoniker": "D:\\Shipping System\\Shipping.BL\\DTOs\\product\\CreateProductDTO.cs",
               "RelativeDocumentMoniker": "Shipping.BL\\DTOs\\product\\CreateProductDTO.cs",
@@ -467,12 +487,11 @@
               "RelativeToolTip": "Shipping.BL\\DTOs\\product\\CreateProductDTO.cs",
               "ViewState": "AgIAAAYAAAAAAAAAAAAuwAsAAAAjAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-25T21:03:33.966Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-25T21:03:33.966Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 10,
               "Title": "ProductService.cs",
               "DocumentMoniker": "D:\\Shipping System\\Shipping.BL\\Services\\ProductService.cs",
               "RelativeDocumentMoniker": "Shipping.BL\\Services\\ProductService.cs",
@@ -480,12 +499,11 @@
               "RelativeToolTip": "Shipping.BL\\Services\\ProductService.cs",
               "ViewState": "AgIAAAkAAAAAAAAAAAAWwBQAAAAaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-25T21:00:43.528Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-25T21:00:43.528Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 13,
               "Title": "AddOrderDTO.cs",
               "DocumentMoniker": "D:\\Shipping System\\Shipping.BL\\DTOs\\Order\\AddOrderDTO.cs",
               "RelativeDocumentMoniker": "Shipping.BL\\DTOs\\Order\\AddOrderDTO.cs",
@@ -493,12 +511,11 @@
               "RelativeToolTip": "Shipping.BL\\DTOs\\Order\\AddOrderDTO.cs",
               "ViewState": "AgIAABUAAAAAAAAAAAAywBsAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-25T20:09:05.076Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-25T20:09:05.076Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 14,
               "Title": "ProductRepositry.cs",
               "DocumentMoniker": "D:\\Shipping System\\Shipping.DAL\\Persistent\\Repositries\\ProductRepositry.cs",
               "RelativeDocumentMoniker": "Shipping.DAL\\Persistent\\Repositries\\ProductRepositry.cs",
@@ -506,12 +523,11 @@
               "RelativeToolTip": "Shipping.DAL\\Persistent\\Repositries\\ProductRepositry.cs",
               "ViewState": "AgIAAAkAAAAAAAAAAAA6wBYAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-25T20:44:58.36Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-25T20:44:58.36Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 15,
               "Title": "Order.cs",
               "DocumentMoniker": "D:\\Shipping System\\Shipping.DAL\\Entities\\Order.cs",
               "RelativeDocumentMoniker": "Shipping.DAL\\Entities\\Order.cs",
@@ -519,12 +535,11 @@
               "RelativeToolTip": "Shipping.DAL\\Entities\\Order.cs",
               "ViewState": "AgIAAAMAAAAAAAAAAAAuwAgAAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-30T13:11:04.53Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-30T13:11:04.53Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 16,
               "Title": "OrderProductService.cs",
               "DocumentMoniker": "D:\\Shipping System\\Shipping.BL\\Services\\OrderProductService.cs",
               "RelativeDocumentMoniker": "Shipping.BL\\Services\\OrderProductService.cs",
@@ -532,12 +547,11 @@
               "RelativeToolTip": "Shipping.BL\\Services\\OrderProductService.cs",
               "ViewState": "AgIAAAkAAAAAAAAAAAAIwBYAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-25T21:24:07.44Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-25T21:24:07.44Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 17,
               "Title": "Order_Product.cs",
               "DocumentMoniker": "D:\\Shipping System\\Shipping.DAL\\Entities\\Order_Product.cs",
               "RelativeDocumentMoniker": "Shipping.DAL\\Entities\\Order_Product.cs",
@@ -545,25 +559,11 @@
               "RelativeToolTip": "Shipping.DAL\\Entities\\Order_Product.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-25T21:16:58.561Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-25T21:16:58.561Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "AuthService.cs",
-              "DocumentMoniker": "D:\\Shipping System\\Shipping.BL\\Services\\AuthService.cs",
-              "RelativeDocumentMoniker": "Shipping.BL\\Services\\AuthService.cs",
-              "ToolTip": "D:\\Shipping System\\Shipping.BL\\Services\\AuthService.cs",
-              "RelativeToolTip": "Shipping.BL\\Services\\AuthService.cs",
-              "ViewState": "AgIAABEAAAAAAAAAAAAxwB8AAAAMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-07T21:08:35.753Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 18,
               "Title": "OrderReportService.cs",
               "DocumentMoniker": "D:\\Shipping System\\Shipping.BL\\Services\\OrderReportService.cs",
               "RelativeDocumentMoniker": "Shipping.BL\\Services\\OrderReportService.cs",
@@ -571,12 +571,11 @@
               "RelativeToolTip": "Shipping.BL\\Services\\OrderReportService.cs",
               "ViewState": "AgIAAB0AAAAAAAAAAAAgwDAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-30T13:16:24.372Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-30T13:16:24.372Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 19,
               "Title": "IOrderService.cs",
               "DocumentMoniker": "D:\\Shipping System\\Shipping.BL\\Services\\Imodel\\IOrderService.cs",
               "RelativeDocumentMoniker": "Shipping.BL\\Services\\Imodel\\IOrderService.cs",
@@ -584,12 +583,11 @@
               "RelativeToolTip": "Shipping.BL\\Services\\Imodel\\IOrderService.cs",
               "ViewState": "AgIAAAYAAAAAAAAAAAAAAA4AAAA5AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-30T17:54:23.475Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-30T17:54:23.475Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 20,
               "Title": "ShippingContextSeed.cs",
               "DocumentMoniker": "D:\\Shipping System\\Shipping.DAL\\Persistent\\Data\\Context\\ShippingContextSeed.cs",
               "RelativeDocumentMoniker": "Shipping.DAL\\Persistent\\Data\\Context\\ShippingContextSeed.cs",
@@ -601,7 +599,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 21,
               "Title": "ReadProductDTO.cs",
               "DocumentMoniker": "D:\\Shipping System\\Shipping.BL\\DTOs\\product\\ReadProductDTO.cs",
               "RelativeDocumentMoniker": "Shipping.BL\\DTOs\\product\\ReadProductDTO.cs",
@@ -613,7 +611,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 22,
               "Title": "ReadOrderDTO.cs",
               "DocumentMoniker": "D:\\Shipping System\\Shipping.BL\\DTOs\\Order\\ReadOrderDTO.cs",
               "RelativeDocumentMoniker": "Shipping.BL\\DTOs\\Order\\ReadOrderDTO.cs",
@@ -625,7 +623,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 23,
               "Title": "Permissions.cs",
               "DocumentMoniker": "D:\\Shipping System\\Shipping.DAL\\Consistants\\Permissions.cs",
               "RelativeDocumentMoniker": "Shipping.DAL\\Consistants\\Permissions.cs",
@@ -637,7 +635,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 24,
               "Title": "Program.cs",
               "DocumentMoniker": "D:\\Shipping System\\Shipping.PL\\Program.cs",
               "RelativeDocumentMoniker": "Shipping.PL\\Program.cs",
@@ -649,7 +647,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 25,
               "Title": "MetadataController.cs",
               "DocumentMoniker": "D:\\Shipping System\\Shipping.PL\\Controllers\\MetadataController.cs",
               "RelativeDocumentMoniker": "Shipping.PL\\Controllers\\MetadataController.cs",
@@ -661,7 +659,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 26,
               "Title": "ReadRoleDTO.cs",
               "DocumentMoniker": "D:\\Shipping System\\Shipping.BL\\DTOs\\Auth\\Role\\ReadRoleDTO.cs",
               "RelativeDocumentMoniker": "Shipping.BL\\DTOs\\Auth\\Role\\ReadRoleDTO.cs",
@@ -673,7 +671,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 27,
               "Title": "ShippingContext.cs",
               "DocumentMoniker": "D:\\Shipping System\\Shipping.DAL\\Persistent\\Data\\Context\\ShippingContext.cs",
               "RelativeDocumentMoniker": "Shipping.DAL\\Persistent\\Data\\Context\\ShippingContext.cs",
@@ -685,7 +683,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 28,
               "Title": "TokenGeneration.cs",
               "DocumentMoniker": "D:\\Shipping System\\Shipping.BL\\Services\\TokenGeneration.cs",
               "RelativeDocumentMoniker": "Shipping.BL\\Services\\TokenGeneration.cs",
@@ -697,7 +695,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 29,
               "Title": "appsettings.json",
               "DocumentMoniker": "D:\\Shipping System\\Shipping.PL\\appsettings.json",
               "RelativeDocumentMoniker": "Shipping.PL\\appsettings.json",
@@ -709,7 +707,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 30,
+              "DocumentIndex": 31,
               "Title": "Merchant.cs",
               "DocumentMoniker": "D:\\Shipping System\\Shipping.DAL\\Entities\\Merchant.cs",
               "RelativeDocumentMoniker": "Shipping.DAL\\Entities\\Merchant.cs",
@@ -721,7 +719,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 31,
+              "DocumentIndex": 32,
               "Title": "ApplicationUser.cs",
               "DocumentMoniker": "D:\\Shipping System\\Shipping.DAL\\Entities\\Identity\\ApplicationUser.cs",
               "RelativeDocumentMoniker": "Shipping.DAL\\Entities\\Identity\\ApplicationUser.cs",
@@ -733,7 +731,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 32,
+              "DocumentIndex": 33,
               "Title": "OrderReportController.cs",
               "DocumentMoniker": "D:\\Shipping System\\Shipping.PL\\Controllers\\OrderReportController.cs",
               "RelativeDocumentMoniker": "Shipping.PL\\Controllers\\OrderReportController.cs",
@@ -745,7 +743,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 33,
+              "DocumentIndex": 34,
               "Title": "RoleController.cs",
               "DocumentMoniker": "D:\\Shipping System\\Shipping.PL\\Controllers\\RoleController.cs",
               "RelativeDocumentMoniker": "Shipping.PL\\Controllers\\RoleController.cs",
@@ -753,12 +751,11 @@
               "RelativeToolTip": "Shipping.PL\\Controllers\\RoleController.cs",
               "ViewState": "AgIAAAkAAAAAAAAAAAAAABsAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-07T21:06:27.49Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-07T21:06:27.49Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
+              "DocumentIndex": 30,
               "Title": "PermissionDTO.cs",
               "DocumentMoniker": "D:\\Shipping System\\Shipping.BL\\DTOs\\Auth\\Permission\\PermissionDTO.cs",
               "RelativeDocumentMoniker": "Shipping.BL\\DTOs\\Auth\\Permission\\PermissionDTO.cs",
@@ -770,7 +767,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 34,
+              "DocumentIndex": 35,
               "Title": "SpecialPackages.cs",
               "DocumentMoniker": "D:\\Shipping System\\Shipping.DAL\\Entities\\SpecialPackages.cs",
               "RelativeDocumentMoniker": "Shipping.DAL\\Entities\\SpecialPackages.cs",
@@ -782,7 +779,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 35,
+              "DocumentIndex": 36,
               "Title": "AssignPermissionsToRoleDTO.cs",
               "DocumentMoniker": "D:\\Shipping System\\Shipping.BL\\DTOs\\Auth\\Permission\\AssignPermissionsToRoleDTO.cs",
               "RelativeDocumentMoniker": "Shipping.BL\\DTOs\\Auth\\Permission\\AssignPermissionsToRoleDTO.cs",
@@ -794,7 +791,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 36,
+              "DocumentIndex": 37,
               "Title": "ApplicationRole.cs",
               "DocumentMoniker": "D:\\Shipping System\\Shipping.DAL\\Entities\\Identity\\ApplicationRole.cs",
               "RelativeDocumentMoniker": "Shipping.DAL\\Entities\\Identity\\ApplicationRole.cs",
@@ -806,7 +803,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 37,
+              "DocumentIndex": 38,
               "Title": "SoftDeleteConfiguration.cs",
               "DocumentMoniker": "D:\\Shipping System\\Shipping.DAL\\Persistent\\Data\\ModelConfigruation\\SoftDeleteConfiguration.cs",
               "RelativeDocumentMoniker": "Shipping.DAL\\Persistent\\Data\\ModelConfigruation\\SoftDeleteConfiguration.cs",
@@ -818,7 +815,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 38,
+              "DocumentIndex": 39,
               "Title": "PermissionAttribute.cs",
               "DocumentMoniker": "D:\\Shipping System\\Shipping.PL\\Attributes\\PermissionAttribute.cs",
               "RelativeDocumentMoniker": "Shipping.PL\\Attributes\\PermissionAttribute.cs",
@@ -830,7 +827,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 39,
+              "DocumentIndex": 40,
               "Title": "Governorate.cs",
               "DocumentMoniker": "D:\\Shipping System\\Shipping.DAL\\Entities\\Governorate.cs",
               "RelativeDocumentMoniker": "Shipping.DAL\\Entities\\Governorate.cs",
@@ -842,7 +839,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 40,
+              "DocumentIndex": 41,
               "Title": "Weight.cs",
               "DocumentMoniker": "D:\\Shipping System\\Shipping.DAL\\Entities\\Weight.cs",
               "RelativeDocumentMoniker": "Shipping.DAL\\Entities\\Weight.cs",
@@ -854,7 +851,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 41,
+              "DocumentIndex": 42,
               "Title": "VillageDelivery.cs",
               "DocumentMoniker": "D:\\Shipping System\\Shipping.DAL\\Entities\\VillageDelivery.cs",
               "RelativeDocumentMoniker": "Shipping.DAL\\Entities\\VillageDelivery.cs",
@@ -866,7 +863,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 42,
+              "DocumentIndex": 43,
               "Title": "ShippingType.cs",
               "DocumentMoniker": "D:\\Shipping System\\Shipping.DAL\\Entities\\ShippingType.cs",
               "RelativeDocumentMoniker": "Shipping.DAL\\Entities\\ShippingType.cs",
@@ -878,7 +875,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 43,
+              "DocumentIndex": 44,
               "Title": "City.cs",
               "DocumentMoniker": "D:\\Shipping System\\Shipping.DAL\\Entities\\City.cs",
               "RelativeDocumentMoniker": "Shipping.DAL\\Entities\\City.cs",
@@ -890,7 +887,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 44,
+              "DocumentIndex": 45,
               "Title": "Branches.cs",
               "DocumentMoniker": "D:\\Shipping System\\Shipping.DAL\\Entities\\Branches.cs",
               "RelativeDocumentMoniker": "Shipping.DAL\\Entities\\Branches.cs",
@@ -902,7 +899,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 45,
+              "DocumentIndex": 46,
               "Title": "20250407213434_AddApplicationRole.cs",
               "DocumentMoniker": "D:\\Shipping System\\Shipping.DAL\\Migrations\\20250407213434_AddApplicationRole.cs",
               "RelativeDocumentMoniker": "Shipping.DAL\\Migrations\\20250407213434_AddApplicationRole.cs",
@@ -914,7 +911,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 46,
+              "DocumentIndex": 47,
               "Title": "Shipping.PL.csproj",
               "DocumentMoniker": "D:\\Shipping System\\Shipping.PL\\Shipping.PL.csproj",
               "RelativeDocumentMoniker": "Shipping.PL\\Shipping.PL.csproj",
@@ -926,7 +923,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 47,
+              "DocumentIndex": 48,
               "Title": "VillageSettingsController.cs",
               "DocumentMoniker": "D:\\Shipping System\\Shipping.PL\\Controllers\\VillageSettingsController.cs",
               "RelativeDocumentMoniker": "Shipping.PL\\Controllers\\VillageSettingsController.cs",
@@ -938,7 +935,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 49,
+              "DocumentIndex": 50,
               "Title": "WeightController.cs",
               "DocumentMoniker": "D:\\Shipping System\\Shipping.PL\\Controllers\\WeightController.cs",
               "RelativeDocumentMoniker": "Shipping.PL\\Controllers\\WeightController.cs",
@@ -950,7 +947,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 50,
+              "DocumentIndex": 51,
               "Title": "ReadVillageDTO.cs",
               "DocumentMoniker": "D:\\Shipping System\\Shipping.BL\\DTOs\\Village\\ReadVillageDTO.cs",
               "RelativeDocumentMoniker": "Shipping.BL\\DTOs\\Village\\ReadVillageDTO.cs",
@@ -962,7 +959,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 51,
+              "DocumentIndex": 52,
               "Title": "AddVillageDTO.cs",
               "DocumentMoniker": "D:\\Shipping System\\Shipping.BL\\DTOs\\Village\\AddVillageDTO.cs",
               "RelativeDocumentMoniker": "Shipping.BL\\DTOs\\Village\\AddVillageDTO.cs",
@@ -974,7 +971,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 48,
+              "DocumentIndex": 49,
               "Title": "WeightPriceService.cs",
               "DocumentMoniker": "D:\\Shipping System\\Shipping.BL\\Services\\WeightPriceService.cs",
               "RelativeDocumentMoniker": "Shipping.BL\\Services\\WeightPriceService.cs",
@@ -986,7 +983,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 52,
+              "DocumentIndex": 53,
               "Title": "VillageDeliveryService.cs",
               "DocumentMoniker": "D:\\Shipping System\\Shipping.BL\\Services\\VillageDeliveryService.cs",
               "RelativeDocumentMoniker": "Shipping.BL\\Services\\VillageDeliveryService.cs",
@@ -998,7 +995,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 53,
+              "DocumentIndex": 54,
               "Title": "IGenericRepository.cs",
               "DocumentMoniker": "D:\\Shipping System\\Shipping.DAL\\Persistent\\Repositries\\Irepo\\IGenericRepository.cs",
               "RelativeDocumentMoniker": "Shipping.DAL\\Persistent\\Repositries\\Irepo\\IGenericRepository.cs",
@@ -1010,7 +1007,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 54,
+              "DocumentIndex": 55,
               "Title": "AddWeightDTO.cs",
               "DocumentMoniker": "D:\\Shipping System\\Shipping.BL\\DTOs\\Weight\\AddWeightDTO.cs",
               "RelativeDocumentMoniker": "Shipping.BL\\DTOs\\Weight\\AddWeightDTO.cs",
@@ -1019,18 +1016,6 @@
               "ViewState": "AgIAAAcAAAAAAAAAAIBQwAwAAAAsAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-06T14:50:14.022Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 55,
-              "Title": "BranchService.cs",
-              "DocumentMoniker": "D:\\Shipping System\\Shipping.BL\\Services\\BranchService.cs",
-              "RelativeDocumentMoniker": "Shipping.BL\\Services\\BranchService.cs",
-              "ToolTip": "D:\\Shipping System\\Shipping.BL\\Services\\BranchService.cs",
-              "RelativeToolTip": "Shipping.BL\\Services\\BranchService.cs",
-              "ViewState": "AgIAADAAAAAAAAAAAAAIwCsAAAAMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-26T11:47:49.224Z"
             },
             {
               "$type": "Document",
@@ -1174,8 +1159,7 @@
               "RelativeToolTip": "Shipping.PL\\Controllers\\BranchController.cs",
               "ViewState": "AgIAACEAAAAAAAAAAAAYwDQAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-28T12:26:51.535Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-28T12:26:51.535Z"
             },
             {
               "$type": "Document",

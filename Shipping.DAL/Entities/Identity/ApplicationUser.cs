@@ -16,4 +16,6 @@ namespace Shipping.DAL.Entities.Identity
         public virtual Delivery Delivery { get; set; }
 
     }
+
+    
 }
