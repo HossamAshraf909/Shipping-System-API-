@@ -17,9 +17,13 @@ public interface IUnitOfWork : IDisposable
     IGenericRepository<Branches> Branches { get; }
     IGenericRepository<ShippingType> ShippingTypes { get; }
     IGenericRepository<WeightPrice> WeightPrices { get; }
+
     IGenericRepository<Delivery> Delivery { get; }
     
     IGenericRepository<Employee> Employee { get; }
+
+
+    IGenericRepository<Merchant> Merchant { get; }
 
     Task<int> SaveChangesAsync();
 }

@@ -18,6 +18,7 @@ namespace Shipping.BL.DTOs.Order
         public int CityId { get; set; }
         public int GovernorateId { get; set; }
         public int ShippingTypeId { get; set; }
+        public int merchantId { get; set; }
         public OrderStatus orderStatus { get; set; }
         public bool IsVillageDelivery { get; set; }
         public string VillageStreetAddress { get; set; } = null!;

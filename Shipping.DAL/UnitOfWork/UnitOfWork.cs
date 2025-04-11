@@ -27,9 +27,8 @@ namespace Shipping.DAL.Persistent.UnitOfWork
         private IGenericRepository<Merchant>? _merchent;
         private IGenericRepository<Delivery>? _delivery;
         private IGenericRepository<Employee>? _employee;
-        // private IGenericRepository<Delivery>? _delivery;
-       // private IGenericRepository<ApplicationUser>? _applicationUser;
-        //private IGenericRepository<Employee>? _employee;
+
+
         public UnitOfWork(ShippingContext context)
 
         {
@@ -73,11 +72,6 @@ namespace Shipping.DAL.Persistent.UnitOfWork
 
         public IGenericRepository<WeightPrice> WeightPrices =>
             _weightPrices ??= new GenericRepository<WeightPrice>(_context);
-
-      
-
-        //public IGenericRepository<Employee> Employee =>
-        //   _employee ??= new GenericRepository<Employee>(_context);
 
 
         public async Task<int> SaveChangesAsync()

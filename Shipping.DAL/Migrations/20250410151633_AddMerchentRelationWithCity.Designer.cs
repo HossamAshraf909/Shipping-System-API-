@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Shipping.DAL.Persistent.Data.Context;
 
@@ -11,9 +12,11 @@ using Shipping.DAL.Persistent.Data.Context;
 namespace Shipping.DAL.Migrations
 {
     [DbContext(typeof(ShippingContext))]
-    partial class ShippingContextModelSnapshot : ModelSnapshot
+    [Migration("20250410151633_AddMerchentRelationWithCity")]
+    partial class AddMerchentRelationWithCity
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -934,7 +937,7 @@ namespace Shipping.DAL.Migrations
                         .IsRequired();
 
                     b.HasOne("Shipping.DAL.Entities.Merchant", "merchant")
-                        .WithMany("SpecialPackages")
+                        .WithMany()
                         .HasForeignKey("merchantID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -1005,8 +1008,6 @@ namespace Shipping.DAL.Migrations
                     b.Navigation("MerchantBranches");
 
                     b.Navigation("Orders");
-
-                    b.Navigation("SpecialPackages");
                 });
 
             modelBuilder.Entity("Shipping.DAL.Entities.ShippingType", b =>

@@ -44,7 +44,7 @@ namespace Shipping.BL.Services
 
             };
 
-            await userManager.CreateAsync(applicationUser);
+            await userManager.CreateAsync(applicationUser,employeeDTO.Password);
 
             await userManager.AddToRoleAsync(applicationUser,employeeDTO.UserRole);
 

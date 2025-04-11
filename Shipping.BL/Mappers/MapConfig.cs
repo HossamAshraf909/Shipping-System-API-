@@ -66,6 +66,7 @@ namespace Shipping.BL.Mappers
             CreateMap<AddOrderDTO, Order>().AfterMap((src, dist) =>
             {
                dist.TotalWeight = src.Products.Sum(p => p.Weight * p.Quantity);
+                dist.MerchantId = src.MerchentId;
                 if (src.IsVillageDelivery == true) 
                 {
                     dist.VillageStreetAddress = src.VillageStreetAddress;
@@ -76,6 +77,7 @@ namespace Shipping.BL.Mappers
             {
                 dist.Governorate = src.Governorate.Name;
                 dist.City = src.City.Name;
+                dist.merchntName = src.Merchant.User.UserName;
             }).ReverseMap();
             CreateMap<Order, ReadOrderWithProducts>().AfterMap((src, dist) =>
             {
@@ -89,6 +91,7 @@ namespace Shipping.BL.Mappers
                         Weight = product.Product.Weight,
                     });
                 }
+                dist.merchantId = src.Merchant.ID;
             }).ReverseMap();
             CreateMap<Order, ReadOrderReportDTO>().AfterMap((src, dist) =>
             {

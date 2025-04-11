@@ -17,6 +17,6 @@ namespace Shipping.BL.DTOs.Delivery
         public string address { get; set; }
         public string TypeOfDiscount { get; set; }
         public float CompanyPercent { get; set; }
-        public int UserId { get; set; } 
+        public string UserId { get; set; } 
     }
 }

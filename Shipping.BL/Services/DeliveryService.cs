@@ -35,7 +35,7 @@ namespace Shipping.BL.Services
                 Address = deliveryDTO.address,
 
             };
-            await userManager.CreateAsync(applicationUser);
+            await userManager.CreateAsync(applicationUser,deliveryDTO.Password);
 
             var user = await userManager.FindByNameAsync(deliveryDTO.Name);
 
