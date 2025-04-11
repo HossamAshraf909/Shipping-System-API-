@@ -33,5 +33,6 @@ namespace Shipping.DAL.Entities
         public virtual ICollection<Order> Orders { get; set; }
         public virtual City City { get; set; }
         public virtual Governorate Governorate  { get; set; }
+        public virtual IEnumerable<SpecialPackages>? SpecialPackages { get; set; } = new List<SpecialPackages>();
     }
 }

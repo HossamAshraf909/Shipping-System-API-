@@ -329,8 +329,23 @@ namespace Shipping.DAL.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"));
 
+                    b.Property<string>("Branch")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
                     b.Property<float>("CompanyPercent")
                         .HasColumnType("real");
+
+                    b.Property<string>("Governorate")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.Property<string>("PhoneNumber")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
 
                     b.Property<string>("TypeOfDiscount")
                         .IsRequired()
@@ -373,9 +388,29 @@ namespace Shipping.DAL.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"));
 
+                    b.Property<string>("Branch")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.Property<string>("PhoneNumber")
+                        .IsRequired()
+                        .HasMaxLength(20)
+                        .HasColumnType("nvarchar(20)");
+
                     b.Property<string>("UserID")
                         .IsRequired()
                         .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("UserRole")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.Property<string>("password")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
 
                     b.HasKey("ID");
 
@@ -516,6 +551,9 @@ namespace Shipping.DAL.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"));
 
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
                     b.Property<decimal>("PickUpPrice")
                         .HasColumnType("decimal(18,2)");
 
@@ -526,10 +564,20 @@ namespace Shipping.DAL.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(450)");
 
+                    b.Property<int>("cityId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("governrateId")
+                        .HasColumnType("int");
+
                     b.HasKey("ID");
 
                     b.HasIndex("UserID")
                         .IsUnique();
+
+                    b.HasIndex("cityId");
+
+                    b.HasIndex("governrateId");
 
                     b.ToTable("Merchants");
                 });
@@ -582,6 +630,9 @@ namespace Shipping.DAL.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
                     b.Property<decimal>("ShippingPrice")
                         .HasColumnType("decimal(18,2)");
 
@@ -591,12 +642,17 @@ namespace Shipping.DAL.Migrations
                     b.Property<int>("governorateID")
                         .HasColumnType("int");
 
+                    b.Property<int>("merchantID")
+                        .HasColumnType("int");
+
                     b.HasKey("Id");
 
                     b.HasIndex("cityID")
                         .IsUnique();
 
                     b.HasIndex("governorateID");
+
+                    b.HasIndex("merchantID");
 
                     b.ToTable("specialPackages");
                 });
@@ -825,6 +881,22 @@ namespace Shipping.DAL.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("Shipping.DAL.Entities.City", "City")
+                        .WithMany("Merchants")
+                        .HasForeignKey("cityId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Shipping.DAL.Entities.Governorate", "Governorate")
+                        .WithMany()
+                        .HasForeignKey("governrateId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("City");
+
+                    b.Navigation("Governorate");
+
                     b.Navigation("User");
                 });
 
@@ -861,9 +933,17 @@ namespace Shipping.DAL.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("Shipping.DAL.Entities.Merchant", "merchant")
+                        .WithMany("SpecialPackages")
+                        .HasForeignKey("merchantID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.Navigation("city");
 
                     b.Navigation("governorate");
+
+                    b.Navigation("merchant");
                 });
 
             modelBuilder.Entity("Order", b =>
@@ -885,6 +965,8 @@ namespace Shipping.DAL.Migrations
 
             modelBuilder.Entity("Shipping.DAL.Entities.City", b =>
                 {
+                    b.Navigation("Merchants");
+
                     b.Navigation("orders");
 
                     b.Navigation("specialPackages");
@@ -923,6 +1005,8 @@ namespace Shipping.DAL.Migrations
                     b.Navigation("MerchantBranches");
 
                     b.Navigation("Orders");
+
+                    b.Navigation("SpecialPackages");
                 });
 
             modelBuilder.Entity("Shipping.DAL.Entities.ShippingType", b =>

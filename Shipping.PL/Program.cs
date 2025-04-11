@@ -9,6 +9,7 @@ using Microsoft.IdentityModel.Tokens;
 using Shipping.BL.Mappers;
 using Shipping.BL.Services;
 using Shipping.BL.Services.Imodel;
+using Shipping.BL.Services.Shipping.BL.Services;
 using Shipping.DAL.Entities.Identity;
 using Shipping.DAL.Persistent.Data.Context;
 
@@ -34,7 +35,8 @@ namespace Shipping.PL
             // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 
             builder.Services.AddOpenApi();
-
+       
+        
 
             #region Add Services
             //allow cors
@@ -77,6 +79,7 @@ namespace Shipping.PL
                       };
               });
 
+
             builder.Services.AddAutoMapper(typeof(MapConfig));
 
             builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
@@ -90,6 +93,9 @@ namespace Shipping.PL
             builder.Services.AddScoped<OrderService>();
             builder.Services.AddScoped<OrderReportService>();
             builder.Services.AddScoped<VillageDeliveryService>();
+            builder.Services.AddScoped<DeliveryService>();
+            builder.Services.AddScoped<EmployeeService>();
+            builder.Services.AddScoped<MerchantService>();
             builder.Services.AddScoped<ITokenGeneration, TokenGeneration>();
 
             builder.Services.AddScoped<AuthService>();
@@ -116,6 +122,8 @@ namespace Shipping.PL
             }
 
             app.UseHttpsRedirection();
+            
+            app.UseAuthentication();
 
             app.UseAuthorization();
 

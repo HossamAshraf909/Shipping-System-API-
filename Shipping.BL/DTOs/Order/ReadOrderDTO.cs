@@ -13,6 +13,7 @@ namespace Shipping.BL.DTOs.Order
         public DateTime OrderDate { get; set; }
         public int Id { get; set; }
         public OrderStatus orderStatus { get; set; }
+        public string merchntName { get; set; } = null!;
         public string CustomerName { get; set; } = null!;
         public string CustomerPhone { get; set; } = null!;
         public string CustomerEmail { get; set; } = null!;

@@ -1,15 +1,20 @@
 
-﻿using System.Collections.Generic;
-using System.Threading.Tasks;
-using AutoMapper;
+﻿using AutoMapper;
 using Shipping.BL.DTOs.SpecialPackage;
 using Shipping.DAL.Entities;
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
 using Shipping.DAL.Persistent.UnitOfWork;
 
 namespace Shipping.BL.Services
 {
     public class SpecialPackageService
     {
+     
         private readonly IMapper _mapper;
         private readonly IUnitOfWork _unitOfWork;
 
@@ -56,7 +61,5 @@ namespace Shipping.BL.Services
             await _unitOfWork.SpecialPackage.DeleteAsync(id);
             await _unitOfWork.SaveChangesAsync();
         }
-
-
     }
 }

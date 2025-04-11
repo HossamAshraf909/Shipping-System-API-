@@ -1,8 +1,11 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using System.Security.Claims;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Shipping.BL.DTOs.Order;
 using Shipping.BL.DTOs.product;
 using Shipping.BL.Services;
+using Shipping.DAL.Entities.Identity;
 
 namespace Shipping.PL.Controllers
 {
@@ -10,16 +13,18 @@ namespace Shipping.PL.Controllers
     [ApiController]
     public class OrderController : ControllerBase
     {
-        public OrderController(OrderService orderService, ProductService productService, OrderProductService orderProductService)
+        public OrderController(OrderService orderService, ProductService productService, OrderProductService orderProductService ,UserManager<ApplicationUser> userManager)
         {
             OrderService = orderService;
             ProductService = productService;
             OrderProductService = orderProductService;
+            UserManager = userManager;
         }
 
         public OrderService OrderService { get; }
         public ProductService ProductService { get; }
         public OrderProductService OrderProductService { get; }
+        public UserManager<ApplicationUser> UserManager { get; }
 
         [HttpGet]
         public async Task<IActionResult> GetAllOrders()
@@ -57,9 +62,12 @@ namespace Shipping.PL.Controllers
         {
             if (orderDTO == null) BadRequest();
             if (!ModelState.IsValid) BadRequest(ModelState);
-            
-            
-            
+            if (orderDTO.MerchentId == 0)
+            {
+                var userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+                var user = await UserManager.FindByIdAsync(userId);
+                orderDTO.MerchentId = user.Merchant.ID;
+            }
             await OrderService.AddOrderAsync(orderDTO);
 
             return Ok();

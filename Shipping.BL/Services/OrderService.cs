@@ -45,7 +45,16 @@ namespace Shipping.BL.Services
             var city = await _unitOfWork.Cities.GetByIdAsync(orderDto.CityId);
             var shippingType = await _unitOfWork.ShippingTypes.GetByIdAsync(orderDto.ShippingTypeId);
             order.ShippingPrice = (city.ShippingPrice+shippingType.ShippingPrice);
-            if(orderDto.IsVillageDelivery== true)
+               var Merchant= await _unitOfWork.Merchant.GetByIdAsync(orderDto.MerchentId);
+            foreach (var specialPackage in Merchant.SpecialPackages)
+            {
+                if (orderDto.CityId == specialPackage.cityID && orderDto.GovernorateId == specialPackage.governorateID)
+                {
+                    order.ShippingPrice = specialPackage.ShippingPrice;
+                    break;
+                }
+            }
+            if (orderDto.IsVillageDelivery== true)
             {
                 var deliveryTovillage = await _unitOfWork.VillageDelivery.GetAllAsync();
                 var delivery= deliveryTovillage.First();    

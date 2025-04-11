@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Shipping.DAL.Entities
 {
-    public class SpecialPackages
+    public class SpecialPackages:BaseEntity
     {
         public int Id { get; set; }
        
