@@ -32,7 +32,11 @@ namespace Shipping.PL.Controllers
         {
             var result = await AuthService.CreateRole(roleName);
             if (result)
-                return Ok("Role Created Successfully");
+                return Ok(new
+                {
+                    message = "Role Created Successfully",
+                    statusCode = 200
+                });
 
 
             return BadRequest("Role Creation Failed");
@@ -50,9 +54,9 @@ namespace Shipping.PL.Controllers
         }
         
         [HttpGet("GetRolePermissions")]
-        public async Task<IActionResult> GetRolePermissions(string roleId)
+        public async Task<IActionResult> GetRolePermissions(string role)
         {
-            var result = await AuthService.GetRolePermissions(roleId);
+            var result = await AuthService.GetRolePermissions(role);
            
             if (result == null)
                      return BadRequest("Role Not Found");

@@ -358,10 +358,8 @@ D:\shippingsys\Shipping.PL\obj\Debug\net9.0\staticwebassets.upToDateCheck.txt
 D:\shippingsys\Shipping.PL\obj\Debug\net9.0\Shipping.EEFF201A.Up2Date
 D:\shippingsys\Shipping.PL\obj\Debug\net9.0\Shipping.PL.genruntimeconfig.cache
 D:\shippingsys\Shipping.PL\obj\Debug\net9.0\ref\Shipping.PL.dll
-
 D:\shippingsys\Shipping.PL\bin\Debug\net9.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 D:\Shipping System\Shipping.PL\bin\Debug\net9.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
-
 C:\Users\emans\source\repos\Shipping\Shipping-System-API-\Shipping.PL\obj\Debug\net9.0\Shipping.PL.csproj.AssemblyReference.cache
 C:\Users\emans\source\repos\Shipping\Shipping-System-API-\Shipping.PL\obj\Debug\net9.0\Shipping.PL.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\emans\source\repos\Shipping\Shipping-System-API-\Shipping.PL\obj\Debug\net9.0\Shipping.PL.AssemblyInfoInputs.cache
@@ -542,4 +540,3 @@ C:\Users\emans\source\repos\Shipping\Shipping-System-API-\Shipping.PL\obj\Debug\
 C:\Users\emans\source\repos\Shipping\Shipping-System-API-\Shipping.PL\obj\Debug\net9.0\Shipping.EEFF201A.Up2Date
 C:\Users\emans\source\repos\Shipping\Shipping-System-API-\Shipping.PL\obj\Debug\net9.0\Shipping.PL.genruntimeconfig.cache
 C:\Users\emans\source\repos\Shipping\Shipping-System-API-\Shipping.PL\obj\Debug\net9.0\ref\Shipping.PL.dll
-

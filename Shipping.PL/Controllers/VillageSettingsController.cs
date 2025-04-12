@@ -30,7 +30,11 @@ namespace Shipping.PL.Controllers
             else
             await DeliveryService.UpdateAsync(existingVillageSetting[0].Id, addVillageDTO);
 
-            return Ok();
+            return Ok(new
+            {
+                message = "Village Setting added successfully",
+                statusCode = 200
+            });
         }
     }
 }

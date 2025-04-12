@@ -17,10 +17,9 @@ namespace Shipping.DAL.Entities
 
         public string TypeOfDiscount { get; set; }
         public float CompanyPercent { get; set; }
-        [Required ,MaxLength(50)]
-        public string Branch { get; set; }
-        [Required, MaxLength(50)]
-        public string Governorate { get; set; }
+        [ForeignKey("Governorate")]
+        public int governorateId { get; set; }
+
         [Required, MaxLength(50)]
         public string PhoneNumber { get; set; }
 
@@ -33,13 +32,6 @@ namespace Shipping.DAL.Entities
         public virtual ICollection<Order> Orders { get; set; }
 
         public virtual ICollection<DeliveryBranch> DeliveryBranches { get; set; }
-
-
-
-
-
-
-        
-        
+        public virtual Governorate Governorate { get; set; }
     }
 }

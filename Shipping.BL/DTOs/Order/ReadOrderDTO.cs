@@ -22,5 +22,6 @@ namespace Shipping.BL.DTOs.Order
         public decimal OrderPrice { get; set; }
         public string City { get; set; } = null!;
         public string Governorate { get; set; } = null!;
+        public bool IsDeleted { get; set; }
     }
 }

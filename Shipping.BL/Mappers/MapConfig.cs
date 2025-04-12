@@ -26,6 +26,7 @@ using Shipping.BL.DTOs.OrderReport;
 using Shipping.DAL.Entities.Identity;
 using Shipping.BL.DTOs.Auth.Role;
 using Shipping.BL.DTOs.Employee;
+using Shipping.BL.DTOs.Delivery;
 
 
 
@@ -77,7 +78,7 @@ namespace Shipping.BL.Mappers
             {
                 dist.Governorate = src.Governorate.Name;
                 dist.City = src.City.Name;
-                dist.merchntName = src.Merchant.User.UserName;
+                dist.merchntName = src.Merchant?.User.UserName;
             }).ReverseMap();
             CreateMap<Order, ReadOrderWithProducts>().AfterMap((src, dist) =>
             {
@@ -110,14 +111,11 @@ namespace Shipping.BL.Mappers
                 dist.Name = src.User.UserName;
                 dist.Email = src.User.Email;
             }).ReverseMap();
-
-            //CreateMap<Employee, AddEmployeeDTO>().AfterMap((src, dist) =>
-            //{
-            //    dist.Name = src.User.UserName;
-            //    dist.Email = src.User.Email;
-            //}).ReverseMap();
-
-
+            CreateMap<Delivery , ReadDeliveryDTO >().AfterMap((src, dist) =>
+            {
+                dist.Name = src.User.UserName;
+                dist.Id = src.ID;
+            }).ReverseMap();
         }
 
     }

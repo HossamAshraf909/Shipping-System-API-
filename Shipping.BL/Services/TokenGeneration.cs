@@ -9,6 +9,7 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
 using System.Security.Claims;
 using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
 
 namespace Shipping.BL.Services
@@ -39,17 +40,6 @@ namespace Shipping.BL.Services
             foreach (var role in roles)
             {
                 autClaims.Add(new Claim(ClaimTypes.Role, role));
-
-                var permissions = await _authService.GetRolePermissions(role);
-
-                foreach (var permission in permissions)
-                {
-                    var permissionClaim = System.Text.Json.JsonSerializer.Serialize(permission);
-
-                    autClaims.Add(new Claim("Permission_" + permission.pageName, permissionClaim));
-                }
-
-
             }
 
             var authKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["JWT:Key"]));

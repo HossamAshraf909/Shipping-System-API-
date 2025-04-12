@@ -24,7 +24,11 @@ namespace Shipping.PL.Controllers
             }
 
             await _merchantService.AddAsync(merchantDTO);
-            return Ok("Merchant added successfully.");
+            return Ok(new
+            {
+                message = "Merchant added successfully",
+                statusCode = 200
+            });
         }
 
         [HttpGet]

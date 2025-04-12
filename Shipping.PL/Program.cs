@@ -14,6 +14,7 @@ using Shipping.DAL.Entities.Identity;
 using Shipping.DAL.Persistent.Data.Context;
 
 using Shipping.DAL.Persistent.UnitOfWork;
+using Shipping.PL.Helpers;
 
 
 namespace Shipping.PL
@@ -111,6 +112,7 @@ namespace Shipping.PL
                 var userManager = serviceProvider.GetRequiredService<UserManager<ApplicationUser>>();
 
                 ShippingContextSeed.Initialize(serviceProvider, userManager);
+                PermissionSeeder.SeedRolesAndPermissions(serviceProvider);
 
             }
 

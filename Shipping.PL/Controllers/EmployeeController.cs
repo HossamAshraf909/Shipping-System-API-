@@ -33,7 +33,11 @@ namespace Shipping.PL.Controllers
             if (employee == null) return BadRequest();
             if (!ModelState.IsValid) return BadRequest();
             await employeeService.AddEmployeeAsync(employee);
-            return Ok();
+            return Ok( new
+            {
+                massage = "Employee added successfully",
+                statusCode = 200
+            });
         }
 
 

@@ -26,7 +26,11 @@ namespace Shipping.PL.Controllers
             if (addShippingTypeDTO == null) BadRequest();
             if (!ModelState.IsValid)  BadRequest(ModelState);
             await ShippingTypeService.AddAsync(addShippingTypeDTO);    
-            return Ok();
+            return Ok(new
+            {
+                message = "Shipping Type added successfully",
+                statusCode = 200
+            });
         }
         [HttpPut]
         public async Task<IActionResult> EditShippingType(AddShippingTypeDTO addShippingTypeDTO) 
@@ -40,7 +44,11 @@ namespace Shipping.PL.Controllers
         {
             if(!ModelState.IsValid) return BadRequest();
             await ShippingTypeService.DeleteAsync(id);
-            return Ok();
+            return Ok(new
+            {
+                message = "Shipping Type deleted successfully",
+                statusCode = 200
+            });
         }
     }
 }

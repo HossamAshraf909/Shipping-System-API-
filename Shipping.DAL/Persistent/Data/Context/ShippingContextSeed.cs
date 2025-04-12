@@ -4,6 +4,7 @@ using Shipping.DAL.Entities.Identity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -45,32 +46,6 @@ namespace Shipping.DAL.Persistent.Data.Context
                 }
             }
         }
-        public static async Task SeedRolesAndPermissions(IServiceProvider serviceProvider)
-        {
-            using (var scope = serviceProvider.CreateScope())
-            {
-                var roleManager = scope.ServiceProvider.GetRequiredService<RoleManager<ApplicationRole>>();
-               
-                // Seed roles and permissions here
-                var roles = new List<string> { "Admin"};
-                foreach (var role in roles)
-                {
-                    if (!await roleManager.RoleExistsAsync(role))
-                    {
-                       var result= await roleManager.CreateAsync(new ApplicationRole
-                        {
-                            Name = role,
-                            NormalizedName = role.ToUpper(),
-                            CreatedDate = DateTime.Now
-                        });
-                        if (result.Succeeded)
-                        {
-                           
-                        }
-                    }
-
-                }
-            }
-        }
+       
     }
 }

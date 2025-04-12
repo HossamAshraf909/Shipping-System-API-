@@ -12,6 +12,15 @@ namespace Shipping.DAL.Consistants
       {
           return $"Permission.{module}.{TypeOfPermission}";
       }
-        
+      public static List<string> GenerateAdminPermissions(string module)
+        {
+            return new List<string>() 
+            {
+             $"Permission.{module}.Create",
+             $"Permission.{module}.Read",
+             $"Permission.{module}.Update",
+             $"Permission.{module}.Delete",
+            };
+        }
     }
 }
