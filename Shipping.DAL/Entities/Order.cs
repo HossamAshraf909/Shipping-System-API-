@@ -54,7 +54,4 @@ public class Order : BaseEntity
     public int? MerchantId { get; set; }
     public virtual Merchant Merchant { get; set; }
 
-    public int? BranchId { get; set; }
-    public virtual Branches? Branche { get; set; }
-
 }

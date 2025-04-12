@@ -47,10 +47,6 @@ namespace Shipping.BL.Services
 
             orderDto.Phonenumber = merchant.User.PhoneNumber;
             orderDto.Address = merchant.User.Address;
-
-            orderDto.Branche = order.Branche.Name;
-
-
             var city = await _unitOfWork.Cities.GetByIdAsync(orderDto.CityId);
             var shippingType = await _unitOfWork.ShippingTypes.GetByIdAsync(orderDto.ShippingTypeId);
             order.ShippingPrice = (city.ShippingPrice+shippingType.ShippingPrice);
