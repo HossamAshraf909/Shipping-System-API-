@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using AutoMapper;
 using Microsoft.AspNetCore.Identity;
 using Shipping.BL.DTOs.Delivery;
 using Shipping.DAL.Entities;
@@ -15,12 +16,13 @@ namespace Shipping.BL.Services
         private readonly IUnitOfWork unit;
 
         UserManager<ApplicationUser> userManager;
+        private readonly IMapper mapper;
 
-        public DeliveryService(IUnitOfWork unit , UserManager<ApplicationUser> userManager)
+        public DeliveryService(IUnitOfWork unit , UserManager<ApplicationUser> userManager , IMapper mapper)
         {
             this.unit = unit;
             this.userManager = userManager;
-            
+            this.mapper = mapper;
         }
 
 
@@ -33,42 +35,45 @@ namespace Shipping.BL.Services
                 Email = deliveryDTO.Email,
                 PasswordHash = deliveryDTO.Password,
                 Address = deliveryDTO.address,
-
             };
             await userManager.CreateAsync(applicationUser,deliveryDTO.Password);
+            
+            await unit.SaveChangesAsync();
 
-            var user = await userManager.FindByNameAsync(deliveryDTO.Name);
 
             var delivery = new Delivery 
             { 
-                Branch = deliveryDTO.Branch,
-                Governorate = deliveryDTO.Governorate,
                 PhoneNumber = deliveryDTO.PhoneNumber,
                 TypeOfDiscount = deliveryDTO.TypeOfDiscount,
                 CompanyPercent = deliveryDTO.CompanyPercent,
-                UserID = user.Id,
+                governorateId=  deliveryDTO.GovernorateId,
+                UserID = applicationUser.Id,
             };
-
-           
             await unit.Delivery.AddAsync(delivery);
-
+            await unit.SaveChangesAsync();
+            foreach (var branchId in deliveryDTO.BranchesId)
+            {
+                var branch = await unit.Branches.GetByIdAsync(branchId);
+                if (branch != null)
+                {
+                    var deliveryBranch = new DeliveryBranch
+                    {
+                        BranchID = branch.Id,
+                        DeliveryID = delivery.ID,
+                    };
+                    await unit.DeliveryBranches.AddAsync(deliveryBranch);
+                    await unit.SaveChangesAsync();
+                }
+            }
         }
 
 
-       public async Task<List<string>> GetByGovernorateAsync (string governorate)
+       public async Task<List<ReadDeliveryDTO>> GetByGovernorateAsync (string governorate)
         {
-         
-            var deliveries = await unit.Delivery.GetAllAsync();
-            var deliveriesNames = deliveries.Where(x=>x.Governorate == governorate)
-                                            .Select(s=>s.User.UserName).ToList();
-
-            return deliveriesNames;
-
+            var deliveries = await unit.Delivery.SearchAsync(g=>g.Governorate.Name==governorate);
+            var deliveriesDto = mapper.Map<List<ReadDeliveryDTO>>(deliveries);
+            return deliveriesDto;
         }
-
-
-
-
 
     }
 }

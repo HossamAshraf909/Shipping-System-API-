@@ -14,7 +14,6 @@ namespace Shipping.PL.Controllers
         public DeliveryController(DeliveryService deliveryService)
         {
             this.deliveryService = deliveryService;
-            
         }
 
         [HttpPost]
@@ -24,16 +23,18 @@ namespace Shipping.PL.Controllers
             if (delivery == null) return BadRequest();
             if (!ModelState.IsValid) return BadRequest();
             await deliveryService.AddAsync(delivery);
-            return Ok();
+            return Ok(new
+            {
+                message = "Delivery added successfully",
+                statusCode = 200
+            });
         }
 
-
-
-        [HttpGet]
-        public async Task<ActionResult> GetByGovernorate(string Governorate)
+        [HttpGet("{governrate:alpha}")]
+        public async Task<ActionResult> GetByGovernorate(string governrate)
         {
-            if(Governorate == null) return BadRequest();
-            return Ok(await deliveryService.GetByGovernorateAsync(Governorate));
+            if(governrate == null) return BadRequest();
+            return Ok(await deliveryService.GetByGovernorateAsync(governrate));
 
         }
     }

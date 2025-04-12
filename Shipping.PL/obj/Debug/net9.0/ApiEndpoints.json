@@ -91,7 +91,7 @@
   {
     "ContainingType": "Shipping.PL.Controllers.BranchController",
     "Method": "SearchForBranchAsync",
-    "RelativePath": "api/Branch/api/branchSearch/{searchWord}",
+    "RelativePath": "api/Branch/{searchWord}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -218,15 +218,15 @@
   {
     "ContainingType": "Shipping.PL.Controllers.DeliveryController",
     "Method": "GetByGovernorate",
-    "RelativePath": "api/Delivery",
+    "RelativePath": "api/Delivery/{governrate}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "Governorate",
+        "Name": "governrate",
         "Type": "System.String",
-        "IsRequired": false
+        "IsRequired": true
       }
     ],
     "ReturnTypes": []
@@ -453,13 +453,13 @@
   {
     "ContainingType": "Shipping.PL.Controllers.OrderController",
     "Method": "GetOrderBystatus",
-    "RelativePath": "api/Order/{search}",
+    "RelativePath": "api/Order/{Status}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "search",
+        "Name": "Status",
         "Type": "System.String",
         "IsRequired": true
       }
@@ -580,7 +580,7 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "roleId",
+        "Name": "role",
         "Type": "System.String",
         "IsRequired": false
       }

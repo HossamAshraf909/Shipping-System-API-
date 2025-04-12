@@ -31,7 +31,11 @@ namespace Shipping.PL.Controllers
                 await weightPriceService.AddAsync(weight);
             else  
                 await weightPriceService.UpdateAsync(weight);
-            return Ok ();   
+            return Ok (new
+            {
+                message = "Weight setting added successfully",
+                statusCode = 200
+            });   
         }
     }
 }

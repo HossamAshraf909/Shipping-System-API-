@@ -18,6 +18,9 @@ namespace Shipping.DAL.Entities
 
         public virtual ICollection<Order> orders { get; set; } = new List<Order>();
 
-        public virtual ICollection<SpecialPackages> specialPackages { get; set; } = new List<SpecialPackages>();    
+        public virtual ICollection<SpecialPackages> specialPackages { get; set; } = new List<SpecialPackages>();  
+        public virtual ICollection<Merchant> Merchants { get; set; } = new List<Merchant>();
+        public virtual ICollection<Delivery> deliveries { get; set; } = new List<Delivery>();
+
     }
 }

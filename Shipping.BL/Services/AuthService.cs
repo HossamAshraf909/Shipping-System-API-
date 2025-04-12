@@ -93,37 +93,54 @@ namespace Shipping.BL.Services
         }
         public async Task<List<PermissionDTO>> GetRolePermissions(string role)
         {
-            var Role= await roleManager.FindByNameAsync(role);
+            var Role = await roleManager.FindByNameAsync(role);
             var rolePermissions = await roleManager.GetClaimsAsync(Role);
-            var PermissionDTOList = new List<PermissionDTO>();
+
+            var permissionDTOMap = new Dictionary<string, PermissionDTO>();
+
             if (!rolePermissions.Any())
-                return PermissionDTOList;
-            
-            
+                return new List<PermissionDTO>();
+
             foreach (var rolePermission in rolePermissions)
             {
-                var permission = rolePermission.Value;
-                var pageName = permission.Split('.')[1];
-                var permissionType = permission.Split('.')[2];
-                var PermissionDTO = new PermissionDTO
+                var parts = rolePermission.Value.Split('.');
+                if (parts.Length != 3) continue;
+
+                var pageName = parts[1];
+                var permissionType = parts[2];
+
+                if (!permissionDTOMap.TryGetValue(pageName.ToLower(), out var dto))
                 {
-                    pageName = pageName
-                };
-                        if (permissionType == "Create")
-                             PermissionDTO.canCreate = true;            
-                
-                        if (permissionType == "Read")
-                             PermissionDTO.canRead = true;
-                
-                        if (permissionType == "Update")
-                             PermissionDTO.canUpdate = true;
-                
-                        if (permissionType == "Delete")
-                             PermissionDTO.canDelete = true;
-               
-                PermissionDTOList.Add(PermissionDTO);
+                    dto = new PermissionDTO
+                    {
+                        pageName = pageName,
+                        canCreate = false,
+                        canRead = false,
+                        canUpdate = false,
+                        canDelete = false
+                    };
+                    permissionDTOMap[pageName.ToLower()] = dto;
+                }
+
+                switch (permissionType)
+                {
+                    case "Create":
+                        dto.canCreate = true;
+                        break;
+                    case "Read":
+                        dto.canRead = true;
+                        break;
+                    case "Update":
+                        dto.canUpdate = true;
+                        break;
+                    case "Delete":
+                        dto.canDelete = true;
+                        break;
+                }
             }
-            return PermissionDTOList;
+
+            return permissionDTOMap.Values.ToList();
+
         }
     }
 } 

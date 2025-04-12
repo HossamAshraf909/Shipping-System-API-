@@ -31,10 +31,10 @@ namespace Shipping.PL.Controllers
         {
             return Ok(await OrderService.GetAllOrdersAsync());
         }
-        [HttpGet("{search:alpha}")]
-        public async Task<IActionResult> GetOrderBystatus(string search)
+        [HttpGet("{Status:alpha}")]
+        public async Task<IActionResult> GetOrderBystatus(string Status)
         {
-            var orders = await OrderService.GetOrderByStatusAsync(search);
+            var orders = await OrderService.GetOrderByStatusAsync(Status);
             if (!orders.Any()) return Ok(new
             {
                 Data = orders,
@@ -55,7 +55,11 @@ namespace Shipping.PL.Controllers
         {
             if (id == 0) BadRequest();
             await OrderService.DeleteOrderAsync(id);
-            return Ok();
+            return Ok(new
+            {
+                massage = "Order Deleted Successfully",
+                StatusCode = 200,
+            });
         }
         [HttpPost]
         public async Task<IActionResult> AddOrder(AddOrderDTO orderDTO)
@@ -70,7 +74,11 @@ namespace Shipping.PL.Controllers
             }
             await OrderService.AddOrderAsync(orderDTO);
 
-            return Ok();
+            return Ok(new
+            {
+                massage = "Order Created Successfully",
+                StatusCode = 200,
+            });
         }
         [HttpPut("{id:int}")]
         public async Task<IActionResult> UpdateOrder(int id, AddOrderDTO orderDTO)
@@ -78,7 +86,11 @@ namespace Shipping.PL.Controllers
             if (orderDTO == null) BadRequest();
             if (!ModelState.IsValid) BadRequest(ModelState);
             await OrderService.UpdateOrderAsync(id, orderDTO);
-            return Ok();
+            return Ok(new
+            {
+                massage = "Order Updated Successfully",
+                StatusCode = 200,
+            });
         }
         [HttpPut("product-Edit")]
         public async Task<IActionResult> UpdateProduct(EditProductDTO productDTO)
@@ -86,14 +98,22 @@ namespace Shipping.PL.Controllers
             if (productDTO == null) BadRequest();
             if (!ModelState.IsValid) BadRequest(ModelState);
             await ProductService.UpdateProductAsync(productDTO);
-            return Ok();
+            return Ok(new
+            {
+                massage = "Product Updated Successfully",
+                StatusCode = 200,
+            });
         }
         [HttpDelete("/product/{id:int}")]
         public async Task<IActionResult> DeleteProductAsync(int id)
         {
             if (id == 0) BadRequest();
             await ProductService.DeleteProductAsync(id);
-            return Ok();
+            return Ok(new
+            {
+                massage = "Product Deleted Successfully",
+                StatusCode = 200,
+            });
         }
     }
 }
