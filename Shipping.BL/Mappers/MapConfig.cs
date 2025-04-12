@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -49,10 +50,10 @@ namespace Shipping.BL.Mappers
             CreateMap<WeightPrice, AddWeightDTO>().ReverseMap();
 
             CreateMap<CreateProductDTO, Product>().ReverseMap();
-            CreateMap<SpecialPackages,ReadPackageDto>().ReverseMap();
-            CreateMap<SpecialPackages,AddPackageDto>().ReverseMap();
-            CreateMap<VillageDelivery,ReadVillageDTO>().ReverseMap();
-            CreateMap<VillageDelivery,AddVillageDTO>().ReverseMap();
+            CreateMap<SpecialPackages, ReadPackageDto>().ReverseMap();
+            CreateMap<SpecialPackages, AddPackageDto>().ReverseMap();
+            CreateMap<VillageDelivery, ReadVillageDTO>().ReverseMap();
+            CreateMap<VillageDelivery, AddVillageDTO>().ReverseMap();
 
             CreateMap<Product, ReadProductDTO>().ReverseMap();
             CreateMap<SpecialPackages, ReadPackageDto>().ReverseMap();
@@ -63,13 +64,13 @@ namespace Shipping.BL.Mappers
 
             CreateMap<AddOrderDTO, Order>().AfterMap((src, dist) =>
             {
-               dist.TotalWeight = src.Products.Sum(p => p.Weight * p.Quantity);
+                dist.TotalWeight = src.Products.Sum(p => p.Weight * p.Quantity);
                 dist.MerchantId = src.MerchentId;
-                if (src.IsVillageDelivery == true) 
+                if (src.IsVillageDelivery == true)
                 {
                     dist.VillageStreetAddress = src.VillageStreetAddress;
                 }
-              
+
             }).ReverseMap();
             CreateMap<Order, ReadOrderDTO>().AfterMap((src, dist) =>
             {
@@ -96,7 +97,7 @@ namespace Shipping.BL.Mappers
                 dist.Governorate = src.Governorate.Name;
                 dist.city = src.City.Name;
                 dist.PaidShippingPrice = src.ShippingPrice;
-                dist.OrderDate = src.OrderDate.ToString("O") ;  
+                dist.OrderDate = src.OrderDate.ToString("O");
             }).ReverseMap();
             CreateMap<ApplicationRole, ReadRoleDTO>().AfterMap((dist, src) =>
             {
@@ -109,7 +110,7 @@ namespace Shipping.BL.Mappers
                 dist.Email = src.User.Email;
                 dist.Branch = src.Branch.Name;
             }).ReverseMap();
-            CreateMap<Delivery , ReadDeliveryDTO >().AfterMap((src, dist) =>
+            CreateMap<Delivery, ReadDeliveryDTO>().AfterMap((src, dist) =>
             {
                 dist.Name = src.User.UserName;
                 dist.Id = src.ID;

@@ -44,12 +44,8 @@ namespace Shipping.BL.Services
 
             var merchant = await _unitOfWork.Merchant.GetByIdAsync(orderDto.MerchentId);
             if (merchant == null) throw new Exception("Merchant not found.");
-
             orderDto.Phonenumber = merchant.User.PhoneNumber;
             orderDto.Address = merchant.User.Address;
-
-            orderDto.Branche = order.Branche.Name;
-
 
             var city = await _unitOfWork.Cities.GetByIdAsync(orderDto.CityId);
             var shippingType = await _unitOfWork.ShippingTypes.GetByIdAsync(orderDto.ShippingTypeId);
@@ -113,7 +109,6 @@ namespace Shipping.BL.Services
                 await _unitOfWork.SaveChangesAsync();  // Ensure changes are saved
             }
         }
-
         public async Task DeleteOrderAsync(int orderId)
         {
             await _unitOfWork.Orders.DeleteAsync(orderId);

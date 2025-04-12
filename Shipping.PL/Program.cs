@@ -12,9 +12,12 @@ using Shipping.BL.Services.Imodel;
 using Shipping.BL.Services.Shipping.BL.Services;
 using Shipping.DAL.Entities.Identity;
 using Shipping.DAL.Persistent.Data.Context;
-
 using Shipping.DAL.Persistent.UnitOfWork;
+
+
+
 using Shipping.PL.Helpers;
+
 
 
 namespace Shipping.PL
@@ -34,6 +37,15 @@ namespace Shipping.PL
                          options.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter());
                      });
             // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
+
+
+                    builder.Services.AddDbContext<ShippingContext>(options =>
+                        options.UseLazyLoadingProxies().UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"))
+                        );
+                    builder.Services.AddScoped<UnitOfWork>();
+                    builder.Services.AddAutoMapper(typeof(MapConfig));
+                   
+            
 
             builder.Services.AddOpenApi();
        
@@ -102,6 +114,7 @@ namespace Shipping.PL
 
 
             builder.Services.AddScoped<AuthService>();
+
 
 
 

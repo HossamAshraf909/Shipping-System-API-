@@ -9,6 +9,7 @@ namespace Shipping.BL.Services.Imodel
 {
     public interface IOrderService
     {
+
         Task<IEnumerable<ReadOrderDTO>> GetAllOrdersAsync();
         Task<ReadOrderWithProducts?> GetOrderByIdAsync(int orderId);
         Task AddOrderAsync(AddOrderDTO order);

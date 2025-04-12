@@ -13,6 +13,7 @@ namespace Shipping.BL.Services
         private readonly IUnitOfWork _unit;
         private readonly IMapper _map;
 
+
         public WeightPriceService(IUnitOfWork unit, IMapper map)
         {
             _unit = unit;
@@ -53,7 +54,6 @@ namespace Shipping.BL.Services
         {
             var weightPrice = await _unit.WeightPrices.GetByIdAsync(id);
              if (weightPrice == null) return;
-
             weightPrice.IsDeleted = true;
             await _unit.SaveChangesAsync();
         }

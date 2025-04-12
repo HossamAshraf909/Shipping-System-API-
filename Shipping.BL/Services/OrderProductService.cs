@@ -11,12 +11,10 @@ namespace Shipping.BL.Services
 {
     public class OrderProductService
     {
-
         private readonly IUnitOfWork unit;
         private readonly IMapper map;
 
         public OrderProductService(IUnitOfWork unit ,IMapper map)
-
         {
             this.unit = unit;
             this.map = map;

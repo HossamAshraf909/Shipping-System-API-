@@ -789,15 +789,14 @@ namespace Shipping.DAL.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-<<<<<<< HEAD
                     b.HasOne("Shipping.DAL.Entities.Branches", "Branches")
                         .WithMany("Orders")
                         .HasForeignKey("branchId");
 
                     b.Navigation("Branches");
-=======
+
                     b.Navigation("Branche");
->>>>>>> 1db4a7c83ba806cbb5b4fcdba4db409ff34e2ff3
+
 
                     b.Navigation("City");
 
