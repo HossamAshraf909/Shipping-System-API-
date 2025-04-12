@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Shipping.DAL.Persistent.Data.Context;
 
@@ -11,9 +12,11 @@ using Shipping.DAL.Persistent.Data.Context;
 namespace Shipping.DAL.Migrations
 {
     [DbContext(typeof(ShippingContext))]
-    partial class ShippingContextModelSnapshot : ModelSnapshot
+    [Migration("20250412193222_relation betwwen order and branch")]
+    partial class relationbetwwenorderandbranch
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -208,9 +211,6 @@ namespace Shipping.DAL.Migrations
                     b.Property<int>("WeightPriceId")
                         .HasColumnType("int");
 
-                    b.Property<int?>("branchId")
-                        .HasColumnType("int");
-
                     b.Property<int>("orderStatus")
                         .HasColumnType("int");
 
@@ -231,8 +231,6 @@ namespace Shipping.DAL.Migrations
                     b.HasIndex("VillageDeliveryId");
 
                     b.HasIndex("WeightPriceId");
-
-                    b.HasIndex("branchId");
 
                     b.ToTable("Orders");
                 });
@@ -396,8 +394,10 @@ namespace Shipping.DAL.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"));
 
-                    b.Property<int>("BranchId")
-                        .HasColumnType("int");
+                    b.Property<string>("Branch")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
 
                     b.Property<string>("PhoneNumber")
                         .IsRequired()
@@ -408,9 +408,17 @@ namespace Shipping.DAL.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(450)");
 
-                    b.HasKey("ID");
+                    b.Property<string>("UserRole")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
 
-                    b.HasIndex("BranchId");
+                    b.Property<string>("password")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.HasKey("ID");
 
                     b.HasIndex("UserID")
                         .IsUnique();
@@ -789,15 +797,7 @@ namespace Shipping.DAL.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-<<<<<<< HEAD
-                    b.HasOne("Shipping.DAL.Entities.Branches", "Branches")
-                        .WithMany("Orders")
-                        .HasForeignKey("branchId");
-
-                    b.Navigation("Branches");
-=======
                     b.Navigation("Branche");
->>>>>>> 1db4a7c83ba806cbb5b4fcdba4db409ff34e2ff3
 
                     b.Navigation("City");
 
@@ -884,19 +884,11 @@ namespace Shipping.DAL.Migrations
 
             modelBuilder.Entity("Shipping.DAL.Entities.Employee", b =>
                 {
-                    b.HasOne("Shipping.DAL.Entities.Branches", "Branch")
-                        .WithMany("Employees")
-                        .HasForeignKey("BranchId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.HasOne("Shipping.DAL.Entities.Identity.ApplicationUser", "User")
                         .WithOne("Employee")
                         .HasForeignKey("Shipping.DAL.Entities.Employee", "UserID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-
-                    b.Navigation("Branch");
 
                     b.Navigation("User");
                 });
@@ -987,8 +979,6 @@ namespace Shipping.DAL.Migrations
             modelBuilder.Entity("Shipping.DAL.Entities.Branches", b =>
                 {
                     b.Navigation("DeliveryBranches");
-
-                    b.Navigation("Employees");
 
                     b.Navigation("MerchantBranches");
 

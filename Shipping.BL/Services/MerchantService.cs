@@ -34,6 +34,7 @@ namespace Shipping.BL.Services
                     Email = merchantDTO.Email,
                     PasswordHash = merchantDTO.Password,
                     Address = merchantDTO.Address,
+                   
                 };
 
                 await userManager.CreateAsync(applicationUser,merchantDTO.Password);
@@ -44,6 +45,9 @@ namespace Shipping.BL.Services
                     cityId = merchantDTO.CityId,
                     governrateId = merchantDTO.GovernorateId,
                     UserID = applicationUser.Id,
+                    MerchantBranches = applicationUser.Merchant.MerchantBranches,
+                   
+
                 };
 
                 await unit.Merchant.AddAsync(merchant);

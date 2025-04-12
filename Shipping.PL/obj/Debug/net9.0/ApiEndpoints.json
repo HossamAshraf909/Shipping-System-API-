@@ -200,6 +200,16 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "Shipping.PL.Controllers.DashBoardController",
+    "Method": "GetOrderStatusCounts",
+    "RelativePath": "api/DashBoard/order-status-counts",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "Shipping.PL.Controllers.DeliveryController",
     "Method": "AddDelivery",
     "RelativePath": "api/Delivery",

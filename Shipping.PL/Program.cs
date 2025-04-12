@@ -98,6 +98,8 @@ namespace Shipping.PL
             builder.Services.AddScoped<EmployeeService>();
             builder.Services.AddScoped<MerchantService>();
             builder.Services.AddScoped<ITokenGeneration, TokenGeneration>();
+            builder.Services.AddScoped<DashboardServices>();
+
 
             builder.Services.AddScoped<AuthService>();
 

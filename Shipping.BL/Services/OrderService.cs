@@ -41,11 +41,21 @@ namespace Shipping.BL.Services
         public async Task AddOrderAsync(AddOrderDTO orderDto)
         {
             var order = _mapper.Map<Order>(orderDto);
-           
+
+            var merchant = await _unitOfWork.Merchant.GetByIdAsync(orderDto.MerchentId);
+            if (merchant == null) throw new Exception("Merchant not found.");
+
+            orderDto.Phonenumber = merchant.User.PhoneNumber;
+            orderDto.Address = merchant.User.Address;
+
+            orderDto.Branche = order.Branche.Name;
+
+
             var city = await _unitOfWork.Cities.GetByIdAsync(orderDto.CityId);
             var shippingType = await _unitOfWork.ShippingTypes.GetByIdAsync(orderDto.ShippingTypeId);
             order.ShippingPrice = (city.ShippingPrice+shippingType.ShippingPrice);
-               var Merchant= await _unitOfWork.Merchant.GetByIdAsync(orderDto.MerchentId);
+
+            var Merchant = await _unitOfWork.Merchant.GetByIdAsync(orderDto.MerchentId);
             foreach (var specialPackage in Merchant.SpecialPackages)
             {
                 if (orderDto.CityId == specialPackage.cityID && orderDto.GovernorateId == specialPackage.governorateID)
