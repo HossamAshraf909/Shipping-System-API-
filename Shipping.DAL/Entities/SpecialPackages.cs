@@ -8,11 +8,13 @@ using System.Threading.Tasks;
 
 namespace Shipping.DAL.Entities
 {
-    public class SpecialPackages
+    public class SpecialPackages:BaseEntity
     {
         public int Id { get; set; }
+       
+        [ForeignKey("merchant")]
+        public int merchantID { get; set; }
 
-        //public int merchantID { get; set; }
         [ForeignKey("city")]
         public int cityID { get; set; }
         [ForeignKey("governorate")]
@@ -21,14 +23,9 @@ namespace Shipping.DAL.Entities
         public decimal ShippingPrice { get; set; }  
 
         public virtual City city { get; set; }
+        public virtual Governorate governorate { get; set; }       
+        public virtual Merchant merchant { get; set; }
 
-<<<<<<< HEAD
-        public virtual Governorate governorate { get; set; } 
-        
-
-=======
-        public virtual Governorate governorate { get; set; }    
->>>>>>> abfc8a0fb6a30b1ba225d84c3ee5a44cc53eab7c
 
     }
 }

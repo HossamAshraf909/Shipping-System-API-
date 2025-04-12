@@ -2,15 +2,17 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace Shipping.DAL.Persistent.Enums
 {
+    [JsonConverter(typeof(JsonStringEnumConverter))]
     public enum ShippingMethod
     {
         FromCompanyBranch = 1, FromMerchentBranch = 2
     }
-
+    [JsonConverter(typeof(JsonStringEnumConverter))]
     public enum OrderStatus
     {
         New = 1,
@@ -23,13 +25,14 @@ namespace Shipping.DAL.Persistent.Enums
         CannotBeReached = 8,
         Processing = 9,
         Shipped = 10,
-        AwaitingConfirmation = 11
+        AwaitingConfirmation = 11,
     }
-
+    [JsonConverter(typeof(JsonStringEnumConverter))]
     public enum PaymentMethod
     {
         Cash = 1, Credit = 2, Order = 3
     }
+    [JsonConverter(typeof(JsonStringEnumConverter))]
 
     public enum RejectionReason
     {

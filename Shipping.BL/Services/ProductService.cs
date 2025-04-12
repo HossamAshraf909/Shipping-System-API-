@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using AutoMapper;
 using Shipping.BL.DTOs.Order;
-using Shipping.BL.DTOs.Product;
+using Shipping.BL.DTOs.product;
 using Shipping.DAL.Entities;
 using Shipping.DAL.Persistent.UnitOfWork;
 
@@ -40,10 +37,8 @@ namespace Shipping.BL.Services
         {
             var product = await _unitOfWork.Products.GetByIdAsync(id);
             if (product == null) return;
-
-            await _unitOfWork.Products.UpdateAsync(product);
+            await _unitOfWork.Products.DeleteAsync(id);
             await _unitOfWork.SaveChangesAsync();
         }
-        
     }
 }

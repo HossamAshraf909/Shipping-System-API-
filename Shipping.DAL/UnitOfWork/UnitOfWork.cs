@@ -1,16 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using Shipping.DAL.Entities;
 using Shipping.DAL.Persistent.Data.Context;
 using Shipping.DAL.Persistent.Repositories;
 using Shipping.DAL.Persistent.Repositries.Irepo;
 using Shipping.DAL.Persistent.Repositries;
-using Shipping.DAL.Entities;
-using Shipping.DAL.Persistent.Data.Context;
-using Shipping.DAL.Persistent.Repositries;
+using Shipping.DAL.Entities.Identity;
 
 namespace Shipping.DAL.Persistent.UnitOfWork
 {
@@ -29,7 +24,16 @@ namespace Shipping.DAL.Persistent.UnitOfWork
         private IGenericRepository<WeightPrice>? _weightPrices;
         private IGenericRepository<VillageDelivery>? _villageDelivery;
         private IGenericRepository<SpecialPackages>? _specialPackages;
+
+
+        private IGenericRepository<Merchant>? _merchent;
+        private IGenericRepository<Delivery>? _delivery;
+        private IGenericRepository<Employee>? _employee;
+        private IGenericRepository<DeliveryBranch>? _deliveryBranches;
+
+
         public UnitOfWork(ShippingContext context)
+
         {
             _context = context ?? throw new ArgumentNullException(nameof(context));
         }
@@ -63,30 +67,43 @@ namespace Shipping.DAL.Persistent.UnitOfWork
 
         public IGenericRepository<WeightPrice> WeightPrices =>
             _weightPrices ??= new GenericRepository<WeightPrice>(_context);
+ 
+        public IGenericRepository<Merchant> Merchant =>
+            _merchent ??= new GenericRepository<Merchant>(_context);
+        public IGenericRepository<Delivery> Delivery =>
+            _delivery ??= new GenericRepository<Delivery>(_context);
 
-            }
-        }
+        public IGenericRepository<Employee> Employee =>
+           _employee ??= new GenericRepository<Employee>(_context);
+      
+        public IGenericRepository<DeliveryBranch> DeliveryBranches =>
+            _deliveryBranches ??= new GenericRepository<DeliveryBranch>(_context);
 
         public async Task<int> SaveChangesAsync()
-            {
+        {
             return await _context.SaveChangesAsync();
         }
-
-        public int SaveChanges()
-            {
-            return _context.SaveChanges();
-        }
-
         public void Dispose()
-            {
+        {
             _context.Dispose();
             GC.SuppressFinalize(this);
         }
-        
-
-        public void Save()
-        {
-            context.SaveChanges();
-        }
     }
 }
+
+       
+
+       
+       
+
+        
+
+
+
+       
+
+       
+
+
+  
+

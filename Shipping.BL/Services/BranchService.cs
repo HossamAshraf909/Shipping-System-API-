@@ -1,11 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using AutoMapper;
 using Shipping.BL.DTOs.Branch;
-using Shipping.BL.DTOs.City;
 using Shipping.DAL.Entities;
 using Shipping.DAL.Persistent.UnitOfWork;
 
@@ -55,10 +53,16 @@ namespace Shipping.BL.Services
         {
             var branch = await _unitOfWork.Branches.GetByIdAsync(id);
             if (branch == null) return;
-
             branch.IsDeleted = true;
             await _unitOfWork.SaveChangesAsync();
         }
+
+        public async Task <IEnumerable<Branches>> SearchAsync(string Searchword)
+        {
+            var Branches= await _unitOfWork.Branches.SearchAsync(B => B.Name.Contains(Searchword));
+            return Branches;
+        }
+
 
     }
 }

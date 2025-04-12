@@ -10,6 +10,7 @@ namespace Shipping.DAL.Persistent.Repositries.Irepo
     public interface IOrderRepository : IGenericRepository<Order>
     {
         Task<IEnumerable<Order>> GetOrdersByCustomerAsync(string customerName);
+            IQueryable<Order> GetAll(); 
     }
 
 }

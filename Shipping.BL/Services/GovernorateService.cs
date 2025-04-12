@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using AutoMapper;
-using Shipping.BL.DTOs.City;
 using Shipping.BL.DTOs.Governorate;
 using Shipping.DAL.Entities;
 using Shipping.DAL.Persistent.UnitOfWork;
@@ -62,6 +58,12 @@ namespace Shipping.BL.Services
         }
 
 
+
+        public  async Task<IEnumerable<Governorate>> SearchAsync(string Searchword)
+        {
+           var Governorates = await _unitOfWork.Governorates.SearchAsync(g => g.Name.Contains(Searchword));
+            return Governorates;
+        }
 
     }
 }

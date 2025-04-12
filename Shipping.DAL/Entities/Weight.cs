@@ -9,9 +9,8 @@ namespace Shipping.DAL.Entities
 {
     public class WeightPrice:BaseEntity
     {
-       
-        [DataType(DataType.Currency)]
-        public decimal DefaultPrice { get; set; }
+        [Key]
+        public int Id { get; set; }
         public int DefaultWeight { get; set; }
         [DataType(DataType.Currency)]
         public decimal ExtraPricePerKilo { get; set; }

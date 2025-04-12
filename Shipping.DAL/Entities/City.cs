@@ -10,7 +10,8 @@ namespace Shipping.DAL.Entities
 {
     public class City:BaseEntity
     {
-       
+        [Key]
+        public int Id { get; set; }
         public string Name { get; set; }
       
 
@@ -25,6 +26,7 @@ namespace Shipping.DAL.Entities
         public virtual Governorate? governorate { get; set; }
 
         public virtual ICollection<Order>? orders { get; set; } = new List<Order>();
+        public virtual ICollection<Merchant> Merchants { get; set; }
         public virtual SpecialPackages? specialPackages { get; set; }
 
 

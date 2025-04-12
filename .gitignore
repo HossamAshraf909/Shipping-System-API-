@@ -398,3 +398,15 @@ FodyWeavers.xsd
 
 # JetBrains Rider
 *.sln.iml
+
+
+
+
+obj/
+bin/
+
+
+.vs/
+
+obj/
+bin/

@@ -1,10 +1,7 @@
-﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using AutoMapper;
-using Shipping.BL.DTOs.VillageDelivery;
+using Shipping.BL.DTOs.Village;
 using Shipping.DAL.Entities;
 using Shipping.DAL.Persistent.UnitOfWork;
 
@@ -51,7 +48,8 @@ namespace Shipping.BL.Services
         }
 
         public async Task DeleteAsync(int id)
-    {
+        {
+
             var delivery = await _unitOfWork.VillageDelivery.GetByIdAsync(id);
             if (delivery == null) return;
 

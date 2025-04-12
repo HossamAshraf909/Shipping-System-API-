@@ -1,7 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using AutoMapper;
 using Shipping.BL.DTOs.Weight;
@@ -14,7 +12,8 @@ namespace Shipping.BL.Services
     {
         private readonly IUnitOfWork _unit;
         private readonly IMapper _map;
-            
+
+
         public WeightPriceService(IUnitOfWork unit, IMapper map)
         {
             _unit = unit;
@@ -43,8 +42,11 @@ namespace Shipping.BL.Services
 
         public async Task UpdateAsync(AddWeightDTO weightDTO)
         {
-            var weightPrice = _map.Map<WeightPrice>(weightDTO);
-           await _unit.WeightPrices.UpdateAsync(weightPrice);
+            var existingWeightPrice = await _unit.WeightPrices.GetByIdAsync(weightDTO.Id);
+            if (existingWeightPrice == null) return;
+          _map.Map(weightDTO, existingWeightPrice);
+            
+            await _unit.WeightPrices.UpdateAsync(existingWeightPrice);
             await _unit.SaveChangesAsync();
         }
 
@@ -52,10 +54,8 @@ namespace Shipping.BL.Services
         {
             var weightPrice = await _unit.WeightPrices.GetByIdAsync(id);
              if (weightPrice == null) return;
-
             weightPrice.IsDeleted = true;
             await _unit.SaveChangesAsync();
         }
-
     }
 }
