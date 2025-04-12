@@ -14,6 +14,9 @@ namespace Shipping.BL.DTOs.Order
         public string CustomerName { get; set; } = null!;
         public string CustomerPhone { get; set; } = null!;
         public string CustomerEmail { get; set; } = null!;
+        public string Address { get; set; } = null!;
+        public string PhoneNumber { get; set; } = null!;
+        public string branche { get; set; } = null!;
         public bool IsDeleted { get; set; }
         public int CityId { get; set; }
         public int GovernorateId { get; set; }
