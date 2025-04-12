@@ -259,6 +259,22 @@
   },
   {
     "ContainingType": "Shipping.PL.Controllers.EmployeeController",
+    "Method": "GetById",
+    "RelativePath": "api/Employee/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Shipping.PL.Controllers.EmployeeController",
     "Method": "UpdateEmployee",
     "RelativePath": "api/Employee/{id}",
     "HttpMethod": "PUT",
@@ -272,7 +288,7 @@
       },
       {
         "Name": "employeeDTO",
-        "Type": "Shipping.BL.DTOs.Employee.AddEmployeeDTO",
+        "Type": "Shipping.BL.DTOs.Employee.EditEmployeeDTO",
         "IsRequired": true
       }
     ],

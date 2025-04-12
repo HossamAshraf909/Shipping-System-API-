@@ -25,7 +25,13 @@ namespace Shipping.PL.Controllers
             return Ok(Employees);
         }
 
-
+        [HttpGet("{id:int}")]
+        public async Task<ActionResult> GetById(int id)
+        {
+            var Employee = await employeeService.GetByIdAsync(id);
+            if (Employee == null) return NotFound();
+            return Ok(Employee);
+        }
 
         [HttpPost]
         public async Task<ActionResult> AddEmployee(AddEmployeeDTO employee)
@@ -40,17 +46,13 @@ namespace Shipping.PL.Controllers
             });
         }
 
-
-
         [HttpPut("{id:int}")]
-        public async Task<ActionResult> UpdateEmployee(int id , AddEmployeeDTO employeeDTO)
+        public async Task<ActionResult> UpdateEmployee(int id , EditEmployeeDTO employeeDTO)
         {
             if(employeeDTO == null) return BadRequest();
             if (!ModelState.IsValid) return BadRequest();
             await employeeService.UpdateEmployeeAsync(id, employeeDTO);
             return Ok();
         }
-
-
     }
 }

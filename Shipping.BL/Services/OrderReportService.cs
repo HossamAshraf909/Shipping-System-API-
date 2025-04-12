@@ -24,24 +24,24 @@ namespace Shipping.BL.Services
             var orderReports = mapper.Map<List<ReadOrderReportDTO>>(orders);
             return orderReports;
         }
-        public async Task<ReadOrderReportDTO> GetOrderByStatus(string status)
+        public async Task<List<ReadOrderReportDTO>> GetOrderByStatus(string status)
         {
             var order = await unit.Orders.GetOrderByStatusAsync(status);
             if (order == null)
             {
                 return null;                
             }
-            var orderReport = mapper.Map<ReadOrderReportDTO>(order);
+            var orderReport = mapper.Map<List<ReadOrderReportDTO>>(order);
             return orderReport;
         }
-        public async Task<ReadOrderReportDTO> GetOrderByDate(DateTime Fromdate , DateTime ToDate)
+        public async Task<List<ReadOrderReportDTO>> GetOrderByDate(DateTime Fromdate , DateTime ToDate)
         {
             var order = await unit.Orders.GetOrderByDateAsync(Fromdate, ToDate);
             if (order == null)
             {
                 return null;
             }
-            var orderReport = mapper.Map<ReadOrderReportDTO>(order);
+            var orderReport = mapper.Map<List<ReadOrderReportDTO>>(order);
             return orderReport;
         }
     }

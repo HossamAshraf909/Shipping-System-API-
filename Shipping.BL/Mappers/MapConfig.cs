@@ -92,14 +92,14 @@ namespace Shipping.BL.Mappers
                         Weight = product.Product.Weight,
                     });
                 }
-                dist.merchantId = src.Merchant.ID;
+                dist.merchantId = src.Merchant?.ID;
             }).ReverseMap();
             CreateMap<Order, ReadOrderReportDTO>().AfterMap((src, dist) =>
             {
                 dist.Governorate = src.Governorate.Name;
                 dist.city = src.City.Name;
                 dist.PaidShippingPrice = src.ShippingPrice;
-                
+                dist.OrderDate = src.OrderDate.ToString("O") ;  
             }).ReverseMap();
             CreateMap<ApplicationRole, ReadRoleDTO>().AfterMap((dist, src) =>
             {
