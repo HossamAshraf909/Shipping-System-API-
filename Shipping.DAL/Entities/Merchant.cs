@@ -20,6 +20,8 @@ namespace Shipping.DAL.Entities
         public int cityId { get; set; }
         [ForeignKey("Governorate")]
 
+
+       
         public int governrateId { get; set; }
 
         [Required]
