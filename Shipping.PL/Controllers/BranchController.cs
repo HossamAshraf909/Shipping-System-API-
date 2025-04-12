@@ -25,8 +25,8 @@ namespace Shipping.PL.Controllers
 
 
 
-        [HttpGet]
-        [Route("api/branchSearch/{searchWord}")]
+        [HttpGet("{searchWord:alpha}")]
+     
         public async Task<IActionResult> SearchForBranchAsync(string searchWord)
         {
             return Ok(await branchService.SearchAsync(searchWord));
@@ -40,7 +40,11 @@ namespace Shipping.PL.Controllers
             if (branch == null) return BadRequest();
             if(!ModelState.IsValid) return BadRequest();
            await branchService.AddAsync(branch);
-            return Ok();
+            return Ok(new
+            {
+                message = "Branch added successfully",
+                statusCode = 200
+            });
         }
 
 
@@ -51,7 +55,11 @@ namespace Shipping.PL.Controllers
             if (branch == null) return BadRequest();
             if(!ModelState.IsValid) return BadRequest();
             await branchService.UpdateAsync(id,branch);
-            return Ok();
+            return Ok(new
+            {
+                message = "Branch updated successfully",
+                statusCode = 200
+            });
 
         }
 
@@ -64,7 +72,11 @@ namespace Shipping.PL.Controllers
             ReadBranchDTO branch = await branchService.GetByIdAsync(id);
             if (branch == null) return BadRequest();
             await branchService.DeleteAsync(id);
-            return Ok();
+            return Ok(new
+            {
+                message = "Branch deleted successfully",
+                statusCode = 200
+            });
 
         }
 

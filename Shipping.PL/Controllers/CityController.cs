@@ -21,7 +21,11 @@ namespace Shipping.PL.Controllers
             if (city == null) return BadRequest();
             if(!ModelState.IsValid) return BadRequest();
             await cityService.AddAsync(city);
-            return Ok();
+            return Ok(new
+            {
+                message = "City added successfully",
+                statusCode = 200
+            });
         }
         [HttpGet]
         public async Task<IActionResult> GetAllCities()
@@ -51,7 +55,11 @@ namespace Shipping.PL.Controllers
             var city = await cityService.GetByIdAsync(id);
             if (city == null) return NotFound();
             await cityService.DeleteAsync(id);
-            return Ok();
+            return Ok(new
+            {
+                message = "City deleted successfully",
+                statusCode = 200
+            });
         }
         [HttpGet("search")]
         public async Task<IActionResult> Search(string searchword)

@@ -40,7 +40,11 @@ namespace Shipping.PL.Controllers
             if (governorate == null) return BadRequest();
             if (!ModelState.IsValid) return BadRequest();
             await governorateService.AddAsync(governorate);
-            return Ok();
+            return Ok(new
+            {
+                message = "Governorate added successfully",
+                statusCode = 200
+            });
         }
 
 
@@ -51,7 +55,11 @@ namespace Shipping.PL.Controllers
             if(governorate == null) return NotFound();
             if(!ModelState.IsValid) return BadRequest();    
            await governorateService.UpdateAsync(id,governorate);
-            return Ok();
+            return Ok(new
+            {
+                message = "Governorate updated successfully",
+                statusCode = 200
+            });
         }
 
         //Entities

@@ -26,6 +26,7 @@ namespace Shipping.DAL.Entities
         public virtual Governorate? governorate { get; set; }
 
         public virtual ICollection<Order>? orders { get; set; } = new List<Order>();
+        public virtual ICollection<Merchant> Merchants { get; set; }
         public virtual SpecialPackages? specialPackages { get; set; }
 
 

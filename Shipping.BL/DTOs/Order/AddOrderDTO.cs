@@ -13,9 +13,9 @@ namespace Shipping.BL.DTOs.Order
         public string CustomerName { get; set; } = null!;
         public string CustomerPhone { get; set; } = null!;
         public string CustomerEmail { get; set; } = null!;
-
         public int CityId { get; set; }
         public int GovernorateId { get; set; }
+        public int MerchentId { get; set; }
         public int ShippingTypeId { get; set; }
         public OrderStatus orderStatus { get; set; }    
         public bool IsVillageDelivery { get; set; }

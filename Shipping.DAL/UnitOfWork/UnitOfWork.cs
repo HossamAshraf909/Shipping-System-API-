@@ -5,6 +5,7 @@ using Shipping.DAL.Persistent.Data.Context;
 using Shipping.DAL.Persistent.Repositories;
 using Shipping.DAL.Persistent.Repositries.Irepo;
 using Shipping.DAL.Persistent.Repositries;
+using Shipping.DAL.Entities.Identity;
 
 namespace Shipping.DAL.Persistent.UnitOfWork
 {
@@ -26,10 +27,15 @@ namespace Shipping.DAL.Persistent.UnitOfWork
         private IGenericRepository<Merchant>? _merchent;
         private IGenericRepository<Delivery>? _delivery;
         private IGenericRepository<Employee>? _employee;
+        private IGenericRepository<DeliveryBranch>? _deliveryBranches;
+
+
         public UnitOfWork(ShippingContext context)
+
         {
             _context = context ?? throw new ArgumentNullException(nameof(context));
         }
+
 
         public ProductRepository Products =>
             _products ??= new ProductRepository(_context);
@@ -67,9 +73,11 @@ namespace Shipping.DAL.Persistent.UnitOfWork
 
         public IGenericRepository<WeightPrice> WeightPrices =>
             _weightPrices ??= new GenericRepository<WeightPrice>(_context);
-
+        public IGenericRepository<DeliveryBranch> DeliveryBranches =>
+            _deliveryBranches ??= new GenericRepository<DeliveryBranch>(_context);
 
         public async Task<int> SaveChangesAsync()
+
         {
             return await _context.SaveChangesAsync();
         }
