@@ -16,8 +16,8 @@ namespace Shipping.DAL.Entities
         public int ID { get; set; }
         [Required,MaxLength(20)]
         public string PhoneNumber { get; set; }
-        [Required , MaxLength(50)]
-        public string Branch { get; set; }
+        [ForeignKey("Branch")]
+        public int BranchId { get; set; }
         [Required, MaxLength(50)]
         
         public string UserRole { get; set; }
@@ -27,7 +27,7 @@ namespace Shipping.DAL.Entities
         [Required]
         [ForeignKey("User")]
         public string UserID { get; set; }
-
         public virtual ApplicationUser User { get; set; }
+        public virtual Branches Branch { get; set; }
     }
 }

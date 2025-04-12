@@ -10,7 +10,6 @@ namespace Shipping.DAL.Entities.Identity
 {
     public class ApplicationRole:IdentityRole
     {
-
         [DataType(DataType.DateTime)]
         public DateTime CreatedDate { get; set; } = DateTime.Now;
     }

@@ -30,7 +30,11 @@ namespace Shipping.BL.Services
             var Employees = await unit.Employee.GetAllAsync();
             return _map.Map<List<ReadEmployeeDTO>>(Employees);
         }
-
+        public async Task<ReadEmployeeDTO?> GetByIdAsync(int id)
+        {
+            var Employee = await unit.Employee.GetByIdAsync(id);
+            return Employee != null ? _map.Map<ReadEmployeeDTO>(Employee) : null;
+        }
 
         public async Task AddEmployeeAsync(AddEmployeeDTO employeeDTO)
         {
@@ -46,28 +50,29 @@ namespace Shipping.BL.Services
 
             await userManager.CreateAsync(applicationUser,employeeDTO.Password);
 
-            await userManager.AddToRoleAsync(applicationUser,employeeDTO.UserRole);
+           var result =  await userManager.AddToRoleAsync(applicationUser,employeeDTO.UserRole);
 
             var user = await userManager.FindByNameAsync(employeeDTO.Name);
 
             var Employee = new Employee
             {
-               
-                Branch = employeeDTO.Branch,
+                BranchId = employeeDTO.BranchId,
                 PhoneNumber = employeeDTO.PhoneNumber,
                 UserID = user.Id
             };
 
+            await unit.Employee.AddAsync(Employee);
+            await unit.SaveChangesAsync();
+                
             
         }
 
 
-        public async Task UpdateEmployeeAsync(int id,AddEmployeeDTO employeeDTO)
+        public async Task UpdateEmployeeAsync(int id,EditEmployeeDTO employeeDTO)
         {
             var Employee = await unit.Employee.GetByIdAsync(id);
             if (Employee == null) return;
-            var applicationUser = await userManager.FindByIdAsync(employeeDTO.UserId.ToString());
-
+            var applicationUser = await userManager.FindByEmailAsync(employeeDTO.Email);
             applicationUser.UserName = employeeDTO.Name;
             applicationUser.Email = employeeDTO.Email;
             applicationUser.Address = employeeDTO.address;
@@ -76,12 +81,12 @@ namespace Shipping.BL.Services
             await userManager.AddToRoleAsync(applicationUser, employeeDTO.UserRole);
 
 
-            Employee.Branch = employeeDTO.Branch;
+            Employee.BranchId = employeeDTO.BranchId;
             Employee.PhoneNumber = employeeDTO.PhoneNumber;
 
             await unit.Employee.UpdateAsync(Employee);
 
-
+            await unit.SaveChangesAsync();
         }
 
        

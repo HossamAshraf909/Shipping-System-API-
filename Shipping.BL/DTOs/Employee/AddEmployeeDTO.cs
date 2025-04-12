@@ -14,7 +14,6 @@ namespace Shipping.BL.DTOs.Employee
         public string address { get; set; }
         public string UserRole { get; set; }
         public string PhoneNumber { get; set; }
-        public string Branch { get; set; }
-        public string UserId { get; set; }
+        public int BranchId { get; set; }
     }
 }
