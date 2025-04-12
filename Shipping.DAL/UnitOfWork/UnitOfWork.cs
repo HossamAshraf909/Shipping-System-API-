@@ -76,6 +76,7 @@ namespace Shipping.DAL.Persistent.UnitOfWork
         public IGenericRepository<DeliveryBranch> DeliveryBranches =>
             _deliveryBranches ??= new GenericRepository<DeliveryBranch>(_context);
 
+
         public async Task<int> SaveChangesAsync()
 
         {

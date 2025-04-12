@@ -26,5 +26,13 @@ namespace Shipping.DAL.Persistent.Repositries
         {
             return await _context.Orders.Where(o => o.OrderDate.Date >= FromDate.Date && o.OrderDate.Date<=ToDate.Date).ToListAsync();
         }
+
+       public IQueryable<Order> GetAll()
+        {
+            return _context.Orders;
+
+        }
+
+      
     }
 }

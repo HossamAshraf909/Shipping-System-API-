@@ -2,6 +2,7 @@
 using Shipping.DAL.Entities.Identity;
 using Shipping.DAL.Persistent.Repositories;
 using Shipping.DAL.Persistent.Repositries;
+using Shipping.DAL.Persistent.Repositries.Irepo;
 
 public interface IUnitOfWork : IDisposable
 {
