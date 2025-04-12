@@ -13,28 +13,49 @@ namespace Shipping.PL.Controllers
     public class DashBoardController : ControllerBase
     {
         private readonly DashboardServices _dashboardServices;
+        private readonly RoleManager<ApplicationRole> _roleManager;
         private readonly UserManager<ApplicationUser> _userManager;
 
-        public DashBoardController(DashboardServices dashboardServices,UserManager<ApplicationUser> userManager)
+        public DashBoardController(DashboardServices dashboardServices,RoleManager<ApplicationRole> roleManager,UserManager<ApplicationUser> userManager)
         {
             _dashboardServices = dashboardServices;
+            _roleManager = roleManager;
             _userManager = userManager;
         }
 
 
-
-
+        [Authorize]
         [HttpGet("order-status-counts")]
         public async Task<IActionResult> GetOrderStatusCounts()
         {
             var userId = User.FindFirstValue(ClaimTypes.NameIdentifier); 
 
-            if (userId == null)
-                return Unauthorized();
+            var user = await _userManager.FindByIdAsync(userId); 
 
-            var counts = await _dashboardServices.GetOrderCountsByStatus(userId);
+            if (user == null)
+                return Unauthorized(new ApiResponse<string>(
+                    statusCode: 401,
+                    message: "User not found",
+                    data: null
+                ));
+
+          
+            var userRoles = await _userManager.GetRolesAsync(user);
+
+            if (userRoles == null || !userRoles.Any())
+                return Unauthorized(new ApiResponse<string>(
+                    statusCode: 401,
+                    message: "User does not have any roles",
+                    data: null
+                ));
+
+            var userRole = userRoles.First();
+
+            var counts = await _dashboardServices.GetOrderCountsByStatus(userId, userRole);
+
             return Ok(counts);
         }
+
 
 
 
