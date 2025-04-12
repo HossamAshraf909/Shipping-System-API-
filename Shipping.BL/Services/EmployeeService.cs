@@ -18,22 +18,55 @@ namespace Shipping.BL.Services
         IMapper _map;
         IUnitOfWork unit;
         UserManager<ApplicationUser> userManager;
-        public EmployeeService(IUnitOfWork unit,IMapper _map,UserManager<ApplicationUser> userManager)
+        private readonly RoleManager<ApplicationRole> roleManager;
+
+        public EmployeeService(IUnitOfWork unit,IMapper _map,UserManager<ApplicationUser> userManager , RoleManager<ApplicationRole> roleManager)
         {
             this.unit = unit;
             this._map = _map;
             this.userManager = userManager;
+            this.roleManager = roleManager;
         }
 
         public async Task<List<ReadEmployeeDTO>> GetAllAsync()
         {
             var Employees = await unit.Employee.GetAllAsync();
-            return _map.Map<List<ReadEmployeeDTO>>(Employees);
+            var EmployeeList = new List<ReadEmployeeDTO>();
+            foreach (var employee in Employees)
+            {
+                var user = await userManager.FindByIdAsync(employee.UserID);
+                var roles = await userManager.GetRolesAsync(user);
+                var role = roles.First();
+                var ReadEmployeeDTO = new ReadEmployeeDTO
+                {
+                    id = employee.ID,
+                    Name = user.UserName,
+                    Email = user.Email,
+                    UserRole = role,
+                    PhoneNumber = employee.PhoneNumber,
+                    Branch = (await unit.Branches.GetByIdAsync(employee.BranchId)).Name
+                };
+                    EmployeeList.Add(ReadEmployeeDTO);
+                
+            }
+            return EmployeeList;
         }
         public async Task<ReadEmployeeDTO?> GetByIdAsync(int id)
         {
             var Employee = await unit.Employee.GetByIdAsync(id);
-            return Employee != null ? _map.Map<ReadEmployeeDTO>(Employee) : null;
+            var user = await userManager.FindByIdAsync(Employee.UserID);
+            var roles = await userManager.GetRolesAsync(user);
+            var role = roles.First();
+            var ReadEmployeeDTO = new ReadEmployeeDTO
+            {
+                id = Employee.ID,
+                Name = user.UserName,
+                Email = user.Email,
+                UserRole = role,
+                PhoneNumber = Employee.PhoneNumber,
+                Branch = (await unit.Branches.GetByIdAsync(Employee.BranchId)).Name
+            };
+            return ReadEmployeeDTO;
         }
 
         public async Task AddEmployeeAsync(AddEmployeeDTO employeeDTO)
@@ -43,22 +76,20 @@ namespace Shipping.BL.Services
             {
                 UserName = employeeDTO.Name,
                 Email = employeeDTO.Email,
-                PasswordHash = employeeDTO.Password,
                 Address = employeeDTO.address,
-
             };
 
             await userManager.CreateAsync(applicationUser,employeeDTO.Password);
-
-           var result =  await userManager.AddToRoleAsync(applicationUser,employeeDTO.UserRole);
-
-            var user = await userManager.FindByNameAsync(employeeDTO.Name);
+            
+          
+            if(await roleManager.RoleExistsAsync(employeeDTO.UserRole))
+                  await userManager.AddToRoleAsync(applicationUser,employeeDTO.UserRole);
 
             var Employee = new Employee
             {
                 BranchId = employeeDTO.BranchId,
                 PhoneNumber = employeeDTO.PhoneNumber,
-                UserID = user.Id
+                UserID = applicationUser.Id
             };
 
             await unit.Employee.AddAsync(Employee);
@@ -78,7 +109,19 @@ namespace Shipping.BL.Services
             applicationUser.Address = employeeDTO.address;
             applicationUser.PasswordHash = employeeDTO.Password;
             await userManager.UpdateAsync(applicationUser);
-            await userManager.AddToRoleAsync(applicationUser, employeeDTO.UserRole);
+            
+            var result = await roleManager.RoleExistsAsync(employeeDTO.UserRole);
+            if (result)
+            {
+                var user = await userManager.FindByIdAsync(applicationUser.Id);
+                var roles = await userManager.GetRolesAsync(user);
+                if (roles.Count > 0)
+                {
+                    await userManager.RemoveFromRoleAsync(user, roles[0]);
+                }
+                await userManager.AddToRoleAsync(user, employeeDTO.UserRole);
+            }
+
 
 
             Employee.BranchId = employeeDTO.BranchId;

@@ -13,9 +13,6 @@ using Shipping.BL.DTOs.Weight;
 
 using Shipping.BL.DTOs.SpecialPackage;
 using Shipping.PL.DTOs.Governorate;
-
-using Shipping.PL.DTOs.Governorate;
-using Shipping.BL.DTOs.SpecialPackage;
 using Shipping.BL.DTOs.Village;
 using Shipping.BL.DTOs.Order;
 
@@ -106,10 +103,11 @@ namespace Shipping.BL.Mappers
                 dist.Id = src.Id;
             }).ReverseMap();
 
-            CreateMap<Employee, ReadEmployeeDTO>().AfterMap((src, dist) =>
+            CreateMap<Employee, ReadEmployeeDTO>().AfterMap(async (src, dist) =>
             {
                 dist.Name = src.User.UserName;
                 dist.Email = src.User.Email;
+                dist.Branch = src.Branch.Name;
             }).ReverseMap();
             CreateMap<Delivery , ReadDeliveryDTO >().AfterMap((src, dist) =>
             {

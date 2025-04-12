@@ -20,5 +20,6 @@ namespace Shipping.DAL.Entities
         public virtual ICollection<MerchantBranch> MerchantBranches { get; set; }
         public virtual ICollection<DeliveryBranch> DeliveryBranches { get; set; }
         public virtual ICollection<Employee> Employees { get; set; }
+        public virtual ICollection<Order> Orders { get; set; }
     }
 }

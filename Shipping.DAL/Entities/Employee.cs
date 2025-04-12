@@ -18,12 +18,7 @@ namespace Shipping.DAL.Entities
         public string PhoneNumber { get; set; }
         [ForeignKey("Branch")]
         public int BranchId { get; set; }
-        [Required, MaxLength(50)]
-        
-        public string UserRole { get; set; }
-        [Required,MaxLength(50)]
-        public string password { get; set; }
-
+       
         [Required]
         [ForeignKey("User")]
         public string UserID { get; set; }
