@@ -83,8 +83,8 @@ namespace Shipping.BL.Services
             if (!result.Succeeded)
                 return false;
 
-            if (await roleManager.RoleExistsAsync(employeeDTO.UserRole))
-                await userManager.AddToRoleAsync(applicationUser, employeeDTO.UserRole);
+            if (await roleManager.RoleExistsAsync("Employee"))
+                await userManager.AddToRoleAsync(applicationUser,"Employee");
 
 
             var Employee = new Employee

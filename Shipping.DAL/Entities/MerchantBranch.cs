@@ -15,7 +15,6 @@ namespace Shipping.DAL.Entities
 
         [Key, Column(Order = 1)]
         public int MerchantID { get; set; }
-
         public virtual Branches Branch { get; set; }
         public virtual Merchant Merchant { get; set; }
     }
