@@ -103,8 +103,6 @@ namespace Shipping.BL.Mappers
                 dist.OrderDate = src.OrderDate.ToString("O");
                 dist.CompanyPersent = (decimal)src.Delivery.CompanyPercent;
                 dist.TotalCoast = (((decimal)src.Delivery.CompanyPercent/100)*src.ShippingPrice)+src.OrderPrice;
-
-
             }).ReverseMap();
             CreateMap<Order, EditOrderDTO>().AfterMap((src, dist) => 
             {

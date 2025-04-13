@@ -105,6 +105,22 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "Shipping.PL.Controllers.ChatController",
+    "Method": "Post",
+    "RelativePath": "api/Chat",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "Shipping.BL.DTOs.ChatRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "Shipping.PL.Controllers.CityController",
     "Method": "AddCity",
     "RelativePath": "api/City",
