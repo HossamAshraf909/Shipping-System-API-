@@ -55,7 +55,7 @@ namespace Shipping.DAL.Persistent.Repositories
         public async Task UpdateAsync(T entity)
         {
             _dbSet.Update(entity);
-            await _context.SaveChangesAsync(); // Ensure the update is saved asynchronously
+            await _context.SaveChangesAsync(); 
         }
 
         public async Task DeleteAsync(int id)
@@ -64,10 +64,10 @@ namespace Shipping.DAL.Persistent.Repositories
             if (entity != null) 
             { 
 
-                entity.GetType().GetProperty("IsDeleted")?.SetValue(entity, true); // Assuming you have a soft delete property
+                entity.GetType().GetProperty("IsDeleted")?.SetValue(entity, true);
                 _dbSet.Update(entity);
 
-                await _context.SaveChangesAsync(); // Ensure the delete is saved asynchronously
+                await _context.SaveChangesAsync(); 
             }
         }
 

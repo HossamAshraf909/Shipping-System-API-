@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Shipping System\\Shipping.BL\\Shipping.BL.csproj": {}
+    "D:\\shippingsys\\Shipping.BL\\Shipping.BL.csproj": {}
   },
   "projects": {
-    "D:\\Shipping System\\Shipping.BL\\Shipping.BL.csproj": {
+    "D:\\shippingsys\\Shipping.BL\\Shipping.BL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Shipping System\\Shipping.BL\\Shipping.BL.csproj",
+        "projectUniqueName": "D:\\shippingsys\\Shipping.BL\\Shipping.BL.csproj",
         "projectName": "Shipping.BL",
-        "projectPath": "D:\\Shipping System\\Shipping.BL\\Shipping.BL.csproj",
-        "packagesPath": "C:\\Users\\Future\\.nuget\\packages\\",
-        "outputPath": "D:\\Shipping System\\Shipping.BL\\obj\\",
+        "projectPath": "D:\\shippingsys\\Shipping.BL\\Shipping.BL.csproj",
+        "packagesPath": "C:\\Users\\Tatuuu\\.nuget\\packages\\",
+        "outputPath": "D:\\shippingsys\\Shipping.BL\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Future\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Tatuuu\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -32,8 +32,8 @@
           "net9.0": {
             "targetAlias": "net9.0",
             "projectReferences": {
-              "D:\\Shipping System\\Shipping.DAL\\Shipping.DAL.csproj": {
-                "projectPath": "D:\\Shipping System\\Shipping.DAL\\Shipping.DAL.csproj"
+              "D:\\shippingsys\\Shipping.DAL\\Shipping.DAL.csproj": {
+                "projectPath": "D:\\shippingsys\\Shipping.DAL\\Shipping.DAL.csproj"
               }
             }
           }
@@ -75,24 +75,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.102/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.101/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\Shipping System\\Shipping.DAL\\Shipping.DAL.csproj": {
+    "D:\\shippingsys\\Shipping.DAL\\Shipping.DAL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Shipping System\\Shipping.DAL\\Shipping.DAL.csproj",
+        "projectUniqueName": "D:\\shippingsys\\Shipping.DAL\\Shipping.DAL.csproj",
         "projectName": "Shipping.DAL",
-        "projectPath": "D:\\Shipping System\\Shipping.DAL\\Shipping.DAL.csproj",
-        "packagesPath": "C:\\Users\\Future\\.nuget\\packages\\",
-        "outputPath": "D:\\Shipping System\\Shipping.DAL\\obj\\",
+        "projectPath": "D:\\shippingsys\\Shipping.DAL\\Shipping.DAL.csproj",
+        "packagesPath": "C:\\Users\\Tatuuu\\.nuget\\packages\\",
+        "outputPath": "D:\\shippingsys\\Shipping.DAL\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Future\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Tatuuu\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -172,7 +172,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.102/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.101/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

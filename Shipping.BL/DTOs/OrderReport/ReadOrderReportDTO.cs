@@ -23,6 +23,8 @@ namespace Shipping.BL.DTOs.OrderReport
         public decimal TotalCoast { get; set;}
         public string OrderDate {  get; set; }
 
+        public int? DID { get; set; }
+
 
 
         
