@@ -6,6 +6,7 @@ namespace Shipping.PL.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    
     public class OrderReportController : ControllerBase
     {
         public OrderReportService OrderReportService { get; }

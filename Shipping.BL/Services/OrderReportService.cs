@@ -25,16 +25,19 @@ namespace Shipping.BL.Services
             return orderReports;
         }
         public async Task<List<ReadOrderReportDTO>> GetOrderByStatus(string status)
-        {
+        { 
+
             var order = await unit.Orders.GetOrderByStatusAsync(status);
             if (order == null)
             {
                 return null;                
             }
+            
             var orderReport = mapper.Map<List<ReadOrderReportDTO>>(order);
+           
             return orderReport;
         }
-        public async Task<List<ReadOrderReportDTO>> GetOrderByDate(DateTime Fromdate , DateTime ToDate)
+        public async Task<List<ReadOrderReportDTO>> GetOrderByDate(DateTime Fromdate, DateTime ToDate)
         {
             var order = await unit.Orders.GetOrderByDateAsync(Fromdate, ToDate);
             if (order == null)

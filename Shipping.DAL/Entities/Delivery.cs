@@ -20,7 +20,7 @@ namespace Shipping.DAL.Entities
         [ForeignKey("Governorate")]
         public int governorateId { get; set; }
 
-        [Required, MaxLength(50)]
+            [Required, MaxLength(50)]
         public string PhoneNumber { get; set; }
 
         [Required]
