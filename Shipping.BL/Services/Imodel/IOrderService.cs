@@ -11,9 +11,9 @@ namespace Shipping.BL.Services.Imodel
     {
 
         Task<IEnumerable<ReadOrderDTO>> GetAllOrdersAsync();
-        Task<ReadOrderWithProducts?> GetOrderByIdAsync(int orderId);
+        Task<EditOrderDTO?> GetOrderByIdAsync(int orderId);
         Task AddOrderAsync(AddOrderDTO order);
-        Task UpdateOrderAsync(int orderId, AddOrderDTO order);
+        Task UpdateOrderAsync(int orderId, EditOrderDTO order);
         Task DeleteOrderAsync(int orderId);
 
     }

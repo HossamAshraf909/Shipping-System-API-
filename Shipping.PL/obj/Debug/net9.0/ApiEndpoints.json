@@ -305,6 +305,22 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "Shipping.PL.Controllers.EmployeeController",
+    "Method": "DeleteEmployee",
+    "RelativePath": "api/Employee/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "Shipping.PL.Controllers.GovernorateController",
     "Method": "GetAllGovernorates",
     "RelativePath": "api/Governorate",
@@ -470,7 +486,7 @@
       },
       {
         "Name": "orderDTO",
-        "Type": "Shipping.BL.DTOs.Order.AddOrderDTO",
+        "Type": "Shipping.BL.DTOs.Order.EditOrderDTO",
         "IsRequired": true
       }
     ],

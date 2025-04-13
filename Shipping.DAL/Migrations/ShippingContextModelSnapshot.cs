@@ -789,6 +789,10 @@ namespace Shipping.DAL.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+<<<<<<< HEAD
+
+=======
+>>>>>>> e460d89be5ad973dedd31e3b79ee350288fe4afa
                     b.HasOne("Shipping.DAL.Entities.Branches", "Branches")
                         .WithMany("Orders")
                         .HasForeignKey("branchId");

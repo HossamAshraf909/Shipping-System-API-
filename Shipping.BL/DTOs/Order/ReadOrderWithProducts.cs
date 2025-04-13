@@ -16,7 +16,7 @@ namespace Shipping.BL.DTOs.Order
         public string CustomerEmail { get; set; } = null!;
         public string Address { get; set; } = null!;
         public string PhoneNumber { get; set; } = null!;
-        public string branche { get; set; } = null!;
+        public string BranchName { get; set; } = null!;
         public bool IsDeleted { get; set; }
         public int CityId { get; set; }
         public int GovernorateId { get; set; }
@@ -24,7 +24,7 @@ namespace Shipping.BL.DTOs.Order
         public int? merchantId { get; set; }
         public OrderStatus orderStatus { get; set; }
         public bool IsVillageDelivery { get; set; }
-        public string VillageStreetAddress { get; set; } = null!;
+        public string? VillageStreetAddress { get; set; } = null!;
         public decimal OrderPrice { get; set; }
         public double TotalWeight { get; set; }
         public PaymentMethod PaymentMethod { get; set; } // Enum for Payment Type

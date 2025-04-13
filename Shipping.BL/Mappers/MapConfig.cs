@@ -66,7 +66,9 @@ namespace Shipping.BL.Mappers
             {
                 dist.TotalWeight = src.Products.Sum(p => p.Weight * p.Quantity);
                 dist.MerchantId = src.MerchentId;
+
                 if (src.IsVillageDelivery == true)
+
                 {
                     dist.VillageStreetAddress = src.VillageStreetAddress;
                 }
@@ -77,6 +79,7 @@ namespace Shipping.BL.Mappers
                 dist.Governorate = src.Governorate.Name;
                 dist.City = src.City.Name;
                 dist.merchntName = src.Merchant?.User.UserName;
+                dist.BranchName = src.Branches?.Name;
             }).ReverseMap();
             CreateMap<Order, ReadOrderWithProducts>().AfterMap((src, dist) =>
             {
@@ -99,10 +102,37 @@ namespace Shipping.BL.Mappers
                 dist.PaidShippingPrice = src.ShippingPrice;
                 dist.OrderDate = src.OrderDate.ToString("O");
             }).ReverseMap();
+            CreateMap<Order, EditOrderDTO>().AfterMap((src, dist) => 
+            {
+                dist.TotalWeight = src.TotalWeight;
+                dist.MerchentId = src.MerchantId;
+                dist.branchId = src.branchId;
+                dist.CityId = src.CityId;
+                dist.GovernorateId = src.GovernorateId;
+                dist.ShippingTypeId = src.ShippingTypeId;
+                dist.IsVillageDelivery = src.IsVillageDelivery;
+                if (src.IsVillageDelivery == true)
+                {
+                    dist.VillageStreetAddress = src.VillageStreetAddress;
+                }
+                dist.orderStatus = src.orderStatus;
+                foreach (var product in src.OrderProducts)
+                {
+                    dist.Products.Add(new EditProductDTO
+                    {
+                        Id = product.ProductId,
+                        Name = product.Product.Name,
+                        Quantity = product.Product.Quantity,
+                        Weight = product.Product.Weight,
+                    });
+                }
+
+            }).ReverseMap();
             CreateMap<ApplicationRole, ReadRoleDTO>().AfterMap((dist, src) =>
             {
                 dist.Id = src.Id;
             }).ReverseMap();
+
 
             CreateMap<Employee, ReadEmployeeDTO>().AfterMap(async (src, dist) =>
             {

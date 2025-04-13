@@ -17,6 +17,7 @@ namespace Shipping.BL.DTOs.Order
         public string CustomerName { get; set; } = null!;
         public string CustomerPhone { get; set; } = null!;
         public string CustomerEmail { get; set; } = null!;
+        public string BranchName { get; set; } = null!;
 
         [DataType(DataType.Currency)]
         public decimal OrderPrice { get; set; }

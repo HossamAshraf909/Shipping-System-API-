@@ -20,7 +20,7 @@ namespace Shipping.BL.Services
         UserManager<ApplicationUser> userManager;
         private readonly RoleManager<ApplicationRole> roleManager;
 
-        public EmployeeService(IUnitOfWork unit,IMapper _map,UserManager<ApplicationUser> userManager , RoleManager<ApplicationRole> roleManager)
+        public EmployeeService(IUnitOfWork unit, IMapper _map, UserManager<ApplicationUser> userManager, RoleManager<ApplicationRole> roleManager)
         {
             this.unit = unit;
             this._map = _map;
@@ -46,8 +46,8 @@ namespace Shipping.BL.Services
                     PhoneNumber = employee.PhoneNumber,
                     Branch = (await unit.Branches.GetByIdAsync(employee.BranchId)).Name
                 };
-                    EmployeeList.Add(ReadEmployeeDTO);
-                
+                EmployeeList.Add(ReadEmployeeDTO);
+
             }
             return EmployeeList;
         }
@@ -69,7 +69,7 @@ namespace Shipping.BL.Services
             return ReadEmployeeDTO;
         }
 
-        public async Task AddEmployeeAsync(AddEmployeeDTO employeeDTO)
+        public async Task<bool> AddEmployeeAsync(AddEmployeeDTO employeeDTO)
         {
 
             var applicationUser = new ApplicationUser
@@ -79,11 +79,13 @@ namespace Shipping.BL.Services
                 Address = employeeDTO.address,
             };
 
-            await userManager.CreateAsync(applicationUser,employeeDTO.Password);
-            
-          
-            if(await roleManager.RoleExistsAsync(employeeDTO.UserRole))
-                  await userManager.AddToRoleAsync(applicationUser,employeeDTO.UserRole);
+            var result = await userManager.CreateAsync(applicationUser, employeeDTO.Password);
+            if (!result.Succeeded)
+                return false;
+
+            if (await roleManager.RoleExistsAsync(employeeDTO.UserRole))
+                await userManager.AddToRoleAsync(applicationUser, employeeDTO.UserRole);
+
 
             var Employee = new Employee
             {
@@ -94,12 +96,11 @@ namespace Shipping.BL.Services
 
             await unit.Employee.AddAsync(Employee);
             await unit.SaveChangesAsync();
-                
-            
+            return true;
         }
 
 
-        public async Task UpdateEmployeeAsync(int id,EditEmployeeDTO employeeDTO)
+        public async Task UpdateEmployeeAsync(int id, EditEmployeeDTO employeeDTO)
         {
             var Employee = await unit.Employee.GetByIdAsync(id);
             if (Employee == null) return;
@@ -109,7 +110,7 @@ namespace Shipping.BL.Services
             applicationUser.Address = employeeDTO.address;
             applicationUser.PasswordHash = employeeDTO.Password;
             await userManager.UpdateAsync(applicationUser);
-            
+
             var result = await roleManager.RoleExistsAsync(employeeDTO.UserRole);
             if (result)
             {
@@ -122,8 +123,6 @@ namespace Shipping.BL.Services
                 await userManager.AddToRoleAsync(user, employeeDTO.UserRole);
             }
 
-
-
             Employee.BranchId = employeeDTO.BranchId;
             Employee.PhoneNumber = employeeDTO.PhoneNumber;
 
@@ -131,8 +130,17 @@ namespace Shipping.BL.Services
 
             await unit.SaveChangesAsync();
         }
-
-       
-
+        public async Task DeleteEmployeeAsync(int id)
+        {
+            var Employee = await unit.Employee.GetByIdAsync(id);
+            if (Employee == null) return;
+            var user = await userManager.FindByIdAsync(Employee.UserID);
+            if (user != null)
+            {
+                await userManager.DeleteAsync(user);
+            }
+            await unit.Employee.DeleteAsync(id);
+            await unit.SaveChangesAsync();
+        }
     }
 }
