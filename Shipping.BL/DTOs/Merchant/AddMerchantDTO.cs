@@ -18,6 +18,7 @@ namespace Shipping.BL.DTOs.Merchant
         public string Password { get; set; }  
         public string Address { get; set; }
         public List<AddSpecialPackageDTO> specialPackages { get; set; } = new List<AddSpecialPackageDTO>(); 
+        public List<int> BranchIds { get; set; } = new List<int>();
 
     }
 

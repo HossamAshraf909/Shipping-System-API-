@@ -20,17 +20,13 @@ namespace Shipping.DAL.Entities
         [ForeignKey("Governorate")]
         public int governorateId { get; set; }
 
-            [Required, MaxLength(50)]
+        [Required, MaxLength(50)]
         public string PhoneNumber { get; set; }
-
         [Required]
         [ForeignKey("User")]
         public string UserID { get; set; }
-
         public virtual ApplicationUser User { get; set; }
-
         public virtual ICollection<Order> Orders { get; set; }
-
         public virtual ICollection<DeliveryBranch> DeliveryBranches { get; set; }
         public virtual Governorate Governorate { get; set; }
     }

@@ -43,3 +43,18 @@ C:\Users\emans\source\repos\Shipping\Shipping-System-API-\Shipping.DAL\obj\Debug
 C:\Users\emans\source\repos\Shipping\Shipping-System-API-\Shipping.DAL\obj\Debug\net9.0\Shipping.DAL.pdb
 C:\Users\emans\source\repos\Shipping\Shipping-System-API-\Shipping.DAL\obj\Debug\net9.0\Shipping.DAL.genruntimeconfig.cache
 C:\Users\emans\source\repos\Shipping\Shipping-System-API-\Shipping.DAL\obj\Debug\net9.0\ref\Shipping.DAL.dll
+E:\Ehab\ITI TASKS\GP\Graduation Project 133-4-2025\Shipping-System-API-\Shipping.DAL\bin\Debug\net9.0\Shipping.DAL.deps.json
+E:\Ehab\ITI TASKS\GP\Graduation Project 133-4-2025\Shipping-System-API-\Shipping.DAL\bin\Debug\net9.0\Shipping.DAL.runtimeconfig.json
+E:\Ehab\ITI TASKS\GP\Graduation Project 133-4-2025\Shipping-System-API-\Shipping.DAL\bin\Debug\net9.0\Shipping.DAL.dll
+E:\Ehab\ITI TASKS\GP\Graduation Project 133-4-2025\Shipping-System-API-\Shipping.DAL\bin\Debug\net9.0\Shipping.DAL.pdb
+E:\Ehab\ITI TASKS\GP\Graduation Project 133-4-2025\Shipping-System-API-\Shipping.DAL\obj\Debug\net9.0\Shipping.DAL.csproj.AssemblyReference.cache
+E:\Ehab\ITI TASKS\GP\Graduation Project 133-4-2025\Shipping-System-API-\Shipping.DAL\obj\Debug\net9.0\Shipping.DAL.GeneratedMSBuildEditorConfig.editorconfig
+E:\Ehab\ITI TASKS\GP\Graduation Project 133-4-2025\Shipping-System-API-\Shipping.DAL\obj\Debug\net9.0\Shipping.DAL.AssemblyInfoInputs.cache
+E:\Ehab\ITI TASKS\GP\Graduation Project 133-4-2025\Shipping-System-API-\Shipping.DAL\obj\Debug\net9.0\Shipping.DAL.AssemblyInfo.cs
+E:\Ehab\ITI TASKS\GP\Graduation Project 133-4-2025\Shipping-System-API-\Shipping.DAL\obj\Debug\net9.0\Shipping.DAL.csproj.CoreCompileInputs.cache
+E:\Ehab\ITI TASKS\GP\Graduation Project 133-4-2025\Shipping-System-API-\Shipping.DAL\obj\Debug\net9.0\Shipping.DAL.sourcelink.json
+E:\Ehab\ITI TASKS\GP\Graduation Project 133-4-2025\Shipping-System-API-\Shipping.DAL\obj\Debug\net9.0\Shipping.DAL.dll
+E:\Ehab\ITI TASKS\GP\Graduation Project 133-4-2025\Shipping-System-API-\Shipping.DAL\obj\Debug\net9.0\refint\Shipping.DAL.dll
+E:\Ehab\ITI TASKS\GP\Graduation Project 133-4-2025\Shipping-System-API-\Shipping.DAL\obj\Debug\net9.0\Shipping.DAL.pdb
+E:\Ehab\ITI TASKS\GP\Graduation Project 133-4-2025\Shipping-System-API-\Shipping.DAL\obj\Debug\net9.0\Shipping.DAL.genruntimeconfig.cache
+E:\Ehab\ITI TASKS\GP\Graduation Project 133-4-2025\Shipping-System-API-\Shipping.DAL\obj\Debug\net9.0\ref\Shipping.DAL.dll

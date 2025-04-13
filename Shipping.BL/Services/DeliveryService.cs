@@ -16,12 +16,14 @@ namespace Shipping.BL.Services
         private readonly IUnitOfWork unit;
 
         UserManager<ApplicationUser> userManager;
+        private readonly RoleManager<ApplicationRole> roleManager;
         private readonly IMapper mapper;
 
-        public DeliveryService(IUnitOfWork unit , UserManager<ApplicationUser> userManager , IMapper mapper)
+        public DeliveryService(IUnitOfWork unit , UserManager<ApplicationUser> userManager ,RoleManager<ApplicationRole> roleManager, IMapper mapper)
         {
             this.unit = unit;
             this.userManager = userManager;
+            this.roleManager = roleManager;
             this.mapper = mapper;
         }
 
@@ -37,11 +39,10 @@ namespace Shipping.BL.Services
                 Address = deliveryDTO.address,
             };
             var result =  await userManager.CreateAsync(applicationUser,deliveryDTO.Password);
-            
-           if (!result.Succeeded)
-                return false;
-
-
+                 if (!result.Succeeded)
+                        return false;
+            if(await roleManager.RoleExistsAsync("Delivery"))
+                await userManager.AddToRoleAsync(applicationUser, "Delivery");
 
             var delivery = new Delivery 
             { 

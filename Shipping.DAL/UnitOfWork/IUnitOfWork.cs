@@ -24,5 +24,6 @@ public interface IUnitOfWork : IDisposable
     IGenericRepository<Employee> Employee { get; }
     IGenericRepository<Merchant> Merchant { get; }
     IGenericRepository<DeliveryBranch> DeliveryBranches { get; }
+    IGenericRepository<MerchantBranch> MerchantBranches { get; }
     Task<int> SaveChangesAsync();
 }

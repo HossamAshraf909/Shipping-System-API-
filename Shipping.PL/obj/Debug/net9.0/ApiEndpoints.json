@@ -105,6 +105,22 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "Shipping.PL.Controllers.ChatController",
+    "Method": "Post",
+    "RelativePath": "api/Chat",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "Shipping.BL.DTOs.ChatRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "Shipping.PL.Controllers.CityController",
     "Method": "AddCity",
     "RelativePath": "api/City",
@@ -237,6 +253,43 @@
         "Name": "governrate",
         "Type": "System.String",
         "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Shipping.PL.Controllers.DeliveryEmployee",
+    "Method": "AssignOrderToDelivery",
+    "RelativePath": "api/DeliveryEmployee/assign-delivery",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "deliveryId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "orderId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Shipping.PL.Controllers.DeliveryEmployee",
+    "Method": "UpdateOrderStatus",
+    "RelativePath": "api/DeliveryEmployee/update-status",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "orderId",
+        "Type": "System.Int32",
+        "IsRequired": false
       }
     ],
     "ReturnTypes": []

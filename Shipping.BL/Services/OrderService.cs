@@ -113,7 +113,7 @@ namespace Shipping.BL.Services
         }
         public async Task AssignOrderToDelivery(int DeliveyId, int OrderId)
         {
-           var Delivery = _unitOfWork.Delivery.GetByIdAsync(DeliveyId);
+           var Delivery = await _unitOfWork.Delivery.GetByIdAsync(DeliveyId);
             if(Delivery!= null)
             {
                 var order = await _unitOfWork.Orders.GetByIdAsync(OrderId);
