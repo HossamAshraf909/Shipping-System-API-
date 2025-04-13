@@ -23,7 +23,11 @@ namespace Shipping.PL.Controllers
                 return BadRequest("Invalid data.");
             }
 
-            await _merchantService.AddAsync(merchantDTO);
+           var isCreated= await _merchantService.AddAsync(merchantDTO);
+            if(!isCreated)
+            {
+                return BadRequest("Failed to create merchant.");
+            }
             return Ok(new
             {
                 message = "Merchant added successfully",
