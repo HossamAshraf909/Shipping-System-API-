@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using AutoMapper;
+using Microsoft.EntityFrameworkCore;
 using Shipping.BL.DTOs.OrderReport;
 
 namespace Shipping.BL.Services
@@ -13,7 +14,7 @@ namespace Shipping.BL.Services
         private readonly IUnitOfWork unit;
         private readonly IMapper mapper;
 
-        public OrderReportService(IUnitOfWork unit , IMapper mapper)
+        public OrderReportService(IUnitOfWork unit, IMapper mapper)
         {
             this.unit = unit;
             this.mapper = mapper;
@@ -21,20 +22,20 @@ namespace Shipping.BL.Services
         public async Task<List<ReadOrderReportDTO>> GetAllOrders()
         {
             var orders = await unit.Orders.GetAllAsync();
-            var orderReports = mapper.Map<List<ReadOrderReportDTO>>(orders);
+            var orderReports = mapper.Map<List<ReadOrderReportDTO>>(orders);            
             return orderReports;
         }
         public async Task<List<ReadOrderReportDTO>> GetOrderByStatus(string status)
-        { 
+        {
 
             var order = await unit.Orders.GetOrderByStatusAsync(status);
             if (order == null)
             {
-                return null;                
+                return null;
             }
-            
+
             var orderReport = mapper.Map<List<ReadOrderReportDTO>>(order);
-           
+
             return orderReport;
         }
         public async Task<List<ReadOrderReportDTO>> GetOrderByDate(DateTime Fromdate, DateTime ToDate)

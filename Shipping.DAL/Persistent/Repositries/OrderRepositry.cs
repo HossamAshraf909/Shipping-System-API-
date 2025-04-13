@@ -30,7 +30,7 @@ namespace Shipping.DAL.Persistent.Repositries
 
        public IQueryable<Order> GetAll()
         {
-            return _context.Orders;
+            return _context.Orders.AsQueryable();
 
         }
 
