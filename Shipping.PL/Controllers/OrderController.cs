@@ -1,4 +1,5 @@
 ﻿using System.Security.Claims;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -6,6 +7,7 @@ using Shipping.BL.DTOs.Order;
 using Shipping.BL.DTOs.product;
 using Shipping.BL.Services;
 using Shipping.DAL.Entities.Identity;
+using Shipping.DAL.Persistent.Enums;
 
 namespace Shipping.PL.Controllers
 {
@@ -68,16 +70,16 @@ namespace Shipping.PL.Controllers
             });
         }
         [HttpPost]
+        [Authorize(Roles = "Merchant,Admin")]
         public async Task<IActionResult> AddOrder(AddOrderDTO orderDTO)
         {
             if (orderDTO == null) BadRequest();
             if (!ModelState.IsValid) BadRequest(ModelState);
-            if (orderDTO.MerchentId == 0)
-            {
-                var userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
-                var user = await UserManager.FindByIdAsync(userId);
-                orderDTO.MerchentId = user.Merchant.ID;
-            }
+            var userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+            var user = await UserManager.FindByIdAsync(userId);
+           if(orderDTO.MerchentId== 0)
+            orderDTO.MerchentId = user.Merchant.ID;
+            
             await OrderService.AddOrderAsync(orderDTO);
 
             return Ok(new

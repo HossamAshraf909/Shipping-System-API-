@@ -41,7 +41,6 @@ namespace Shipping.BL.Services
         public async Task AddOrderAsync(AddOrderDTO orderDto)
         {
             var order = _mapper.Map<Order>(orderDto);
-
             var merchant = await _unitOfWork.Merchant.GetByIdAsync(orderDto.MerchentId);
             if (merchant == null) throw new Exception("Merchant not found.");
             orderDto.Phonenumber = merchant.User.PhoneNumber;
@@ -114,7 +113,7 @@ namespace Shipping.BL.Services
         }
         public async Task AssignOrderToDelivery(int DeliveyId, int OrderId)
         {
-           var Delivery = _unitOfWork.Delivery.GetByIdAsync(DeliveyId);
+           var Delivery = await _unitOfWork.Delivery.GetByIdAsync(DeliveyId);
             if(Delivery!= null)
             {
                 var order = await _unitOfWork.Orders.GetByIdAsync(OrderId);
