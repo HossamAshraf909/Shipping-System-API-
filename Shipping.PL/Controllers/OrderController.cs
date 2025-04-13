@@ -31,6 +31,12 @@ namespace Shipping.PL.Controllers
         {
             return Ok(await OrderService.GetAllOrdersAsync());
         }
+        [HttpGet("paginated")]
+        public async Task<IActionResult> GetAllOrdersPaginated(int pageNumber, int pageSize)
+        {
+            var orders = await OrderService.GetPaginatedAsync(pageNumber,pageSize);
+            return Ok(orders);
+        }
         [HttpGet("{Status:alpha}")]
         public async Task<IActionResult> GetOrderBystatus(string Status)
         {

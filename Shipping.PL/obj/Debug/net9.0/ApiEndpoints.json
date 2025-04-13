@@ -526,6 +526,27 @@
   },
   {
     "ContainingType": "Shipping.PL.Controllers.OrderController",
+    "Method": "GetAllOrdersPaginated",
+    "RelativePath": "api/Order/paginated",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "pageNumber",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "pageSize",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Shipping.PL.Controllers.OrderController",
     "Method": "UpdateProduct",
     "RelativePath": "api/Order/product-Edit",
     "HttpMethod": "PUT",

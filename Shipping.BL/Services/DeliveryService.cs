@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using AutoMapper;
 using Microsoft.AspNetCore.Identity;
 using Shipping.BL.DTOs.Delivery;
+using Shipping.BL.DTOs.Result;
 using Shipping.DAL.Entities;
 using Shipping.DAL.Entities.Identity;
 
@@ -29,8 +30,9 @@ namespace Shipping.BL.Services
 
 
 
-        public async Task<bool> AddAsync (AddDeliveryDTO deliveryDTO)
+        public async Task<OperationResult> AddAsync (AddDeliveryDTO deliveryDTO)
         {
+            var resultDto = new OperationResult();
             var applicationUser = new ApplicationUser
             {
                 UserName = deliveryDTO.Name,
@@ -39,9 +41,13 @@ namespace Shipping.BL.Services
                 Address = deliveryDTO.address,
             };
             var result =  await userManager.CreateAsync(applicationUser,deliveryDTO.Password);
-                 if (!result.Succeeded)
-                        return false;
-            if(await roleManager.RoleExistsAsync("Delivery"))
+            if (!result.Succeeded)
+            {
+                resultDto.Success = false;
+                resultDto.Errors.AddRange(result.Errors.Select(e => e.Description));
+                return resultDto;
+            }
+            if (await roleManager.RoleExistsAsync("Delivery"))
                 await userManager.AddToRoleAsync(applicationUser, "Delivery");
 
             var delivery = new Delivery 
@@ -68,7 +74,8 @@ namespace Shipping.BL.Services
                     await unit.SaveChangesAsync();
                 }
             }
-            return true;
+            resultDto.Success = true;
+            return resultDto;
         }
 
 

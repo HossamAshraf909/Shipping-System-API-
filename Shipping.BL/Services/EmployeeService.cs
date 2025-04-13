@@ -7,6 +7,7 @@ using AutoMapper;
 using Microsoft.AspNetCore.Identity;
 using Shipping.BL.DTOs.City;
 using Shipping.BL.DTOs.Employee;
+using Shipping.BL.DTOs.Result;
 using Shipping.DAL.Entities;
 using Shipping.DAL.Entities.Identity;
 using Shipping.DAL.Persistent.UnitOfWork;
@@ -37,6 +38,8 @@ namespace Shipping.BL.Services
                 var user = await userManager.FindByIdAsync(employee.UserID);
                 var roles = await userManager.GetRolesAsync(user);
                 var role = roles.First();
+                var Branch = await unit.Branches.GetByIdAsync(employee.BranchId);
+
                 var ReadEmployeeDTO = new ReadEmployeeDTO
                 {
                     id = employee.ID,
@@ -44,10 +47,9 @@ namespace Shipping.BL.Services
                     Email = user.Email,
                     UserRole = role,
                     PhoneNumber = employee.PhoneNumber,
-                    Branch = (await unit.Branches.GetByIdAsync(employee.BranchId)).Name
+                    Branch=Branch?.Name
                 };
                 EmployeeList.Add(ReadEmployeeDTO);
-
             }
             return EmployeeList;
         }
@@ -57,21 +59,22 @@ namespace Shipping.BL.Services
             var user = await userManager.FindByIdAsync(Employee.UserID);
             var roles = await userManager.GetRolesAsync(user);
             var role = roles.First();
-            var ReadEmployeeDTO = new ReadEmployeeDTO
+            var Branch = (await unit.Branches.GetByIdAsync(Employee.BranchId)).Name;
+            var ReadEmployeeDTO = new ReadEmployeeDTO 
             {
                 id = Employee.ID,
                 Name = user.UserName,
                 Email = user.Email,
                 UserRole = role,
                 PhoneNumber = Employee.PhoneNumber,
-                Branch = (await unit.Branches.GetByIdAsync(Employee.BranchId)).Name
+                Branch = Branch
             };
             return ReadEmployeeDTO;
         }
 
-        public async Task<bool> AddEmployeeAsync(AddEmployeeDTO employeeDTO)
+        public async Task<OperationResult> AddEmployeeAsync(AddEmployeeDTO employeeDTO)
         {
-
+            var resultDto = new OperationResult();
             var applicationUser = new ApplicationUser
             {
                 UserName = employeeDTO.Name,
@@ -81,10 +84,14 @@ namespace Shipping.BL.Services
 
             var result = await userManager.CreateAsync(applicationUser, employeeDTO.Password);
             if (!result.Succeeded)
-                return false;
+            {
+                resultDto.Success = false;
+                resultDto.Errors.AddRange(result.Errors.Select(e => e.Description));
+                return resultDto;
+            }
 
             if (await roleManager.RoleExistsAsync("Employee"))
-                await userManager.AddToRoleAsync(applicationUser,"Employee");
+                await userManager.AddToRoleAsync(applicationUser, "Employee");
 
 
             var Employee = new Employee
@@ -96,7 +103,8 @@ namespace Shipping.BL.Services
 
             await unit.Employee.AddAsync(Employee);
             await unit.SaveChangesAsync();
-            return true;
+            resultDto.Success = true;
+            return resultDto;
         }
 
 
