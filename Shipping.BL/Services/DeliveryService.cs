@@ -27,7 +27,7 @@ namespace Shipping.BL.Services
 
 
 
-        public async Task AddAsync (AddDeliveryDTO deliveryDTO)
+        public async Task<bool> AddAsync (AddDeliveryDTO deliveryDTO)
         {
             var applicationUser = new ApplicationUser
             {
@@ -36,9 +36,11 @@ namespace Shipping.BL.Services
                 PasswordHash = deliveryDTO.Password,
                 Address = deliveryDTO.address,
             };
-            await userManager.CreateAsync(applicationUser,deliveryDTO.Password);
+            var result =  await userManager.CreateAsync(applicationUser,deliveryDTO.Password);
             
-            await unit.SaveChangesAsync();
+           if (!result.Succeeded)
+                return false;
+
 
 
             var delivery = new Delivery 
@@ -65,6 +67,7 @@ namespace Shipping.BL.Services
                     await unit.SaveChangesAsync();
                 }
             }
+            return true;
         }
 
 

@@ -50,7 +50,8 @@ namespace Shipping.BL.Services
         }
         public async Task<bool> AssignPermissionToRole(AssignPermissionsToRoleDTO permissionsToRoleDTO)
         {
-            var role = await roleManager.FindByIdAsync(permissionsToRoleDTO.RoleId);
+         
+            var role = await roleManager.FindByNameAsync(permissionsToRoleDTO.Role);
             if (role == null)
             {
                 return false;
@@ -89,7 +90,6 @@ namespace Shipping.BL.Services
 
             }
             return true;
-
         }
         public async Task<List<PermissionDTO>> GetRolePermissions(string role)
         {
