@@ -30,6 +30,7 @@ namespace Shipping.DAL.Persistent.UnitOfWork
         private IGenericRepository<Delivery>? _delivery;
         private IGenericRepository<Employee>? _employee;
         private IGenericRepository<DeliveryBranch>? _deliveryBranches;
+        private IGenericRepository<MerchantBranch>? _merchentBranches;
 
 
         public UnitOfWork(ShippingContext context)
@@ -78,6 +79,8 @@ namespace Shipping.DAL.Persistent.UnitOfWork
       
         public IGenericRepository<DeliveryBranch> DeliveryBranches =>
             _deliveryBranches ??= new GenericRepository<DeliveryBranch>(_context);
+        public IGenericRepository<MerchantBranch> MerchantBranches =>
+            _merchentBranches ??= new GenericRepository<MerchantBranch>(_context);
 
         public async Task<int> SaveChangesAsync()
         {

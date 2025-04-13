@@ -22,7 +22,12 @@ namespace Shipping.PL.Controllers
 
             if (delivery == null) return BadRequest();
             if (!ModelState.IsValid) return BadRequest();
-            await deliveryService.AddAsync(delivery);
+            var isCreate=  await deliveryService.AddAsync(delivery);
+            if (!isCreate)
+                return BadRequest(new
+                {
+                    error = "Failed to create Delivery"
+                });
             return Ok(new
             {
                 message = "Delivery added successfully",
