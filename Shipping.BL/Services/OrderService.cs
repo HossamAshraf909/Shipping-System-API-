@@ -120,17 +120,18 @@ namespace Shipping.BL.Services
                 if (order != null)
                 {
                     order.DeliveryId = DeliveyId;
+                    order.orderStatus = OrderStatus.Delivered;
                     await _unitOfWork.Orders.UpdateAsync(order);
                     await _unitOfWork.SaveChangesAsync();  // Ensure changes are saved
                 }
             }
         }
-        public async Task UpdateOrderStatus(int OrderId, OrderStatus Status)
+        public async Task UpdateOrderStatus(int OrderId)
         {
             var order = await _unitOfWork.Orders.GetByIdAsync(OrderId);
             if (order != null)
             {
-                order.orderStatus = Status;
+                order.orderStatus = OrderStatus.Pending;
                 await _unitOfWork.Orders.UpdateAsync(order);
                 await _unitOfWork.SaveChangesAsync();  // Ensure changes are saved
             }

@@ -95,6 +95,7 @@ namespace Shipping.BL.Mappers
                 }
                 dist.merchantId = src.Merchant?.ID;
             }).ReverseMap();
+
             CreateMap<Order, ReadOrderReportDTO>().AfterMap((src, dist) =>
             {
                 dist.Governorate = src.Governorate.Name;
@@ -104,7 +105,8 @@ namespace Shipping.BL.Mappers
                 dist.CompanyPersent = (decimal)src.Delivery.CompanyPercent;
                 dist.TotalCoast = (((decimal)src.Delivery.CompanyPercent/100)*src.ShippingPrice)+src.OrderPrice;
             }).ReverseMap();
-            CreateMap<Order, EditOrderDTO>().AfterMap((src, dist) => 
+         
+            CreateMap<Order, EditOrderDTO>().AfterMap((src, dist) =>
             {
                 dist.TotalWeight = src.TotalWeight;
                 dist.MerchentId = src.MerchantId;
@@ -148,9 +150,34 @@ namespace Shipping.BL.Mappers
                 dist.Id = src.ID;
             }).ReverseMap();
             CreateMap<Order, ReadOrderReportDTO>()
-    .ForMember(dest => dest.MerchantName, opt => opt.MapFrom(src => src.Merchant.User.UserName));
+      .ForMember(dest => dest.MerchantName,
+                 opt => opt.MapFrom(src => src.Merchant.User.UserName))
+
+      .ForMember(dest => dest.CompanyPersent,
+                 opt => opt.MapFrom(src => src.Delivery.CompanyPercent))
+
+      .ForMember(dest => dest.PaidShippingPrice,
+                 opt => opt.MapFrom(src => src.ShippingPrice))
+
+      .ForMember(dest => dest.DID,
+                 opt => opt.MapFrom(src => src.DeliveryId))
+
+      .ForMember(dest => dest.TotalCoast,
+                 opt => opt.MapFrom(src =>
+                      (src.Delivery.CompanyPercent) == 0
+                          ? src.OrderPrice
+                          : ((decimal)(src.Delivery.CompanyPercent) * src.ShippingPrice) + src.OrderPrice
+                 ))
+
+      .ForMember(dest => dest.city,
+                 opt => opt.MapFrom(src => src.City.Name))
+
+      .ForMember(dest => dest.Governorate,
+                 opt => opt.MapFrom(src => src.Governorate.Name))
+
+      .ForMember(dest => dest.OrderDate,
+                 opt => opt.MapFrom(src => src.OrderDate.ToString("O")));
 
         }
-
     }
 }
