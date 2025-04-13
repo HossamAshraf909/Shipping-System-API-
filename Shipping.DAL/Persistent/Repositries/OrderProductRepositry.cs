@@ -19,12 +19,11 @@ public class OrderProductRepository : GenericRepository<Order_Product>
         }
 
         await DeleteAsync(id); 
-
+         
         if (orderProduct.Product != null) 
         {
             _context.Products.Remove(orderProduct.Product);
         }
-
         await SaveChangesAsync(); 
     }
 }

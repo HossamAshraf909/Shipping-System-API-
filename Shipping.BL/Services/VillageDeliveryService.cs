@@ -49,6 +49,7 @@ namespace Shipping.BL.Services
 
         public async Task DeleteAsync(int id)
         {
+
             var delivery = await _unitOfWork.VillageDelivery.GetByIdAsync(id);
             if (delivery == null) return;
 

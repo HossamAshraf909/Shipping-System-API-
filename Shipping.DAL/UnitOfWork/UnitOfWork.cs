@@ -24,6 +24,8 @@ namespace Shipping.DAL.Persistent.UnitOfWork
         private IGenericRepository<WeightPrice>? _weightPrices;
         private IGenericRepository<VillageDelivery>? _villageDelivery;
         private IGenericRepository<SpecialPackages>? _specialPackages;
+
+
         private IGenericRepository<Merchant>? _merchent;
         private IGenericRepository<Delivery>? _delivery;
         private IGenericRepository<Employee>? _employee;
@@ -36,21 +38,13 @@ namespace Shipping.DAL.Persistent.UnitOfWork
             _context = context ?? throw new ArgumentNullException(nameof(context));
         }
 
-
         public ProductRepository Products =>
             _products ??= new ProductRepository(_context);
-        
+
         
         public IGenericRepository<SpecialPackages> SpecialPackage =>
             _specialPackages ??= new GenericRepository<SpecialPackages>(_context);
 
-        public IGenericRepository<Merchant> Merchant =>
-            _merchent ??= new GenericRepository<Merchant>(_context);
-        public IGenericRepository<Delivery> Delivery =>
-            _delivery ??= new GenericRepository<Delivery>(_context);
-
-        public IGenericRepository<Employee> Employee =>
-           _employee ??= new GenericRepository<Employee>(_context);
         public OrderProductRepository OrderProducts =>
             _orderProducts ??= new OrderProductRepository(_context);
 
@@ -73,27 +67,43 @@ namespace Shipping.DAL.Persistent.UnitOfWork
 
         public IGenericRepository<WeightPrice> WeightPrices =>
             _weightPrices ??= new GenericRepository<WeightPrice>(_context);
+ 
+        public IGenericRepository<Merchant> Merchant =>
+            _merchent ??= new GenericRepository<Merchant>(_context);
+        public IGenericRepository<Delivery> Delivery =>
+            _delivery ??= new GenericRepository<Delivery>(_context);
+
+        public IGenericRepository<Employee> Employee =>
+           _employee ??= new GenericRepository<Employee>(_context);
+      
         public IGenericRepository<DeliveryBranch> DeliveryBranches =>
             _deliveryBranches ??= new GenericRepository<DeliveryBranch>(_context);
 
-
         public async Task<int> SaveChangesAsync()
-
         {
             return await _context.SaveChangesAsync();
         }
-
-        public int SaveChanges()
-        {
-            return _context.SaveChanges();
-        }
-
         public void Dispose()
         {
             _context.Dispose();
             GC.SuppressFinalize(this);
         }
-
-
     }
 }
+
+       
+
+       
+       
+
+        
+
+
+
+       
+
+       
+
+
+  
+

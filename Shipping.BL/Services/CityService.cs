@@ -13,7 +13,6 @@ namespace Shipping.BL.Services
     {
         private readonly IMapper _mapper;
         private readonly IUnitOfWork _unitOfWork;
-
         public CityService(IMapper mapper, IUnitOfWork unitOfWork)
         {
             _mapper = mapper;

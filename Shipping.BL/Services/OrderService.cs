@@ -43,7 +43,6 @@ namespace Shipping.BL.Services
 
             var merchant = await _unitOfWork.Merchant.GetByIdAsync(orderDto.MerchentId);
             if (merchant == null) throw new Exception("Merchant not found.");
-
             orderDto.Phonenumber = merchant.User.PhoneNumber;
             orderDto.Address = merchant.User.Address;
             var city = await _unitOfWork.Cities.GetByIdAsync(orderDto.CityId);

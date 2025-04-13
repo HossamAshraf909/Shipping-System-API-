@@ -23,10 +23,9 @@ namespace Shipping.DAL.Entities
         public decimal ShippingPrice { get; set; }  
 
         public virtual City city { get; set; }
-
-        public virtual Governorate governorate { get; set; } 
-        
+        public virtual Governorate governorate { get; set; }       
         public virtual Merchant merchant { get; set; }
+
 
     }
 }
