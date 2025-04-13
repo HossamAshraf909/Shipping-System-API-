@@ -81,11 +81,11 @@ namespace Shipping.PL.Controllers
             });
         }
         [HttpPut("{id:int}")]
-        public async Task<IActionResult> UpdateOrder(int id, AddOrderDTO orderDTO)
+        public async Task<IActionResult> UpdateOrder(int id, EditOrderDTO orderDTO)
         {
             if (orderDTO == null) BadRequest();
             if (!ModelState.IsValid) BadRequest(ModelState);
-            await OrderService.UpdateOrderAsync(id, orderDTO);
+            await OrderService.UpdateOrderAsync(id,orderDTO);
             return Ok(new
             {
                 massage = "Order Updated Successfully",

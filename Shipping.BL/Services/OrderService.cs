@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using AutoMapper;
 using Shipping.BL.DTOs.Order;
 using Shipping.BL.Services.Imodel;
+using Shipping.DAL.Persistent.Enums;
 using Shipping.DAL.Persistent.UnitOfWork;
 
 namespace Shipping.BL.Services
@@ -26,18 +27,16 @@ namespace Shipping.BL.Services
             var orders = await _unitOfWork.Orders.GetAllAsync();
             return _mapper.Map<IEnumerable<ReadOrderDTO>>(orders);
         }
-
-        public async Task<ReadOrderWithProducts?> GetOrderByIdAsync(int orderId)
+        public async Task<EditOrderDTO?> GetOrderByIdAsync(int orderId)
         {
             var order = await _unitOfWork.Orders.GetByIdAsync(orderId);
-            return _mapper.Map<ReadOrderWithProducts>(order);
+            return _mapper.Map<EditOrderDTO>(order);
         }
-       public async Task<List<ReadOrderDTO>> GetOrderByStatusAsync(string Status)
+        public async Task<List<ReadOrderDTO>> GetOrderByStatusAsync(string Status)
         {
             var orders= await _unitOfWork.Orders.GetOrderByStatusAsync(Status);
             return _mapper.Map<List<ReadOrderDTO>>(orders);
         }
-
         public async Task AddOrderAsync(AddOrderDTO orderDto)
         {
             var order = _mapper.Map<Order>(orderDto);
@@ -98,8 +97,7 @@ namespace Shipping.BL.Services
             }
                 await _unitOfWork.SaveChangesAsync();
         }
-
-        public async Task UpdateOrderAsync(int orderId, AddOrderDTO orderDto)
+        public async Task UpdateOrderAsync(int orderId, EditOrderDTO orderDto)
         {
             var order = await _unitOfWork.Orders.GetByIdAsync(orderId);
             if (order != null)
@@ -109,11 +107,34 @@ namespace Shipping.BL.Services
                 await _unitOfWork.SaveChangesAsync();  // Ensure changes are saved
             }
         }
-
         public async Task DeleteOrderAsync(int orderId)
         {
             await _unitOfWork.Orders.DeleteAsync(orderId);
             await _unitOfWork.SaveChangesAsync();  // Ensure changes are saved
+        }
+        public async Task AssignOrderToDelivery(int DeliveyId, int OrderId)
+        {
+           var Delivery = _unitOfWork.Delivery.GetByIdAsync(DeliveyId);
+            if(Delivery!= null)
+            {
+                var order = await _unitOfWork.Orders.GetByIdAsync(OrderId);
+                if (order != null)
+                {
+                    order.DeliveryId = DeliveyId;
+                    await _unitOfWork.Orders.UpdateAsync(order);
+                    await _unitOfWork.SaveChangesAsync();  // Ensure changes are saved
+                }
+            }
+        }
+        public async Task UpdateOrderStatus(int OrderId, OrderStatus Status)
+        {
+            var order = await _unitOfWork.Orders.GetByIdAsync(OrderId);
+            if (order != null)
+            {
+                order.orderStatus = Status;
+                await _unitOfWork.Orders.UpdateAsync(order);
+                await _unitOfWork.SaveChangesAsync();  // Ensure changes are saved
+            }
         }
     }
 }

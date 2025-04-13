@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Azure.Messaging;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Shipping.BL.DTOs.Employee;
 using Shipping.BL.Services;
@@ -38,7 +39,12 @@ namespace Shipping.PL.Controllers
         {
             if (employee == null) return BadRequest();
             if (!ModelState.IsValid) return BadRequest();
-            await employeeService.AddEmployeeAsync(employee);
+           var IsCreated=  await employeeService.AddEmployeeAsync(employee);
+            if (!IsCreated)
+                return BadRequest(new
+                {
+                    error = "Failed to create"
+                });
             return Ok( new
             {
                 massage = "Employee added successfully",
@@ -53,6 +59,17 @@ namespace Shipping.PL.Controllers
             if (!ModelState.IsValid) return BadRequest();
             await employeeService.UpdateEmployeeAsync(id, employeeDTO);
             return Ok();
+        }
+        [HttpDelete("{id:int}")]
+        public async Task<ActionResult> DeleteEmployee(int id)
+        {
+            if (id == 0) return BadRequest();
+            await employeeService.DeleteEmployeeAsync(id);
+            return Ok(new
+            {
+                massage = "Employee Deleted Successfully",
+                StatusCode = 200,
+            });
         }
     }
 }

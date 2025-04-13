@@ -22,13 +22,11 @@ namespace Shipping.BL.DTOs.Order
         public string VillageStreetAddress { get; set; } = null!;
         public decimal OrderPrice { get; set; }
         public double TotalWeight { get; set; }
-
-        public string Branche { get; set; } 
+        public int branchId { get; set; }
         public string Phonenumber { get; set; }
         public string Address { get; set; }
         public PaymentMethod PaymentMethod { get; set; } // Enum for Payment Type
         public ShippingMethod ShippingMethod { get; set; } // Enum for Shipping Type
-
         public List<CreateProductDTO> Products { get; set; } = new();
 
     }
