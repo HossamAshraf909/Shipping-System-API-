@@ -7,6 +7,7 @@ using Shipping.BL.DTOs.Order;
 using Shipping.BL.DTOs.product;
 using Shipping.BL.Services;
 using Shipping.DAL.Entities.Identity;
+using Shipping.DAL.Persistent.Enums;
 
 namespace Shipping.PL.Controllers
 {
