@@ -2,7 +2,7 @@
 {
     public class AssignPermissionsToRoleDTO
     {
-        public string RoleId { get; set; }
+        public string Role { get; set; }
         public List<PermissionDTO> Permissions { get; set; } = new();
 
     }

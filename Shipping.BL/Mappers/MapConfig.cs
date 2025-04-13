@@ -101,6 +101,10 @@ namespace Shipping.BL.Mappers
                 dist.city = src.City.Name;
                 dist.PaidShippingPrice = src.ShippingPrice;
                 dist.OrderDate = src.OrderDate.ToString("O");
+                dist.CompanyPersent = (decimal)src.Delivery.CompanyPercent;
+                dist.TotalCoast = (((decimal)src.Delivery.CompanyPercent/100)*src.ShippingPrice)+src.OrderPrice;
+
+
             }).ReverseMap();
             CreateMap<Order, EditOrderDTO>().AfterMap((src, dist) => 
             {
@@ -145,6 +149,9 @@ namespace Shipping.BL.Mappers
                 dist.Name = src.User.UserName;
                 dist.Id = src.ID;
             }).ReverseMap();
+            CreateMap<Order, ReadOrderReportDTO>()
+    .ForMember(dest => dest.MerchantName, opt => opt.MapFrom(src => src.Merchant.User.UserName));
+
         }
 
     }
