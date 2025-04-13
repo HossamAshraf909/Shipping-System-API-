@@ -174,8 +174,7 @@
               "RelativeToolTip": "Shipping.BL\\DTOs\\Order\\ReadOrderWithProducts.cs",
               "ViewState": "AgIAAAkAAAAAAAAAAAAAABoAAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-12T22:50:53.088Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-12T22:50:53.088Z"
             },
             {
               "$type": "Document",
@@ -187,8 +186,7 @@
               "RelativeToolTip": "Shipping.BL\\Services\\OrderService.cs",
               "ViewState": "AgIAABMAAAAAAAAAAAAswGwAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-12T21:56:44.166Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-12T21:56:44.166Z"
             },
             {
               "$type": "Document",
@@ -198,7 +196,7 @@
               "RelativeDocumentMoniker": "Shipping.PL\\Controllers\\OrderController.cs",
               "ToolTip": "D:\\Shipping System\\Shipping.PL\\Controllers\\OrderController.cs",
               "RelativeToolTip": "Shipping.PL\\Controllers\\OrderController.cs",
-              "ViewState": "AgIAADUAAAAAAAAAAAAowFQAAAAIAAAAAAAAAA==",
+              "ViewState": "AgIAADIAAAAAAAAAAADwv1QAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-12T22:19:11.68Z",
               "EditorCaption": ""
@@ -213,8 +211,7 @@
               "RelativeToolTip": "Shipping.BL\\DTOs\\Order\\ReadOrderDTO.cs",
               "ViewState": "AgIAAAkAAAAAAAAAAAAAABMAAAA3AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-12T22:50:11.864Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-12T22:50:11.864Z"
             },
             {
               "$type": "Document",
@@ -226,8 +223,7 @@
               "RelativeToolTip": "Shipping.BL\\DTOs\\Order\\EditOrderDTO.cs",
               "ViewState": "AgIAABIAAAAAAAAAAAA1wBsAAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-13T00:48:24.148Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-13T00:48:24.148Z"
             },
             {
               "$type": "Document",
@@ -239,8 +235,7 @@
               "RelativeToolTip": "Shipping.PL\\Controllers\\EmployeeController.cs",
               "ViewState": "AgIAABoAAAAAAAAAAAAgwD4AAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-12T22:19:11.725Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-12T22:19:11.725Z"
             },
             {
               "$type": "Document",
@@ -252,8 +247,7 @@
               "RelativeToolTip": "Shipping.DAL\\Persistent\\Repositries\\GenericRepositry.cs",
               "ViewState": "AgIAAC0AAAAAAAAAAAAowDsAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-12T21:37:50.395Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-12T21:37:50.395Z"
             },
             {
               "$type": "Document",
@@ -265,8 +259,7 @@
               "RelativeToolTip": "Shipping.DAL\\UnitOfWork\\UnitOfWork.cs",
               "ViewState": "AgIAAEQAAAAAAAAAAADwv1MAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-12T21:13:53.878Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-12T21:13:53.878Z"
             },
             {
               "$type": "Document",
@@ -278,8 +271,7 @@
               "RelativeToolTip": "Shipping.BL\\DTOs\\Order\\AddOrderDTO.cs",
               "ViewState": "AgIAABEAAAAAAAAAAAA9wAsAAAAHAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-12T19:48:33.087Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-12T19:48:33.087Z"
             },
             {
               "$type": "Document",
@@ -291,8 +283,7 @@
               "RelativeToolTip": "Shipping.BL\\Mappers\\MapConfig.cs",
               "ViewState": "AgIAAEcAAAAAAAAAAAAgwGYAAABFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-12T17:34:19.909Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-12T17:34:19.909Z"
             },
             {
               "$type": "Document",
@@ -304,8 +295,7 @@
               "RelativeToolTip": "Shipping.BL\\Services\\Imodel\\IOrderService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-12T21:58:43.876Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-12T21:58:43.876Z"
             },
             {
               "$type": "Document",
@@ -317,8 +307,7 @@
               "RelativeToolTip": "Shipping.BL\\Services\\EmployeeService.cs",
               "ViewState": "AgIAADEAAAAAAAAAAAAIwDgAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-12T22:19:11.739Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-12T22:19:11.739Z"
             },
             {
               "$type": "Document",
@@ -330,8 +319,7 @@
               "RelativeToolTip": "Shipping.BL\\Services\\OrderReportService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-12T22:19:11.709Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-12T22:19:11.709Z"
             },
             {
               "$type": "Document",
@@ -343,8 +331,7 @@
               "RelativeToolTip": "Shipping.PL\\Program.cs",
               "ViewState": "AgIAAH8AAAAAAAAAAAAQwHQAAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-12T21:12:42.923Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-12T21:12:42.923Z"
             },
             {
               "$type": "Document",
