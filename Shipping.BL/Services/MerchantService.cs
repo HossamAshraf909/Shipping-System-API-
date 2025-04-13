@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Identity;
 using Shipping.BL.DTOs.Merchant;
+using Shipping.BL.DTOs.Result;
 using Shipping.DAL.Entities;
 using Shipping.DAL.Entities.Identity;
 using System;
@@ -28,8 +29,9 @@ namespace Shipping.BL.Services
                 this.roleManager = roleManager;
             }
 
-            public async Task<bool> AddAsync(AddMerchantDTO merchantDTO)
+            public async Task<OperationResult> AddAsync(AddMerchantDTO merchantDTO)
             {
+                var resultDto = new OperationResult();
                 var applicationUser = new ApplicationUser
                 {
                     UserName = merchantDTO.UserName,
@@ -40,8 +42,11 @@ namespace Shipping.BL.Services
 
                var result= await userManager.CreateAsync(applicationUser,merchantDTO.Password);
                 if (!result.Succeeded)
-                    return false;
-
+                {
+                    resultDto.Success = false;
+                    resultDto.Errors.AddRange(result.Errors.Select(e => e.Description));
+                    return resultDto;
+                }
                 if (await roleManager.RoleExistsAsync("Merchant"))
                     await userManager.AddToRoleAsync(applicationUser, "Merchant");
 
@@ -83,28 +88,31 @@ namespace Shipping.BL.Services
                         await unit.SaveChangesAsync();
                     }
                 }
-                return true;
+                resultDto.Success = true;
+                return resultDto;
             }
 
-            public async Task<List<Task<ReadMerchantDTO>>> GetAllAsync()
+            public async Task<List<ReadMerchantDTO>> GetAllAsync()
             {
                 var merchants = await unit.Merchant.GetAllAsync();
-               
+                var result = new List<ReadMerchantDTO>();
 
-                var result = merchants.Select(async m =>
+                foreach (var m in merchants)
                 {
                     var user = await userManager.FindByIdAsync(m.UserID);
 
-                    return new ReadMerchantDTO
+                    result.Add(new ReadMerchantDTO
                     {
                         CityName = m.City?.Name,
                         GovernorateName = m.Governorate?.Name,
                         PickUpPrice = m.PickUpPrice,
                         RejectedOrderPrice = m.RejectedOrderPrice,
-                        UserName = user.UserName,
-                        UserEmail = user?.Email
-                    };
-                }).ToList();
+                        UserName = user?.UserName,
+                        UserEmail = user?.Email,
+                        ID= m.ID,
+                        UserID=user?.Id
+                    });
+                }
 
                 return result;
             }

@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 using Shipping.BL.DTOs.Delivery;
 using Shipping.BL.Services;
@@ -22,12 +23,15 @@ namespace Shipping.PL.Controllers
 
             if (delivery == null) return BadRequest();
             if (!ModelState.IsValid) return BadRequest();
-            var isCreate=  await deliveryService.AddAsync(delivery);
-            if (!isCreate)
+            var result=  await deliveryService.AddAsync(delivery);
+            if (!result.Success)
+            {
                 return BadRequest(new
                 {
-                    error = "Failed to create Delivery"
+                    error = "Failed to create employee",
+                    details = result.Errors
                 });
+            }
             return Ok(new
             {
                 message = "Delivery added successfully",

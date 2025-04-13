@@ -23,10 +23,14 @@ namespace Shipping.PL.Controllers
                 return BadRequest("Invalid data.");
             }
 
-           var isCreated= await _merchantService.AddAsync(merchantDTO);
-            if(!isCreated)
+            var result= await _merchantService.AddAsync(merchantDTO);
+            if (!result.Success)
             {
-                return BadRequest("Failed to create merchant.");
+                return BadRequest(new
+                {
+                    error = "Failed to create employee",
+                    details = result.Errors
+                });
             }
             return Ok(new
             {

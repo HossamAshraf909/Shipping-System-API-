@@ -39,12 +39,15 @@ namespace Shipping.PL.Controllers
         {
             if (employee == null) return BadRequest();
             if (!ModelState.IsValid) return BadRequest();
-           var IsCreated=  await employeeService.AddEmployeeAsync(employee);
-            if (!IsCreated)
+           var result=  await employeeService.AddEmployeeAsync(employee);
+            if (!result.Success)
+            {
                 return BadRequest(new
                 {
-                    error = "Failed to create"
+                    error = "Failed to create employee",
+                    details = result.Errors
                 });
+            }
             return Ok( new
             {
                 massage = "Employee added successfully",

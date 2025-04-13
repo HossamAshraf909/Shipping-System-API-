@@ -62,6 +62,10 @@ namespace Shipping.BL.Services
             var Branches= await _unitOfWork.Branches.SearchAsync(B => B.Name.Contains(Searchword));
             return Branches;
         }
+        public async Task<(IEnumerable<Branches> Data, int TotalRecords, int TotalPages)> GetPaginatedAsync(int page, int pageSize)
+        {
+            return await _unitOfWork.Branches.GetPaginatedAsync(page, pageSize);
+        }
 
 
     }

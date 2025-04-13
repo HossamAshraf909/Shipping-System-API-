@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using AutoMapper;
 using Shipping.BL.DTOs.Order;
 using Shipping.BL.Services.Imodel;
+using Shipping.DAL.Entities;
 using Shipping.DAL.Persistent.Enums;
 using Shipping.DAL.Persistent.UnitOfWork;
 
@@ -135,6 +136,20 @@ namespace Shipping.BL.Services
                 await _unitOfWork.Orders.UpdateAsync(order);
                 await _unitOfWork.SaveChangesAsync();  // Ensure changes are saved
             }
+        }
+        public async Task<PaginatedOrderDTO> GetPaginatedAsync(int page, int pageSize)
+        {
+            var _PaginatedOrders= new PaginatedOrderDTO();
+            var orders= await _unitOfWork.Orders.GetPaginatedAsync(page, pageSize);
+            _PaginatedOrders.TotalRecords = orders.TotalRecords;
+            _PaginatedOrders.TotalPages = orders.TotalPages;
+            foreach (var order in orders.Data)
+            {
+                var orderDto = _mapper.Map<ReadOrderDTO>(order);
+                _PaginatedOrders.Orders.Add(orderDto);
+            }
+            var paginatedOrders = _mapper.Map<IEnumerable<ReadOrderDTO>>(orders.Data);
+            return _PaginatedOrders ;
         }
     }
 }
