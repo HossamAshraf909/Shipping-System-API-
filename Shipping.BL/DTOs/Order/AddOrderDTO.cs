@@ -20,11 +20,7 @@ namespace Shipping.BL.DTOs.Order
         public string VillageStreetAddress { get; set; } = null!;
         public decimal OrderPrice { get; set; }
         public double TotalWeight { get; set; }
-<<<<<<< HEAD
         public int branchId { get; set; }
-=======
-        public string Branche { get; set; }
->>>>>>> e460d89be5ad973dedd31e3b79ee350288fe4afa
         public string Phonenumber { get; set; }
         public string Address { get; set; }
         public PaymentMethod PaymentMethod { get; set; } // Enum for Payment Type

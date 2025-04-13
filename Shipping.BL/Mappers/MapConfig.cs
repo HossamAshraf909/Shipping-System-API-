@@ -66,8 +66,9 @@ namespace Shipping.BL.Mappers
             {
                 dist.TotalWeight = src.Products.Sum(p => p.Weight * p.Quantity);
                 dist.MerchantId = src.MerchentId;
-                
-                if (src.IsVillageDelivery == true) 
+
+                if (src.IsVillageDelivery == true)
+
                 {
                     dist.VillageStreetAddress = src.VillageStreetAddress;
                 }
