@@ -41,7 +41,6 @@ namespace Shipping.BL.Services
         public async Task AddOrderAsync(AddOrderDTO orderDto)
         {
             var order = _mapper.Map<Order>(orderDto);
-
             var merchant = await _unitOfWork.Merchant.GetByIdAsync(orderDto.MerchentId);
             if (merchant == null) throw new Exception("Merchant not found.");
             orderDto.Phonenumber = merchant.User.PhoneNumber;

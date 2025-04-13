@@ -25,7 +25,7 @@ namespace Shipping.DAL.Persistent.Data.Context
         {
             base.OnModelCreating(modelBuilder);
 
-
+           
             modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
             foreach (var entityType in modelBuilder.Model.GetEntityTypes())
             {
@@ -36,9 +36,6 @@ namespace Shipping.DAL.Persistent.Data.Context
                 }
             }
         }
-
-
-
        public DbSet<Branches> Branches { get; set; }
        public DbSet<City> Cities { get; set; }
        public DbSet<Governorate> governorates { get; set; }

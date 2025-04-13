@@ -79,7 +79,7 @@ namespace Shipping.BL.Mappers
                 dist.Governorate = src.Governorate.Name;
                 dist.City = src.City.Name;
                 dist.merchntName = src.Merchant?.User.UserName;
-                dist.BranchName = src.Branches?.Name;
+                dist.BranchName = src.Branch?.Name;
             }).ReverseMap();
             CreateMap<Order, ReadOrderWithProducts>().AfterMap((src, dist) =>
             {
