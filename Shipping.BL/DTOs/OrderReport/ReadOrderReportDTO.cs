@@ -11,6 +11,7 @@ namespace Shipping.BL.DTOs.OrderReport
     {
         public int Id { get; set; }
         public OrderStatus OrderStatus { get; set; }
+        public string MerchantName { get; set; } = null!;
         public string CustomerName { get; set; } = null!;
         public string CustomerPhone { get; set; } = null!;
         public string city { get; set; } = null!;
@@ -18,7 +19,12 @@ namespace Shipping.BL.DTOs.OrderReport
         public decimal OrderPrice { get; set; }
         public decimal ShippingPrice { get; set; }
         public decimal PaidShippingPrice { get; set; }
+        public decimal CompanyPersent { get; set; }
+        public decimal TotalCoast { get; set;}
         public string OrderDate {  get; set; }
+
+
+
         
     }
 }
