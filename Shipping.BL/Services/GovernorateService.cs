@@ -28,7 +28,7 @@ namespace Shipping.BL.Services
         public async Task<ReadGovernorateDTO?> GetByIdAsync(int id)
         {
             var governorate = await _unitOfWork.Governorates.GetByIdAsync(id);
-            return governorate != null ? _mapper.Map<ReadGovernorateDTO>(governorate) : null;
+            return  _mapper.Map<ReadGovernorateDTO>(governorate);
         }
 
         public async Task AddAsync(AddGovernorateDTO governorateDTO)
@@ -59,10 +59,11 @@ namespace Shipping.BL.Services
 
 
 
-        public  async Task<IEnumerable<Governorate>> SearchAsync(string Searchword)
+        public  async Task<List<ReadGovernorateDTO>> SearchAsync(string Searchword)
         {
            var Governorates = await _unitOfWork.Governorates.SearchAsync(g => g.Name.Contains(Searchword));
-            return Governorates;
+            var govsDTO = _mapper.Map<List<ReadGovernorateDTO>>(Governorates);
+            return govsDTO;
         }
 
     }

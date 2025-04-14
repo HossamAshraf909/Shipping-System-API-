@@ -38,6 +38,7 @@ namespace Shipping.BL.Services
                     Email = merchantDTO.Email,
                     PasswordHash = merchantDTO.Password,
                     Address = merchantDTO.Address,
+                    PhoneNumber = merchantDTO.PhoneNumber,
                 };
 
                var result= await userManager.CreateAsync(applicationUser,merchantDTO.Password);
@@ -110,7 +111,8 @@ namespace Shipping.BL.Services
                         UserName = user?.UserName,
                         UserEmail = user?.Email,
                         ID= m.ID,
-                        UserID=user?.Id
+                        UserID=user?.Id,
+                        UserPhoneNumber = user?.PhoneNumber,
                     });
                 }
 

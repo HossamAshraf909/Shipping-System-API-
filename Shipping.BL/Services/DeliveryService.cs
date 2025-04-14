@@ -39,6 +39,7 @@ namespace Shipping.BL.Services
                 Email = deliveryDTO.Email,
                 PasswordHash = deliveryDTO.Password,
                 Address = deliveryDTO.address,
+                PhoneNumber = deliveryDTO.PhoneNumber,
             };
             var result =  await userManager.CreateAsync(applicationUser,deliveryDTO.Password);
             if (!result.Succeeded)
