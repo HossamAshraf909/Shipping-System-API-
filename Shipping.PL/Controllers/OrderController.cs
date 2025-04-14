@@ -77,7 +77,7 @@ namespace Shipping.PL.Controllers
             if (!ModelState.IsValid) BadRequest(ModelState);
             var userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
             var user = await UserManager.FindByIdAsync(userId);
-           if(orderDTO.MerchentId== 0)
+            if(orderDTO.MerchentId== 0)
             orderDTO.MerchentId = user.Merchant.ID;
             
             await OrderService.AddOrderAsync(orderDTO);

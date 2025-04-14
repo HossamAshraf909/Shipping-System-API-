@@ -15,8 +15,9 @@ namespace Shipping.BL.DTOs.Merchant
             public string UserID { get; set; }
             public string CityName { get; set; }
             public string GovernorateName { get; set; }
-             public string UserName { get;  set; }
-             public string UserEmail { get;  set; }
+            public string UserName { get;  set; }
+            public string UserEmail { get;  set; }
+            public string UserPhoneNumber { get; set; }
     }
 
     }

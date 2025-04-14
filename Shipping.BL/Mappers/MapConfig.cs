@@ -67,6 +67,8 @@ namespace Shipping.BL.Mappers
                 dist.TotalWeight = src.Products.Sum(p => p.Weight * p.Quantity);
                 dist.MerchantId = src.MerchentId;
                 dist.BranchId = src.branchId;
+                dist.Merchant.User.Address = src.Address;
+                dist.Merchant.User.PhoneNumber = src.Phonenumber;
                 if (src.IsVillageDelivery == true)
 
                 {
@@ -105,7 +107,7 @@ namespace Shipping.BL.Mappers
                 dist.GovernorateId = src.GovernorateId;
                 dist.ShippingTypeId = src.ShippingTypeId;
                 dist.IsVillageDelivery = src.IsVillageDelivery;
-                dist.Phonenumber = src.CustomerPhone;
+                dist.Phonenumber = src.Merchant?.User.PhoneNumber;
                 dist.Address = src.Merchant?.User.Address;
                 if (src.IsVillageDelivery == true)
                 {
@@ -135,6 +137,7 @@ namespace Shipping.BL.Mappers
                 dist.Name = src.User.UserName;
                 dist.Email = src.User.Email;
                 dist.Branch = src.Branch.Name;
+                dist.PhoneNumber = src.User.PhoneNumber;
             }).ReverseMap();
             CreateMap<Delivery, ReadDeliveryDTO>().AfterMap((src, dist) =>
             {

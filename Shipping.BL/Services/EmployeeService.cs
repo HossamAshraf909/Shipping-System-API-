@@ -46,7 +46,7 @@ namespace Shipping.BL.Services
                     Name = user.UserName,
                     Email = user.Email,
                     UserRole = role,
-                    PhoneNumber = employee.PhoneNumber,
+                    PhoneNumber = employee.User?.PhoneNumber,
                     Branch=Branch?.Name
                 };
                 EmployeeList.Add(ReadEmployeeDTO);
@@ -75,7 +75,7 @@ namespace Shipping.BL.Services
                 Name = user.UserName,
                 Email = user.Email,
                 UserRole = role,
-                PhoneNumber = Employee.PhoneNumber,
+                PhoneNumber = Employee.User?.PhoneNumber,
                 Branch = Branch
             };
             return ReadEmployeeDTO;
@@ -88,6 +88,7 @@ namespace Shipping.BL.Services
                 UserName = employeeDTO.Name,
                 Email = employeeDTO.Email,
                 Address = employeeDTO.address,
+                PhoneNumber = employeeDTO.PhoneNumber,
             };
 
             var result = await userManager.CreateAsync(applicationUser, employeeDTO.Password);
