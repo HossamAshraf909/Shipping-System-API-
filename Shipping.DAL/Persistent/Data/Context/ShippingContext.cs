@@ -36,6 +36,8 @@ namespace Shipping.DAL.Persistent.Data.Context
                         .HasQueryFilter(SoftDeleteConfiguration.CreateFilterExpression(entityType.ClrType));
                 }
             }
+
+            
         }
        public DbSet<Branches> Branches { get; set; }
        public DbSet<City> Cities { get; set; }

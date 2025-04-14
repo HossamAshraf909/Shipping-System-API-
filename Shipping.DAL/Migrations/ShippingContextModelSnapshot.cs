@@ -142,9 +142,6 @@ namespace Shipping.DAL.Migrations
                     b.Property<int?>("BranchId")
                         .HasColumnType("int");
 
-                    b.Property<int?>("BrancheId")
-                        .HasColumnType("int");
-
                     b.Property<int>("CityId")
                         .HasColumnType("int");
 
@@ -208,15 +205,12 @@ namespace Shipping.DAL.Migrations
                     b.Property<int>("WeightPriceId")
                         .HasColumnType("int");
 
-                    b.Property<int?>("branchId")
-                        .HasColumnType("int");
-
                     b.Property<int>("orderStatus")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("BrancheId");
+                    b.HasIndex("BranchId");
 
                     b.HasIndex("CityId");
 
@@ -231,8 +225,6 @@ namespace Shipping.DAL.Migrations
                     b.HasIndex("VillageDeliveryId");
 
                     b.HasIndex("WeightPriceId");
-
-                    b.HasIndex("branchId");
 
                     b.ToTable("Orders");
                 });
@@ -749,9 +741,9 @@ namespace Shipping.DAL.Migrations
 
             modelBuilder.Entity("Order", b =>
                 {
-                    b.HasOne("Shipping.DAL.Entities.Branches", "Branche")
+                    b.HasOne("Shipping.DAL.Entities.Branches", "Branch")
                         .WithMany("Orders")
-                        .HasForeignKey("BrancheId");
+                        .HasForeignKey("BranchId");
 
                     b.HasOne("Shipping.DAL.Entities.City", "City")
                         .WithMany("orders")
@@ -789,15 +781,7 @@ namespace Shipping.DAL.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-
-                    b.HasOne("Shipping.DAL.Entities.Branches", "Branches")
-                        .WithMany("Orders")
-                        .HasForeignKey("branchId");
-
-                    b.Navigation("Branches");
-
-                    b.Navigation("Branche");
-
+                    b.Navigation("Branch");
 
                     b.Navigation("City");
 

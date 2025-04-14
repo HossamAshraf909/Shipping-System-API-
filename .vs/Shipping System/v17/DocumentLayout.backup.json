@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "D:\\Shipping System\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{BD8A6E5E-26D4-4181-BE21-B5ACA2AE1B4F}|Shipping.DAL\\Shipping.DAL.csproj|d:\\shipping system\\shipping.dal\\migrations\\shippingcontextmodelsnapshot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BD8A6E5E-26D4-4181-BE21-B5ACA2AE1B4F}|Shipping.DAL\\Shipping.DAL.csproj|solutionrelative:shipping.dal\\migrations\\shippingcontextmodelsnapshot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{AD701035-5C87-4D32-AE49-2F1EEDF305B3}|Shipping.BL\\Shipping.BL.csproj|d:\\shipping system\\shipping.bl\\services\\branchservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{AD701035-5C87-4D32-AE49-2F1EEDF305B3}|Shipping.BL\\Shipping.BL.csproj|solutionrelative:shipping.bl\\services\\branchservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -25,10 +29,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{BD8A6E5E-26D4-4181-BE21-B5ACA2AE1B4F}|Shipping.DAL\\Shipping.DAL.csproj|d:\\shipping system\\shipping.dal\\persistent\\data\\context\\shippingcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{BD8A6E5E-26D4-4181-BE21-B5ACA2AE1B4F}|Shipping.DAL\\Shipping.DAL.csproj|solutionrelative:shipping.dal\\persistent\\data\\context\\shippingcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BD8A6E5E-26D4-4181-BE21-B5ACA2AE1B4F}|Shipping.DAL\\Shipping.DAL.csproj|d:\\shipping system\\shipping.dal\\migrations\\shippingcontextmodelsnapshot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BD8A6E5E-26D4-4181-BE21-B5ACA2AE1B4F}|Shipping.DAL\\Shipping.DAL.csproj|solutionrelative:shipping.dal\\migrations\\shippingcontextmodelsnapshot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{BD8A6E5E-26D4-4181-BE21-B5ACA2AE1B4F}|Shipping.DAL\\Shipping.DAL.csproj|d:\\shipping system\\shipping.dal\\entities\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -249,7 +249,7 @@
       "DocumentGroups": [
         {
           "DockedHeight": 268,
-          "SelectedChildIndex": 11,
+          "SelectedChildIndex": 9,
           "Children": [
             {
               "$type": "Bookmark",
@@ -272,12 +272,8 @@
               "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
             },
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
-            },
-            {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "PaginatedBranchesDTO.cs",
               "DocumentMoniker": "D:\\Shipping System\\Shipping.BL\\DTOs\\Branch\\PaginatedBranchesDTO.cs",
               "RelativeDocumentMoniker": "Shipping.BL\\DTOs\\Branch\\PaginatedBranchesDTO.cs",
@@ -285,12 +281,11 @@
               "RelativeToolTip": "Shipping.BL\\DTOs\\Branch\\PaginatedBranchesDTO.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAtAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-14T11:20:17.94Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-14T11:20:17.94Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "BranchController.cs",
               "DocumentMoniker": "D:\\Shipping System\\Shipping.PL\\Controllers\\BranchController.cs",
               "RelativeDocumentMoniker": "Shipping.PL\\Controllers\\BranchController.cs",
@@ -298,8 +293,7 @@
               "RelativeToolTip": "Shipping.PL\\Controllers\\BranchController.cs",
               "ViewState": "AgIAAAsAAAAAAAAAAAAYwBsAAABSAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-14T11:01:05.511Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-14T11:01:05.511Z"
             },
             {
               "$type": "Document",
@@ -311,8 +305,7 @@
               "RelativeToolTip": "Shipping.DAL\\Entities\\Branches.cs",
               "ViewState": "AgIAAAYAAAAAAAAAAAAAABgAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-12T19:33:19.094Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-12T19:33:19.094Z"
             },
             {
               "$type": "Document",
@@ -324,38 +317,37 @@
               "RelativeToolTip": "Shipping.DAL\\Entities\\Order.cs",
               "ViewState": "AgIAABIAAAAAAAAAAAAIwDgAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-12T19:30:42.446Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-12T19:30:42.446Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 0,
               "Title": "ShippingContextModelSnapshot.cs",
               "DocumentMoniker": "D:\\Shipping System\\Shipping.DAL\\Migrations\\ShippingContextModelSnapshot.cs",
               "RelativeDocumentMoniker": "Shipping.DAL\\Migrations\\ShippingContextModelSnapshot.cs",
               "ToolTip": "D:\\Shipping System\\Shipping.DAL\\Migrations\\ShippingContextModelSnapshot.cs",
               "RelativeToolTip": "Shipping.DAL\\Migrations\\ShippingContextModelSnapshot.cs",
-              "ViewState": "AgIAABkDAAAAAAAAAAAQwC4DAAATAAAAAAAAAA==",
+              "ViewState": "AgIAAOkCAAAAAAAAAAAQwO0CAAAwAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-13T20:17:28.753Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "BranchService.cs",
               "DocumentMoniker": "D:\\Shipping System\\Shipping.BL\\Services\\BranchService.cs",
               "RelativeDocumentMoniker": "Shipping.BL\\Services\\BranchService.cs",
-              "ToolTip": "D:\\Shipping System\\Shipping.BL\\Services\\BranchService.cs*",
-              "RelativeToolTip": "Shipping.BL\\Services\\BranchService.cs*",
-              "ViewState": "AgIAADEAAAAAAAAAAAAAwEQAAABZAAAAAAAAAA==",
+              "ToolTip": "D:\\Shipping System\\Shipping.BL\\Services\\BranchService.cs",
+              "RelativeToolTip": "Shipping.BL\\Services\\BranchService.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAAEAAAABZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-12T22:10:24.385Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "PaginatedOrderDTO.cs",
               "DocumentMoniker": "D:\\Shipping System\\Shipping.BL\\DTOs\\Order\\PaginatedOrderDTO.cs",
               "RelativeDocumentMoniker": "Shipping.BL\\DTOs\\Order\\PaginatedOrderDTO.cs",
@@ -363,12 +355,11 @@
               "RelativeToolTip": "Shipping.BL\\DTOs\\Order\\PaginatedOrderDTO.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAABSAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-13T19:23:25.184Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-13T19:23:25.184Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "ShippingContext.cs",
               "DocumentMoniker": "D:\\Shipping System\\Shipping.DAL\\Persistent\\Data\\Context\\ShippingContext.cs",
               "RelativeDocumentMoniker": "Shipping.DAL\\Persistent\\Data\\Context\\ShippingContext.cs",
@@ -376,12 +367,11 @@
               "RelativeToolTip": "Shipping.DAL\\Persistent\\Data\\Context\\ShippingContext.cs",
               "ViewState": "AgIAABQAAAAAAAAAAAAAwBsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-13T20:16:16.192Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-13T20:16:16.192Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "EmployeeController.cs",
               "DocumentMoniker": "D:\\Shipping System\\Shipping.PL\\Controllers\\EmployeeController.cs",
               "RelativeDocumentMoniker": "Shipping.PL\\Controllers\\EmployeeController.cs",
@@ -389,8 +379,7 @@
               "RelativeToolTip": "Shipping.PL\\Controllers\\EmployeeController.cs",
               "ViewState": "AgIAAAEAAAAAAAAAAAAawBoAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-12T22:19:11.725Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-12T22:19:11.725Z"
             },
             {
               "$type": "Document",
@@ -414,8 +403,7 @@
               "RelativeToolTip": "Shipping.DAL\\UnitOfWork\\UnitOfWork.cs",
               "ViewState": "AgIAAEgAAAAAAAAAAAAqwFwAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-12T21:13:53.878Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-12T21:13:53.878Z"
             },
             {
               "$type": "Document",
@@ -427,8 +415,7 @@
               "RelativeToolTip": "Shipping.BL\\Mappers\\MapConfig.cs",
               "ViewState": "AgIAAGgAAAAAAAAAAAApwH0AAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-12T17:34:19.909Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-12T17:34:19.909Z"
             },
             {
               "$type": "Document",
@@ -440,8 +427,7 @@
               "RelativeToolTip": "Shipping.PL\\Controllers\\OrderController.cs",
               "ViewState": "AgIAAB8AAAAAAAAAAAA+wDsAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-12T22:19:11.68Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-12T22:19:11.68Z"
             },
             {
               "$type": "Document",
@@ -525,8 +511,7 @@
               "RelativeToolTip": "Shipping.PL\\Controllers\\MerchantController.cs",
               "ViewState": "AgIAAAsAAAAAAAAAAAAawC4AAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-13T11:58:59.096Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-13T11:58:59.096Z"
             },
             {
               "$type": "Document",
@@ -539,18 +524,6 @@
               "ViewState": "AgIAAAkAAAAAAAAAAAAAABkAAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-12T22:50:11.864Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 21,
-              "Title": "20250412202709_relationBetweenBranchOrder.cs",
-              "DocumentMoniker": "D:\\Shipping System\\Shipping.DAL\\Migrations\\20250412202709_relationBetweenBranchOrder.cs",
-              "RelativeDocumentMoniker": "Shipping.DAL\\Migrations\\20250412202709_relationBetweenBranchOrder.cs",
-              "ToolTip": "D:\\Shipping System\\Shipping.DAL\\Migrations\\20250412202709_relationBetweenBranchOrder.cs",
-              "RelativeToolTip": "Shipping.DAL\\Migrations\\20250412202709_relationBetweenBranchOrder.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAACAAAAAoAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-13T20:31:03.292Z"
             },
             {
               "$type": "Document",
@@ -634,8 +607,7 @@
               "RelativeToolTip": "Shipping.BL\\Services\\EmployeeService.cs",
               "ViewState": "AgIAAB0AAAAAAAAAAAAYwDYAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-12T22:19:11.739Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-12T22:19:11.739Z"
             },
             {
               "$type": "Document",
@@ -729,8 +701,7 @@
               "RelativeToolTip": "Shipping.PL\\Controllers\\DeliveryController.cs",
               "ViewState": "AgIAAAwAAAAAAAAAAAAAwBkAAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-13T12:04:18.483Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-13T12:04:18.483Z"
             },
             {
               "$type": "Document",
@@ -1007,6 +978,22 @@
               "ViewState": "AgIAAAkAAAAAAAAAAAAAAB4AAAAlAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-12T21:28:02.221Z"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "20250412202709_relationBetweenBranchOrder.cs",
+              "DocumentMoniker": "D:\\Shipping System\\Shipping.DAL\\Migrations\\20250412202709_relationBetweenBranchOrder.cs",
+              "RelativeDocumentMoniker": "Shipping.DAL\\Migrations\\20250412202709_relationBetweenBranchOrder.cs",
+              "ToolTip": "D:\\Shipping System\\Shipping.DAL\\Migrations\\20250412202709_relationBetweenBranchOrder.cs",
+              "RelativeToolTip": "Shipping.DAL\\Migrations\\20250412202709_relationBetweenBranchOrder.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAACAAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-13T20:31:03.292Z"
             }
           ]
         },

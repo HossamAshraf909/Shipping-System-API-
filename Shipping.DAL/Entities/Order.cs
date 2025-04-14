@@ -29,10 +29,16 @@ public class Order : BaseEntity
 
     public int? VillageDeliveryId { get; set; }
     public virtual VillageDelivery? VillageDelivery { get; set; }
+<<<<<<< HEAD
     
     public int? branchId { get; set;  }
     [ForeignKey("branchId")]
     public virtual Branches Branch { get; set;}
+=======
+    public int? BranchId { get; set; }
+    public virtual Branches Branch { get; set; }
+
+>>>>>>> 5381c1a92b33eb012e8da72ad100284d18464c04
 
     public int CityId { get; set; }
     public virtual City City { get; set; }

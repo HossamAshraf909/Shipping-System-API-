@@ -100,7 +100,7 @@ namespace Shipping.BL.Mappers
             {
                 dist.TotalWeight = src.TotalWeight;
                 dist.MerchentId = src.MerchantId;
-                dist.branchId = src.branchId;
+                dist.branchId = src.BranchId;
                 dist.CityId = src.CityId;
                 dist.GovernorateId = src.GovernorateId;
                 dist.ShippingTypeId = src.ShippingTypeId;
