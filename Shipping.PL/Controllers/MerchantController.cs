@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Shipping.BL.DTOs.Merchant;
 using Shipping.BL.Services.Shipping.BL.Services;
 
@@ -16,6 +17,7 @@ namespace Shipping.PL.Controllers
         }
 
         [HttpPost]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> AddMerchant([FromBody] AddMerchantDTO merchantDTO)
         {
             if (merchantDTO == null)
@@ -40,6 +42,7 @@ namespace Shipping.PL.Controllers
         }
 
         [HttpGet]
+  
         public async Task<ActionResult<List<ReadMerchantDTO>>> GetAllMerchants()
         {
             var merchants = await _merchantService.GetAllAsync();

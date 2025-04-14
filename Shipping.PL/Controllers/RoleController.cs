@@ -10,6 +10,7 @@ namespace Shipping.PL.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+
     public class RoleController : ControllerBase
     {
         private AuthService AuthService { get; }
@@ -62,7 +63,6 @@ namespace Shipping.PL.Controllers
                      return BadRequest("Role Not Found");
             
             return Ok(result);
-
         }
     }
 }

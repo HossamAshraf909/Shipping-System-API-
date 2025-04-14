@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
+using Microsoft.OpenApi.Models;
 using Shipping.BL.Mappers;
 using Shipping.BL.Services;
 using Shipping.BL.Services.Imodel;
@@ -39,7 +40,7 @@ namespace Shipping.PL
             // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 
 
-                    builder.Services.AddDbContext<ShippingContext>(options =>
+            builder.Services.AddDbContext<ShippingContext>(options =>
                         options.UseLazyLoadingProxies().UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"))
                         );
                     builder.Services.AddScoped<UnitOfWork>();
@@ -135,6 +136,7 @@ namespace Shipping.PL
             if (app.Environment.IsDevelopment())
             {
                 app.MapOpenApi();
+          
                 app.UseSwaggerUI(op => op.SwaggerEndpoint("/openapi/v1.json", "v1"));
             }
 

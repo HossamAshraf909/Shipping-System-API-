@@ -718,3 +718,5 @@ E:\Ehab\ITI TASKS\GP\Graduation Project 133-4-2025\Shipping-System-API-\Shipping
 E:\Ehab\ITI TASKS\GP\Graduation Project 133-4-2025\Shipping-System-API-\Shipping.PL\obj\Debug\net9.0\Shipping.PL.pdb
 E:\Ehab\ITI TASKS\GP\Graduation Project 133-4-2025\Shipping-System-API-\Shipping.PL\obj\Debug\net9.0\Shipping.PL.genruntimeconfig.cache
 E:\Ehab\ITI TASKS\GP\Graduation Project 133-4-2025\Shipping-System-API-\Shipping.PL\obj\Debug\net9.0\ref\Shipping.PL.dll
+D:\Shipping System\Shipping.PL\bin\Debug\net9.0\Swashbuckle.AspNetCore.Swagger.dll
+D:\Shipping System\Shipping.PL\bin\Debug\net9.0\Swashbuckle.AspNetCore.SwaggerGen.dll

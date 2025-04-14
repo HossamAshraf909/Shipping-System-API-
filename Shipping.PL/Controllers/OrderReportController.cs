@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Shipping.BL.Services;
 
@@ -6,7 +7,7 @@ namespace Shipping.PL.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    
+  
     public class OrderReportController : ControllerBase
     {
         public OrderReportService OrderReportService { get; }
@@ -26,7 +27,7 @@ namespace Shipping.PL.Controllers
             return Ok(orders);
         }
         [HttpGet("Paginated")]
-        public async Task<IActionResult> GetOrderReportPaginatedAsync(int pagesize , int pageNumber)
+        public async Task<IActionResult> GetOrderReportPaginatedAsync(int pagesize=10 , int pageNumber=1)
         {
             var ordersReport =await OrderReportService.GetPaginatedOrderReport(pagesize, pageNumber);
             if (!ordersReport.Orders.Any())
@@ -39,7 +40,7 @@ namespace Shipping.PL.Controllers
         }
        
         [HttpGet("{Status:alpha}")]
-        public async Task<IActionResult> GetOrderByStatus(string Status,int pageSize , int PageNumber)
+        public async Task<IActionResult> GetOrderByStatus(string Status,int pageSize=10 , int PageNumber=1)
         {
             var order = await OrderReportService.GetOrderByStatus(Status,PageNumber,pageSize);
             if (!order.Orders.Any())
@@ -52,7 +53,7 @@ namespace Shipping.PL.Controllers
         }
         
         [HttpGet("{FromDate:datetime}/{ToDate:datetime}")]
-        public async Task<IActionResult> GetOrderByDate(DateTime FromDate, DateTime ToDate)
+        public async Task<IActionResult> GetOrderByDate(DateTime FromDate,DateTime ToDate)
         {
             var order = await OrderReportService.GetOrderByDate(FromDate, ToDate);
             if (order == null)

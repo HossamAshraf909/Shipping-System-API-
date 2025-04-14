@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Shipping.BL.DTOs.ShippingType;
 using Shipping.BL.Services;
@@ -7,6 +8,7 @@ namespace Shipping.PL.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+
     public class ShippingTypeController : ControllerBase
     {
         public ShippingTypeService ShippingTypeService { get; }
@@ -15,6 +17,7 @@ namespace Shipping.PL.Controllers
             ShippingTypeService = shippingTypeService;
         }
         [HttpGet]
+
         public async Task<IActionResult> GetAllType()
         {
            var shippingTypes= await ShippingTypeService.GetAllAsync();

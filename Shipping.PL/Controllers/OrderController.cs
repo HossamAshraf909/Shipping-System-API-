@@ -13,6 +13,7 @@ namespace Shipping.PL.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+   
     public class OrderController : ControllerBase
     {
         public OrderController(OrderService orderService, ProductService productService, OrderProductService orderProductService ,UserManager<ApplicationUser> userManager)
@@ -29,18 +30,35 @@ namespace Shipping.PL.Controllers
         public UserManager<ApplicationUser> UserManager { get; }
 
         [HttpGet]
+        
         public async Task<IActionResult> GetAllOrders()
         {
             return Ok(await OrderService.GetAllOrdersAsync());
         }
         [HttpGet("paginated")]
-        public async Task<IActionResult> GetAllOrdersPaginated(int pageNumber, int pageSize)
+        public async Task<IActionResult> GetAllOrdersPaginated(int pageNumber=1, int pageSize = 10)
         {
             var orders = await OrderService.GetPaginatedAsync(pageNumber,pageSize);
             return Ok(orders);
         }
+        [HttpGet("merchant")]
+        public async Task<IActionResult> GetAllOrdersByMerchant()
+        {
+            var userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+            var user = await UserManager.FindByIdAsync(userId);
+            var orders = await OrderService.GetOrderByMerchantId(user.Merchant.ID);
+            return Ok(orders);
+        }
+        [HttpGet("delivery")]
+        public async Task<IActionResult> GetAllOrdersByDelivery()
+        {
+            var userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+            var user = await UserManager.FindByIdAsync(userId);
+            var orders = await OrderService.GetOrderbyDeliveryId(user.Delivery.ID);
+            return Ok(orders);
+        }
         [HttpGet("{Status:alpha}")]
-        public async Task<IActionResult> GetOrderBystatus(string Status , int pageSize , int pageNumber)
+        public async Task<IActionResult> GetOrderBystatus(string Status , int pageSize=10 , int pageNumber= 1)
         {
             var orders = await OrderService.GetOrderByStatusAsync(Status,pageSize,pageNumber);
             if (!orders.Orders.Any()) return Ok(new
@@ -89,6 +107,7 @@ namespace Shipping.PL.Controllers
             });
         }
         [HttpPut("{id:int}")]
+
         public async Task<IActionResult> UpdateOrder(int id, EditOrderDTO orderDTO)
         {
             if (orderDTO == null) BadRequest();
