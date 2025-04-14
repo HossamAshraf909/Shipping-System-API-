@@ -12,8 +12,8 @@ using Shipping.DAL.Persistent.Data.Context;
 namespace Shipping.DAL.Migrations
 {
     [DbContext(typeof(ShippingContext))]
-    [Migration("20250412193222_relation betwwen order and branch")]
-    partial class relationbetwwenorderandbranch
+    [Migration("20250414114318_order branch relationship")]
+    partial class orderbranchrelationship
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -145,9 +145,6 @@ namespace Shipping.DAL.Migrations
                     b.Property<int?>("BranchId")
                         .HasColumnType("int");
 
-                    b.Property<int?>("BrancheId")
-                        .HasColumnType("int");
-
                     b.Property<int>("CityId")
                         .HasColumnType("int");
 
@@ -216,7 +213,7 @@ namespace Shipping.DAL.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("BrancheId");
+                    b.HasIndex("BranchId");
 
                     b.HasIndex("CityId");
 
@@ -394,10 +391,8 @@ namespace Shipping.DAL.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"));
 
-                    b.Property<string>("Branch")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
+                    b.Property<int>("BranchId")
+                        .HasColumnType("int");
 
                     b.Property<string>("PhoneNumber")
                         .IsRequired()
@@ -408,17 +403,9 @@ namespace Shipping.DAL.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(450)");
 
-                    b.Property<string>("UserRole")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
-
-                    b.Property<string>("password")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
-
                     b.HasKey("ID");
+
+                    b.HasIndex("BranchId");
 
                     b.HasIndex("UserID")
                         .IsUnique();
@@ -757,9 +744,9 @@ namespace Shipping.DAL.Migrations
 
             modelBuilder.Entity("Order", b =>
                 {
-                    b.HasOne("Shipping.DAL.Entities.Branches", "Branche")
+                    b.HasOne("Shipping.DAL.Entities.Branches", "Branch")
                         .WithMany("Orders")
-                        .HasForeignKey("BrancheId");
+                        .HasForeignKey("BranchId");
 
                     b.HasOne("Shipping.DAL.Entities.City", "City")
                         .WithMany("orders")
@@ -797,7 +784,7 @@ namespace Shipping.DAL.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Branche");
+                    b.Navigation("Branch");
 
                     b.Navigation("City");
 
@@ -884,11 +871,19 @@ namespace Shipping.DAL.Migrations
 
             modelBuilder.Entity("Shipping.DAL.Entities.Employee", b =>
                 {
+                    b.HasOne("Shipping.DAL.Entities.Branches", "Branch")
+                        .WithMany("Employees")
+                        .HasForeignKey("BranchId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.HasOne("Shipping.DAL.Entities.Identity.ApplicationUser", "User")
                         .WithOne("Employee")
                         .HasForeignKey("Shipping.DAL.Entities.Employee", "UserID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.Navigation("Branch");
 
                     b.Navigation("User");
                 });
@@ -979,6 +974,8 @@ namespace Shipping.DAL.Migrations
             modelBuilder.Entity("Shipping.DAL.Entities.Branches", b =>
                 {
                     b.Navigation("DeliveryBranches");
+
+                    b.Navigation("Employees");
 
                     b.Navigation("MerchantBranches");
 

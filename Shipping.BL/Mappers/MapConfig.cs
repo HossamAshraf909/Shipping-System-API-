@@ -79,7 +79,7 @@ namespace Shipping.BL.Mappers
                 dist.Governorate = src.Governorate.Name;
                 dist.City = src.City.Name;
                 dist.merchntName = src.Merchant?.User.UserName;
-                dist.BranchName = src.Branches?.Name;
+                dist.BranchName = src.Branch?.Name;
             }).ReverseMap();
             CreateMap<Order, ReadOrderWithProducts>().AfterMap((src, dist) =>
             {
@@ -99,7 +99,7 @@ namespace Shipping.BL.Mappers
             {
                 dist.TotalWeight = src.TotalWeight;
                 dist.MerchentId = src.MerchantId;
-                dist.branchId = src.branchId;
+                dist.branchId = src.BranchId;
                 dist.CityId = src.CityId;
                 dist.GovernorateId = src.GovernorateId;
                 dist.ShippingTypeId = src.ShippingTypeId;

@@ -35,6 +35,8 @@ namespace Shipping.DAL.Persistent.Data.Context
                         .HasQueryFilter(SoftDeleteConfiguration.CreateFilterExpression(entityType.ClrType));
                 }
             }
+
+            
         }
 
 
