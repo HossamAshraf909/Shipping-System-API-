@@ -22,7 +22,11 @@ namespace Shipping.PL.Controllers
         {
             return Ok(await branchService.GetAllAsync());
         }
-
+        [HttpGet("Paginated")]
+        public async Task<IActionResult> GetAllBranchsPaginated(int pageNumber = 1, int pageSize = 10)
+        {
+           return Ok(await branchService.GetPaginatedAsync(pageNumber, pageSize));
+        }
 
 
         [HttpGet("{searchWord:alpha}")]
