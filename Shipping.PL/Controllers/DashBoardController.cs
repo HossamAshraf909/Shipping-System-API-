@@ -10,6 +10,7 @@ namespace Shipping.PL.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+  
     public class DashBoardController : ControllerBase
     {
         private readonly DashboardServices _dashboardServices;

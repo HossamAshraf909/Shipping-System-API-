@@ -1,4 +1,5 @@
 ﻿using Azure.Messaging;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Shipping.BL.DTOs.Employee;
@@ -8,6 +9,7 @@ namespace Shipping.PL.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    
     public class EmployeeController : ControllerBase
     {
         EmployeeService employeeService;
@@ -26,7 +28,7 @@ namespace Shipping.PL.Controllers
             return Ok(Employees);
         }
         [HttpGet("PaginatedEmployees")]
-        public async Task<ActionResult> GetPaginatedEmployees(int pageSize, int pageNumber)
+        public async Task<ActionResult> GetPaginatedEmployees(int pageSize=10, int pageNumber = 1)
         {
             var Employees = await employeeService.PaginatedEmployeesAsync(pageSize, pageNumber);
             if (Employees == null) return NotFound();

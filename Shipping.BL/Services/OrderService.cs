@@ -15,14 +15,12 @@ namespace Shipping.BL.Services
         private readonly IUnitOfWork _unitOfWork;
         private readonly IMapper _mapper;
        
-
         public OrderService(IUnitOfWork unitOfWork, IMapper mapper)
         {
             _unitOfWork = unitOfWork;
             _mapper = mapper;
            
         }
-
         public async Task<IEnumerable<ReadOrderDTO>> GetAllOrdersAsync()
         {
             var orders = await _unitOfWork.Orders.GetAllAsync();
@@ -155,5 +153,16 @@ namespace Shipping.BL.Services
             var paginatedOrders = _mapper.Map<IEnumerable<ReadOrderDTO>>(orders.Data);
             return _PaginatedOrders ;
         }
+        public async Task<List<ReadOrderDTO>> GetOrderByMerchantId(int MerchantId)
+        {
+            var orders = await _unitOfWork.Orders.GetOrdersByMerchantIdAsync(MerchantId);
+            return _mapper.Map<List<ReadOrderDTO>>(orders);
+        }
+        public async Task<List<ReadOrderDTO>> GetOrderbyDeliveryId(int deliveryId)
+        {
+            var orders = await _unitOfWork.Orders.GetOrdersByDeliveryIdAsync(deliveryId);
+            return _mapper.Map<List<ReadOrderDTO>>(orders);
+        }
+
     }
 }

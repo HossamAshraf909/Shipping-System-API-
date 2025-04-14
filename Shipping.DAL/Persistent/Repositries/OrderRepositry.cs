@@ -14,10 +14,14 @@ namespace Shipping.DAL.Persistent.Repositries
     {
         public OrderRepository(ShippingContext context) : base(context) { }
 
-        public async Task<IEnumerable<Order>> GetOrdersByCustomerAsync(string customerName)   
+        public async Task<IEnumerable<Order>> GetOrdersByMerchantIdAsync(int merchentId)   
 
         {
-            return await _context.Orders.Where(o => o.CustomerName == customerName).ToListAsync();
+            return await _context.Orders.Where(o => o.MerchantId == merchentId).ToListAsync();
+        }
+        public async Task<IEnumerable<Order>> GetOrdersByDeliveryIdAsync(int deliveryid)
+        {
+            return await _context.Orders.Where(o => o.DeliveryId == deliveryid).ToListAsync();
         }
         public async Task<IEnumerable<Order>> GetOrderByStatusAsync(string Status)
         {

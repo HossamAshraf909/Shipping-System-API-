@@ -615,6 +615,26 @@
   },
   {
     "ContainingType": "Shipping.PL.Controllers.OrderController",
+    "Method": "GetAllOrdersByDelivery",
+    "RelativePath": "api/Order/delivery",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Shipping.PL.Controllers.OrderController",
+    "Method": "GetAllOrdersByMerchant",
+    "RelativePath": "api/Order/merchant",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Shipping.PL.Controllers.OrderController",
     "Method": "GetAllOrdersPaginated",
     "RelativePath": "api/Order/paginated",
     "HttpMethod": "GET",
