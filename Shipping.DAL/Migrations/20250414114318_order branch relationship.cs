@@ -5,26 +5,26 @@
 namespace Shipping.DAL.Migrations
 {
     /// <inheritdoc />
-    public partial class relationBetweenBranchOrder : Migration
+    public partial class orderbranchrelationship : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.AddColumn<int>(
-                name: "branchId",
+                name: "BranchId",
                 table: "Orders",
                 type: "int",
                 nullable: true);
 
             migrationBuilder.CreateIndex(
-                name: "IX_Orders_branchId",
+                name: "IX_Orders_BranchId",
                 table: "Orders",
-                column: "branchId");
+                column: "BranchId");
 
             migrationBuilder.AddForeignKey(
-                name: "FK_Orders_Branches_branchId",
+                name: "FK_Orders_Branches_BranchId",
                 table: "Orders",
-                column: "branchId",
+                column: "BranchId",
                 principalTable: "Branches",
                 principalColumn: "Id");
         }
@@ -33,15 +33,15 @@ namespace Shipping.DAL.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropForeignKey(
-                name: "FK_Orders_Branches_branchId",
+                name: "FK_Orders_Branches_BranchId",
                 table: "Orders");
 
             migrationBuilder.DropIndex(
-                name: "IX_Orders_branchId",
+                name: "IX_Orders_BranchId",
                 table: "Orders");
 
             migrationBuilder.DropColumn(
-                name: "branchId",
+                name: "BranchId",
                 table: "Orders");
         }
     }

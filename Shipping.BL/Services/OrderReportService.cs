@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using AutoMapper;
 using Microsoft.EntityFrameworkCore;
+using Shipping.BL.DTOs.Order;
 using Shipping.BL.DTOs.OrderReport;
 
 namespace Shipping.BL.Services
@@ -25,18 +26,28 @@ namespace Shipping.BL.Services
             var orderReports = mapper.Map<List<ReadOrderReportDTO>>(orders);            
             return orderReports;
         }
-        public async Task<List<ReadOrderReportDTO>> GetOrderByStatus(string status)
+        public async Task<PaginatedOrderReportDTO> GetPaginatedOrderReport(int pageSize, int pageNumber)
         {
-
-            var order = await unit.Orders.GetOrderByStatusAsync(status);
-            if (order == null)
+            var paginatedReportDto = new PaginatedOrderReportDTO();
+            var Report =  await unit.Orders.GetPaginatedAsync(pageNumber, pageSize);
+            paginatedReportDto.TotalRecords=Report.TotalRecords;
+            paginatedReportDto.TotalPages=Report.TotalPages;
+            paginatedReportDto.Orders= mapper.Map<List<ReadOrderReportDTO>>(Report.Data);
+            return paginatedReportDto;
+        }
+        public async Task<PaginatedOrderReportDTO> GetOrderByStatus(string status , int pageNumber,int pageSize)
+        {
+            var orders = await unit.Orders.GetOrderByStatusAsync(status);
+            if (orders == null)
             {
                 return null;
             }
-
-            var orderReport = mapper.Map<List<ReadOrderReportDTO>>(order);
-
-            return orderReport;
+            var paginatedOrders = new PaginatedOrderReportDTO();
+            paginatedOrders.TotalRecords = orders.Count();
+            paginatedOrders.TotalPages = (int)Math.Ceiling((double)paginatedOrders.TotalRecords / pageSize);
+            paginatedOrders.Orders = mapper.Map<List<ReadOrderReportDTO>>(orders);
+            paginatedOrders.Orders = paginatedOrders.Orders.Skip((pageNumber - 1) * pageSize).Take(pageSize).ToList();
+            return paginatedOrders;
         }
         public async Task<List<ReadOrderReportDTO>> GetOrderByDate(DateTime Fromdate, DateTime ToDate)
         {

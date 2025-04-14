@@ -53,6 +53,15 @@ namespace Shipping.BL.Services
             }
             return EmployeeList;
         }
+        public async Task<PaginatedEmployeesDTO> PaginatedEmployeesAsync(int pageSize , int pageNumber)
+        {
+            var paginatedEmployees = new PaginatedEmployeesDTO();
+            var Employees = await unit.Employee.GetPaginatedAsync(pageNumber,pageSize);
+            paginatedEmployees.TotalRecords= Employees.TotalRecords;
+            paginatedEmployees.TotalPages = Employees.TotalPages;
+            paginatedEmployees.EmployeeDTOs = _map.Map<List<ReadEmployeeDTO>>(Employees.Data);
+            return paginatedEmployees;
+        }
         public async Task<ReadEmployeeDTO?> GetByIdAsync(int id)
         {
             var Employee = await unit.Employee.GetByIdAsync(id);
@@ -71,7 +80,6 @@ namespace Shipping.BL.Services
             };
             return ReadEmployeeDTO;
         }
-
         public async Task<OperationResult> AddEmployeeAsync(AddEmployeeDTO employeeDTO)
         {
             var resultDto = new OperationResult();
@@ -106,8 +114,6 @@ namespace Shipping.BL.Services
             resultDto.Success = true;
             return resultDto;
         }
-
-
         public async Task UpdateEmployeeAsync(int id, EditEmployeeDTO employeeDTO)
         {
             var Employee = await unit.Employee.GetByIdAsync(id);

@@ -183,7 +183,6 @@ D:\shippingsys\Shipping.PL\obj\Debug\net9.0\Shipping.PL.GeneratedMSBuildEditorCo
 D:\shippingsys\Shipping.PL\obj\Debug\net9.0\Shipping.PL.AssemblyInfoInputs.cache
 D:\shippingsys\Shipping.PL\obj\Debug\net9.0\Shipping.PL.AssemblyInfo.cs
 D:\shippingsys\Shipping.PL\obj\Debug\net9.0\Shipping.PL.csproj.CoreCompileInputs.cache
-D:\shippingsys\Shipping.PL\obj\Debug\net9.0\Shipping.PL.MvcApplicationPartsAssemblyInfo.cs
 D:\shippingsys\Shipping.PL\obj\Debug\net9.0\Shipping.PL.MvcApplicationPartsAssemblyInfo.cache
 D:\shippingsys\Shipping.PL\obj\Debug\net9.0\Shipping.PL.sourcelink.json
 D:\shippingsys\Shipping.PL\obj\Debug\net9.0\Shipping.PL.dll

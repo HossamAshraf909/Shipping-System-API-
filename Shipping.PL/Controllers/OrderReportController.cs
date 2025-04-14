@@ -25,15 +25,29 @@ namespace Shipping.PL.Controllers
             }
             return Ok(orders);
         }
+        [HttpGet("Paginated")]
+        public async Task<IActionResult> GetOrderReportPaginatedAsync(int pagesize , int pageNumber)
+        {
+            var ordersReport =await OrderReportService.GetPaginatedOrderReport(pagesize, pageNumber);
+            if (!ordersReport.Orders.Any())
+                return Ok(new
+                {
+                    message= "No orders found",
+                    data = ordersReport,
+                });
+            return Ok(ordersReport);
+        }
        
         [HttpGet("{Status:alpha}")]
-        public async Task<IActionResult> GetOrderByStatus(string Status)
+        public async Task<IActionResult> GetOrderByStatus(string Status,int pageSize , int PageNumber)
         {
-            var order = await OrderReportService.GetOrderByStatus(Status);
-            if (order == null)
-            {
-                return NotFound();
-            }
+            var order = await OrderReportService.GetOrderByStatus(Status,PageNumber,pageSize);
+            if (!order.Orders.Any())
+                return Ok(new
+                {
+                    message = "No orders found",
+                    data = order,
+                });
             return Ok(order);
         }
         

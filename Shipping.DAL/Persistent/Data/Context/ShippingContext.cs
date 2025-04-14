@@ -24,8 +24,9 @@ namespace Shipping.DAL.Persistent.Data.Context
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
-
            
+
+
             modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
             foreach (var entityType in modelBuilder.Model.GetEntityTypes())
             {
@@ -35,6 +36,8 @@ namespace Shipping.DAL.Persistent.Data.Context
                         .HasQueryFilter(SoftDeleteConfiguration.CreateFilterExpression(entityType.ClrType));
                 }
             }
+
+            
         }
        public DbSet<Branches> Branches { get; set; }
        public DbSet<City> Cities { get; set; }

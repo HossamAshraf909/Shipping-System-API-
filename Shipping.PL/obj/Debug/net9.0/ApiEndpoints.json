@@ -105,6 +105,27 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "Shipping.PL.Controllers.BranchController",
+    "Method": "GetAllBranchsPaginated",
+    "RelativePath": "api/Branch/Paginated",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "pageNumber",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "pageSize",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "Shipping.PL.Controllers.ChatController",
     "Method": "Post",
     "RelativePath": "api/Chat",
@@ -374,6 +395,27 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "Shipping.PL.Controllers.EmployeeController",
+    "Method": "GetPaginatedEmployees",
+    "RelativePath": "api/Employee/PaginatedEmployees",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "pageSize",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "pageNumber",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "Shipping.PL.Controllers.GovernorateController",
     "Method": "GetAllGovernorates",
     "RelativePath": "api/Governorate",
@@ -557,6 +599,16 @@
         "Name": "Status",
         "Type": "System.String",
         "IsRequired": true
+      },
+      {
+        "Name": "pageSize",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "pageNumber",
+        "Type": "System.Int32",
+        "IsRequired": false
       }
     ],
     "ReturnTypes": []
@@ -641,6 +693,37 @@
         "Name": "Status",
         "Type": "System.String",
         "IsRequired": true
+      },
+      {
+        "Name": "pageSize",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "PageNumber",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Shipping.PL.Controllers.OrderReportController",
+    "Method": "GetOrderReportPaginatedAsync",
+    "RelativePath": "api/OrderReport/Paginated",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "pagesize",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "pageNumber",
+        "Type": "System.Int32",
+        "IsRequired": false
       }
     ],
     "ReturnTypes": []
