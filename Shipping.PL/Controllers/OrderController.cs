@@ -40,10 +40,10 @@ namespace Shipping.PL.Controllers
             return Ok(orders);
         }
         [HttpGet("{Status:alpha}")]
-        public async Task<IActionResult> GetOrderBystatus(string Status)
+        public async Task<IActionResult> GetOrderBystatus(string Status , int pageSize , int pageNumber)
         {
-            var orders = await OrderService.GetOrderByStatusAsync(Status);
-            if (!orders.Any()) return Ok(new
+            var orders = await OrderService.GetOrderByStatusAsync(Status,pageSize,pageNumber);
+            if (!orders.Orders.Any()) return Ok(new
             {
                 Data = orders,
                 Message = "No orders found with the given status.",

@@ -25,7 +25,13 @@ namespace Shipping.PL.Controllers
             if (Employees == null) return NotFound();
             return Ok(Employees);
         }
-
+        [HttpGet("PaginatedEmployees")]
+        public async Task<ActionResult> GetPaginatedEmployees(int pageSize, int pageNumber)
+        {
+            var Employees = await employeeService.PaginatedEmployeesAsync(pageSize, pageNumber);
+            if (Employees == null) return NotFound();
+            return Ok(Employees);
+        }
         [HttpGet("{id:int}")]
         public async Task<ActionResult> GetById(int id)
         {
