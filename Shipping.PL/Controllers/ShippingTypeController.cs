@@ -20,7 +20,7 @@ namespace Shipping.PL.Controllers
 
         public async Task<IActionResult> GetAllType()
         {
-           var shippingTypes= await ShippingTypeService.GetAllAsync();
+            var shippingTypes= await ShippingTypeService.GetAllAsync();
             return  Ok(shippingTypes);
         }
         [HttpPost]
