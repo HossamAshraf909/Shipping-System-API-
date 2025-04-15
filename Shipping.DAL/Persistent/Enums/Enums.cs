@@ -15,18 +15,20 @@ namespace Shipping.DAL.Persistent.Enums
     [JsonConverter(typeof(JsonStringEnumConverter))]
     public enum OrderStatus
     {
-        New = 1,
-        Pending = 2,
-        Delivered = 3,
-        PartiallyDelivered = 4,
-        CanceledByRecipient = 5,
-        Rejected = 6,
-        PaymentPending = 7,
-        CannotBeReached = 8,
-        Processing = 9,
-        Shipped = 10,
-        AwaitingConfirmation = 11,
+        New = 1, //جديد
+        Pending = 2, // قيد الانتظار
+        Delivered = 3, // تم التسليم لمندوب
+        PartiallyDelivered = 4,// تم التسليم جزئيا 
+        CanceledByRecipient = 5,// تم الالغاء من قبل المستلم
+        Rejected = 6, // تم الرفض
+        Delayed = 7, // تم التأجيل
+        CannotBeReached = 8, // لا يمكن الوصول
+        rejectedWithPaid = 9,// تم الرفض مع الدفع
+        Shipped = 10, // تم الشحن
+        rejectedNotPaid = 11, // تم الرفض بدون دفع
+        All = 12 // الكل
     }
+
     [JsonConverter(typeof(JsonStringEnumConverter))]
     public enum PaymentMethod
     {

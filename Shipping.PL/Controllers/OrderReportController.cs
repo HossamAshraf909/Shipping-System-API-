@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Shipping.BL.Services;
+using Shipping.DAL.Persistent.Enums;
 
 namespace Shipping.PL.Controllers
 {
@@ -40,8 +41,9 @@ namespace Shipping.PL.Controllers
         }
        
         [HttpGet("{Status:alpha}")]
-        public async Task<IActionResult> GetOrderByStatus(string Status,int pageSize=10 , int PageNumber=1)
+        public async Task<IActionResult> GetOrderByStatus(OrderStatus Status,int pageSize=10 , int PageNumber=1)
         {
+            if (Status == OrderStatus.All) return Ok(await OrderReportService.GetPaginatedOrderReport(pageSize, PageNumber));
             var order = await OrderReportService.GetOrderByStatus(Status,PageNumber,pageSize);
             if (!order.Orders.Any())
                 return Ok(new

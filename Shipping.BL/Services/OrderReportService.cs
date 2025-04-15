@@ -7,6 +7,7 @@ using AutoMapper;
 using Microsoft.EntityFrameworkCore;
 using Shipping.BL.DTOs.Order;
 using Shipping.BL.DTOs.OrderReport;
+using Shipping.DAL.Persistent.Enums;
 
 namespace Shipping.BL.Services
 {
@@ -35,7 +36,7 @@ namespace Shipping.BL.Services
             paginatedReportDto.Orders= mapper.Map<List<ReadOrderReportDTO>>(Report.Data);
             return paginatedReportDto;
         }
-        public async Task<PaginatedOrderReportDTO> GetOrderByStatus(string status , int pageNumber,int pageSize)
+        public async Task<PaginatedOrderReportDTO> GetOrderByStatus(OrderStatus status , int pageNumber,int pageSize)
         {
             var orders = await unit.Orders.GetOrderByStatusAsync(status);
             if (orders == null)

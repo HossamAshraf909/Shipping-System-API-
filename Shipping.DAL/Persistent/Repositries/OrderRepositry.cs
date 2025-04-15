@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Shipping.DAL.Persistent.Data.Context;
+using Shipping.DAL.Persistent.Enums;
 using Shipping.DAL.Persistent.Repositories;
 using Shipping.DAL.Persistent.Repositries.Irepo;
 using System;
@@ -23,9 +24,9 @@ namespace Shipping.DAL.Persistent.Repositries
         {
             return await _context.Orders.Where(o => o.DeliveryId == deliveryid).ToListAsync();
         }
-        public async Task<IEnumerable<Order>> GetOrderByStatusAsync(string Status)
+        public async Task<IEnumerable<Order>> GetOrderByStatusAsync(OrderStatus Status)
         {
-            return await _context.Orders.Where(o => o.orderStatus.ToString() == Status).ToListAsync();
+            return await _context.Orders.Where(o => o.orderStatus == Status).ToListAsync();
         }
         public async Task<IEnumerable<Order>> GetOrderByDateAsync(DateTime FromDate, DateTime ToDate)
         {

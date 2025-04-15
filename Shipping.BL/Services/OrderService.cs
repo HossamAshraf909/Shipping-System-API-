@@ -32,7 +32,7 @@ namespace Shipping.BL.Services
             var order = await _unitOfWork.Orders.GetByIdAsync(orderId);
             return _mapper.Map<EditOrderDTO>(order);
         }
-        public async Task<PaginatedOrderDTO> GetOrderByStatusAsync(string Status,int pageSize , int pageNumber)
+        public async Task<PaginatedOrderDTO> GetOrderByStatusAsync(OrderStatus Status,int pageSize , int pageNumber)
         {
             var orders= await _unitOfWork.Orders.GetOrderByStatusAsync(Status);
             var paginatedOrders = new PaginatedOrderDTO();
