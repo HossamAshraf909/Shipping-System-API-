@@ -29,9 +29,9 @@ namespace Shipping.PL.Controllers
         }
 
         [HttpPut("update-status")]
-        public async Task<IActionResult> UpdateOrderStatus(int orderId)
+        public async Task<IActionResult> UpdateOrderStatus(int orderId,OrderStatus status)
         {
-            await _orderService.UpdateOrderStatus(orderId);
+            await _orderService.UpdateOrderStatus(orderId,status);
             var order = await _orderService.GetOrderByIdAsync(orderId);
             if (order == null)
             {
