@@ -58,8 +58,9 @@ namespace Shipping.PL.Controllers
             return Ok(orders);
         }
         [HttpGet("{Status:alpha}")]
-        public async Task<IActionResult> GetOrderBystatus(string Status , int pageSize=10 , int pageNumber= 1)
+        public async Task<IActionResult> GetOrderBystatus(OrderStatus Status , int pageSize=10 , int pageNumber= 1)
         {
+            if (Status == OrderStatus.All)  return Ok( await OrderService.GetPaginatedAsync(pageNumber,pageSize));
             var orders = await OrderService.GetOrderByStatusAsync(Status,pageSize,pageNumber);
             if (!orders.Orders.Any()) return Ok(new
             {
@@ -88,7 +89,7 @@ namespace Shipping.PL.Controllers
             });
         }
         [HttpPost]
-        [Authorize(Roles = "Merchant,Admin")]
+        //[Authorize(Roles = "Merchant,Admin")]
         public async Task<IActionResult> AddOrder(AddOrderDTO orderDTO)
         {
             if (orderDTO == null) BadRequest();
