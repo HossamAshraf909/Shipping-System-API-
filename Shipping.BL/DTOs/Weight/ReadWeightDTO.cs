@@ -9,8 +9,7 @@ namespace Shipping.BL.DTOs.Weight
     public class ReadWeightDTO
     {
         public int Id { get; set; }
-        public decimal DefualPrice { get; set; }
-        public decimal DefualtWeight { get; set; }
+        public int DefaultWeight { get; set; }
         public decimal ExtraPricePerKilo { get; set; }
     }
 }
