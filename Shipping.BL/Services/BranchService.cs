@@ -57,10 +57,10 @@ namespace Shipping.BL.Services
             await _unitOfWork.SaveChangesAsync();
         }
 
-        public async Task <IEnumerable<Branches>> SearchAsync(string Searchword)
+        public async Task <List<ReadBranchDTO>> SearchAsync(string Searchword)
         {
             var Branches= await _unitOfWork.Branches.SearchAsync(B => B.Name.Contains(Searchword));
-            return Branches;
+            return _mapper.Map<List<ReadBranchDTO>>(Branches);
         }
         public async Task<PaginatedBranchesDTO> GetPaginatedAsync(int page, int pageSize)
         {

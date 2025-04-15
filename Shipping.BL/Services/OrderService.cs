@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using AutoMapper;
 using Shipping.BL.DTOs.Order;
+using Shipping.BL.DTOs.Result;
 using Shipping.BL.Services.Imodel;
 using Shipping.DAL.Entities;
 using Shipping.DAL.Persistent.Enums;
@@ -116,7 +117,8 @@ namespace Shipping.BL.Services
         }
         public async Task AssignOrderToDelivery(int DeliveyId, int OrderId)
         {
-           var Delivery = await _unitOfWork.Delivery.GetByIdAsync(DeliveyId);
+            var operationResult = new OperationResult();  
+            var Delivery = await _unitOfWork.Delivery.GetByIdAsync(DeliveyId);
             if(Delivery!= null)
             {
                 var order = await _unitOfWork.Orders.GetByIdAsync(OrderId);
@@ -127,7 +129,9 @@ namespace Shipping.BL.Services
                     await _unitOfWork.Orders.UpdateAsync(order);
                     await _unitOfWork.SaveChangesAsync();  // Ensure changes are saved
                 }
+                
             }
+            
         }
         public async Task UpdateOrderStatus(int OrderId)
         {

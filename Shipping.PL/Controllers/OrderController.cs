@@ -73,7 +73,7 @@ namespace Shipping.PL.Controllers
         {
             if (id == 0) BadRequest();
             var order = await OrderService.GetOrderByIdAsync(id);
-            if (order == null) return NotFound();
+            if (order == null) return BadRequest("Not Found Order");
             return Ok(order);
         } 
         [HttpDelete("{id:int}")]

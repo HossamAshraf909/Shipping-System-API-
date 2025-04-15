@@ -24,6 +24,13 @@ namespace Shipping.PL.Controllers
         {
             return Ok(await branchService.GetAllAsync());
         }
+        [HttpGet("{id:int}")]
+        public async Task<IActionResult> GetBranchById(int id)
+        {
+            ReadBranchDTO branch = await branchService.GetByIdAsync(id);
+            if (branch == null) return BadRequest();
+            return Ok(branch);
+        }
         [HttpGet("Paginated")]
         public async Task<IActionResult> GetAllBranchsPaginated(int pageNumber = 1, int pageSize = 10)
         {
