@@ -59,26 +59,48 @@ namespace Shipping.BL.Services
             var Employees = await unit.Employee.GetPaginatedAsync(pageNumber,pageSize);
             paginatedEmployees.TotalRecords= Employees.TotalRecords;
             paginatedEmployees.TotalPages = Employees.TotalPages;
-            paginatedEmployees.EmployeeDTOs = _map.Map<List<ReadEmployeeDTO>>(Employees.Data);
+            var EmployeeList = new List<ReadEmployeeDTO>();
+            foreach (var employee in Employees.Data)
+            {
+                var user = await userManager.FindByIdAsync(employee.UserID);
+                var roles = await userManager.GetRolesAsync(user);
+                var Branch = await unit.Branches.GetByIdAsync(employee.BranchId);
+
+                var role = roles.First();
+                var ReadEmployeeDTO = new ReadEmployeeDTO
+                {
+                    id = employee.ID,
+                    Name = user.UserName,
+                    Email = user.Email,
+                    UserRole = role,
+                    PhoneNumber = employee.User?.PhoneNumber,
+                    Branch = Branch?.Name
+                };
+                EmployeeList.Add(ReadEmployeeDTO);
+            }
+            paginatedEmployees.EmployeeDTOs = EmployeeList;
             return paginatedEmployees;
         }
         public async Task<ReadEmployeeDTO?> GetByIdAsync(int id)
         {
             var Employee = await unit.Employee.GetByIdAsync(id);
-            var user = await userManager.FindByIdAsync(Employee.UserID);
-            var roles = await userManager.GetRolesAsync(user);
-            var role = roles.First();
-            var Branch = (await unit.Branches.GetByIdAsync(Employee.BranchId)).Name;
-            var ReadEmployeeDTO = new ReadEmployeeDTO 
-            {
-                id = Employee.ID,
-                Name = user.UserName,
-                Email = user.Email,
-                UserRole = role,
-                PhoneNumber = Employee.User?.PhoneNumber,
-                Branch = Branch
-            };
-            return ReadEmployeeDTO;
+            if (Employee == null)
+                return new ReadEmployeeDTO();
+
+                var user = await userManager.FindByIdAsync(Employee.UserID);
+                var roles = await userManager.GetRolesAsync(user);
+                var role = roles.First();
+                var Branch = (await unit.Branches.GetByIdAsync(Employee.BranchId)).Name;
+                var ReadEmployeeDTO = new ReadEmployeeDTO
+                {
+                    id = Employee.ID,
+                    Name = user.UserName,
+                    Email = user.Email,
+                    UserRole = role,
+                    PhoneNumber = Employee.User?.PhoneNumber,
+                    Branch = Branch
+                };
+                return ReadEmployeeDTO;
         }
         public async Task<OperationResult> AddEmployeeAsync(AddEmployeeDTO employeeDTO)
         {
