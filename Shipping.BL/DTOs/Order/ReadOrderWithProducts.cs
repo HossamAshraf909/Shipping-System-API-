@@ -27,7 +27,7 @@ namespace Shipping.BL.DTOs.Order
         public string? VillageStreetAddress { get; set; } = null!;
         public decimal OrderPrice { get; set; }
         public double TotalWeight { get; set; }
-        public PaymentMethod PaymentMethod { get; set; } // Enum for Payment Type
+        public PaymentMethod PaymentType { get; set; } // Enum for Payment Type
         public ShippingMethod ShippingMethod { get; set; } // Enum for Shipping Type
         public List<EditProductDTO> Products { get; set; } = new();
     }

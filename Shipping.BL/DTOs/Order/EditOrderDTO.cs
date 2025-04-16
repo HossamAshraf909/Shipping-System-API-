@@ -26,7 +26,7 @@ namespace Shipping.BL.DTOs.Order
         public int? branchId { get; set; }
         public string? Phonenumber { get; set; }
         public string? Address { get; set; }
-        public PaymentMethod PaymentMethod { get; set; } 
+        public PaymentMethod PaymentType { get; set; } 
         public ShippingMethod ShippingMethod { get; set; } 
         public List<EditProductDTO> Products { get; set; } = new();
     }
