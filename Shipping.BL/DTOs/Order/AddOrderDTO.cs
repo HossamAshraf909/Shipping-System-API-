@@ -23,7 +23,7 @@ namespace Shipping.BL.DTOs.Order
         public int branchId { get; set; }
         public string Phonenumber { get; set; }
         public string Address { get; set; }
-        public PaymentMethod PaymentMethod { get; set; } // Enum for Payment Type
+        public PaymentMethod PaymentType { get; set; } // Enum for Payment Type
         public ShippingMethod ShippingMethod { get; set; } // Enum for Shipping Type
         public List<CreateProductDTO> Products { get; set; } = new();
     }
