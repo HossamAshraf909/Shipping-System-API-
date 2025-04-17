@@ -26,10 +26,10 @@ namespace Shipping.BL.Services
             return _map.Map<List<ReadWeightDTO>>(weightPrices);
         }
 
-        public async Task<ReadWeightDTO?> GetByIdAsync(int id)
+        public async Task<AddWeightDTO?> GetByIdAsync(int id)
         {
             var weightPrice = await _unit.WeightPrices.GetByIdAsync(id);
-            return weightPrice == null ? null : _map.Map<ReadWeightDTO>(weightPrice);
+            return weightPrice == null ? null : _map.Map<AddWeightDTO>(weightPrice);
         }
 
 

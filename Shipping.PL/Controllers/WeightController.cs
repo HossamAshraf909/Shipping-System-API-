@@ -27,9 +27,9 @@ namespace Shipping.PL.Controllers
         {
             if (weight == null) return BadRequest();
             if(!ModelState.IsValid) return BadRequest();
-            var existingWeightSetting = await weightPriceService.GetAllAsync();
-                weight.Id = existingWeightSetting[0].Id;
-            if (!existingWeightSetting.Any())
+            var existingWeightSetting = await weightPriceService.GetByIdAsync(1);
+                weight.Id = existingWeightSetting.Id;
+            if (existingWeightSetting == null)
                 await weightPriceService.AddAsync(weight);
             else  
                 await weightPriceService.UpdateAsync(weight);
