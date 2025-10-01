@@ -1,34 +1,20 @@
-﻿
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using AutoMapper;
-using Shipping.DAL.Entities;
-using Shipping.BL.DTOs.City;
-using Shipping.BL.DTOs.Branch;
-using Shipping.BL.DTOs.Governorate;
-using Shipping.BL.DTOs.ShippingType;
-using Shipping.BL.DTOs.Weight;
-
-using Shipping.BL.DTOs.SpecialPackage;
-using Shipping.PL.DTOs.Governorate;
-using Shipping.BL.DTOs.Village;
-using Shipping.BL.DTOs.Order;
-
-using Microsoft.EntityFrameworkCore.Query.SqlExpressions;
-using Shipping.BL.DTOs.product;
-using System.Net;
-using Shipping.BL.DTOs.OrderReport;
-using Shipping.DAL.Entities.Identity;
+﻿using AutoMapper;
 using Shipping.BL.DTOs.Auth.Role;
-using Shipping.BL.DTOs.Employee;
+using Shipping.BL.DTOs.Branch;
+using Shipping.BL.DTOs.City;
 using Shipping.BL.DTOs.Delivery;
-
-
-
-
+using Shipping.BL.DTOs.Employee;
+using Shipping.BL.DTOs.Governorate;
+using Shipping.BL.DTOs.Order;
+using Shipping.BL.DTOs.OrderReport;
+using Shipping.BL.DTOs.product;
+using Shipping.BL.DTOs.ShippingType;
+using Shipping.BL.DTOs.SpecialPackage;
+using Shipping.BL.DTOs.Village;
+using Shipping.BL.DTOs.Weight;
+using Shipping.DAL.Entities;
+using Shipping.DAL.Entities.Identity;
+using Shipping.PL.DTOs.Governorate;
 
 namespace Shipping.BL.Mappers
 {
@@ -44,135 +30,81 @@ namespace Shipping.BL.Mappers
             CreateMap<Branches, ReadBranchDTO>().ReverseMap();
 
             CreateMap<CreateProductDTO, Product>().ReverseMap();
+            CreateMap<Product, ReadProductDTO>().ReverseMap();
+            CreateMap<SpecialPackages, ReadPackageDto>().ReverseMap();
+            CreateMap<SpecialPackages, AddPackageDto>().ReverseMap();
+
             CreateMap<AddShippingTypeDTO, ShippingType>().ReverseMap();
             CreateMap<ShippingType, ReadShippingTypeDTO>().ReverseMap();
             CreateMap<WeightPrice, ReadWeightDTO>().ReverseMap();
             CreateMap<WeightPrice, AddWeightDTO>().ReverseMap();
 
-            CreateMap<CreateProductDTO, Product>().ReverseMap();
-            CreateMap<SpecialPackages, ReadPackageDto>().ReverseMap();
-            CreateMap<SpecialPackages, AddPackageDto>().ReverseMap();
             CreateMap<VillageDelivery, ReadVillageDTO>().ReverseMap();
             CreateMap<VillageDelivery, AddVillageDTO>().ReverseMap();
 
-            CreateMap<Product, ReadProductDTO>().ReverseMap();
-            CreateMap<SpecialPackages, ReadPackageDto>().ReverseMap();
-            CreateMap<SpecialPackages, AddPackageDto>().ReverseMap();
-            CreateMap<VillageDelivery, ReadVillageDTO>().ReverseMap();
-            CreateMap<VillageDelivery, AddVillageDTO>().ReverseMap();
+            CreateMap<AddOrderDTO, Order>().ReverseMap();
 
+            CreateMap<Order, ReadOrderDTO>()
+                .ForMember(dest => dest.Governorate,
+                           opt => opt.MapFrom(src => src.Governorate != null ? src.Governorate.Name : string.Empty))
+                .ForMember(dest => dest.City,
+                           opt => opt.MapFrom(src => src.City != null ? src.City.Name : string.Empty))
+                .ForMember(dest => dest.merchntName,
+                           opt => opt.MapFrom(src => src.Merchant != null ? src.Merchant.User.UserName : string.Empty))
+                .ForMember(dest => dest.BranchName,
+                           opt => opt.MapFrom(src => src.Branch != null ? src.Branch.Name : string.Empty))
+                .ReverseMap();
 
-            CreateMap<AddOrderDTO, Order>().AfterMap((src, dist) =>
-            {
-                dist.TotalWeight = src.Products.Sum(p => p.Weight * p.Quantity);
-                dist.MerchantId = src.MerchentId;
-                dist.BranchId = src.branchId;
-               
-                if (src.IsVillageDelivery == true)
+            CreateMap<Order, EditOrderDTO>()
+                .ForMember(dest => dest.MerchentId, opt => opt.MapFrom(src => src.MerchantId))
+                .ForMember(dest => dest.branchId, opt => opt.MapFrom(src => src.BranchId))
+                .ForMember(dest => dest.CityId, opt => opt.MapFrom(src => src.CityId))
+                .ForMember(dest => dest.GovernorateId, opt => opt.MapFrom(src => src.GovernorateId))
+                .ForMember(dest => dest.ShippingTypeId, opt => opt.MapFrom(src => src.ShippingTypeId))
+                .ForMember(dest => dest.IsVillageDelivery, opt => opt.MapFrom(src => src.IsVillageDelivery))
+                .ForMember(dest => dest.Phonenumber,
+                           opt => opt.MapFrom(src => src.Merchant != null ? src.Merchant.User.PhoneNumber : string.Empty))
+                .ForMember(dest => dest.Address,
+                           opt => opt.MapFrom(src => src.Merchant != null ? src.Merchant.User.Address : string.Empty))
+                .ReverseMap();
 
-                {
-                    dist.VillageStreetAddress = src.VillageStreetAddress;
-                }
+            CreateMap<ApplicationRole, ReadRoleDTO>()
+                .ForMember(dest => dest.Id, opt => opt.MapFrom(src => src.Id))
+                .ReverseMap();
 
-            }).ReverseMap();
-            CreateMap<Order, ReadOrderDTO>().AfterMap((src, dist) =>
-            {
-                dist.Governorate = src.Governorate.Name;
-                dist.City = src.City.Name;
-                dist.merchntName = src.Merchant?.User.UserName;
-                dist.BranchName = src.Branch?.Name;
-            }).ReverseMap();
-            CreateMap<Order, ReadOrderWithProducts>().AfterMap((src, dist) =>
-            {
-                foreach (var product in src.OrderProducts)
-                {
-                    dist.Products.Add(new EditProductDTO
-                    {
-                        Id = product.ProductId,
-                        Name = product.Product.Name,
-                        Quantity = product.Product.Quantity,
-                        Weight = product.Product.Weight,
-                    });
-                }
-                dist.merchantId = src.Merchant?.ID;
-            }).ReverseMap();
+            CreateMap<Employee, ReadEmployeeDTO>()
+                .ForMember(dest => dest.Name,
+                           opt => opt.MapFrom(src => src.User != null ? src.User.UserName : string.Empty))
+                .ForMember(dest => dest.Email,
+                           opt => opt.MapFrom(src => src.User != null ? src.User.Email : string.Empty))
+                .ForMember(dest => dest.Branch,
+                           opt => opt.MapFrom(src => src.Branch != null ? src.Branch.Name : string.Empty))
+                .ForMember(dest => dest.PhoneNumber,
+                           opt => opt.MapFrom(src => src.User != null ? src.User.PhoneNumber : string.Empty))
+                .ReverseMap();
 
-            CreateMap<Order, EditOrderDTO>().AfterMap((src, dist) =>
-            {
-                dist.TotalWeight = src.TotalWeight;
-                dist.MerchentId = src.MerchantId;
-                dist.branchId = src.BranchId;
-                dist.CityId = src.CityId;
-                dist.GovernorateId = src.GovernorateId;
-                dist.ShippingTypeId = src.ShippingTypeId;
-                dist.IsVillageDelivery = src.IsVillageDelivery;
-                dist.Phonenumber = src.Merchant?.User.PhoneNumber;
-                dist.Address = src.Merchant?.User.Address;
-                if (src.IsVillageDelivery == true)
-                {
-                    dist.VillageStreetAddress = src.VillageStreetAddress;
-                }
-                dist.orderStatus = src.orderStatus;
-                foreach (var product in src.OrderProducts)
-                {
-                    dist.Products.Add(new EditProductDTO
-                    {
-                        Id = product.ProductId,
-                        Name = product.Product.Name,
-                        Quantity = product.Product.Quantity,
-                        Weight = product.Product.Weight,
-                    });
-                }
+            CreateMap<Delivery, ReadDeliveryDTO>()
+                .ForMember(dest => dest.Name,
+                           opt => opt.MapFrom(src => src.User != null ? src.User.UserName : string.Empty))
+                .ForMember(dest => dest.Id, opt => opt.MapFrom(src => src.ID))
+                .ReverseMap();
 
-            }).ReverseMap();
-            CreateMap<ApplicationRole, ReadRoleDTO>().AfterMap((dist, src) =>
-            {
-                dist.Id = src.Id;
-            }).ReverseMap();
-
-
-            CreateMap<Employee, ReadEmployeeDTO>().AfterMap(async (src, dist) =>
-            {
-                dist.Name = src.User.UserName;
-                dist.Email = src.User.Email;
-                dist.Branch = src.Branch.Name;
-                dist.PhoneNumber = src.User.PhoneNumber;
-            }).ReverseMap();
-            CreateMap<Delivery, ReadDeliveryDTO>().AfterMap((src, dist) =>
-            {
-                dist.Name = src.User.UserName;
-                dist.Id = src.ID;
-            }).ReverseMap();
-          
             CreateMap<Order, ReadOrderReportDTO>()
-      .ForMember(dest => dest.MerchantName,
-                 opt => opt.MapFrom(src => src.Merchant.User.UserName))
-
-      .ForMember(dest => dest.CompanyPersent,
-                 opt => opt.MapFrom(src => src.Delivery.CompanyPercent))
-
-      .ForMember(dest => dest.PaidShippingPrice,
-                 opt => opt.MapFrom(src => src.ShippingPrice))
-
-      .ForMember(dest => dest.DID,
-                 opt => opt.MapFrom(src => src.DeliveryId))
-
-      .ForMember(dest => dest.TotalCoast,
-                 opt => opt.MapFrom(src =>
-                      (src.Delivery.CompanyPercent) == 0
-                          ? src.OrderPrice
-                          : ((decimal)(src.Delivery.CompanyPercent) * src.ShippingPrice) + src.OrderPrice
-                 ))
-
-      .ForMember(dest => dest.city,
-                 opt => opt.MapFrom(src => src.City.Name))
-
-      .ForMember(dest => dest.Governorate,
-                 opt => opt.MapFrom(src => src.Governorate.Name))
-
-      .ForMember(dest => dest.OrderDate,
-                 opt => opt.MapFrom(src => src.OrderDate.ToString("O")));
-
+                .ForMember(dest => dest.MerchantName,
+                           opt => opt.MapFrom(src => src.Merchant != null ? src.Merchant.User.UserName : string.Empty))
+                .ForMember(dest => dest.CompanyPersent,
+                           opt => opt.MapFrom(src => src.Delivery != null ? src.Delivery.CompanyPercent : 0))
+                .ForMember(dest => dest.PaidShippingPrice,
+                           opt => opt.MapFrom(src => src.ShippingPrice))
+                .ForMember(dest => dest.DID,
+                           opt => opt.MapFrom(src => src.DeliveryId))
+                .ForMember(dest => dest.city,
+                           opt => opt.MapFrom(src => src.City != null ? src.City.Name : string.Empty))
+                .ForMember(dest => dest.Governorate,
+                           opt => opt.MapFrom(src => src.Governorate != null ? src.Governorate.Name : string.Empty))
+                .ForMember(dest => dest.OrderDate,
+                           opt => opt.MapFrom(src => src.OrderDate.ToString("O")))
+                .ReverseMap();
         }
     }
 }

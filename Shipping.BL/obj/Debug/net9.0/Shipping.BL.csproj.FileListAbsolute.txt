@@ -62,3 +62,19 @@ E:\Ehab\ITI TASKS\GP\Graduation Project 133-4-2025\Shipping-System-API-\Shipping
 E:\Ehab\ITI TASKS\GP\Graduation Project 133-4-2025\Shipping-System-API-\Shipping.BL\obj\Debug\net9.0\refint\Shipping.BL.dll
 E:\Ehab\ITI TASKS\GP\Graduation Project 133-4-2025\Shipping-System-API-\Shipping.BL\obj\Debug\net9.0\Shipping.BL.pdb
 E:\Ehab\ITI TASKS\GP\Graduation Project 133-4-2025\Shipping-System-API-\Shipping.BL\obj\Debug\net9.0\ref\Shipping.BL.dll
+E:\Shipping-System-API-\Shipping.BL\bin\Debug\net9.0\Shipping.BL.deps.json
+E:\Shipping-System-API-\Shipping.BL\bin\Debug\net9.0\Shipping.BL.dll
+E:\Shipping-System-API-\Shipping.BL\bin\Debug\net9.0\Shipping.BL.pdb
+E:\Shipping-System-API-\Shipping.BL\bin\Debug\net9.0\Shipping.DAL.dll
+E:\Shipping-System-API-\Shipping.BL\bin\Debug\net9.0\Shipping.DAL.pdb
+E:\Shipping-System-API-\Shipping.BL\obj\Debug\net9.0\Shipping.BL.csproj.AssemblyReference.cache
+E:\Shipping-System-API-\Shipping.BL\obj\Debug\net9.0\Shipping.BL.GeneratedMSBuildEditorConfig.editorconfig
+E:\Shipping-System-API-\Shipping.BL\obj\Debug\net9.0\Shipping.BL.AssemblyInfoInputs.cache
+E:\Shipping-System-API-\Shipping.BL\obj\Debug\net9.0\Shipping.BL.AssemblyInfo.cs
+E:\Shipping-System-API-\Shipping.BL\obj\Debug\net9.0\Shipping.BL.csproj.CoreCompileInputs.cache
+E:\Shipping-System-API-\Shipping.BL\obj\Debug\net9.0\Shipping.BL.sourcelink.json
+E:\Shipping-System-API-\Shipping.BL\obj\Debug\net9.0\Shipping.26712019.Up2Date
+E:\Shipping-System-API-\Shipping.BL\obj\Debug\net9.0\Shipping.BL.dll
+E:\Shipping-System-API-\Shipping.BL\obj\Debug\net9.0\refint\Shipping.BL.dll
+E:\Shipping-System-API-\Shipping.BL\obj\Debug\net9.0\Shipping.BL.pdb
+E:\Shipping-System-API-\Shipping.BL\obj\Debug\net9.0\ref\Shipping.BL.dll
